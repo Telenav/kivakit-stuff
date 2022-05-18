@@ -18,9 +18,9 @@ public class Session implements Comparable<Session>
 {
     private String name;
 
-    private Time started;
-
     private Bytes size;
+
+    private Time started;
 
     public Session(String name, Time started, Bytes size)
     {
@@ -62,7 +62,7 @@ public class Session implements Comparable<Session>
 
     public FileName fileName()
     {
-        return FileName.dateTime(started.localTime()).prefixedWith(name + "-");
+        return FileName.dateTime(started.asLocalTime()).prefixedWith(name + "-");
     }
 
     @Override
@@ -89,7 +89,7 @@ public class Session implements Comparable<Session>
     @Override
     public String toString()
     {
-        return name + " - " + new HumanizedLocalDateTimeConverter(Listener.throwing())
-                .unconvert(started.localTime());
+        return name + " - " + new HumanizedLocalDateTimeConverter(Listener.throwingListener())
+                .unconvert(started.asLocalTime());
     }
 }

@@ -36,9 +36,12 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.util.Objects;
 
+import static com.telenav.kivakit.core.value.level.Percent.percent;
+
 /**
  * Represents a color in RGBA space (red, green, blue, alpha).
  */
+@SuppressWarnings("UnusedReturnValue")
 public class Color
 {
     public static final Color BLACK = of(java.awt.Color.BLACK);
@@ -117,13 +120,13 @@ public class Color
         }
     }
 
-    private int red;
-
-    private int green;
+    private int alpha;
 
     private int blue;
 
-    private int alpha;
+    private int green;
+
+    private int red;
 
     private Color(int red, int green, int blue, int alpha)
     {
@@ -236,13 +239,13 @@ public class Color
 
     public Color brighter()
     {
-        return brighter(Percent.of(15));
+        return brighter(percent(15));
     }
 
     public Color brighter(Percent percent)
     {
         var copy = new Color(this);
-        var scaleFactor = 1.0 + percent.asZeroToOne();
+        var scaleFactor = 1.0 + percent.unitValue();
         copy.red = Math.min((int) (red() * scaleFactor), 255);
         copy.green = Math.min((int) (green() * scaleFactor), 255);
         copy.blue = Math.min((int) (blue() * scaleFactor), 255);
@@ -251,13 +254,13 @@ public class Color
 
     public Color darker()
     {
-        return darker(Percent.of(15));
+        return darker(percent(15));
     }
 
     public Color darker(Percent percent)
     {
         var copy = new Color(this);
-        var scaleFactor = 1.0 - percent.asZeroToOne();
+        var scaleFactor = 1.0 - percent.unitValue();
         copy.red = Math.max((int) (red() * scaleFactor), 0);
         copy.green = Math.max((int) (green() * scaleFactor), 0);
         copy.blue = Math.max((int) (blue() * scaleFactor), 0);

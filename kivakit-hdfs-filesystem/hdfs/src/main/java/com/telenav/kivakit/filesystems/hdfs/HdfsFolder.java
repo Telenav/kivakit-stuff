@@ -97,7 +97,7 @@ public class HdfsFolder extends BaseComponent implements FolderService
     }
 
     @Override
-    public Time created()
+    public Time createdAt()
     {
         return unsupported();
     }
@@ -203,13 +203,6 @@ public class HdfsFolder extends BaseComponent implements FolderService
     }
 
     @Override
-    public Time lastModified()
-    {
-        return retry(() -> Time.milliseconds(proxy().lastModified(pathAsString())))
-                .orDefault(null, "Unable to determine modification time of $", this);
-    }
-
-    @Override
     public HdfsFolder mkdirs()
     {
         return retry(() ->
@@ -222,6 +215,13 @@ public class HdfsFolder extends BaseComponent implements FolderService
         }).orDefault(null, "Unable to create folder path $", this);
     }
 
+    @Override
+    public Time modifiedAt()
+    {
+        return retry(() -> Time.epochMilliseconds(proxy().lastModified(pathAsString())))
+                .orDefault(null, "Unable to determine modification time of $", this);
+    }
+
     public String name()
     {
         return path().fileName().name();
@@ -231,7 +231,6 @@ public class HdfsFolder extends BaseComponent implements FolderService
     {
         return retry(() -> matching(proxy().nestedFiles(pathAsString()), matchAll())).orDefault(new ArrayList<>(), "Unable to locate files in $", this);
     }
-
 
     @Override
     public List<FileService> nestedFiles(Matcher<FilePath> matcher)
