@@ -5,8 +5,6 @@ open module kivakit.primitive.collections
     requires transitive kivakit.serialization.kryo;
     requires transitive kivakit.collections;
     requires transitive kivakit.conversion;
-    requires transitive kivakit.test;
-    requires transitive kivakit.test.internal;
 
     // Module exports
     exports com.telenav.kivakit.primitive.collections;

@@ -16,7 +16,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-package com.telenav.kivakit.data.compression;
+package com.telenav.kivakit.data.compression.codecs.huffman;
 
 import com.telenav.kivakit.core.path.StringPath;
 import com.telenav.kivakit.core.value.count.Count;
@@ -55,7 +55,7 @@ import com.telenav.kivakit.serialization.kryo.KryoSerializationSessionFactory;
  *
  * @author jonathanl (shibo)
  */
-@LexakaiJavadoc(complete = true)
+@SuppressWarnings("DuplicatedCode") @LexakaiJavadoc(complete = true)
 public class KryoUnitTest extends UnitTest
 {
     private SerializationSessionFactory factory;

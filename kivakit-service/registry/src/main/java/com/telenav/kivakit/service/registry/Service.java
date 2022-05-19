@@ -267,7 +267,7 @@ public class Service extends BaseComponent implements Comparable<Service>, Strin
 
     public Service renewedAt(Time renewedAt)
     {
-        this.renewedAt = renewedAt.asMilliseconds();
+        this.renewedAt = renewedAt.milliseconds();
         return this;
     }
 

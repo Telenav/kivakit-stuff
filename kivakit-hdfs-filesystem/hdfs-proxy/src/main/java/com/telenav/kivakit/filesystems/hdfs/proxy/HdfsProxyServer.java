@@ -111,7 +111,7 @@ public class HdfsProxyServer extends Server implements com.telenav.kivakit.files
     public HdfsProxyServer()
     {
         // Shut the proxy server down when it hasn't been used in a while to prevent stuck proxy servers
-        Duration.minutes(1).every(timer ->
+        Duration.minutes(1).repeat(timer ->
         {
             if (lastRequest.elapsedSince().isGreaterThan(Duration.minutes(5)))
             {

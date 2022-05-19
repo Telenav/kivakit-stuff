@@ -18,7 +18,7 @@
 
 package com.telenav.kivakit.math.statistics;
 
-import com.telenav.kivakit.internal.test.support.CoreUnitTest;
+import com.telenav.kivakit.test.UnitTest;
 import org.junit.Test;
 
 /**
@@ -26,7 +26,7 @@ import org.junit.Test;
  *
  * @author matthieun
  */
-public class StandardDeviationTest extends CoreUnitTest
+public class StandardDeviationTest extends UnitTest
 {
     @Test
     public void testStandardDeviation()

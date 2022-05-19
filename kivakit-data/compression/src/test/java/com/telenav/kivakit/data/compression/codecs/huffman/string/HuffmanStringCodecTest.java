@@ -18,14 +18,14 @@
 
 package com.telenav.kivakit.data.compression.codecs.huffman.string;
 
-import com.telenav.kivakit.core.messaging.Listener;
 import com.telenav.kivakit.core.progress.reporters.BroadcastingProgressReporter;
-import com.telenav.kivakit.data.compression.DataCompressionUnitTest;
+import com.telenav.kivakit.data.compression.codecs.huffman.DataCompressionUnitTest;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.telenav.kivakit.core.messaging.Listener.emptyListener;
 import static com.telenav.kivakit.core.value.count.Count._10;
 import static com.telenav.kivakit.core.value.count.Count._100;
 import static com.telenav.kivakit.interfaces.code.FilteredLoopBody.FilterAction.ACCEPT;
@@ -46,14 +46,14 @@ public class HuffmanStringCodecTest extends DataCompressionUnitTest
     @Test
     public void testRandom()
     {
-        var progress = BroadcastingProgressReporter.create(Listener.deafListener(), "codec");
+        var progress = BroadcastingProgressReporter.create(emptyListener(), "codec");
         _10.loop(codecNumber ->
         {
             var symbols = randomStringSymbols(2, 100, 1, 100);
             var codec = HuffmanStringCodec.from(symbols);
             var choices = symbols.symbols();
 
-            var test = BroadcastingProgressReporter.create(Listener.deafListener(), "test");
+            var test = BroadcastingProgressReporter.create(emptyListener(), "test");
             _100.loop(testNumber ->
             {
                 var input = new ArrayList<String>();

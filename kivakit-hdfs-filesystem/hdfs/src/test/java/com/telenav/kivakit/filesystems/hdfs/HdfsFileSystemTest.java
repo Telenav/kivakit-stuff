@@ -18,12 +18,12 @@
 
 package com.telenav.kivakit.filesystems.hdfs;
 
-import com.telenav.kivakit.core.test.support.SlowTest;
 import com.telenav.kivakit.filesystem.Folder;
 import com.telenav.kivakit.network.core.EmailAddress;
 import com.telenav.kivakit.network.core.NetworkPath;
 import com.telenav.kivakit.network.http.HttpNetworkLocation;
 import com.telenav.kivakit.settings.Settings;
+import com.telenav.kivakit.test.SlowTest;
 import com.telenav.kivakit.test.UnitTest;
 import org.junit.Before;
 import org.junit.Ignore;

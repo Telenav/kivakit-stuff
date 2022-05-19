@@ -24,7 +24,6 @@ import com.telenav.kivakit.core.logging.LoggerFactory;
 import com.telenav.kivakit.core.progress.reporters.BroadcastingProgressReporter;
 import com.telenav.kivakit.core.value.count.Count;
 import com.telenav.kivakit.core.value.count.Maximum;
-import com.telenav.kivakit.data.compression.DataCompressionUnitTest;
 import com.telenav.kivakit.data.compression.SymbolConsumer;
 import com.telenav.kivakit.data.compression.codecs.huffman.tree.Symbols;
 import org.junit.Test;
@@ -34,7 +33,6 @@ import java.util.List;
 
 import static com.telenav.kivakit.core.value.count.Count._10;
 import static com.telenav.kivakit.core.value.count.Count._100;
-import static com.telenav.kivakit.interfaces.code.FilteredLoopBody.FilterAction.ACCEPT;
 
 @SuppressWarnings("SpellCheckingInspection")
 public class HuffmanCodecTest extends DataCompressionUnitTest

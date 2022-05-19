@@ -18,10 +18,10 @@
 
 package com.telenav.kivakit.security.digest.digesters;
 
-import com.telenav.kivakit.internal.test.support.CoreUnitTest;
+import com.telenav.kivakit.test.UnitTest;
 import org.junit.Test;
 
-public class Sha1DigesterTest extends CoreUnitTest
+public class Sha1DigesterTest extends UnitTest
 {
     @Test
     public void test()

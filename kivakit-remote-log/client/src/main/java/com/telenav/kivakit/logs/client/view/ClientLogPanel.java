@@ -61,7 +61,6 @@ import java.awt.Toolkit;
 import java.util.List;
 import java.util.function.Consumer;
 
-import static com.telenav.kivakit.core.time.Duration.FOREVER;
 import static com.telenav.kivakit.core.vm.ShutdownHook.Order.FIRST;
 import static com.telenav.kivakit.ui.desktop.component.panel.output.OutputPanel.Type.FIXED_WIDTH;
 import static com.telenav.kivakit.ui.desktop.component.progress.ProgressPanel.CompletionStatus.CANCELLED;
@@ -292,7 +291,7 @@ public class ClientLogPanel extends KivaKitPanel
             {
                 if (status == CANCELLED)
                 {
-                    receiver.stop(FOREVER);
+                    receiver.stop(Duration.MAXIMUM);
                 }
             });
             progress.setVisible(true);
