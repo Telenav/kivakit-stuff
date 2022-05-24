@@ -129,7 +129,7 @@ SessionStore extends BaseComponent
                 var time = new LocalDateTimeConverter(this).convert(parts[1]);
                 if (!Strings.isEmpty(name) && time != null)
                 {
-                    sessions.add(new Session(name, time.asTime(), file.sizeInBytes()));
+                    sessions.add(new Session(name, time, file.sizeInBytes()));
                 }
             }
         }

@@ -267,14 +267,14 @@ public class Service extends BaseComponent implements Comparable<Service>, Strin
 
     public Service renewedAt(Time renewedAt)
     {
-        this.renewedAt = renewedAt.asMilliseconds();
+        this.renewedAt = renewedAt.milliseconds();
         return this;
     }
 
     @KivaKitIncludeProperty
     public Time renewedAt()
     {
-        return Time.epochMilliseconds(renewedAt);
+        return Time.milliseconds(renewedAt);
     }
 
     public Scope scope()

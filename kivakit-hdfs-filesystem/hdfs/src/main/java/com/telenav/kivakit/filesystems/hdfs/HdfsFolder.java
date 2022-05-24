@@ -218,7 +218,7 @@ public class HdfsFolder extends BaseComponent implements FolderService
     @Override
     public Time modifiedAt()
     {
-        return retry(() -> Time.epochMilliseconds(proxy().lastModified(pathAsString())))
+        return retry(() -> Time.milliseconds(proxy().lastModified(pathAsString())))
                 .orDefault(null, "Unable to determine modification time of $", this);
     }
 

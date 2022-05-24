@@ -6,10 +6,10 @@ import com.telenav.kivakit.core.messaging.repeaters.BaseRepeater;
 import com.telenav.kivakit.core.progress.ProgressReporter;
 import com.telenav.kivakit.core.registry.RegistryTrait;
 import com.telenav.kivakit.core.thread.latches.CompletionLatch;
+import com.telenav.kivakit.core.time.Duration;
 import com.telenav.kivakit.core.time.Time;
 import com.telenav.kivakit.core.version.VersionedObject;
 import com.telenav.kivakit.interfaces.lifecycle.Stoppable;
-import com.telenav.kivakit.interfaces.time.LengthOfTime;
 import com.telenav.kivakit.logs.server.session.Session;
 import com.telenav.kivakit.logs.server.session.SessionStore;
 import com.telenav.kivakit.resource.serialization.SerializableObject;
@@ -30,7 +30,7 @@ import static com.telenav.kivakit.serialization.core.SerializationSession.Sessio
  * @author jonathanl (shibo)
  */
 public class Receiver extends BaseRepeater implements
-        Stoppable,
+        Stoppable<Duration>,
         RegistryTrait
 {
     enum State
@@ -110,13 +110,19 @@ public class Receiver extends BaseRepeater implements
     }
 
     @Override
-    public void stop(LengthOfTime wait)
+    public void stop(Duration wait)
     {
         if (state == RUNNING)
         {
             state = STOPPING;
             stopping.waitForCompletion(wait);
         }
+    }
+
+    @Override
+    public Duration maximumWaitTime()
+    {
+        return Duration.MAXIMUM;
     }
 
     @SuppressWarnings("unchecked")

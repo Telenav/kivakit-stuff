@@ -58,7 +58,6 @@ import java.util.List;
 
 import static com.telenav.kivakit.core.ensure.Ensure.fail;
 import static com.telenav.kivakit.core.project.Project.resolveProject;
-import static com.telenav.kivakit.core.time.Duration.FOREVER;
 import static com.telenav.kivakit.core.vm.ShutdownHook.Order.LAST;
 import static com.telenav.kivakit.serialization.core.SerializationSession.SessionType.CLIENT;
 import static com.telenav.kivakit.serialization.core.SerializationSession.SessionType.SERVER;
@@ -178,7 +177,7 @@ public class ServerLog extends BaseTextLog implements ComponentMixin
 
                         // and send the entry
                         serializer.write(new SerializableObject<>(entry, projectVersion()));
-                        serializer.flush(FOREVER);
+                        serializer.flush(Duration.MAXIMUM);
                     }
                     catch (Exception e)
                     {
@@ -265,7 +264,7 @@ public class ServerLog extends BaseTextLog implements ComponentMixin
                     synchronizeSessions(serializer, reporter);
 
                     // then flush the serializer
-                    serializer.flush(FOREVER);
+                    serializer.flush(Duration.MAXIMUM);
 
                     // tell the progress reporter that the initialization process is done
                     reporter.end();

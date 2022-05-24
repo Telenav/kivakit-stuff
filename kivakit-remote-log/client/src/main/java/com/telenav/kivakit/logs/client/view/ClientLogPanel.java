@@ -21,7 +21,6 @@ package com.telenav.kivakit.logs.client.view;
 import com.telenav.kivakit.core.logging.LogEntry;
 import com.telenav.kivakit.core.messaging.Broadcaster;
 import com.telenav.kivakit.core.progress.reporters.BroadcastingProgressReporter;
-import com.telenav.kivakit.core.progress.reporters.ProgressiveInputStream;
 import com.telenav.kivakit.core.string.Strings;
 import com.telenav.kivakit.core.thread.KivaKitThread;
 import com.telenav.kivakit.core.time.Duration;
@@ -61,7 +60,6 @@ import java.awt.Toolkit;
 import java.util.List;
 import java.util.function.Consumer;
 
-import static com.telenav.kivakit.core.time.Duration.FOREVER;
 import static com.telenav.kivakit.core.vm.ShutdownHook.Order.FIRST;
 import static com.telenav.kivakit.ui.desktop.component.panel.output.OutputPanel.Type.FIXED_WIDTH;
 import static com.telenav.kivakit.ui.desktop.component.progress.ProgressPanel.CompletionStatus.CANCELLED;
@@ -287,12 +285,11 @@ public class ClientLogPanel extends KivaKitPanel
         return connection ->
         {
             var reporter = BroadcastingProgressReporter.create();
-            var progressiveInput = new ProgressiveInputStream(connection.input(), reporter);
             var progress = new ProgressPanel(reporter, 150, status ->
             {
                 if (status == CANCELLED)
                 {
-                    receiver.stop(FOREVER);
+                    receiver.stop(Duration.MAXIMUM);
                 }
             });
             progress.setVisible(true);
