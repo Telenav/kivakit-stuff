@@ -104,7 +104,7 @@ public class HuffmanStringListCodecTest extends DataCompressionUnitTest
         var progress = BroadcastingProgressReporter.create(Listener.emptyListener(), "codec");
         _10.loop(codecNumber ->
         {
-            var stringSymbols = randomStringSymbols(2, 16, 1, 32);
+            var stringSymbols = randomStringSymbols(2, 16, 2, 32);
             var string = HuffmanStringCodec.from(stringSymbols, Maximum._8);
 
             var characterSymbols = randomCharacterSymbols(1, 25);
