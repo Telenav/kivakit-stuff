@@ -23,8 +23,8 @@ import com.telenav.kivakit.network.core.EmailAddress;
 import com.telenav.kivakit.network.core.NetworkPath;
 import com.telenav.kivakit.network.http.HttpNetworkLocation;
 import com.telenav.kivakit.settings.Settings;
-import com.telenav.kivakit.test.SlowTest;
-import com.telenav.kivakit.test.UnitTest;
+import com.telenav.kivakit.testing.SlowTest;
+import com.telenav.kivakit.testing.UnitTest;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -62,7 +62,7 @@ public class HdfsFileSystemTest extends UnitTest
     {
         if (TEST_OSMTEAM_CLUSTER)
         {
-            var folder = Folder.parse(this, osmteamZambia().toString());
+            var folder = Folder.parseFolder(this, osmteamZambia().toString());
             assert folder != null;
             ensure(folder.exists());
             ensure(!folder.isEmpty());
@@ -133,12 +133,12 @@ public class HdfsFileSystemTest extends UnitTest
     @SuppressWarnings("SpellCheckingInspection")
     private Folder navteamHdfs()
     {
-        return Folder.parse(this, "hdfs://navhacluster");
+        return Folder.parseFolder(this, "hdfs://navhacluster");
     }
 
     private Folder osmteamHdfs()
     {
-        return Folder.parse(this, "hdfs://cluster1ns");
+        return Folder.parseFolder(this, "hdfs://cluster1ns");
     }
 
     private Folder osmteamZambia()

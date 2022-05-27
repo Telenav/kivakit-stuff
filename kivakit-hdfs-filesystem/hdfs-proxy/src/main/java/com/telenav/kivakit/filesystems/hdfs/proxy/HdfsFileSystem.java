@@ -186,7 +186,7 @@ class HdfsFileSystem extends BaseComponent
         if (property != null)
         {
             // see if the folder exists or can be created
-            var folder = Folder.parse(this, property);
+            var folder = Folder.parseFolder(this, property);
             if (folder != null)
             {
                 folder.mkdirs();

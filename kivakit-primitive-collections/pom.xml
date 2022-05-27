@@ -25,19 +25,38 @@
         <dependency>
             <groupId>com.telenav.kivakit</groupId>
             <artifactId>kivakit-serialization-kryo</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>com.telenav.kivakit</groupId>
             <artifactId>kivakit-collections</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>com.telenav.kivakit</groupId>
             <artifactId>kivakit-conversion</artifactId>
+            <version>${project.version}</version>
         </dependency>
+
+        <!-- Testing -->
 
         <dependency>
             <groupId>com.telenav.kivakit</groupId>
-            <artifactId>kivakit-kryo-tests</artifactId>
+            <artifactId>kivakit-internal-testing</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.telenav.kivakit</groupId>
+            <artifactId>kivakit-testing</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.telenav.kivakit</groupId>
+            <artifactId>kivakit-serialization-kryo</artifactId>
+            <version>${project.version}</version>
+            <type>test-jar</type>
             <scope>test</scope>
         </dependency>
 

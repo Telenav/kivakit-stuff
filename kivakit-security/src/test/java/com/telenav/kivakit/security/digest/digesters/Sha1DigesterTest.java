@@ -18,7 +18,7 @@
 
 package com.telenav.kivakit.security.digest.digesters;
 
-import com.telenav.kivakit.test.UnitTest;
+import com.telenav.kivakit.testing.UnitTest;
 import org.junit.Test;
 
 public class Sha1DigesterTest extends UnitTest

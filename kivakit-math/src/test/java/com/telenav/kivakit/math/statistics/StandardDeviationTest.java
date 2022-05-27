@@ -18,7 +18,7 @@
 
 package com.telenav.kivakit.math.statistics;
 
-import com.telenav.kivakit.test.UnitTest;
+import com.telenav.kivakit.testing.UnitTest;
 import org.junit.Test;
 
 /**

@@ -24,8 +24,8 @@ import org.junit.Test;
 
 import java.util.HashMap;
 
-import static com.telenav.kivakit.core.test.Repeats.ALLOW_REPEATS;
-import static com.telenav.kivakit.core.test.Repeats.NO_REPEATS;
+import static com.telenav.kivakit.internal.testing.Repeats.ALLOW_REPEATS;
+import static com.telenav.kivakit.internal.testing.Repeats.NO_REPEATS;
 import static com.telenav.kivakit.core.value.count.Count._10;
 
 public class LongArrayTest extends PrimitiveCollectionsUnitTest
