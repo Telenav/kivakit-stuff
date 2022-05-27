@@ -9,11 +9,12 @@
     </parent>
 
     <artifactId>kivakit-filesystems-hdfs-proxy</artifactId>
+    <version>1.5.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>
 
-        <jar.name>kivakit-hdfs-proxy-${kivakit.version}</jar.name>
+        <jar.name>kivakit-hdfs-proxy-${project.version}</jar.name>
 
     </properties>
 

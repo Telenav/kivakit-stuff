@@ -16,7 +16,7 @@
     </parent>
 
     <artifactId>kivakit-data-compression</artifactId>
-
+    <version>1.5.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <dependencies>

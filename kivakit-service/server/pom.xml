@@ -16,11 +16,12 @@
     </parent>
 
     <artifactId>kivakit-service-server</artifactId>
+    <version>1.5.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>
 
-        <jar.name>kivakit-service-server-${kivakit.version}</jar.name>
+        <jar.name>kivakit-service-server-${project.version}</jar.name>
 
     </properties>
 
