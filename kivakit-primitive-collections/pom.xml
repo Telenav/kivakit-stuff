@@ -55,7 +55,7 @@
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>kivakit-serialization-kryo-test</artifactId>
+            <artifactId>kivakit-serialization-kryo-testing</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>
         </dependency>

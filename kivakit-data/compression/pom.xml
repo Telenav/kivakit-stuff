@@ -52,7 +52,7 @@
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>kivakit-serialization-kryo-test</artifactId>
+            <artifactId>kivakit-serialization-kryo-testing</artifactId>
             <scope>test</scope>
         </dependency>
 
