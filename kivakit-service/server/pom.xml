@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//
-// © 2011-2022 Telenav, Inc.
-// Licensed under Apache License, Version 2.0
-//
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
--->
+ /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ //
+ // © 2011-2022 Telenav, Inc.
+ // Licensed under Apache License, Version 2.0
+ //
+ /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ -->
 
 <project
-     xmlns="http://maven.apache.org/POM/4.0.0"
-     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
     <modelVersion>4.0.0</modelVersion>
-
+    
     <parent>
         <groupId>com.telenav.kivakit</groupId>
         <artifactId>kivakit</artifactId>
         <version>1.5.1-SNAPSHOT</version>
         <relativePath/>
     </parent>
-
+    
     <artifactId>kivakit-service-server</artifactId>
-
+    
     <properties>
         <jar.name>kivakit-service-server-${project.version}</jar.name>
     </properties>
-
+    
     <dependencies>
-
+        
         <!-- KivaKit -->
-
+        
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>kivakit-service-client</artifactId>
@@ -60,9 +60,9 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>kivakit-web-wicket</artifactId>
         </dependency>
-
+        
         <!-- Wicket -->
-
+        
         <dependency>
             <groupId>org.apache.wicket</groupId>
             <artifactId>wicket-extensions</artifactId>
@@ -73,14 +73,14 @@
             <artifactId>jdk-serializable-functional</artifactId>
             <version>1.9.0</version>
         </dependency>
-
+        
     </dependencies>
-
+    
     <build>
         <plugins>
-
+            
             <plugin>
-
+                
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>${maven-shade-plugin.version}</version>
@@ -90,9 +90,9 @@
                         <goals>
                             <goal>shade</goal>
                         </goals>
-
+                        
                         <configuration>
-
+                            
                             <minimizeJar>false</minimizeJar>
                             <finalName>${jar.name}</finalName>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
@@ -111,55 +111,54 @@
                             </filters>
                             <transformers>
                                 <transformer
-                                     implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                     <mainClass>com.telenav.kivakit.service.registry.server.ServiceRegistryServer</mainClass>
                                 </transformer>
                                 <transformer
-                                     implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+                                implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
                             </transformers>
-
+                            
                         </configuration>
-
+                        
                     </execution>
                 </executions>
-
+                
             </plugin>
-
+            
             <plugin>
-
+                
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>
                 <version>3.0.0</version>
                 <executions>
-
+                    
                     <execution>
-
+                        
                         <id>install-kivakit-service-registry</id>
                         <phase>install</phase>
                         <configuration>
                             <target
-                                 name="Install ${jar.name}">
+                                name="Install ${jar.name}">
                                 <echo
-                                     message="Installing jar ${jar.name}.jar"/>
+                                message="Installing jar ${jar.name}.jar"/>
                                 <copy
-                                     file="${project.basedir}/target/${jar.name}.jar"
-                                     tofile="${env.HOME}/.kivakit/${kivakit.version}/temporary/launcher/${jar.name}.jar"
-                                     verbose="true"/>
+                                file="${project.basedir}/target/${jar.name}.jar"
+                                tofile="${env.HOME}/.kivakit/${kivakit.version}/temporary/launcher/${jar.name}.jar"
+                                verbose="true"/>
                             </target>
                         </configuration>
                         <goals>
                             <goal>run</goal>
                         </goals>
-
+                        
                     </execution>
-
+                    
                 </executions>
-
+                
             </plugin>
-
+            
         </plugins>
-
+        
     </build>
-
+    
 </project>
-
