@@ -8,7 +8,7 @@ open module kivakit.service.client
     // Jersey and XML binding
     requires jersey.client;
     requires java.ws.rs;
-    requires gson;
+    requires com.google.gson;
 
     // Module exports
     exports com.telenav.kivakit.service.registry.client;
