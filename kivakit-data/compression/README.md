@@ -1,24 +1,24 @@
 [//]: # (start-user-text)
 
 <a href="https://www.kivakit.org">
-<img src="https://www.kivakit.org/images/web-32.png" srcset="https://www.kivakit.org/images/web-32-2x.png 2x"/>
+<img src="https://telenav.github.io/telenav-assets/images/iconsweb-32.png" srcset="https://telenav.github.io/telenav-assets/images/iconsweb-32-2x.png 2x"/>
 </a>
 &nbsp;
 <a href="https://twitter.com/openkivakit">
-<img src="https://www.kivakit.org/images/twitter-32.png" srcset="https://www.kivakit.org/images/twitter-32-2x.png 2x"/>
+<img src="https://telenav.github.io/telenav-assets/images/iconstwitter-32.png" srcset="https://telenav.github.io/telenav-assets/images/iconstwitter-32-2x.png 2x"/>
 </a>
 &nbsp;
 <a href="https://kivakit.zulipchat.com">
-<img src="https://www.kivakit.org/images/zulip-32.png" srcset="https://www.kivakit.org/images/zulip-32-2x.png 2x"/>
+<img src="https://telenav.github.io/telenav-assets/images/iconszulip-32.png" srcset="https://telenav.github.io/telenav-assets/images/iconszulip-32-2x.png 2x"/>
 </a>
 
 [//]: # (end-user-text)
 
-# kivakit-data-compression &nbsp;&nbsp; <img src="https://www.kivakit.org/images/compress-32.png" srcset="https://www.kivakit.org/images/compress-32-2x.png 2x"/>
+# kivakit-data-compression &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/compress-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/compress-32-2x.png 2x"/>
 
 This module contains packages for compressing and decompressing data.
 
-<img src="https://www.kivakit.org/images/horizontal-line-512.png" srcset="https://www.kivakit.org/images/horizontal-line-512-2x.png 2x"/>
+<img src="https://telenav.github.io/telenav-assets/images/iconshorizontal-line-512.png" srcset="https://telenav.github.io/telenav-assets/png/separators/horizontal-line-512-2x.png 2x"/>
 
 ### Index
 
@@ -26,9 +26,9 @@ This module contains packages for compressing and decompressing data.
 
 [**Dependencies**](#dependencies) | [**Class Diagrams**](#class-diagrams) | [**Package Diagrams**](#package-diagrams) | [**Javadoc**](#javadoc)
 
-<img src="https://www.kivakit.org/images/horizontal-line-512.png" srcset="https://www.kivakit.org/images/horizontal-line-512-2x.png 2x"/>
+<img src="https://telenav.github.io/telenav-assets/images/iconshorizontal-line-512.png" srcset="https://telenav.github.io/telenav-assets/png/separators/horizontal-line-512-2x.png 2x"/>
 
-### Dependencies <a name="dependencies"></a> &nbsp;&nbsp; <img src="https://www.kivakit.org/images/dependencies-32.png" srcset="https://www.kivakit.org/images/dependencies-32-2x.png 2x"/>
+### Dependencies <a name="dependencies"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/iconsdependencies-32.png" srcset="https://telenav.github.io/telenav-assets/images/iconsdependencies-32-2x.png 2x"/>
 
 [*Dependency Diagram*](https://www.kivakit.org/1.5.1-SNAPSHOT/lexakai/kivakit-stuff/kivakit-data/compression/documentation/diagrams/dependencies.svg)
 
@@ -40,7 +40,7 @@ This module contains packages for compressing and decompressing data.
         <version>1.5.1-SNAPSHOT</version>
     </dependency>
 
-<img src="https://www.kivakit.org/images/horizontal-line-128.png" srcset="https://www.kivakit.org/images/horizontal-line-128-2x.png 2x"/>
+<img src="https://telenav.github.io/telenav-assets/images/iconshorizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/png/separators/horizontal-line-128-2x.png 2x"/>
 
 [//]: # (start-user-text)
 
@@ -50,15 +50,15 @@ This module provides interfaces for compression and decompression and an impleme
 
 [//]: # (end-user-text)
 
-<img src="https://www.kivakit.org/images/horizontal-line-128.png" srcset="https://www.kivakit.org/images/horizontal-line-128-2x.png 2x"/>
+<img src="https://telenav.github.io/telenav-assets/images/iconshorizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/png/separators/horizontal-line-128-2x.png 2x"/>
 
-### Class Diagrams <a name="class-diagrams"></a> &nbsp; &nbsp; <img src="https://www.kivakit.org/images/diagram-40.png" srcset="https://www.kivakit.org/images/diagram-40-2x.png 2x"/>
+### Class Diagrams <a name="class-diagrams"></a> &nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/iconsdiagram-40.png" srcset="https://telenav.github.io/telenav-assets/images/iconsdiagram-40-2x.png 2x"/>
 
 None
 
-<img src="https://www.kivakit.org/images/horizontal-line-128.png" srcset="https://www.kivakit.org/images/horizontal-line-128-2x.png 2x"/>
+<img src="https://telenav.github.io/telenav-assets/images/iconshorizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/png/separators/horizontal-line-128-2x.png 2x"/>
 
-### Package Diagrams <a name="package-diagrams"></a> &nbsp;&nbsp; <img src="https://www.kivakit.org/images/box-32.png" srcset="https://www.kivakit.org/images/box-32-2x.png 2x"/>
+### Package Diagrams <a name="package-diagrams"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/iconsbox-32.png" srcset="https://telenav.github.io/telenav-assets/images/iconsbox-32-2x.png 2x"/>
 
 [*com.telenav.kivakit.data.compression*](https://www.kivakit.org/1.5.1-SNAPSHOT/lexakai/kivakit-stuff/kivakit-data/compression/documentation/diagrams/com.telenav.kivakit.data.compression.svg)  
 [*com.telenav.kivakit.data.compression.codecs*](https://www.kivakit.org/1.5.1-SNAPSHOT/lexakai/kivakit-stuff/kivakit-data/compression/documentation/diagrams/com.telenav.kivakit.data.compression.codecs.svg)  
@@ -68,47 +68,46 @@ None
 [*com.telenav.kivakit.data.compression.codecs.huffman.string*](https://www.kivakit.org/1.5.1-SNAPSHOT/lexakai/kivakit-stuff/kivakit-data/compression/documentation/diagrams/com.telenav.kivakit.data.compression.codecs.huffman.string.svg)  
 [*com.telenav.kivakit.data.compression.codecs.huffman.tree*](https://www.kivakit.org/1.5.1-SNAPSHOT/lexakai/kivakit-stuff/kivakit-data/compression/documentation/diagrams/com.telenav.kivakit.data.compression.codecs.huffman.tree.svg)
 
-<img src="https://www.kivakit.org/images/horizontal-line-128.png" srcset="https://www.kivakit.org/images/horizontal-line-128-2x.png 2x"/>
+<img src="https://telenav.github.io/telenav-assets/images/iconshorizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/png/separators/horizontal-line-128-2x.png 2x"/>
 
-### Javadoc <a name="javadoc"></a> &nbsp;&nbsp; <img src="https://www.kivakit.org/images/books-32.png" srcset="https://www.kivakit.org/images/books-32-2x.png 2x"/>
+### Javadoc <a name="javadoc"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/iconsbooks-32.png" srcset="https://telenav.github.io/telenav-assets/images/iconsbooks-32-2x.png 2x"/>
 
 Javadoc coverage for this project is 75.8%.  
   
-&nbsp; &nbsp; <img src="https://www.kivakit.org/images/meter-80-96.png" srcset="https://www.kivakit.org/images/meter-80-96-2x.png 2x"/>
+&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/meter-80-96.png" srcset="https://telenav.github.io/telenav-assets/meter-80-96-2x.png 2x"/>
 
 
 The following significant classes are undocumented:  
 
-- FastHuffmanDecoder.Table.Entry
+- com.telenav.kivakit.data.compression.codecs.huffman
 
 | Class | Documentation Sections |
 |---|---|
-| [*CharacterCodec*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression/com/telenav/kivakit/data/compression/codecs/CharacterCodec.html) |  |  
-| [*CharacterFrequencies*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression/com/telenav/kivakit/data/compression/codecs/huffman/character/CharacterFrequencies.html) |  |  
-| [*Code*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression/com/telenav/kivakit/data/compression/codecs/huffman/tree/Code.html) |  |  
-| [*Codec*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression/com/telenav/kivakit/data/compression/Codec.html) |  |  
-| [*CodedSymbol*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression/com/telenav/kivakit/data/compression/codecs/huffman/tree/CodedSymbol.html) |  |  
-| [*DataCompressionKryoTypes*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression/com/telenav/kivakit/data/compression/DataCompressionKryoTypes.html) |  |  
-| [*DataCompressionUnitTest*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression/com/telenav/kivakit/data/compression/DataCompressionUnitTest.html) |  |  
-| [*FastHuffmanDecoder*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression/com/telenav/kivakit/data/compression/codecs/huffman/FastHuffmanDecoder.html) |  |  
-| [*FastHuffmanDecoder.Table*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression/com/telenav/kivakit/data/compression/codecs/huffman/FastHuffmanDecoder.Table.html) |  |  
-| [*FastHuffmanDecoder.Table.Entry*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression/com/telenav/kivakit/data/compression/codecs/huffman/FastHuffmanDecoder.Table.Entry.html) |  |  
-| [*HuffmanCharacterCodec*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression/com/telenav/kivakit/data/compression/codecs/huffman/character/HuffmanCharacterCodec.html) |  |  
-| [*HuffmanCharacterCodec.Converter*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression/com/telenav/kivakit/data/compression/codecs/huffman/character/HuffmanCharacterCodec.Converter.html) |  |  
-| [*HuffmanCodec*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression/com/telenav/kivakit/data/compression/codecs/huffman/HuffmanCodec.html) |  |  
-| [*HuffmanStringCodec*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression/com/telenav/kivakit/data/compression/codecs/huffman/string/HuffmanStringCodec.html) |  |  
-| [*HuffmanStringCodec.Converter*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression/com/telenav/kivakit/data/compression/codecs/huffman/string/HuffmanStringCodec.Converter.html) |  |  
-| [*HuffmanStringListCodec*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression/com/telenav/kivakit/data/compression/codecs/huffman/list/HuffmanStringListCodec.html) |  |  
-| [*Leaf*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression/com/telenav/kivakit/data/compression/codecs/huffman/tree/Leaf.html) |  |  
-| [*Node*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression/com/telenav/kivakit/data/compression/codecs/huffman/tree/Node.html) |  |  
-| [*StringCodec*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression/com/telenav/kivakit/data/compression/codecs/StringCodec.html) |  |  
-| [*StringFrequencies*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression/com/telenav/kivakit/data/compression/codecs/huffman/string/StringFrequencies.html) |  |  
-| [*StringListCodec*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression/com/telenav/kivakit/data/compression/codecs/StringListCodec.html) |  |  
-| [*SymbolConsumer*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression/com/telenav/kivakit/data/compression/SymbolConsumer.html) |  |  
-| [*SymbolConsumer.Directive*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression/com/telenav/kivakit/data/compression/SymbolConsumer.Directive.html) |  |  
-| [*SymbolProducer*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression/com/telenav/kivakit/data/compression/SymbolProducer.html) |  |  
-| [*Symbols*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression/com/telenav/kivakit/data/compression/codecs/huffman/tree/Symbols.html) |  |  
-| [*Tree*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression/com/telenav/kivakit/data/compression/codecs/huffman/tree/Tree.html) |  |  
+| [*CharacterCodec*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression///////////////////////////////////////////////////////////.html) |  |  
+| [*CharacterFrequencies*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression///////////////////////////////////////////////////////////////////////////////////.html) |  |  
+| [*Code*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression//////////////////////////////////////////////////////////////.html) |  |  
+| [*Codec*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression///////////////////////////////////////////.html) |  |  
+| [*CodedSymbol*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression/////////////////////////////////////////////////////////////////////.html) |  |  
+| [*DataCompressionKryoTypes*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression//////////////////////////////////////////////////////////////.html) |  |  
+| [*FastHuffmanDecoder*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression///////////////////////////////////////////////////////////////////////.html) |  |  
+| [*FastHuffmanDecoder.Table*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression/////////////////////////////////////////////////////////////////////////////.html) |  |  
+| [*FastHuffmanDecoder.Table.Entry*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression///////////////////////////////////////////////////////////////////////////////////.html) |  |  
+| [*HuffmanCharacterCodec*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression////////////////////////////////////////////////////////////////////////////////////.html) |  |  
+| [*HuffmanCharacterCodec.Converter*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression//////////////////////////////////////////////////////////////////////////////////////////////.html) |  |  
+| [*HuffmanCodec*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression/////////////////////////////////////////////////////////////////.html) |  |  
+| [*HuffmanStringCodec*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression//////////////////////////////////////////////////////////////////////////////.html) |  |  
+| [*HuffmanStringCodec.Converter*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression////////////////////////////////////////////////////////////////////////////////////////.html) |  |  
+| [*HuffmanStringListCodec*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression////////////////////////////////////////////////////////////////////////////////.html) |  |  
+| [*Leaf*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression//////////////////////////////////////////////////////////////.html) |  |  
+| [*Node*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression//////////////////////////////////////////////////////////////.html) |  |  
+| [*StringCodec*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression////////////////////////////////////////////////////////.html) |  |  
+| [*StringFrequencies*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression/////////////////////////////////////////////////////////////////////////////.html) |  |  
+| [*StringListCodec*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression////////////////////////////////////////////////////////////.html) |  |  
+| [*SymbolConsumer*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression////////////////////////////////////////////////////.html) |  |  
+| [*SymbolConsumer.Directive*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression//////////////////////////////////////////////////////////////.html) |  |  
+| [*SymbolProducer*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression////////////////////////////////////////////////////.html) |  |  
+| [*Symbols*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression/////////////////////////////////////////////////////////////////.html) |  |  
+| [*Tree*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.compression//////////////////////////////////////////////////////////////.html) |  |  
 
 [//]: # (start-user-text)
 
@@ -116,8 +115,7 @@ The following significant classes are undocumented:
 
 [//]: # (end-user-text)
 
-<img src="https://www.kivakit.org/images/horizontal-line-512.png" srcset="https://www.kivakit.org/images/horizontal-line-512-2x.png 2x"/>
+<img src="https://telenav.github.io/telenav-assets/images/iconshorizontal-line-512.png" srcset="https://telenav.github.io/telenav-assets/png/separators/horizontal-line-512-2x.png 2x"/>
 
 <sub>Copyright &#169; 2011-2021 [Telenav](https://telenav.com), Inc. Distributed under [Apache License, Version 2.0](LICENSE)</sub>  
 <sub>This documentation was generated by [Lexakai](https://lexakai.org). UML diagrams courtesy of [PlantUML](https://plantuml.com).</sub>
-
