@@ -20,14 +20,14 @@ This module views logs on a server.
 
 ### Dependencies <a name="dependencies"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/iconsdependencies-32.png" srcset="https://telenav.github.io/telenav-assets/images/iconsdependencies-32-2x.png 2x"/>
 
-[*Dependency Diagram*](https://www.kivakit.org/1.5.1-SNAPSHOT/lexakai/kivakit-stuff/kivakit-remote-log/viewer/documentation/diagrams/dependencies.svg)
+[*Dependency Diagram*](https://www.kivakit.org/1.6.0/lexakai/kivakit-stuff/kivakit-remote-log/viewer/documentation/diagrams/dependencies.svg)
 
 #### Maven Dependency
 
     <dependency>
         <groupId>com.telenav.kivakit</groupId>
         <artifactId>kivakit-logs-viewer</artifactId>
-        <version>1.5.1-SNAPSHOT</version>
+        <version>1.6.0</version>
     </dependency>
 
 <img src="https://telenav.github.io/telenav-assets/images/iconshorizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/png/separators/horizontal-line-128-2x.png 2x"/>
@@ -48,7 +48,7 @@ None
 
 ### Package Diagrams <a name="package-diagrams"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/iconsbox-32.png" srcset="https://telenav.github.io/telenav-assets/images/iconsbox-32-2x.png 2x"/>
 
-[*com.telenav.kivakit.logs.viewer*](https://www.kivakit.org/1.5.1-SNAPSHOT/lexakai/kivakit-stuff/kivakit-remote-log/viewer/documentation/diagrams/com.telenav.kivakit.logs.viewer.svg)
+[*com.telenav.kivakit.logs.viewer*](https://www.kivakit.org/1.6.0/lexakai/kivakit-stuff/kivakit-remote-log/viewer/documentation/diagrams/com.telenav.kivakit.logs.viewer.svg)
 
 <img src="https://telenav.github.io/telenav-assets/images/iconshorizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/png/separators/horizontal-line-128-2x.png 2x"/>
 
@@ -63,8 +63,8 @@ Javadoc coverage for this project is 30.0%.
 
 | Class | Documentation Sections |
 |---|---|
-| [*LogViewerApplication*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.logs.viewer/////////////////////////////////////////////////////.html) |  |  
-| [*LogViewerTesterApplication*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.logs.viewer///////////////////////////////////////////////////////////.html) |  |  
+| [*LogViewerApplication*](https://www.kivakit.org/1.6.0/javadoc/kivakit-stuff/kivakit.logs.viewer/////////////////////////////////////////////////////.html) |  |  
+| [*LogViewerTesterApplication*](https://www.kivakit.org/1.6.0/javadoc/kivakit-stuff/kivakit.logs.viewer///////////////////////////////////////////////////////////.html) |  |  
 
 [//]: # (start-user-text)
 

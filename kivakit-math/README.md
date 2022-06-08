@@ -30,14 +30,14 @@ This module contains packages for some common math operations.
 
 ### Dependencies <a name="dependencies"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/iconsdependencies-32.png" srcset="https://telenav.github.io/telenav-assets/images/iconsdependencies-32-2x.png 2x"/>
 
-[*Dependency Diagram*](https://www.kivakit.org/1.5.1-SNAPSHOT/lexakai/kivakit-stuff/kivakit-math/documentation/diagrams/dependencies.svg)
+[*Dependency Diagram*](https://www.kivakit.org/1.6.0/lexakai/kivakit-stuff/kivakit-math/documentation/diagrams/dependencies.svg)
 
 #### Maven Dependency
 
     <dependency>
         <groupId>com.telenav.kivakit</groupId>
         <artifactId>kivakit-math</artifactId>
-        <version>1.5.1-SNAPSHOT</version>
+        <version>1.6.0</version>
     </dependency>
 
 <img src="https://telenav.github.io/telenav-assets/images/iconshorizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/png/separators/horizontal-line-128-2x.png 2x"/>
@@ -60,8 +60,8 @@ None
 
 ### Package Diagrams <a name="package-diagrams"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/iconsbox-32.png" srcset="https://telenav.github.io/telenav-assets/images/iconsbox-32-2x.png 2x"/>
 
-[*com.telenav.kivakit.math.statistics*](https://www.kivakit.org/1.5.1-SNAPSHOT/lexakai/kivakit-stuff/kivakit-math/documentation/diagrams/com.telenav.kivakit.math.statistics.svg)  
-[*com.telenav.kivakit.math.trigonometry*](https://www.kivakit.org/1.5.1-SNAPSHOT/lexakai/kivakit-stuff/kivakit-math/documentation/diagrams/com.telenav.kivakit.math.trigonometry.svg)
+[*com.telenav.kivakit.math.statistics*](https://www.kivakit.org/1.6.0/lexakai/kivakit-stuff/kivakit-math/documentation/diagrams/com.telenav.kivakit.math.statistics.svg)  
+[*com.telenav.kivakit.math.trigonometry*](https://www.kivakit.org/1.6.0/lexakai/kivakit-stuff/kivakit-math/documentation/diagrams/com.telenav.kivakit.math.trigonometry.svg)
 
 <img src="https://telenav.github.io/telenav-assets/images/iconshorizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/png/separators/horizontal-line-128-2x.png 2x"/>
 
@@ -76,9 +76,9 @@ Javadoc coverage for this project is 61.9%.
 
 | Class | Documentation Sections |
 |---|---|
-| [*StandardDeviation*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.math//////////////////////////////////////////////////////.html) |  |  
-| [*SuccessRate*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.math////////////////////////////////////////////////.html) |  |  
-| [*Trigonometry*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.math///////////////////////////////////////////////////.html) |  |  
+| [*StandardDeviation*](https://www.kivakit.org/1.6.0/javadoc/kivakit-stuff/kivakit.math//////////////////////////////////////////////////////.html) |  |  
+| [*SuccessRate*](https://www.kivakit.org/1.6.0/javadoc/kivakit-stuff/kivakit.math////////////////////////////////////////////////.html) |  |  
+| [*Trigonometry*](https://www.kivakit.org/1.6.0/javadoc/kivakit-stuff/kivakit.math///////////////////////////////////////////////////.html) |  |  
 
 [//]: # (start-user-text)
 

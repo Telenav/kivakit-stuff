@@ -30,14 +30,14 @@ This project contains functionality related to security
 
 ### Dependencies <a name="dependencies"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/iconsdependencies-32.png" srcset="https://telenav.github.io/telenav-assets/images/iconsdependencies-32-2x.png 2x"/>
 
-[*Dependency Diagram*](https://www.kivakit.org/1.5.1-SNAPSHOT/lexakai/kivakit-stuff/kivakit-security/documentation/diagrams/dependencies.svg)
+[*Dependency Diagram*](https://www.kivakit.org/1.6.0/lexakai/kivakit-stuff/kivakit-security/documentation/diagrams/dependencies.svg)
 
 #### Maven Dependency
 
     <dependency>
         <groupId>com.telenav.kivakit</groupId>
         <artifactId>kivakit-security</artifactId>
-        <version>1.5.1-SNAPSHOT</version>
+        <version>1.6.0</version>
     </dependency>
 
 <img src="https://telenav.github.io/telenav-assets/images/iconshorizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/png/separators/horizontal-line-128-2x.png 2x"/>
@@ -55,15 +55,15 @@ producing simple message digests easier.
 
 ### Class Diagrams <a name="class-diagrams"></a> &nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/iconsdiagram-40.png" srcset="https://telenav.github.io/telenav-assets/images/iconsdiagram-40-2x.png 2x"/>
 
-[*Message Digests*](https://www.kivakit.org/1.5.1-SNAPSHOT/lexakai/kivakit-stuff/kivakit-security/documentation/diagrams/diagram-security-digest.svg)
+[*Message Digests*](https://www.kivakit.org/1.6.0/lexakai/kivakit-stuff/kivakit-security/documentation/diagrams/diagram-security-digest.svg)
 
 <img src="https://telenav.github.io/telenav-assets/images/iconshorizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/png/separators/horizontal-line-128-2x.png 2x"/>
 
 ### Package Diagrams <a name="package-diagrams"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/iconsbox-32.png" srcset="https://telenav.github.io/telenav-assets/images/iconsbox-32-2x.png 2x"/>
 
-[*com.telenav.kivakit.security.digest*](https://www.kivakit.org/1.5.1-SNAPSHOT/lexakai/kivakit-stuff/kivakit-security/documentation/diagrams/com.telenav.kivakit.security.digest.svg)  
-[*com.telenav.kivakit.security.digest.digesters*](https://www.kivakit.org/1.5.1-SNAPSHOT/lexakai/kivakit-stuff/kivakit-security/documentation/diagrams/com.telenav.kivakit.security.digest.digesters.svg)  
-[*com.telenav.kivakit.security.lexakai*](https://www.kivakit.org/1.5.1-SNAPSHOT/lexakai/kivakit-stuff/kivakit-security/documentation/diagrams/com.telenav.kivakit.security.lexakai.svg)
+[*com.telenav.kivakit.security.digest*](https://www.kivakit.org/1.6.0/lexakai/kivakit-stuff/kivakit-security/documentation/diagrams/com.telenav.kivakit.security.digest.svg)  
+[*com.telenav.kivakit.security.digest.digesters*](https://www.kivakit.org/1.6.0/lexakai/kivakit-stuff/kivakit-security/documentation/diagrams/com.telenav.kivakit.security.digest.digesters.svg)  
+[*com.telenav.kivakit.security.lexakai*](https://www.kivakit.org/1.6.0/lexakai/kivakit-stuff/kivakit-security/documentation/diagrams/com.telenav.kivakit.security.lexakai.svg)
 
 <img src="https://telenav.github.io/telenav-assets/images/iconshorizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/png/separators/horizontal-line-128-2x.png 2x"/>
 
@@ -78,12 +78,12 @@ Javadoc coverage for this project is 33.3%.
 
 | Class | Documentation Sections |
 |---|---|
-| [*BaseDigester*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.security/////////////////////////////////////////////////.html) |  |  
-| [*DiagramSecurity*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.security/////////////////////////////////////////////////////.html) |  |  
-| [*DiagramSecurityDigest*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.security///////////////////////////////////////////////////////////.html) |  |  
-| [*Digester*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.security/////////////////////////////////////////////.html) |  |  
-| [*Md5Digester*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.security//////////////////////////////////////////////////////////.html) |  |  
-| [*Sha1Digester*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.security///////////////////////////////////////////////////////////.html) |  |  
+| [*BaseDigester*](https://www.kivakit.org/1.6.0/javadoc/kivakit-stuff/kivakit.security/////////////////////////////////////////////////.html) |  |  
+| [*DiagramSecurity*](https://www.kivakit.org/1.6.0/javadoc/kivakit-stuff/kivakit.security/////////////////////////////////////////////////////.html) |  |  
+| [*DiagramSecurityDigest*](https://www.kivakit.org/1.6.0/javadoc/kivakit-stuff/kivakit.security///////////////////////////////////////////////////////////.html) |  |  
+| [*Digester*](https://www.kivakit.org/1.6.0/javadoc/kivakit-stuff/kivakit.security/////////////////////////////////////////////.html) |  |  
+| [*Md5Digester*](https://www.kivakit.org/1.6.0/javadoc/kivakit-stuff/kivakit.security//////////////////////////////////////////////////////////.html) |  |  
+| [*Sha1Digester*](https://www.kivakit.org/1.6.0/javadoc/kivakit-stuff/kivakit.security///////////////////////////////////////////////////////////.html) |  |  
 
 [//]: # (start-user-text)
 

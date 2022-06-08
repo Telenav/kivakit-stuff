@@ -20,14 +20,14 @@ This module provides log information to clients from a server.
 
 ### Dependencies <a name="dependencies"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/iconsdependencies-32.png" srcset="https://telenav.github.io/telenav-assets/images/iconsdependencies-32-2x.png 2x"/>
 
-[*Dependency Diagram*](https://www.kivakit.org/1.5.1-SNAPSHOT/lexakai/kivakit-stuff/kivakit-remote-log/server/documentation/diagrams/dependencies.svg)
+[*Dependency Diagram*](https://www.kivakit.org/1.6.0/lexakai/kivakit-stuff/kivakit-remote-log/server/documentation/diagrams/dependencies.svg)
 
 #### Maven Dependency
 
     <dependency>
         <groupId>com.telenav.kivakit</groupId>
         <artifactId>kivakit-logs-server</artifactId>
-        <version>1.5.1-SNAPSHOT</version>
+        <version>1.6.0</version>
     </dependency>
 
 <img src="https://telenav.github.io/telenav-assets/images/iconshorizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/png/separators/horizontal-line-128-2x.png 2x"/>
@@ -48,8 +48,8 @@ None
 
 ### Package Diagrams <a name="package-diagrams"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/iconsbox-32.png" srcset="https://telenav.github.io/telenav-assets/images/iconsbox-32-2x.png 2x"/>
 
-[*com.telenav.kivakit.logs.server*](https://www.kivakit.org/1.5.1-SNAPSHOT/lexakai/kivakit-stuff/kivakit-remote-log/server/documentation/diagrams/com.telenav.kivakit.logs.server.svg)  
-[*com.telenav.kivakit.logs.server.session*](https://www.kivakit.org/1.5.1-SNAPSHOT/lexakai/kivakit-stuff/kivakit-remote-log/server/documentation/diagrams/com.telenav.kivakit.logs.server.session.svg)
+[*com.telenav.kivakit.logs.server*](https://www.kivakit.org/1.6.0/lexakai/kivakit-stuff/kivakit-remote-log/server/documentation/diagrams/com.telenav.kivakit.logs.server.svg)  
+[*com.telenav.kivakit.logs.server.session*](https://www.kivakit.org/1.6.0/lexakai/kivakit-stuff/kivakit-remote-log/server/documentation/diagrams/com.telenav.kivakit.logs.server.session.svg)
 
 <img src="https://telenav.github.io/telenav-assets/images/iconshorizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/png/separators/horizontal-line-128-2x.png 2x"/>
 
@@ -67,11 +67,11 @@ The following significant classes are undocumented:
 
 | Class | Documentation Sections |
 |---|---|
-| [*ServerLog*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.logs.server//////////////////////////////////////////.html) |  |  
-| [*ServerLogKryoTypes*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.logs.server///////////////////////////////////////////////////.html) |  |  
-| [*ServerLogProject*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.logs.server/////////////////////////////////////////////////.html) |  |  
-| [*Session*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.logs.server////////////////////////////////////////////////.html) |  |  
-| [*SessionStore*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.logs.server/////////////////////////////////////////////////////.html) |  |  
+| [*ServerLog*](https://www.kivakit.org/1.6.0/javadoc/kivakit-stuff/kivakit.logs.server//////////////////////////////////////////.html) |  |  
+| [*ServerLogKryoTypes*](https://www.kivakit.org/1.6.0/javadoc/kivakit-stuff/kivakit.logs.server///////////////////////////////////////////////////.html) |  |  
+| [*ServerLogProject*](https://www.kivakit.org/1.6.0/javadoc/kivakit-stuff/kivakit.logs.server/////////////////////////////////////////////////.html) |  |  
+| [*Session*](https://www.kivakit.org/1.6.0/javadoc/kivakit-stuff/kivakit.logs.server////////////////////////////////////////////////.html) |  |  
+| [*SessionStore*](https://www.kivakit.org/1.6.0/javadoc/kivakit-stuff/kivakit.logs.server/////////////////////////////////////////////////////.html) |  |  
 
 [//]: # (start-user-text)
 

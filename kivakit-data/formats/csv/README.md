@@ -30,14 +30,14 @@ This module reads and writes CSV data.
 
 ### Dependencies <a name="dependencies"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/iconsdependencies-32.png" srcset="https://telenav.github.io/telenav-assets/images/iconsdependencies-32-2x.png 2x"/>
 
-[*Dependency Diagram*](https://www.kivakit.org/1.5.1-SNAPSHOT/lexakai/kivakit-stuff/kivakit-data/formats/csv/documentation/diagrams/dependencies.svg)
+[*Dependency Diagram*](https://www.kivakit.org/1.6.0/lexakai/kivakit-stuff/kivakit-data/formats/csv/documentation/diagrams/dependencies.svg)
 
 #### Maven Dependency
 
     <dependency>
         <groupId>com.telenav.kivakit</groupId>
         <artifactId>kivakit-data-formats-csv</artifactId>
-        <version>1.5.1-SNAPSHOT</version>
+        <version>1.6.0</version>
     </dependency>
 
 <img src="https://telenav.github.io/telenav-assets/images/iconshorizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/png/separators/horizontal-line-128-2x.png 2x"/>
@@ -54,14 +54,14 @@ This module provides easy access to CSV data using an object-oriented data model
 
 ### Class Diagrams <a name="class-diagrams"></a> &nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/iconsdiagram-40.png" srcset="https://telenav.github.io/telenav-assets/images/iconsdiagram-40-2x.png 2x"/>
 
-[*CSV Data Format*](https://www.kivakit.org/1.5.1-SNAPSHOT/lexakai/kivakit-stuff/kivakit-data/formats/csv/documentation/diagrams/diagram-csv.svg)
+[*CSV Data Format*](https://www.kivakit.org/1.6.0/lexakai/kivakit-stuff/kivakit-data/formats/csv/documentation/diagrams/diagram-csv.svg)
 
 <img src="https://telenav.github.io/telenav-assets/images/iconshorizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/png/separators/horizontal-line-128-2x.png 2x"/>
 
 ### Package Diagrams <a name="package-diagrams"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/iconsbox-32.png" srcset="https://telenav.github.io/telenav-assets/images/iconsbox-32-2x.png 2x"/>
 
-[*com.telenav.kivakit.data.formats.csv*](https://www.kivakit.org/1.5.1-SNAPSHOT/lexakai/kivakit-stuff/kivakit-data/formats/csv/documentation/diagrams/com.telenav.kivakit.data.formats.csv.svg)  
-[*com.telenav.kivakit.data.formats.csv.lexakai*](https://www.kivakit.org/1.5.1-SNAPSHOT/lexakai/kivakit-stuff/kivakit-data/formats/csv/documentation/diagrams/com.telenav.kivakit.data.formats.csv.lexakai.svg)
+[*com.telenav.kivakit.data.formats.csv*](https://www.kivakit.org/1.6.0/lexakai/kivakit-stuff/kivakit-data/formats/csv/documentation/diagrams/com.telenav.kivakit.data.formats.csv.svg)  
+[*com.telenav.kivakit.data.formats.csv.lexakai*](https://www.kivakit.org/1.6.0/lexakai/kivakit-stuff/kivakit-data/formats/csv/documentation/diagrams/com.telenav.kivakit.data.formats.csv.lexakai.svg)
 
 <img src="https://telenav.github.io/telenav-assets/images/iconshorizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/png/separators/horizontal-line-128-2x.png 2x"/>
 
@@ -76,15 +76,15 @@ Javadoc coverage for this project is 87.1%.
 
 | Class | Documentation Sections |
 |---|---|
-| [*CsvColumn*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.formats.csv///////////////////////////////////////////////.html) |  |  
-| [*CsvLine*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.formats.csv/////////////////////////////////////////////.html) | Properties |  
+| [*CsvColumn*](https://www.kivakit.org/1.6.0/javadoc/kivakit-stuff/kivakit.data.formats.csv///////////////////////////////////////////////.html) |  |  
+| [*CsvLine*](https://www.kivakit.org/1.6.0/javadoc/kivakit-stuff/kivakit.data.formats.csv/////////////////////////////////////////////.html) | Properties |  
 | | Converting a Line to an Object |  
-| [*CsvPropertyFilter*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.formats.csv///////////////////////////////////////////////////////.html) |  |  
-| [*CsvReader*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.formats.csv///////////////////////////////////////////////.html) | Processing CSV Lines |  
-| [*CsvSchema*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.formats.csv///////////////////////////////////////////////.html) |  |  
-| [*CsvWriter*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.formats.csv///////////////////////////////////////////////.html) |  |  
-| [*DiagramCsv*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.formats.csv////////////////////////////////////////////////////////.html) |  |  
-| [*UnquotedCsvReader*](https://www.kivakit.org/1.5.1-SNAPSHOT/javadoc/kivakit-stuff/kivakit.data.formats.csv///////////////////////////////////////////////////////.html) |  |  
+| [*CsvPropertyFilter*](https://www.kivakit.org/1.6.0/javadoc/kivakit-stuff/kivakit.data.formats.csv///////////////////////////////////////////////////////.html) |  |  
+| [*CsvReader*](https://www.kivakit.org/1.6.0/javadoc/kivakit-stuff/kivakit.data.formats.csv///////////////////////////////////////////////.html) | Processing CSV Lines |  
+| [*CsvSchema*](https://www.kivakit.org/1.6.0/javadoc/kivakit-stuff/kivakit.data.formats.csv///////////////////////////////////////////////.html) |  |  
+| [*CsvWriter*](https://www.kivakit.org/1.6.0/javadoc/kivakit-stuff/kivakit.data.formats.csv///////////////////////////////////////////////.html) |  |  
+| [*DiagramCsv*](https://www.kivakit.org/1.6.0/javadoc/kivakit-stuff/kivakit.data.formats.csv////////////////////////////////////////////////////////.html) |  |  
+| [*UnquotedCsvReader*](https://www.kivakit.org/1.6.0/javadoc/kivakit-stuff/kivakit.data.formats.csv///////////////////////////////////////////////////////.html) |  |  
 
 [//]: # (start-user-text)
 
