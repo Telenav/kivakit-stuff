@@ -15,13 +15,15 @@
     <modelVersion>4.0.0</modelVersion>
     
     <parent>
-        <groupId>com.telenav.kivakit</groupId>
-        <artifactId>kivakit-superpom</artifactId>
-        <version>1.6.0</version>
+        <groupId>com.telenav</groupId>
+        <artifactId>telenav-family-superpom</artifactId>
+        <version>1.0</version>
         <relativePath/>
     </parent>
-    
+
+    <groupId>com.telenav.kivakit</groupId>    
     <artifactId>kivakit-stuff</artifactId>
+    <version>1.6.0</version>
     
     <packaging>pom</packaging>
     <description>A collection of modules that extend KivaKit</description>
