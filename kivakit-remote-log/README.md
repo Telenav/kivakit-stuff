@@ -26,11 +26,11 @@ This project provides log services that satisfy the kivakit-core logging service
 
 ### Javadoc Coverage <a name = "javadoc-coverage"></a> &nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/bargraph-24.png" srcset="https://telenav.github.io/telenav-assets/images/icons/bargraph-24-2x.png 2x"/>
 
-&nbsp; <img src="https://telenav.github.io/telenav-assets/meter-30-96.png" srcset="https://telenav.github.io/telenav-assets/meter-30-96-2x.png 2x"/>
+&nbsp; <img src="https://telenav.github.io/telenav-assets/images/meter/meter-30-96.png" srcset="https://telenav.github.io/telenav-assets/images/meter/meter-30-96-2x.png 2x"/>
  &nbsp; &nbsp; [**kivakit-remote-log-client**](client/README.md)  
-&nbsp; <img src="https://telenav.github.io/telenav-assets/meter-50-96.png" srcset="https://telenav.github.io/telenav-assets/meter-50-96-2x.png 2x"/>
+&nbsp; <img src="https://telenav.github.io/telenav-assets/images/meter/meter-50-96.png" srcset="https://telenav.github.io/telenav-assets/images/meter/meter-50-96-2x.png 2x"/>
  &nbsp; &nbsp; [**kivakit-remote-log-server**](server/README.md)  
-&nbsp; <img src="https://telenav.github.io/telenav-assets/meter-30-96.png" srcset="https://telenav.github.io/telenav-assets/meter-30-96-2x.png 2x"/>
+&nbsp; <img src="https://telenav.github.io/telenav-assets/images/meter/meter-30-96.png" srcset="https://telenav.github.io/telenav-assets/images/meter/meter-30-96-2x.png 2x"/>
  &nbsp; &nbsp; [**kivakit-remote-log-viewer**](viewer/README.md)
 
 [//]: # (start-user-text)

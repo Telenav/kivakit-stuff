@@ -105,7 +105,7 @@ The *primitive* package contains an extensive set of classes for storing data in
 
 Javadoc coverage for this project is 64.6%.  
   
-&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/meter-60-96.png" srcset="https://telenav.github.io/telenav-assets/meter-60-96-2x.png 2x"/>
+&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meter/meter-60-96.png" srcset="https://telenav.github.io/telenav-assets/images/meter/meter-60-96-2x.png 2x"/>
 
 
 The following significant classes are undocumented:  

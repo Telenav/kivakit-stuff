@@ -35,13 +35,13 @@ This project contains projects for compressing data and processing data in commo
 
 ### Javadoc Coverage <a name = "javadoc-coverage"></a> &nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/bargraph-24.png" srcset="https://telenav.github.io/telenav-assets/images/icons/bargraph-24-2x.png 2x"/>
 
-&nbsp; <img src="https://telenav.github.io/telenav-assets/meter-80-96.png" srcset="https://telenav.github.io/telenav-assets/meter-80-96-2x.png 2x"/>
+&nbsp; <img src="https://telenav.github.io/telenav-assets/images/meter/meter-80-96.png" srcset="https://telenav.github.io/telenav-assets/images/meter/meter-80-96-2x.png 2x"/>
  &nbsp; &nbsp; [**kivakit-data-compression**](compression/README.md)  
-&nbsp; <img src="https://telenav.github.io/telenav-assets/meter-90-96.png" srcset="https://telenav.github.io/telenav-assets/meter-90-96-2x.png 2x"/>
+&nbsp; <img src="https://telenav.github.io/telenav-assets/images/meter/meter-90-96.png" srcset="https://telenav.github.io/telenav-assets/images/meter/meter-90-96-2x.png 2x"/>
  &nbsp; &nbsp; [**kivakit-data-formats-csv**](formats/csv/README.md)  
-&nbsp; <img src="https://telenav.github.io/telenav-assets/meter-90-96.png" srcset="https://telenav.github.io/telenav-assets/meter-90-96-2x.png 2x"/>
+&nbsp; <img src="https://telenav.github.io/telenav-assets/images/meter/meter-90-96.png" srcset="https://telenav.github.io/telenav-assets/images/meter/meter-90-96-2x.png 2x"/>
  &nbsp; &nbsp; [**kivakit-data-formats-library**](formats/library/README.md)  
-&nbsp; <img src="https://telenav.github.io/telenav-assets/meter-70-96.png" srcset="https://telenav.github.io/telenav-assets/meter-70-96-2x.png 2x"/>
+&nbsp; <img src="https://telenav.github.io/telenav-assets/images/meter/meter-70-96.png" srcset="https://telenav.github.io/telenav-assets/images/meter/meter-70-96-2x.png 2x"/>
  &nbsp; &nbsp; [**kivakit-data-formats-xml**](formats/xml/README.md)
 
 [//]: # (start-user-text)

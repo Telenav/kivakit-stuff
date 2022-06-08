@@ -69,7 +69,7 @@ This module provides easy access to CSV data using an object-oriented data model
 
 Javadoc coverage for this project is 87.1%.  
   
-&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/meter-90-96.png" srcset="https://telenav.github.io/telenav-assets/meter-90-96-2x.png 2x"/>
+&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meter/meter-90-96.png" srcset="https://telenav.github.io/telenav-assets/images/meter/meter-90-96-2x.png 2x"/>
 
 
 
