@@ -58,7 +58,7 @@ Service provider interface for HDFS proxy.
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
-### Package Diagrams <a name="package-diagrams"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/box-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/box-32-2x.png 2x"/>
+### Package Diagrams <a name="package-diagrams"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/box-24.png" srcset="https://telenav.github.io/telenav-assets/images/icons/box-24-2x.png 2x"/>
 
 [*com.telenav.kivakit.filesystems.hdfs.proxy.spi*](https://www.kivakit.org/1.6.0/lexakai/kivakit-stuff/kivakit-hdfs-filesystem/hdfs-proxy-spi/documentation/diagrams/com.telenav.kivakit.filesystems.hdfs.proxy.spi.svg)  
 [*com.telenav.kivakit.filesystems.hdfs.proxy.spi.lexakai*](https://www.kivakit.org/1.6.0/lexakai/kivakit-stuff/kivakit-hdfs-filesystem/hdfs-proxy-spi/documentation/diagrams/com.telenav.kivakit.filesystems.hdfs.proxy.spi.lexakai.svg)
