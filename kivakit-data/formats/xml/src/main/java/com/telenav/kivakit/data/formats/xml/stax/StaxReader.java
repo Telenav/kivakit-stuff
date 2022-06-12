@@ -90,7 +90,6 @@ import static com.telenav.kivakit.data.formats.xml.stax.StaxReader.Match.NOT_FOU
  * the given path. The reader is <i>inside</i> a path if the given path is a prefix of the reader's current path. For example,
  * if the reader is at a/b/c/d and the path is a/b/c, then the reader is <i>inside</i> the given path. Finally, the
  * reader is <i>outside</i> the given path in the reverse situation, where the reader is at a/b and the path is a/b/c.
- * </i>
  * </p>
  *
  * <ul>
