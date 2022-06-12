@@ -107,7 +107,7 @@ public class HuffmanStringListCodecTest extends DataCompressionUnitTest
             var stringSymbols = randomStringSymbols(2, 16, 2, 32);
             var string = HuffmanStringCodec.from(stringSymbols, Maximum._8);
 
-            var characterSymbols = randomCharacterSymbols(1, 25);
+            var characterSymbols = randomCharacterSymbols(2, 25);
             var character = HuffmanCharacterCodec.from(characterSymbols, Maximum._8);
 
             var codec = new HuffmanStringListCodec(string, character);
@@ -119,7 +119,7 @@ public class HuffmanStringListCodecTest extends DataCompressionUnitTest
             _100.loop(testNumber ->
             {
                 var input = new ArrayList<String>();
-                random().rangeInclusive(1, 32).loop(() -> input.add(choices.get(random().randomIntExclusive(0, choices.size() - 1))));
+                random().rangeInclusive(2, 32).loop(() -> input.add(choices.get(random().randomIntExclusive(0, choices.size() - 1))));
                 test(codec, input);
                 test.next();
                 return ACCEPT;
