@@ -20,7 +20,6 @@ package com.telenav.kivakit.data.compression.codecs.huffman;
 
 import com.telenav.kivakit.core.collections.map.CountMap;
 import com.telenav.kivakit.core.value.count.Count;
-import static com.telenav.kivakit.core.value.count.Count._10;
 import com.telenav.kivakit.core.value.count.Minimum;
 import com.telenav.kivakit.core.value.count.MutableCount;
 import com.telenav.kivakit.core.value.mutable.MutableValue;
@@ -30,14 +29,17 @@ import com.telenav.kivakit.data.compression.SymbolConsumer;
 import com.telenav.kivakit.data.compression.SymbolProducer;
 import com.telenav.kivakit.data.compression.codecs.huffman.character.HuffmanCharacterCodec;
 import com.telenav.kivakit.data.compression.codecs.huffman.tree.Symbols;
-import com.telenav.kivakit.serialization.kryo.test.KryoUnitTest;
 import com.telenav.kivakit.primitive.collections.array.scalars.ByteArray;
 import com.telenav.kivakit.primitive.collections.list.ByteList;
 import com.telenav.kivakit.properties.PropertyMap;
+import com.telenav.kivakit.serialization.kryo.test.KryoUnitTest;
 import com.telenav.kivakit.serialization.kryo.types.CoreKryoTypes;
 import com.telenav.kivakit.serialization.kryo.types.KryoTypes;
-import java.util.List;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.List;
+
+import static com.telenav.kivakit.core.value.count.Count._10;
 
 /**
  * @author jonathanl (shibo)
@@ -98,7 +100,7 @@ public class DataCompressionUnitTest extends KryoUnitTest
                 var value = random().letters(minimumLength, maximumLength);
                 if (!frequencies.contains(value))
                 {
-                    frequencies.add(value, Count.count(random().randomIntExclusive(1, 10_000)));
+                    frequencies.add(value, Count.count(random().randomIntExclusive(2, 10_000)));
                     break;
                 }
             }

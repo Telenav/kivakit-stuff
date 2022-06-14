@@ -26,8 +26,8 @@ import com.telenav.kivakit.core.value.count.Count;
 import com.telenav.kivakit.core.value.count.Maximum;
 import com.telenav.kivakit.core.value.count.Minimum;
 import com.telenav.kivakit.data.compression.Codec;
-import com.telenav.kivakit.data.compression.codecs.huffman.DataCompressionUnitTest;
 import com.telenav.kivakit.data.compression.SymbolConsumer;
+import com.telenav.kivakit.data.compression.codecs.huffman.DataCompressionUnitTest;
 import com.telenav.kivakit.data.compression.codecs.huffman.character.HuffmanCharacterCodec;
 import com.telenav.kivakit.data.compression.codecs.huffman.string.HuffmanStringCodec;
 import com.telenav.kivakit.data.compression.codecs.huffman.tree.Symbols;
@@ -74,7 +74,7 @@ public class HuffmanStringListCodecTest extends DataCompressionUnitTest
                 .add('e', Objects.requireNonNull(Count.parseCount(this, "6,379")))
                 .add('x', Objects.requireNonNull(Count.parseCount(this, "5,566")))
                 .add(HuffmanCharacterCodec.ESCAPE, Count._1024)
-                .add(HuffmanCharacterCodec.END_OF_STRING, Count._1024), HuffmanCharacterCodec.ESCAPE, Minimum._1);
+                .add(HuffmanCharacterCodec.END_OF_STRING, Count._1024), HuffmanCharacterCodec.ESCAPE, Minimum._2);
 
         var character = HuffmanCharacterCodec.from(characterSymbols, Maximum._8);
 
