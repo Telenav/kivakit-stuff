@@ -22,7 +22,8 @@
     </parent>
     
     <artifactId>kivakit-filesystems-hdfs-proxy</artifactId>
-    
+    <version>1.6.0</version>
+
     <properties>
         <jar.name>kivakit-hdfs-proxy-${project.version}</jar.name>
         <maven.javadoc.skip>true</maven.javadoc.skip>

@@ -23,7 +23,8 @@
     </parent>
     
     <artifactId>kivakit-service-server</artifactId>
-    
+    <version>1.6.0</version>
+
     <properties>
         <jar.name>kivakit-service-server-${project.version}</jar.name>
     </properties>
