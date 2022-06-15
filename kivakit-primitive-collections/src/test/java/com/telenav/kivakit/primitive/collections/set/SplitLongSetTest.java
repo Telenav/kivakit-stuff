@@ -18,7 +18,7 @@
 
 package com.telenav.kivakit.primitive.collections.set;
 
-import com.telenav.kivakit.core.test.Repeats;
+import com.telenav.kivakit.internal.testing.Repeats;
 import com.telenav.kivakit.primitive.collections.CompressibleCollection;
 import com.telenav.kivakit.primitive.collections.PrimitiveCollectionsUnitTest;
 import org.junit.Test;

@@ -26,8 +26,8 @@ import com.telenav.kivakit.core.value.count.Count;
 import com.telenav.kivakit.core.value.count.Maximum;
 import com.telenav.kivakit.core.value.count.Minimum;
 import com.telenav.kivakit.data.compression.Codec;
-import com.telenav.kivakit.data.compression.DataCompressionUnitTest;
 import com.telenav.kivakit.data.compression.SymbolConsumer;
+import com.telenav.kivakit.data.compression.codecs.huffman.DataCompressionUnitTest;
 import com.telenav.kivakit.data.compression.codecs.huffman.character.HuffmanCharacterCodec;
 import com.telenav.kivakit.data.compression.codecs.huffman.string.HuffmanStringCodec;
 import com.telenav.kivakit.data.compression.codecs.huffman.tree.Symbols;
@@ -74,7 +74,7 @@ public class HuffmanStringListCodecTest extends DataCompressionUnitTest
                 .add('e', Objects.requireNonNull(Count.parseCount(this, "6,379")))
                 .add('x', Objects.requireNonNull(Count.parseCount(this, "5,566")))
                 .add(HuffmanCharacterCodec.ESCAPE, Count._1024)
-                .add(HuffmanCharacterCodec.END_OF_STRING, Count._1024), HuffmanCharacterCodec.ESCAPE, Minimum._1);
+                .add(HuffmanCharacterCodec.END_OF_STRING, Count._1024), HuffmanCharacterCodec.ESCAPE, Minimum._2);
 
         var character = HuffmanCharacterCodec.from(characterSymbols, Maximum._8);
 
@@ -107,19 +107,19 @@ public class HuffmanStringListCodecTest extends DataCompressionUnitTest
             var stringSymbols = randomStringSymbols(2, 16, 2, 32);
             var string = HuffmanStringCodec.from(stringSymbols, Maximum._8);
 
-            var characterSymbols = randomCharacterSymbols(1, 25);
+            var characterSymbols = randomCharacterSymbols(2, 25);
             var character = HuffmanCharacterCodec.from(characterSymbols, Maximum._8);
 
             var codec = new HuffmanStringListCodec(string, character);
 
             var choices = stringSymbols.symbols();
-            choices.addAll(randomStringSymbols(2, 8, 1, 32).symbols());
+            choices.addAll(randomStringSymbols(2, 8, 2, 32).symbols());
 
             var test = BroadcastingProgressReporter.create(Listener.emptyListener(), "test");
             _100.loop(testNumber ->
             {
                 var input = new ArrayList<String>();
-                random().rangeInclusive(1, 32).loop(() -> input.add(choices.get(random().randomIntExclusive(0, choices.size() - 1))));
+                random().rangeInclusive(2, 32).loop(() -> input.add(choices.get(random().randomIntExclusive(0, choices.size() - 1))));
                 test(codec, input);
                 test.next();
                 return ACCEPT;

@@ -24,7 +24,7 @@ import org.junit.Test;
 
 import java.util.Collections;
 
-import static com.telenav.kivakit.core.test.Repeats.ALLOW_REPEATS;
+import static com.telenav.kivakit.internal.testing.Repeats.ALLOW_REPEATS;
 
 public class IntLinkedListStoreTest extends PrimitiveCollectionsUnitTest
 {

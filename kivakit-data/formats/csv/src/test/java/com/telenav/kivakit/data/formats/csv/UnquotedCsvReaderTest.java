@@ -21,7 +21,7 @@ package com.telenav.kivakit.data.formats.csv;
 import com.telenav.kivakit.conversion.core.language.primitive.DoubleConverter;
 import com.telenav.kivakit.conversion.core.language.primitive.IntegerConverter;
 import com.telenav.kivakit.core.progress.ProgressReporter;
-import com.telenav.kivakit.test.UnitTest;
+import com.telenav.kivakit.testing.UnitTest;
 import com.telenav.kivakit.resource.packages.PackageTrait;
 import org.junit.Test;
 

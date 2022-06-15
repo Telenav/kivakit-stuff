@@ -50,6 +50,12 @@ public class Receiver extends BaseRepeater implements
         return state == RUNNING;
     }
 
+    @Override
+    public Duration maximumWaitTime()
+    {
+        return Duration.MAXIMUM;
+    }
+
     /**
      * Reads handshake version from the given input stream. If it is compatible, reads the application from the server,
      * creates a new session for the application and passes it to the new session listener. Then reads log entries until

@@ -25,8 +25,8 @@ import org.junit.Test;
 import java.util.HashSet;
 import java.util.List;
 
-import static com.telenav.kivakit.core.test.Repeats.ALLOW_REPEATS;
-import static com.telenav.kivakit.core.test.Repeats.NO_REPEATS;
+import static com.telenav.kivakit.internal.testing.Repeats.ALLOW_REPEATS;
+import static com.telenav.kivakit.internal.testing.Repeats.NO_REPEATS;
 
 public class SplitLongToByteMapTest extends PrimitiveCollectionsUnitTest
 {
@@ -60,9 +60,9 @@ public class SplitLongToByteMapTest extends PrimitiveCollectionsUnitTest
         {
             var b = map();
             putAll(b, keys, values);
-            ensureEqual(a, b);
-            b.put(99, (byte) -1);
-            ensureNotEqual(a, b);
+            ensureEqual(a, b, "Should be equal: $ and $", a, b);
+            b.put(-999999, (byte) -1);
+            ensureNotEqual(a, b, "Should not be equal: $ and $", a, b);
         });
     }
 

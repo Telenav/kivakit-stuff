@@ -17,7 +17,7 @@ package com.telenav.kivakit.serialization.yaml;/////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 import com.telenav.kivakit.core.path.PackagePath;
-import com.telenav.kivakit.core.test.UnitTest;
+import com.telenav.kivakit.core.testing.UnitTest;
 import com.telenav.kivakit.core.time.Duration;
 import com.telenav.kivakit.settings.Settings;
 import com.telenav.kivakit.settings.stores.PackageSettingsStore;

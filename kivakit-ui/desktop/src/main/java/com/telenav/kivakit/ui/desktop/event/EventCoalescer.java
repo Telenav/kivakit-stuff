@@ -29,7 +29,7 @@ public class EventCoalescer
 
     public EventCoalescer(Frequency frequency, Runnable callback)
     {
-        timer = new Timer((int) frequency.cycleLength().asMilliseconds(), event ->
+        timer = new Timer((int) frequency.cycleLength().milliseconds(), event ->
         {
             if (timer != null)
             {

@@ -19,10 +19,10 @@
 package com.telenav.kivakit.math.statistics;
 
 import com.telenav.kivakit.core.value.level.Percent;
-import com.telenav.kivakit.internal.test.support.CoreUnitTest;
+import com.telenav.kivakit.testing.UnitTest;
 import org.junit.Test;
 
-public class SuccessRateTest extends CoreUnitTest
+public class SuccessRateTest extends UnitTest
 {
     @Test
     public void test()
