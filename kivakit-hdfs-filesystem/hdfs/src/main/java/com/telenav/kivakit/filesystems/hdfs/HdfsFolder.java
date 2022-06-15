@@ -56,6 +56,7 @@ import static com.telenav.kivakit.interfaces.comparison.Matcher.matchAll;
  *
  * @author jonathanl (shibo)
  */
+@SuppressWarnings("unused")
 @UmlClassDiagram(diagram = DiagramHdfs.class)
 @UmlNotPublicApi
 @UmlRelation(label = "gets proxy from", referent = HdfsProxyClient.class)
@@ -218,7 +219,7 @@ public class HdfsFolder extends BaseComponent implements FolderService
     @Override
     public Time modifiedAt()
     {
-        return retry(() -> Time.milliseconds(proxy().lastModified(pathAsString())))
+        return retry(() -> Time.epochMilliseconds(proxy().lastModified(pathAsString())))
                 .orDefault(null, "Unable to determine modification time of $", this);
     }
 

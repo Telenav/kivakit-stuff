@@ -29,7 +29,7 @@ import static com.telenav.kivakit.serialization.core.SerializationSession.Sessio
 /**
  * @author jonathanl (shibo)
  */
-public class Receiver extends BaseRepeater implements
+@SuppressWarnings("unused") public class Receiver extends BaseRepeater implements
         Stoppable<Duration>,
         RegistryTrait
 {
@@ -123,12 +123,6 @@ public class Receiver extends BaseRepeater implements
             state = STOPPING;
             stopping.waitForCompletion(wait);
         }
-    }
-
-    @Override
-    public Duration maximumWaitTime()
-    {
-        return Duration.MAXIMUM;
     }
 
     @SuppressWarnings("unchecked")

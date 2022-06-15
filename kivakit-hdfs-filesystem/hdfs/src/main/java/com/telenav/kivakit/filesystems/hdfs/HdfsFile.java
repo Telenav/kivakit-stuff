@@ -120,7 +120,7 @@ public class HdfsFile extends BaseWritableResource implements FileService
     @Override
     public Time modifiedAt()
     {
-        return retry(() -> Time.milliseconds(proxy().lastModified(pathAsString())))
+        return retry(() -> Time.epochMilliseconds(proxy().lastModified(pathAsString())))
                 .orDefault(this, null, "Unable to get last modified time of $", this);
     }
 

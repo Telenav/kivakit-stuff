@@ -80,7 +80,7 @@ import static com.telenav.kivakit.core.language.object.ObjectFormatter.Format.SI
  *
  * @author jonathanl (shibo)
  */
-@OpenApiIncludeType(
+@SuppressWarnings("unused") @OpenApiIncludeType(
         description = "A particular type of service belonging to an application and running on a TCP/IP port on a host. "
                 + "There can be multiple services running on a network, on a cluster, on a host and within an application. "
                 + "Each service has metadata describing itself and declares a scope within which it should be visible. ")
@@ -186,6 +186,7 @@ public class Service extends BaseComponent implements Comparable<Service>, Strin
         return health;
     }
 
+    @SuppressWarnings("UnusedReturnValue")
     public Service health(JavaVirtualMachineHealth health)
     {
         this.health = health;
@@ -265,6 +266,7 @@ public class Service extends BaseComponent implements Comparable<Service>, Strin
         return port;
     }
 
+    @SuppressWarnings("UnusedReturnValue")
     public Service renewedAt(Time renewedAt)
     {
         this.renewedAt = renewedAt.milliseconds();
@@ -274,7 +276,7 @@ public class Service extends BaseComponent implements Comparable<Service>, Strin
     @KivaKitIncludeProperty
     public Time renewedAt()
     {
-        return Time.milliseconds(renewedAt);
+        return Time.epochMilliseconds(renewedAt);
     }
 
     public Scope scope()
