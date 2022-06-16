@@ -4,7 +4,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-logs-viewer &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons//log-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons//log-32-2x.png 2x"/>
+# kivakit-logs-viewer &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/log-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/log-32-2x.png 2x"/>
 
 This module views logs on a server.
 
@@ -56,7 +56,7 @@ None
 
 Javadoc coverage for this project is 30.0%.  
   
-&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meter/meter-30-96.png" srcset="https://telenav.github.io/telenav-assets/images/meter/meter-30-96-2x.png 2x"/>
+&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/meters/meter-30-96.png" srcset="https://telenav.github.io/telenav-assets/meters/meter-30-96-2x.png 2x"/>
 
 
 

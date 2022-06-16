@@ -14,7 +14,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-filesystems-hdfs-proxy-spi &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons//communicate-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons//communicate-32-2x.png 2x"/>
+# kivakit-filesystems-hdfs-proxy-spi &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/communicate-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/communicate-32-2x.png 2x"/>
 
 Service provider interface for HDFS proxy.
 
@@ -69,7 +69,7 @@ Service provider interface for HDFS proxy.
 
 Javadoc coverage for this project is 75.0%.  
   
-&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meter/meter-80-96.png" srcset="https://telenav.github.io/telenav-assets/images/meter/meter-80-96-2x.png 2x"/>
+&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/meters/meter-80-96.png" srcset="https://telenav.github.io/telenav-assets/meters/meter-80-96-2x.png 2x"/>
 
 
 

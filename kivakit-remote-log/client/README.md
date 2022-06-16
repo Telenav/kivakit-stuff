@@ -4,7 +4,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-logs-client &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons//log-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons//log-32-2x.png 2x"/>
+# kivakit-logs-client &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/log-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/log-32-2x.png 2x"/>
 
 This module is a text file log service provider.
 
@@ -64,7 +64,7 @@ None
 
 Javadoc coverage for this project is 26.5%.  
   
-&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meter/meter-30-96.png" srcset="https://telenav.github.io/telenav-assets/images/meter/meter-30-96-2x.png 2x"/>
+&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/meters/meter-30-96.png" srcset="https://telenav.github.io/telenav-assets/meters/meter-30-96-2x.png 2x"/>
 
 
 The following significant classes are undocumented:  

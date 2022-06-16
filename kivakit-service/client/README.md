@@ -14,7 +14,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-service-client &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons//communicate-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons//communicate-32-2x.png 2x"/>
+# kivakit-service-client &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/communicate-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/communicate-32-2x.png 2x"/>
 
 This project provides a client for accessing local and network service registries.
 
@@ -72,7 +72,7 @@ for a detailed discussion.
 
 Javadoc coverage for this project is 83.3%.  
   
-&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meter/meter-80-96.png" srcset="https://telenav.github.io/telenav-assets/images/meter/meter-80-96-2x.png 2x"/>
+&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/meters/meter-80-96.png" srcset="https://telenav.github.io/telenav-assets/meters/meter-80-96-2x.png 2x"/>
 
 
 

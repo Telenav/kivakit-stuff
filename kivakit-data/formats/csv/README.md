@@ -14,7 +14,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-data-formats-csv &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons//csv-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons//csv-32-2x.png 2x"/>
+# kivakit-data-formats-csv &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/csv-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/csv-32-2x.png 2x"/>
 
 This module reads and writes CSV data.
 
@@ -69,7 +69,7 @@ This module provides easy access to CSV data using an object-oriented data model
 
 Javadoc coverage for this project is 87.1%.  
   
-&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meter/meter-90-96.png" srcset="https://telenav.github.io/telenav-assets/images/meter/meter-90-96-2x.png 2x"/>
+&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/meters/meter-90-96.png" srcset="https://telenav.github.io/telenav-assets/meters/meter-90-96-2x.png 2x"/>
 
 
 

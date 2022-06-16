@@ -14,7 +14,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-filesystems-hdfs &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons//communicate-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons//communicate-32-2x.png 2x"/>
+# kivakit-filesystems-hdfs &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/communicate-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/communicate-32-2x.png 2x"/>
 
 HDFS proxy due to large number of conflicts between HDFS and other projects, especially Spark.
 
@@ -100,7 +100,7 @@ any application.
 
 Javadoc coverage for this project is 82.3%.  
   
-&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meter/meter-80-96.png" srcset="https://telenav.github.io/telenav-assets/images/meter/meter-80-96-2x.png 2x"/>
+&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/meters/meter-80-96.png" srcset="https://telenav.github.io/telenav-assets/meters/meter-80-96-2x.png 2x"/>
 
 
 

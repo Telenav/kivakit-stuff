@@ -14,7 +14,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-data-compression &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons//compress-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons//compress-32-2x.png 2x"/>
+# kivakit-data-compression &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/compress-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/compress-32-2x.png 2x"/>
 
 This module contains packages for compressing and decompressing data.
 
@@ -74,7 +74,7 @@ None
 
 Javadoc coverage for this project is 75.8%.  
   
-&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meter/meter-80-96.png" srcset="https://telenav.github.io/telenav-assets/images/meter/meter-80-96-2x.png 2x"/>
+&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/meters/meter-80-96.png" srcset="https://telenav.github.io/telenav-assets/meters/meter-80-96-2x.png 2x"/>
 
 
 The following significant classes are undocumented:  

@@ -14,7 +14,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-security &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons//lock-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons//lock-32-2x.png 2x"/>
+# kivakit-security &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/lock-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/lock-32-2x.png 2x"/>
 
 This project contains functionality related to security
 
@@ -71,7 +71,7 @@ producing simple message digests easier.
 
 Javadoc coverage for this project is 33.3%.  
   
-&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meter/meter-30-96.png" srcset="https://telenav.github.io/telenav-assets/images/meter/meter-30-96-2x.png 2x"/>
+&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/meters/meter-30-96.png" srcset="https://telenav.github.io/telenav-assets/meters/meter-30-96-2x.png 2x"/>
 
 
 

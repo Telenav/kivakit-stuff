@@ -14,7 +14,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-serialization yaml &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons//communicate-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons//communicate-32-2x.png 2x"/>
+# kivakit-serialization yaml &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/communicate-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/communicate-32-2x.png 2x"/>
 
 This project contains support for serializing objects to YAML.
 
@@ -68,7 +68,7 @@ None
 
 Javadoc coverage for this project is 62.5%.  
   
-&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meter/meter-60-96.png" srcset="https://telenav.github.io/telenav-assets/images/meter/meter-60-96-2x.png 2x"/>
+&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/meters/meter-60-96.png" srcset="https://telenav.github.io/telenav-assets/meters/meter-60-96-2x.png 2x"/>
 
 
 The following significant classes are undocumented:  

@@ -14,7 +14,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-data-formats-library &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons//books-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons//books-32-2x.png 2x"/>
+# kivakit-data-formats-library &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/books-24.png" srcset="https://telenav.github.io/telenav-assets/images/icons/books-24-2x.png 2x"/>
 
 This module contains code generally relevant to data formats.
 
@@ -69,7 +69,7 @@ This module provides packages for use in processing data formats.
 
 Javadoc coverage for this project is 91.7%.  
   
-&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meter/meter-90-96.png" srcset="https://telenav.github.io/telenav-assets/images/meter/meter-90-96-2x.png 2x"/>
+&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/meters/meter-90-96.png" srcset="https://telenav.github.io/telenav-assets/meters/meter-90-96-2x.png 2x"/>
 
 
 

@@ -14,7 +14,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-service-registry &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons//log-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons//log-32-2x.png 2x"/>
+# kivakit-service-registry &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/log-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/log-32-2x.png 2x"/>
 
 This project provides shared registry code to kivakit-service-client and kivakit-service-server.
 
@@ -80,7 +80,7 @@ to provide core registration and discovery functionality.
 
 Javadoc coverage for this project is 95.7%.  
   
-&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meter/meter-100-96.png" srcset="https://telenav.github.io/telenav-assets/images/meter/meter-100-96-2x.png 2x"/>
+&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/meters/meter-100-96.png" srcset="https://telenav.github.io/telenav-assets/meters/meter-100-96-2x.png 2x"/>
 
 
 
