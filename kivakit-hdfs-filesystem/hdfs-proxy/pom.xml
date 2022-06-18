@@ -11,27 +11,27 @@
     xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    
+
     <modelVersion>4.0.0</modelVersion>
-    
+
     <parent>
         <groupId>com.telenav.kivakit</groupId>
         <artifactId>telenav-superpom-kivakit</artifactId>
         <version>2.0.0</version>
         <relativePath/>
     </parent>
-    
+
     <artifactId>kivakit-filesystems-hdfs-proxy</artifactId>
     <version>1.6.0</version>
 
     <properties>
         <jar.name>kivakit-hdfs-proxy-${project.version}</jar.name>
     </properties>
-    
+
     <dependencies>
-        
+
         <!-- KivaKit -->
-        
+
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>kivakit-application</artifactId>
@@ -44,9 +44,9 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>kivakit-filesystems-hdfs-proxy-spi</artifactId>
         </dependency>
-        
+
         <!-- HTTP Client -->
-        
+
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
@@ -56,13 +56,13 @@
                     <artifactId>commons-codec</artifactId>
                 </exclusion>
             </exclusions>
-            
+
         </dependency>
-        
+
         <!-- Hadoop -->
-        
+
         <dependency>
-            
+
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-hdfs</artifactId>
             <version>3.3.3</version>
@@ -96,9 +96,9 @@
                     <artifactId>org.osgi.core</artifactId>
                 </exclusion>
             </exclusions>
-            
+
         </dependency>
-        
+
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-hdfs-client</artifactId>
@@ -113,11 +113,11 @@
                     <artifactId>hadoop-common</artifactId>
                 </exclusion>
             </exclusions>
-            
+
         </dependency>
-        
+
         <dependency>
-            
+
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-common</artifactId>
             <version>3.3.3</version>
@@ -135,9 +135,9 @@
                     <artifactId>commons-io</artifactId>
                 </exclusion>
             </exclusions>
-            
+
         </dependency>
-        
+
         <dependency>
             <!-- Replaces the two conflicting (!!) versions both inherited
             from hadoop-common. -->
@@ -159,28 +159,28 @@
             <artifactId>commons-io</artifactId>
             <version>2.11.0</version>
         </dependency>
-        
+
     </dependencies>
-    
+
     <build>
         <plugins>
-            
+
             <plugin>
-                
+
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <configuration>
                     <!-- We need this or the JDK's automatic module name
-                         generation algorithm will see the indirect dependency 
+                         generation algorithm will see the indirect dependency
                          hadoop-shaded-protobuf_3_7, interpret 3 as an indentifier,
                          and fail the javadoc build, preventing deployment to
                          maven central. -->
                     <source>8</source>
                 </configuration>
-            </plugin>            
-            
+            </plugin>
+
             <plugin>
-                
+
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>${maven-jar-plugin.version}</version>
@@ -191,9 +191,9 @@
                         </manifestEntries>
                     </archive>
                 </configuration>
-                
+
             </plugin>
-            
+
             <plugin>
 
                 <groupId>org.apache.maven.plugins</groupId>
@@ -205,9 +205,9 @@
                         <goals>
                             <goal>shade</goal>
                         </goals>
-                        
+
                         <configuration>
-                            
+
                             <minimizeJar>false</minimizeJar>
                             <finalName>${jar.name}</finalName>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
@@ -222,23 +222,23 @@
                                     <mainClass>com.telenav.kivakit.filesystems.hdfs.proxy.HdfsProxyServer</mainClass>
                                 </transformer>
                             </transformers>
-                            
+
                         </configuration>
-                        
+
                     </execution>
                 </executions>
-                
+
             </plugin>
-            
+
             <plugin>
-                
+
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>
                 <version>${maven-antrun-plugin.version}</version>
                 <executions>
-                    
+
                     <execution>
-                        
+
                         <id>install-kivakit-hdfs-proxy</id>
                         <phase>install</phase>
                         <configuration>
@@ -255,15 +255,15 @@
                         <goals>
                             <goal>run</goal>
                         </goals>
-                        
+
                     </execution>
-                    
+
                 </executions>
-                
+
             </plugin>
-            
+
         </plugins>
-        
+
     </build>
-    
+
 </project>
