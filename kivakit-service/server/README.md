@@ -70,7 +70,7 @@ This module provides port registration services to kivakit-service-client
 
 Javadoc coverage for this project is 85.2%.  
   
-&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/meters/meter-90-96.png" srcset="https://telenav.github.io/telenav-assets/meters/meter-90-96-2x.png 2x"/>
+&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-90-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-90-96-2x.png 2x"/>
 
 
 

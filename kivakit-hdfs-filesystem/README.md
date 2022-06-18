@@ -26,11 +26,11 @@ Service provider for HDFS filesystem.
 
 ### Javadoc Coverage <a name = "javadoc-coverage"></a> &nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/bargraph-24.png" srcset="https://telenav.github.io/telenav-assets/images/icons/bargraph-24-2x.png 2x"/>
 
-&nbsp; <img src="https://telenav.github.io/telenav-assets/meters/meter-80-96.png" srcset="https://telenav.github.io/telenav-assets/meters/meter-80-96-2x.png 2x"/>
+&nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-80-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-80-96-2x.png 2x"/>
  &nbsp; &nbsp; [**kivakit-hdfs-filesystem-hdfs**](hdfs/README.md)  
-&nbsp; <img src="https://telenav.github.io/telenav-assets/meters/meter-60-96.png" srcset="https://telenav.github.io/telenav-assets/meters/meter-60-96-2x.png 2x"/>
+&nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-60-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-60-96-2x.png 2x"/>
  &nbsp; &nbsp; [**kivakit-hdfs-filesystem-hdfs-proxy**](hdfs-proxy/README.md)  
-&nbsp; <img src="https://telenav.github.io/telenav-assets/meters/meter-80-96.png" srcset="https://telenav.github.io/telenav-assets/meters/meter-80-96-2x.png 2x"/>
+&nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-80-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-80-96-2x.png 2x"/>
  &nbsp; &nbsp; [**kivakit-hdfs-filesystem-hdfs-proxy-spi**](hdfs-proxy-spi/README.md)
 
 [//]: # (start-user-text)

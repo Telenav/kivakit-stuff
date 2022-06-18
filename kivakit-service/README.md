@@ -67,13 +67,13 @@ needs to be set up manually.
 
 ### Javadoc Coverage <a name = "javadoc-coverage"></a> &nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/bargraph-24.png" srcset="https://telenav.github.io/telenav-assets/images/icons/bargraph-24-2x.png 2x"/>
 
-&nbsp; <img src="https://telenav.github.io/telenav-assets/meters/meter-80-96.png" srcset="https://telenav.github.io/telenav-assets/meters/meter-80-96-2x.png 2x"/>
+&nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-80-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-80-96-2x.png 2x"/>
  &nbsp; &nbsp; [**kivakit-service-client**](client/README.md)  
-&nbsp; <img src="https://telenav.github.io/telenav-assets/meters/meter-100-96.png" srcset="https://telenav.github.io/telenav-assets/meters/meter-100-96-2x.png 2x"/>
+&nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-100-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-100-96-2x.png 2x"/>
  &nbsp; &nbsp; [**kivakit-service-registry**](registry/README.md)  
-&nbsp; <img src="https://telenav.github.io/telenav-assets/meters/meter-90-96.png" srcset="https://telenav.github.io/telenav-assets/meters/meter-90-96-2x.png 2x"/>
+&nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-90-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-90-96-2x.png 2x"/>
  &nbsp; &nbsp; [**kivakit-service-server**](server/README.md)  
-&nbsp; <img src="https://telenav.github.io/telenav-assets/meters/meter-30-96.png" srcset="https://telenav.github.io/telenav-assets/meters/meter-30-96-2x.png 2x"/>
+&nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-30-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-30-96-2x.png 2x"/>
  &nbsp; &nbsp; [**kivakit-service-viewer**](viewer/README.md)
 
 [//]: # (start-user-text)
