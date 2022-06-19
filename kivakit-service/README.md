@@ -43,7 +43,7 @@ is not defined by this API.
 2. Provide criteria for discovery (service type and version)
 
 Both servers and clients use the
-[*ServiceRegistryClient*](https://github.com/Telenav/kivakit/blob/master/kivakit-service/client/src/main/java/com/telenav/kivakit/service/registry/client/ServiceRegistryClient.java)
+[*ServiceRegistryClient*](https://github.com/Telenav/kivakit/blob/develop/kivakit-service/client/src/main/java/com/telenav/kivakit/service/registry/client/ServiceRegistryClient.java)
 to perform these tasks. 
 
 The *server* module contains the *ServiceRegistryServer* application, which provides

@@ -48,7 +48,7 @@ This project provides a client for accessing local and network service registrie
 
 This module provides an easy API to perform registration and discovery tasks
 with a service registry [server](../server/README.md). See
-[*ServiceRegistryClient*](https://github.com/Telenav/kivakit/blob/master/kivakit-service/client/src/main/java/com/telenav/kivakit/service/registry/client/ServiceRegistryClient.java)
+[*ServiceRegistryClient*](https://github.com/Telenav/kivakit/blob/develop/kivakit-service/client/src/main/java/com/telenav/kivakit/service/registry/client/ServiceRegistryClient.java)
 for a detailed discussion.
 
 [//]: # (end-user-text)
