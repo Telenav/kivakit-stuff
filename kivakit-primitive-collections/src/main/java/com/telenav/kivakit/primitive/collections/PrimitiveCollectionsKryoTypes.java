@@ -19,7 +19,6 @@
 package com.telenav.kivakit.primitive.collections;
 
 import com.telenav.kivakit.core.collections.list.LinkedObjectList;
-import com.telenav.kivakit.primitive.collections.PrimitiveCollection;
 import com.telenav.kivakit.primitive.collections.array.arrays.ByteArrayArray;
 import com.telenav.kivakit.primitive.collections.array.arrays.IntArrayArray;
 import com.telenav.kivakit.primitive.collections.array.arrays.LongArrayArray;
@@ -81,7 +80,12 @@ public class PrimitiveCollectionsKryoTypes extends KryoTypes
         // in each registration group must remain in the same order.
         //----------------------------------------------------------------------------------------------
 
-        group("collections", () -> register(PrimitiveCollection.class));
+        group("collections", () ->
+        {
+            register(PrimitiveCollection.class);
+            register(CompressibleCollection.class);
+            register(CompressibleCollection.Method.class);
+        });
 
         group("dynamic-arrays", () ->
         {
