@@ -89,19 +89,19 @@ import static com.telenav.kivakit.core.vm.ShutdownHook.Order.FIRST;
  * <p>
  * <b>One-Dimensional Collections</b>
  * <p>
- * One-dimensional collections have only one key (or index) and their size is configured with {@link
- * #initialSize(Estimate)} and {@link #maximumSize(Maximum)}. Examples of one-dimensional collections include {@link
- * ByteArray}, {@link IntArray} and {@link LongToLongMap}), since only one key is needed to access data in each case.
- * Note that "split" versions of arrays and maps (to avoid allocating large contiguous blocks of memory that make the
- * garbage collector's job harder) like {@link SplitIntArray} and {@link SplitLongToIntMap} are also one-dimensional
+ * One-dimensional collections have only one key (or index) and their size is configured with
+ * {@link #initialSize(Estimate)} and {@link #maximumSize(Maximum)}. Examples of one-dimensional collections include
+ * {@link ByteArray}, {@link IntArray} and {@link LongToLongMap}), since only one key is needed to access data in each
+ * case. Note that "split" versions of arrays and maps (to avoid allocating large contiguous blocks of memory that make
+ * the garbage collector's job harder) like {@link SplitIntArray} and {@link SplitLongToIntMap} are also one-dimensional
  * even though they have child collections internally because they still only require a single key.
  * <p>
  * <b>Two-Dimensional Collections</b>
  * <p>
- * Two-dimensional collections have two keys (or indexes) and the second dimension can be configured with {@link
- * #initialChildSize(BaseCount)} and {@link #maximumChildSize(Maximum)}. Examples of two-dimensional collections include
- * {@link ByteArrayArray} and {@link LongToLongMultiMap}. The first key gets access to a child collection (usually an
- * array or list) and the second key gets access to the data.
+ * Two-dimensional collections have two keys (or indexes) and the second dimension can be configured with
+ * {@link #initialChildSize(BaseCount)} and {@link #maximumChildSize(Maximum)}. Examples of two-dimensional collections
+ * include {@link ByteArrayArray} and {@link LongToLongMultiMap}. The first key gets access to a child collection
+ * (usually an array or list) and the second key gets access to the data.
  * <p>
  * <b>Default Sizes</b>
  * <ul>
@@ -196,18 +196,21 @@ public abstract class PrimitiveCollection implements
 
     static
     {
-        ShutdownHook.register(FIRST, () ->
+        ShutdownHook.register("PrimitiveCollectionShutdown", FIRST, () ->
         {
-            compressionRecords = compressionRecords.uniqued();
-            Collections.sort(compressionRecords);
-            var totalDelta = 0L;
-            for (var trim : compressionRecords)
+            if (DEBUG.isDebugOn())
             {
-                totalDelta += Math.abs(trim.delta());
-            }
+                compressionRecords = compressionRecords.uniqued();
+                Collections.sort(compressionRecords);
+                var totalDelta = 0L;
+                for (var trim : compressionRecords)
+                {
+                    totalDelta += Math.abs(trim.delta());
+                }
 
-            DEBUG.trace("Compressed collections by $:\n$", Bytes.bytes(totalDelta), compressionRecords.bulleted());
-            LOGGER.flush(MAXIMUM);
+                DEBUG.trace("Compressed collections by $:\n$", Bytes.bytes(totalDelta), compressionRecords.bulleted());
+                LOGGER.flush(MAXIMUM);
+            }
         });
     }
 
@@ -248,6 +251,14 @@ public abstract class PrimitiveCollection implements
      */
     private static class CompressionRecord implements Comparable<CompressionRecord>
     {
+        final Class<?> type;
+
+        final String objectName;
+
+        final int before;
+
+        final int after;
+
         CompressionRecord(Class<?> type, String objectName, int before, int after)
         {
             this.type = type;
@@ -305,14 +316,6 @@ public abstract class PrimitiveCollection implements
         {
             return type + "-" + objectName;
         }
-
-        final Class<?> type;
-
-        final String objectName;
-
-        final int before;
-
-        final int after;
     }
 
     /** Any compression method that has been applied to this collection (see {@link CompressibleCollection}) */

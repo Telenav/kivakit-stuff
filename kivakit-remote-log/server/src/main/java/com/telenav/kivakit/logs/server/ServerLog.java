@@ -103,7 +103,7 @@ public class ServerLog extends BaseTextLog implements ComponentMixin
 
     public ServerLog()
     {
-        ShutdownHook.register(LAST, () -> SessionStore.get().save(session.get()));
+        ShutdownHook.register("ServerLogShutdown", LAST, () -> SessionStore.get().save(session.get()));
 
         resolveProject(ServerLogProject.class).initialize();
 
