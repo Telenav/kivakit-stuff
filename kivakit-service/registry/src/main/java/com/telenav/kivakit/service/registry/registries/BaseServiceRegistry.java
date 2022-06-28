@@ -56,11 +56,12 @@ import static com.telenav.kivakit.core.vm.ShutdownHook.Order.FIRST;
 /**
  * <b>Not public API</b>
  * <p>
- * Base implementation of the {@link ServiceRegistry} interface for both {@link LocalServiceRegistry} and {@link
- * NetworkServiceRegistry}. This class holds registration information added by clients through the web service API,
- * allowing for registration and lookup of services that are uniquely identified by {@link Port} (which includes the
- * host for the port). Service bindings are saved by {@link ServiceRegistryStore} every few seconds and on application
- * shutdown to ensure that service registration information remains intact during a registry service update or reboot.
+ * Base implementation of the {@link ServiceRegistry} interface for both {@link LocalServiceRegistry} and
+ * {@link NetworkServiceRegistry}. This class holds registration information added by clients through the web service
+ * API, allowing for registration and lookup of services that are uniquely identified by {@link Port} (which includes
+ * the host for the port). Service bindings are saved by {@link ServiceRegistryStore} every few seconds and on
+ * application shutdown to ensure that service registration information remains intact during a registry service update
+ * or reboot.
  * </p>
  * <p>
  * <b>Construction</b>
@@ -324,7 +325,7 @@ public abstract class BaseServiceRegistry extends BaseRepeater implements Servic
             running = true;
 
             // Save the service registry on shutdown
-            ShutdownHook.register(FIRST, () -> store.save(this));
+            ShutdownHook.register("ServiceRegistryShutdown", FIRST, () -> store.save(this));
 
             // and also every 30 seconds, in case we go down.
             KivaKitThread.repeat(this, "ServiceRegistrySaver", Duration.seconds(30).asFrequency(), () -> store.save(this));

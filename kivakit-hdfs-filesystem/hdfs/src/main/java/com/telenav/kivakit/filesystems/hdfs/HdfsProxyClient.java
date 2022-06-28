@@ -179,7 +179,7 @@ public class HdfsProxyClient extends BaseComponent
                     .processType(CHILD)
                     .run();
 
-            ShutdownHook.register(LAST, process::destroyForcibly);
+            ShutdownHook.register("HdfsProxyClientShutdown", LAST, process::destroyForcibly);
         }
         else
         {

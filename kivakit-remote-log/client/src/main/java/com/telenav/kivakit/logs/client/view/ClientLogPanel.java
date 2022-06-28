@@ -70,7 +70,7 @@ import static com.telenav.kivakit.ui.desktop.component.status.StatusPanel.Displa
  *
  * @author jonathanl (shibo)
  */
-@SuppressWarnings({ "SameParameterValue" })
+@SuppressWarnings({ "SameParameterValue", "unused" })
 public class ClientLogPanel extends KivaKitPanel
 {
     static
@@ -105,7 +105,7 @@ public class ClientLogPanel extends KivaKitPanel
         this.frame = frame;
         this.log = log;
 
-        ShutdownHook.register(FIRST, this::saveConnectedSession);
+        ShutdownHook.register("ClientLogPanelShutdown", FIRST, this::saveConnectedSession);
 
         receiver = statusPanel().listenTo(new Receiver());
 
