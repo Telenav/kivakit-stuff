@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- //
- // © 2011-2022 Telenav, Inc.
- // Licensed under Apache License, Version 2.0
- //
- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- -->
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// © 2011-2022 Telenav, Inc.
+// Licensed under Apache License, Version 2.0
+//
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
 
 <project
     xmlns="http://maven.apache.org/POM/4.0.0"
@@ -37,15 +37,24 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>kivakit-filesystems-hdfs-proxy-spi</artifactId>
         </dependency>
+        
+        <!-- Required by org.apache.wicket.core -->
         <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>kivakit-testing</artifactId>
-            
-            <!-- PENDING: Something is leaking a direct dependency on this.
-             What?? -->
-            <!-- <scope>test</scope> -->
-            
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-commons</artifactId>
+            <scope>test</scope>
+        </dependency>
+        
     </dependencies>
     
     <build>

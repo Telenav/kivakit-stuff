@@ -26,6 +26,7 @@
 
     <properties>
         <jar.name>kivakit-hdfs-proxy-${project.version}</jar.name>
+        <maven.javadoc.skip>true</maven.javadoc.skip>
     </properties>
 
     <dependencies>
@@ -169,14 +170,6 @@
 
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <configuration>
-                    <!-- We need this or the JDK's automatic module name
-                         generation algorithm will see the indirect dependency
-                         hadoop-shaded-protobuf_3_7, interpret 3 as an indentifier,
-                         and fail the javadoc build, preventing deployment to
-                         maven central. -->
-                    <source>8</source>
-                </configuration>
             </plugin>
 
             <plugin>
@@ -243,7 +236,10 @@
                         <configuration>
                             <target name="Install ${jar.name}">
                                 <echo message="Installing ${project.basedir}/target/${jar.name}.jar -&gt; ${env.HOME}/.kivakit/${kivakit.version}/temporary/launcher/${jar.name}.jar"/>
-                                <copy file="${project.basedir}/target/${jar.name}.jar" tofile="${env.HOME}/.kivakit/${kivakit.version}/temporary/launcher/${jar.name}.jar" verbose="true"/>
+                                <!-- We need failonerror=false below so that we can build
+                                     aggregate javadoc with the shade plugin disabled, and 
+                                     then rebuild with it enabled to generate final jars. -->
+                                <copy failonerror="false" file="${project.basedir}/target/${jar.name}.jar" tofile="${env.HOME}/.kivakit/${kivakit.version}/temporary/launcher/${jar.name}.jar" verbose="true"/>
                             </target>
                         </configuration>
                         <goals>
