@@ -14,7 +14,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-service-client &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/communicate-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/communicate-32-2x.png 2x"/>
+# kivakit-service-client &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/images/icons/communicate-32.png" srcset="https://telenav.github.io/telenav-assets/images/images/icons/communicate-32-2x.png 2x"/>
 
 This project provides a client for accessing local and network service registries.
 
@@ -30,14 +30,14 @@ This project provides a client for accessing local and network service registrie
 
 ### Dependencies <a name="dependencies"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/dependencies-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/dependencies-32-2x.png 2x"/>
 
-[*Dependency Diagram*](https://www.kivakit.org/1.6.0/lexakai/kivakit-stuff/kivakit-service/client/documentation/diagrams/dependencies.svg)
+[*Dependency Diagram*](https://www.kivakit.org/1.6.1/lexakai/kivakit-stuff/kivakit-service/client/documentation/diagrams/dependencies.svg)
 
 #### Maven Dependency
 
     <dependency>
         <groupId>com.telenav.kivakit</groupId>
         <artifactId>kivakit-service-client</artifactId>
-        <version>1.6.0</version>
+        <version>1.6.1</version>
     </dependency>
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
@@ -57,14 +57,14 @@ for a detailed discussion.
 
 ### Class Diagrams <a name="class-diagrams"></a> &nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/diagram-40.png" srcset="https://telenav.github.io/telenav-assets/images/icons/diagram-40-2x.png 2x"/>
 
-[*Service Registry Client*](https://www.kivakit.org/1.6.0/lexakai/kivakit-stuff/kivakit-service/client/documentation/diagrams/diagram-client.svg)
+[*Service Registry Client*](https://www.kivakit.org/1.6.1/lexakai/kivakit-stuff/kivakit-service/client/documentation/diagrams/diagram-client.svg)
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
 ### Package Diagrams <a name="package-diagrams"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/box-24.png" srcset="https://telenav.github.io/telenav-assets/images/icons/box-24-2x.png 2x"/>
 
-[*com.telenav.kivakit.service.registry.client*](https://www.kivakit.org/1.6.0/lexakai/kivakit-stuff/kivakit-service/client/documentation/diagrams/com.telenav.kivakit.service.registry.client.svg)  
-[*com.telenav.kivakit.service.registry.client.lexakai*](https://www.kivakit.org/1.6.0/lexakai/kivakit-stuff/kivakit-service/client/documentation/diagrams/com.telenav.kivakit.service.registry.client.lexakai.svg)
+[*com.telenav.kivakit.service.registry.client*](https://www.kivakit.org/1.6.1/lexakai/kivakit-stuff/kivakit-service/client/documentation/diagrams/com.telenav.kivakit.service.registry.client.svg)  
+[*com.telenav.kivakit.service.registry.client.lexakai*](https://www.kivakit.org/1.6.1/lexakai/kivakit-stuff/kivakit-service/client/documentation/diagrams/com.telenav.kivakit.service.registry.client.lexakai.svg)
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
@@ -79,9 +79,9 @@ Javadoc coverage for this project is 83.3%.
 
 | Class | Documentation Sections |
 |---|---|
-| [*DiagramClient*](https://www.kivakit.org/1.6.0/javadoc/kivakit-stuff/kivakit.service.client//////////////////////////////////////////////////////////////////.html) |  |  
-| [*ServiceRegistryClient*](https://www.kivakit.org/1.6.0/javadoc/kivakit-stuff/kivakit.service.client//////////////////////////////////////////////////////////////////.html) |  |  
-| [*ServiceRegistryClientSettings*](https://www.kivakit.org/1.6.0/javadoc/kivakit-stuff/kivakit.service.client//////////////////////////////////////////////////////////////////////////.html) |  |  
+| [*DiagramClient*](https://www.kivakit.org/1.6.1/javadoc/kivakit-stuff/kivakit.service.client//////////////////////////////////////////////////////////////////.html) |  |  
+| [*ServiceRegistryClient*](https://www.kivakit.org/1.6.1/javadoc/kivakit-stuff/kivakit.service.client//////////////////////////////////////////////////////////////////.html) |  |  
+| [*ServiceRegistryClientSettings*](https://www.kivakit.org/1.6.1/javadoc/kivakit-stuff/kivakit.service.client//////////////////////////////////////////////////////////////////////////.html) |  |  
 
 [//]: # (start-user-text)
 

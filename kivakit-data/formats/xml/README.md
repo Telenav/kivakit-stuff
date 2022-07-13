@@ -4,7 +4,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-data-formats-xml &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/bits-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/bits-32-2x.png 2x"/>
+# kivakit-data-formats-xml &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/images/icons/bits-32.png" srcset="https://telenav.github.io/telenav-assets/images/images/icons/bits-32-2x.png 2x"/>
 
 This module reads and writes XML data using Java's StAX pull parser.
 
@@ -20,14 +20,14 @@ This module reads and writes XML data using Java's StAX pull parser.
 
 ### Dependencies <a name="dependencies"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/dependencies-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/dependencies-32-2x.png 2x"/>
 
-[*Dependency Diagram*](https://www.kivakit.org/1.6.0/lexakai/kivakit-stuff/kivakit-data/formats/xml/documentation/diagrams/dependencies.svg)
+[*Dependency Diagram*](https://www.kivakit.org/1.6.1/lexakai/kivakit-stuff/kivakit-data/formats/xml/documentation/diagrams/dependencies.svg)
 
 #### Maven Dependency
 
     <dependency>
         <groupId>com.telenav.kivakit</groupId>
         <artifactId>kivakit-data-formats-xml</artifactId>
-        <version>1.6.0</version>
+        <version>1.6.1</version>
     </dependency>
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
@@ -48,7 +48,7 @@ None
 
 ### Package Diagrams <a name="package-diagrams"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/box-24.png" srcset="https://telenav.github.io/telenav-assets/images/icons/box-24-2x.png 2x"/>
 
-[*com.telenav.kivakit.data.formats.xml.stax*](https://www.kivakit.org/1.6.0/lexakai/kivakit-stuff/kivakit-data/formats/xml/documentation/diagrams/com.telenav.kivakit.data.formats.xml.stax.svg)
+[*com.telenav.kivakit.data.formats.xml.stax*](https://www.kivakit.org/1.6.1/lexakai/kivakit-stuff/kivakit-data/formats/xml/documentation/diagrams/com.telenav.kivakit.data.formats.xml.stax.svg)
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
@@ -63,15 +63,15 @@ Javadoc coverage for this project is 67.0%.
 
 | Class | Documentation Sections |
 |---|---|
-| [*StaxPath*](https://www.kivakit.org/1.6.0/javadoc/kivakit-stuff/kivakit.data.formats.xml///////////////////////////////////////////////////.html) |  |  
-| [*StaxReader*](https://www.kivakit.org/1.6.0/javadoc/kivakit-stuff/kivakit.data.formats.xml/////////////////////////////////////////////////////.html) | Using a {@link StaxReader} |  
+| [*StaxPath*](https://www.kivakit.org/1.6.1/javadoc/kivakit-stuff/kivakit.data.formats.xml///////////////////////////////////////////////////.html) |  |  
+| [*StaxReader*](https://www.kivakit.org/1.6.1/javadoc/kivakit-stuff/kivakit.data.formats.xml/////////////////////////////////////////////////////.html) | Using a {@link StaxReader} |  
 | | Stream Positioning |  
 | | Reader State |  
 | | Moving Through the Stream |  
 | | StaxPath Positioning Operations |  
-| [*StaxReader.BooleanMatcher*](https://www.kivakit.org/1.6.0/javadoc/kivakit-stuff/kivakit.data.formats.xml////////////////////////////////////////////////////////////////////.html) |  |  
-| [*StaxReader.Match*](https://www.kivakit.org/1.6.0/javadoc/kivakit-stuff/kivakit.data.formats.xml///////////////////////////////////////////////////////////.html) |  |  
-| [*StaxReader.Matcher*](https://www.kivakit.org/1.6.0/javadoc/kivakit-stuff/kivakit.data.formats.xml/////////////////////////////////////////////////////////////.html) |  |  
+| [*StaxReader.BooleanMatcher*](https://www.kivakit.org/1.6.1/javadoc/kivakit-stuff/kivakit.data.formats.xml////////////////////////////////////////////////////////////////////.html) |  |  
+| [*StaxReader.Match*](https://www.kivakit.org/1.6.1/javadoc/kivakit-stuff/kivakit.data.formats.xml///////////////////////////////////////////////////////////.html) |  |  
+| [*StaxReader.Matcher*](https://www.kivakit.org/1.6.1/javadoc/kivakit-stuff/kivakit.data.formats.xml/////////////////////////////////////////////////////////////.html) |  |  
 
 [//]: # (start-user-text)
 
