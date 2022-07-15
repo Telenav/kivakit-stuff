@@ -174,7 +174,8 @@
                 <configuration>
                     <additionalOptions>
                         --show-module-contents api
-                        -Xmaxerrs 0
+                        -Xmaxerrs 30
+                        -Xmaxwarns 0
                     </additionalOptions>
                 </configuration>
             </plugin>
