@@ -171,6 +171,12 @@
 
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+                    <additionalOptions>
+                        --show-module-contents api
+                        -Xmaxerrs 0
+                    </additionalOptions>
+                </configuration>
             </plugin>
 
             <plugin>
