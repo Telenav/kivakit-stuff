@@ -26,7 +26,7 @@
 
     <properties>
         <jar.name>kivakit-hdfs-proxy-${project.version}</jar.name>
-        <!--<maven.javadoc.skip>true</maven.javadoc.skip>-->
+        <maven.javadoc.skip>true</maven.javadoc.skip>
         <enforcer.skip>true</enforcer.skip>
     </properties>
 
