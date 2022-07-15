@@ -26,7 +26,8 @@
 
     <properties>
         <jar.name>kivakit-hdfs-proxy-${project.version}</jar.name>
-        <maven.javadoc.skip>true</maven.javadoc.skip>
+        <!--<maven.javadoc.skip>true</maven.javadoc.skip>-->
+        <enforcer.skip>true</enforcer.skip>
     </properties>
 
     <dependencies>
@@ -200,9 +201,10 @@
                         </goals>
 
                         <configuration>
+                            <shadedArtifactAttached>true</shadedArtifactAttached>
+                            <shadedClassifierName>app</shadedClassifierName>
 
                             <minimizeJar>false</minimizeJar>
-                            <finalName>${jar.name}</finalName>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
                             <artifactSet>
                                 <includes>
