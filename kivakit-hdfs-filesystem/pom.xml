@@ -28,6 +28,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>hadoop-doubly-shaded-protobuf</module>
         <module>hdfs-proxy-spi</module>
         <module>hdfs-proxy</module>
         <module>hdfs</module>
