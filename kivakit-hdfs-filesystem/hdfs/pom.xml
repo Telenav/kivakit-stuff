@@ -90,8 +90,6 @@
                     </systemPropertyVariables>
                     <useModulePath>false</useModulePath>
                     <argLine>
-                        --add-opens org.junit.platform.commons/org.junit.platform.commons.logging=ALL-UNNAMED
-                        --add-opens org.junit.platform.commons/org.junit.platform.commons.util=ALL-UNNAMED
                         -Xmx2g
                     </argLine>
                 </configuration>
