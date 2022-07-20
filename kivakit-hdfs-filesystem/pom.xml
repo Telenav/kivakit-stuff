@@ -29,10 +29,9 @@
 
     <modules>
     <!-- removing these from the build pending moving them to a separate repository
-         for pathological things that can probably never be modularized -->
-<!--        <module>hadoop-doubly-shaded-protobuf</module>
-        <module>hdfs-proxy-spi</module> -->
-        <module>hdfs-proxy</module>
+         for pathological things that can probably never be modularized
+        <module>hadoop-doubly-shaded-protobuf</module>
+	<module>hdfs-proxy-spi</module> -->
         <module>hdfs</module>
     </modules>
     
