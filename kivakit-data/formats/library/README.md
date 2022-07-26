@@ -14,7 +14,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-data-formats-library &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/images/icons/books-24.png" srcset="https://telenav.github.io/telenav-assets/images/images/icons/books-24-2x.png 2x"/>
+# kivakit-data-formats-library &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/books-24.png" srcset="https://telenav.github.io/telenav-assets/images/icons/books-24-2x.png 2x"/>
 
 This module contains code generally relevant to data formats.
 

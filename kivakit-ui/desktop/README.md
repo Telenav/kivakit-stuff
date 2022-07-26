@@ -14,7 +14,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-ui-desktop &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/images/icons/window-32.png" srcset="https://telenav.github.io/telenav-assets/images/images/icons/window-32-2x.png 2x"/>
+# kivakit-ui-desktop &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/window-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/window-32-2x.png 2x"/>
 
 This project contains packages for developing desktop applications.
 

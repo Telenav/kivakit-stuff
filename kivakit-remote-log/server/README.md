@@ -4,7 +4,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-logs-server &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/images/icons/log-32.png" srcset="https://telenav.github.io/telenav-assets/images/images/icons/log-32-2x.png 2x"/>
+# kivakit-logs-server &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/log-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/log-32-2x.png 2x"/>
 
 This module provides log information to clients from a server.
 

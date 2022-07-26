@@ -18,7 +18,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-stuff &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/images/logos/kivakit/kivakit-32.png" srcset="https://telenav.github.io/telenav-assets/images/images/logos/kivakit/kivakit-32-2x.png 2x"/>
+# kivakit-stuff &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/logos/kivakit/kivakit-32.png" srcset="https://telenav.github.io/telenav-assets/images/logos/kivakit/kivakit-32-2x.png 2x"/>
 
 This repository contains projects that are under development, or have a limited audience.
 
