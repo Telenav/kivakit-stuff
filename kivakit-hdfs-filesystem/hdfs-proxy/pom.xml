@@ -30,40 +30,15 @@
         <mastfrog.version>2.8.3</mastfrog.version>
         <smart-jar-merge.version>${mastfrog.version}.2</smart-jar-merge.version>
         <moduleinfo-synthesizer-parent.version>1.0.2</moduleinfo-synthesizer-parent.version>
+        <hadoop.version>3.3.3</hadoop.version>
     </properties>
 
     <dependencies>
 
-        <!-- KivaKit -->
-
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>kivakit-application</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.google.code.gson</groupId>
-                    <artifactId>gson</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>kivakit-network-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>kivakit-filesystems-hdfs-proxy-spi</artifactId>
-        </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>hadoop-doubly-shaded-protobuf</artifactId>
             <version>${kivakit.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.apache.hadoop.thirdparty</groupId>
-                    <artifactId>hadoop-shaded-protobuf_3_7</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
 
         <!-- HTTP Client -->
@@ -114,11 +89,13 @@
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <configuration>
                     <additionalOptions>
+                        --limit-modules kivakit.filesystems.hdfs.proxy
                         --show-module-contents api
                         -Xmaxerrs 30
                         -Xmaxwarns 0
                     </additionalOptions>
                 </configuration>
+
             </plugin>
 
             <plugin>
@@ -137,6 +114,7 @@
             </plugin>
 
             <plugin>
+
                 <groupId>com.mastfrog</groupId>
                 <artifactId>maven-merge-configuration</artifactId>
                 <dependencies>
@@ -163,93 +141,34 @@
                         </goals>
                         <phase>package</phase>
                         <configuration>
-                            <classifier></classifier>
+                            <classifier>app</classifier>
                             <mainClass>com.telenav.kivakit.filesystems.hdfs.proxy.HdfsProxyServer</mainClass>
                             <extensionProperties>
                                 <moduleName>kivakit.filesystems.hdfs.proxy</moduleName>
-                                <defaultPackageDest>wasdefaultopackage</defaultPackageDest>
+                                <checkServiceConstructors>true</checkServiceConstructors>
+                                <generateUses>true</generateUses>
+                                <defaultPackageDest>was.in.defaultpkg</defaultPackageDest>
+                                <unrequire>com.google.gson,org.jetbrains.annotations</unrequire>
                             </extensionProperties>
-<!--                            <manifestEntries>
-                                <Random-Key>random.value</Random-Key>
-                            </manifestEntries>-->
                             <skipLicenseFiles>true</skipLicenseFiles>
                             <skipMavenMetadata>true</skipMavenMetadata>
                             <replacePom>true</replacePom>
                             <openModule>true</openModule>
+<!--                            <exclude>
+                                java.xml.bind
+                                javax.xml
+                            </exclude>
+                            <excludePatterns>java/xml/*</excludePatterns>-->
+                            <excludePaths>
+                                META-INF/versions
+                            </excludePaths>
                         </configuration>
                         <inherited>true</inherited>
                     </execution>
                 </executions>
+
             </plugin>
-
-<!--            <plugin>
-
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>${maven-shade-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-
-                        <configuration>
-                            <shadedArtifactAttached>true</shadedArtifactAttached>
-                            <shadedClassifierName>app</shadedClassifierName>
-
-                            <minimizeJar>false</minimizeJar>
-                            <createDependencyReducedPom>false</createDependencyReducedPom>
-                            <artifactSet>
-                                <includes>
-                                    <include>*:*</include>
-                                </includes>
-                            </artifactSet>
-                            <transformers>
-                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.telenav.kivakit.filesystems.hdfs.proxy.HdfsProxyServer</mainClass>
-                                </transformer>
-                            </transformers>
-
-                        </configuration>
-
-                    </execution>
-                </executions>
-
-            </plugin>-->
-
-<!--            <plugin>
-
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <version>${maven-antrun-plugin.version}</version>
-                <executions>
-
-                    <execution>
-
-                        <id>install-kivakit-hdfs-proxy</id>
-                        <phase>install</phase>
-                        <configuration>
-                            <target name="Install ${jar.name}">
-                                <echo message="Installing ${project.basedir}/target/${jar.name}.jar -&gt; ${env.HOME}/.kivakit/${kivakit.version}/temporary/launcher/${jar.name}.jar"/>
-                                 We need failonerror=false below so that we can build
-                                     aggregate javadoc with the shade plugin disabled, and 
-                                     then rebuild with it enabled to generate final jars. 
-                                <copy failonerror="false" file="${project.basedir}/target/${jar.name}.jar" tofile="${env.HOME}/.kivakit/${kivakit.version}/temporary/launcher/${jar.name}.jar" verbose="true"/>
-                            </target>
-                        </configuration>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-
-                    </execution>
-
-                </executions>
-
-            </plugin>-->
-
         </plugins>
-
     </build>
 
 </project>

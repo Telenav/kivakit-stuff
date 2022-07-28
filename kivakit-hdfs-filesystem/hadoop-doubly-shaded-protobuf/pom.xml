@@ -22,10 +22,10 @@
     </parent>
 
     <!--
-    This project exists entirely because of:
-    Unable to derive module descriptor for /tmp/maven-repository/org/apache/hadoop/thirdparty/hadoop-shaded-protobuf_3_7/1.1.1/hadoop-shaded-protobuf_3_7-1.1.1.jar
-    so we need a way to give it a usable module name.
-     -->
+   This project exists entirely because of:
+   Unable to derive module descriptor for /tmp/maven-repository/org/apache/hadoop/thirdparty/hadoop-shaded-protobuf_3_7/1.1.1/hadoop-shaded-protobuf_3_7-1.1.1.jar
+   so we need a way to give it a usable module name.
+    -->
 
     <artifactId>hadoop-doubly-shaded-protobuf</artifactId>
     <version>1.6.3-SNAPSHOT</version>
@@ -61,11 +61,36 @@
             <artifactId>hadoop-hdfs-client</artifactId>
             <version>${hadoop.version}</version>
         </dependency>
+        
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>kivakit-application</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>kivakit-network-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>kivakit-filesystems-hdfs-proxy-spi</artifactId>
+        </dependency>
+        
+<!--        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.9.0</version>
+        </dependency>-->
+        
     </dependencies>
 
     <build>
         <plugins>
-<!--            <plugin>
+            <!--            <plugin>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <configuration>
                     <additionalOptions>
@@ -73,7 +98,7 @@
                     </additionalOptions>
                 </configuration>
             </plugin>-->
-<!--            <plugin>
+            <!--            <plugin>
 
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -120,58 +145,64 @@
                                 <checkServiceConstructors>true</checkServiceConstructors>
                                 <generateUses>true</generateUses>
                                 <defaultPackageDest>was.in.defaultpkg</defaultPackageDest>
+                                <unrequire>com.google.gson,org.jetbrains.annotations</unrequire>
                             </extensionProperties>
-<!--                            <manifestEntries>
-                                <Random-Key>random.value</Random-Key>
-                            </manifestEntries>-->
                             <skipLicenseFiles>true</skipLicenseFiles>
                             <skipMavenMetadata>true</skipMavenMetadata>
                             <replacePom>true</replacePom>
                             <openModule>true</openModule>
-                            <excludePaths>META-INF/versions</excludePaths>
+<!--                            <exclude>
+                                java.xml.bind
+                                javax.xml.stream
+                            </exclude>
+                            <excludePatterns>java/xml/*</excludePatterns>-->
+                            <excludePaths>
+                                java/xml
+                                META-INF/versions
+                            </excludePaths>
                         </configuration>
                         <inherited>true</inherited>
                     </execution>
                 </executions>
             </plugin>
-<!--
-            <plugin>
+            <!--
+<plugin>
 
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>${maven-shade-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-shade-plugin</artifactId>
+    <version>${maven-shade-plugin.version}</version>
+    <executions>
+        <execution>
+            <phase>package</phase>
+            <goals>
+                <goal>shade</goal>
+            </goals>
 
-                        <configuration>
+            <configuration>
 
-                            <minimizeJar>false</minimizeJar>
-                            <createDependencyReducedPom>true</createDependencyReducedPom>
-                            <artifactSet>
-                                <includes>
-                                    <include>*:*</include>
-                                </includes>
-                            </artifactSet>
-                            <filters>
-                                <filter>
-                                    <artifact>*:*</artifact>
-                                    <excludes>
-                                        <exclude>javax/xml/stream/**</exclude>
-                                    </excludes>
-                                </filter>
-                            </filters>
+                <minimizeJar>false</minimizeJar>
+                <createDependencyReducedPom>true</createDependencyReducedPom>
+                <artifactSet>
+                    <includes>
+                        <include>*:*</include>
+                    </includes>
+                </artifactSet>
+                <filters>
+                    <filter>
+                        <artifact>*:*</artifact>
+                        <excludes>
+                            <exclude>javax/xml/stream/**</exclude>
+                        </excludes>
+                    </filter>
+                </filters>
 
-                        </configuration>
+            </configuration>
 
-                    </execution>
-                </executions>
+        </execution>
+    </executions>
 
-            </plugin>
-                        -->
+</plugin>
+            -->
 
         </plugins>
 
