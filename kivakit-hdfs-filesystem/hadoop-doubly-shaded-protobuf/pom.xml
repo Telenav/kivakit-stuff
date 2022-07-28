@@ -117,7 +117,9 @@
                             <classifier></classifier>
                             <extensionProperties>
                                 <moduleName>kivakit.hadoop.doubly.shaded.protobuffer</moduleName>
-                                <defaultPackageDest>wasdefaultopackage</defaultPackageDest>
+                                <checkServiceConstructors>true</checkServiceConstructors>
+                                <generateUses>true</generateUses>
+                                <defaultPackageDest>was.in.defaultpkg</defaultPackageDest>
                             </extensionProperties>
 <!--                            <manifestEntries>
                                 <Random-Key>random.value</Random-Key>
