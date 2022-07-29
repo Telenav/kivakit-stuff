@@ -33,8 +33,10 @@
     <properties>
         <enforcer.skip>true</enforcer.skip>
         <mastfrog.version>2.8.3</mastfrog.version>
-        <smart-jar-merge.version>${mastfrog.version}.2</smart-jar-merge.version>
+        <smart-jar-merge.version>${mastfrog.version}.3</smart-jar-merge.version>
+        <maven-merge-configuration.version>${mastfrog.version}.2</maven-merge-configuration.version>
         <moduleinfo-synthesizer-parent.version>1.0.2</moduleinfo-synthesizer-parent.version>
+        <!-- Hadoop version override of 3.3.0 to 3.3.3 is intentional -->
         <hadoop.version>3.3.3</hadoop.version>
     </properties>
 
@@ -45,7 +47,6 @@
             <artifactId>hadoop-shaded-protobuf_3_7</artifactId>
             <version>1.1.1</version>
         </dependency>
-        <!-- Hadoop version override of 3.3.0 to 3.3.3 is intentional -->
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-hdfs</artifactId>
@@ -75,46 +76,14 @@
             <artifactId>kivakit-filesystems-hdfs-proxy-spi</artifactId>
         </dependency>
         
-<!--        <dependency>
-            <groupId>org.jetbrains</groupId>
-            <artifactId>annotations</artifactId>
-        </dependency>
-        
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>2.9.0</version>
-        </dependency>-->
-        
     </dependencies>
 
     <build>
         <plugins>
-            <!--            <plugin>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <configuration>
-                    <additionalOptions>
-                        - -limit-modules java.xml
-                    </additionalOptions>
-                </configuration>
-            </plugin>-->
-            <!--            <plugin>
-
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>${maven-jar-plugin.version}</version>
-                <configuration>
-                    <archive>
-                        <manifestEntries>
-                            <Automatic-Module-Name>hadoop.doubly.shaded.protobuf</Automatic-Module-Name>
-                        </manifestEntries>
-                    </archive>
-                </configuration>
-
-            </plugin>-->
             <plugin>
                 <groupId>com.mastfrog</groupId>
                 <artifactId>maven-merge-configuration</artifactId>
+                <version>${maven-merge-configuration.version}</version>
                 <dependencies>
                     <dependency>
                         <groupId>com.mastfrog</groupId>
@@ -151,13 +120,7 @@
                             <skipMavenMetadata>true</skipMavenMetadata>
                             <replacePom>true</replacePom>
                             <openModule>true</openModule>
-<!--                            <exclude>
-                                java.xml.bind
-                                javax.xml.stream
-                            </exclude>
-                            <excludePatterns>java/xml/*</excludePatterns>-->
                             <excludePaths>
-                                java/xml
                                 META-INF/versions
                             </excludePaths>
                         </configuration>
@@ -165,44 +128,6 @@
                     </execution>
                 </executions>
             </plugin>
-            <!--
-<plugin>
-
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-shade-plugin</artifactId>
-    <version>${maven-shade-plugin.version}</version>
-    <executions>
-        <execution>
-            <phase>package</phase>
-            <goals>
-                <goal>shade</goal>
-            </goals>
-
-            <configuration>
-
-                <minimizeJar>false</minimizeJar>
-                <createDependencyReducedPom>true</createDependencyReducedPom>
-                <artifactSet>
-                    <includes>
-                        <include>*:*</include>
-                    </includes>
-                </artifactSet>
-                <filters>
-                    <filter>
-                        <artifact>*:*</artifact>
-                        <excludes>
-                            <exclude>javax/xml/stream/**</exclude>
-                        </excludes>
-                    </filter>
-                </filters>
-
-            </configuration>
-
-        </execution>
-    </executions>
-
-</plugin>
-            -->
 
         </plugins>
 

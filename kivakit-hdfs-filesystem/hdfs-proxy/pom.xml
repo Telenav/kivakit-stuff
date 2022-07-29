@@ -28,7 +28,8 @@
         <jar.name>kivakit-hdfs-proxy-${project.version}</jar.name>
         <enforcer.skip>true</enforcer.skip>
         <mastfrog.version>2.8.3</mastfrog.version>
-        <smart-jar-merge.version>${mastfrog.version}.2</smart-jar-merge.version>
+        <smart-jar-merge.version>${mastfrog.version}.3</smart-jar-merge.version>
+        <maven-merge-configuration.version>${mastfrog.version}.2</maven-merge-configuration.version>
         <moduleinfo-synthesizer-parent.version>1.0.2</moduleinfo-synthesizer-parent.version>
         <hadoop.version>3.3.3</hadoop.version>
     </properties>
@@ -117,6 +118,7 @@
 
                 <groupId>com.mastfrog</groupId>
                 <artifactId>maven-merge-configuration</artifactId>
+                <version>${maven-merge-configuration.version}</version>
                 <dependencies>
                     <dependency>
                         <groupId>com.mastfrog</groupId>
@@ -154,11 +156,6 @@
                             <skipMavenMetadata>true</skipMavenMetadata>
                             <replacePom>true</replacePom>
                             <openModule>true</openModule>
-<!--                            <exclude>
-                                java.xml.bind
-                                javax.xml
-                            </exclude>
-                            <excludePatterns>java/xml/*</excludePatterns>-->
                             <excludePaths>
                                 META-INF/versions
                             </excludePaths>
