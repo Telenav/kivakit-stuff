@@ -3,6 +3,7 @@ package com.telenav.kivakit.logs.server.session;
 import com.telenav.kivakit.component.BaseComponent;
 import com.telenav.kivakit.conversion.core.time.LocalDateTimeConverter;
 import com.telenav.kivakit.core.logging.LogEntry;
+import com.telenav.kivakit.core.logging.logs.text.formatters.NarrowLogFormatter;
 import com.telenav.kivakit.core.object.Lazy;
 import com.telenav.kivakit.core.progress.ProgressReporter;
 import com.telenav.kivakit.core.string.Strings;
@@ -23,7 +24,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import static com.telenav.kivakit.core.logging.logs.text.formatters.ColumnarLogFormatter.DEFAULT;
 import static com.telenav.kivakit.core.string.Formatter.Format.WITHOUT_EXCEPTION;
 import static com.telenav.kivakit.resource.Extension.KRYO;
 import static com.telenav.kivakit.resource.Extension.TXT;
@@ -95,6 +95,7 @@ SessionStore extends BaseComponent
             {
                 try (var input = sessionFile(session, KRYO).openForReading())
                 {
+                    @SuppressWarnings("resource")
                     var serializationSession = session();
                     var version = serializationSession.open(input, RESOURCE);
                     trace("Loaded session '$' (KivaKit version $)", session, version);
@@ -160,7 +161,7 @@ SessionStore extends BaseComponent
             {
                 for (var row : entries)
                 {
-                    output.println(row.format(DEFAULT, WITHOUT_EXCEPTION));
+                    output.println(row.format(NarrowLogFormatter.INSTANCE, WITHOUT_EXCEPTION));
                 }
             }
         }

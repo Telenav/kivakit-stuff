@@ -14,7 +14,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-data-formats-csv &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/images/icons/csv-32.png" srcset="https://telenav.github.io/telenav-assets/images/images/icons/csv-32-2x.png 2x"/>
+# kivakit-data-formats-csv &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/csv-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/csv-32-2x.png 2x"/>
 
 This module reads and writes CSV data.
 
