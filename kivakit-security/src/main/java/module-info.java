@@ -1,5 +1,6 @@
 open module kivakit.security
 {
+    // Annotations
     requires lexakai.annotations;
 
     // Module exports
