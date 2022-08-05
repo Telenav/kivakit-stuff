@@ -4,7 +4,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-service-viewer &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/images/icons/server-32f.png" srcset="https://telenav.github.io/telenav-assets/images/images/icons/server-32f-2x.png 2x"/>
+# kivakit-service-viewer &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/server-32f.png" srcset="https://telenav.github.io/telenav-assets/images/icons/server-32f-2x.png 2x"/>
 
 This module allows users to view service information.
 

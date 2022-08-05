@@ -14,7 +14,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-data-compression &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/images/icons/compress-32.png" srcset="https://telenav.github.io/telenav-assets/images/images/icons/compress-32-2x.png 2x"/>
+# kivakit-data-compression &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/compress-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/compress-32-2x.png 2x"/>
 
 This module contains packages for compressing and decompressing data.
 

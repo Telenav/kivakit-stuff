@@ -14,7 +14,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-math &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/images/icons/math-32.png" srcset="https://telenav.github.io/telenav-assets/images/images/icons/math-32-2x.png 2x"/>
+# kivakit-math &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/math-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/math-32-2x.png 2x"/>
 
 This module contains packages for some common math operations.
 
