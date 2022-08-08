@@ -33,8 +33,8 @@
     <properties>
         <enforcer.skip>true</enforcer.skip>
         <mastfrog.version>2.8.3</mastfrog.version>
-        <smart-jar-merge.version>${mastfrog.version}.3</smart-jar-merge.version>
-        <maven-merge-configuration.version>${mastfrog.version}.2</maven-merge-configuration.version>
+        <smart-jar-merge.version>${mastfrog.version}.5</smart-jar-merge.version>
+        <maven-merge-configuration.version>${mastfrog.version}.4</maven-merge-configuration.version>
         <moduleinfo-synthesizer-parent.version>1.0.2</moduleinfo-synthesizer-parent.version>
         <!-- Hadoop version override of 3.3.0 to 3.3.3 is intentional -->
         <hadoop.version>3.3.3</hadoop.version>
@@ -119,10 +119,12 @@
                             <skipLicenseFiles>true</skipLicenseFiles>
                             <skipMavenMetadata>true</skipMavenMetadata>
                             <replacePom>true</replacePom>
-                            <openModule>true</openModule>
                             <excludePaths>
                                 META-INF/versions
                             </excludePaths>
+                            <!-- For some reason, we have jars containing prose
+                                 descriptions of kerberos config files in some dependencies -->
+                            <excludePatterns>ccache.txt,keytab.txt,META-INF/mailcap.default</excludePatterns>
                         </configuration>
                         <inherited>true</inherited>
                     </execution>
