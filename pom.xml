@@ -14,8 +14,6 @@
     
     <modelVersion>4.0.0</modelVersion>
 
-<!-- test test test -->
-    
     <parent>
         <groupId>com.telenav</groupId>
         <artifactId>telenav-superpom-project-family</artifactId>
