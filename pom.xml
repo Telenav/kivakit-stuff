@@ -24,6 +24,8 @@
     <groupId>com.telenav.kivakit</groupId>    
     <artifactId>kivakit-stuff</artifactId>
     <version>1.6.3-SNAPSHOT</version>
+
+    <!-- pr test content -->
     
     <packaging>pom</packaging>
     <description>A collection of modules that extend KivaKit</description>
