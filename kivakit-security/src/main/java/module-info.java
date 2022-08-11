@@ -6,5 +6,4 @@ open module kivakit.security
     // Module exports
     exports com.telenav.kivakit.security.digest.digesters;
     exports com.telenav.kivakit.security.digest;
-    exports com.telenav.kivakit.security.lexakai;
 }
