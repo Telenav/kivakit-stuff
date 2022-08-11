@@ -12,7 +12,6 @@ open module kivakit.service.server
     requires io.swagger.v3.oas.annotations;
 
     // Module exports
-    exports com.telenav.kivakit.service.registry.server.lexakai;
     exports com.telenav.kivakit.service.registry.server.rest;
     exports com.telenav.kivakit.service.registry.server.webapp.pages.home;
     exports com.telenav.kivakit.service.registry.server.webapp;

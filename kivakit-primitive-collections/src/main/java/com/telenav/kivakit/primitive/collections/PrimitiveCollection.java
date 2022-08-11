@@ -60,7 +60,7 @@ import com.telenav.kivakit.primitive.collections.array.arrays.ByteArrayArray;
 import com.telenav.kivakit.primitive.collections.array.scalars.ByteArray;
 import com.telenav.kivakit.primitive.collections.array.scalars.IntArray;
 import com.telenav.kivakit.primitive.collections.array.scalars.SplitIntArray;
-import com.telenav.kivakit.primitive.collections.lexakai.DiagramPrimitiveCollection;
+import com.telenav.kivakit.primitive.collections.internal.lexakai.DiagramPrimitiveCollection;
 import com.telenav.kivakit.primitive.collections.list.store.PackedStringStore;
 import com.telenav.kivakit.primitive.collections.list.store.PrimitiveListStore;
 import com.telenav.kivakit.primitive.collections.map.PrimitiveMap;

@@ -13,7 +13,6 @@ open module kivakit.service.registry
 
     // Module exports
     exports com.telenav.kivakit.service.registry;
-    exports com.telenav.kivakit.service.registry.lexakai;
     exports com.telenav.kivakit.service.registry.protocol;
     exports com.telenav.kivakit.service.registry.registries;
     exports com.telenav.kivakit.service.registry.store;

@@ -26,7 +26,7 @@ import com.telenav.kivakit.core.time.Duration;
 import com.telenav.kivakit.core.time.Time;
 import com.telenav.kivakit.core.vm.ShutdownHook;
 import com.telenav.kivakit.filesystem.Folder;
-import com.telenav.kivakit.filesystems.hdfs.lexakai.DiagramHdfs;
+import com.telenav.kivakit.filesystems.hdfs.internal.lexakai.DiagramHdfs;
 import com.telenav.kivakit.filesystems.hdfs.proxy.spi.HdfsProxy;
 import com.telenav.kivakit.launcher.JarLauncher;
 import com.telenav.kivakit.network.core.Port;

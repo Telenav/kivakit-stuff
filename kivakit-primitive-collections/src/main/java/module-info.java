@@ -29,5 +29,4 @@ open module kivakit.primitive.collections
     exports com.telenav.kivakit.primitive.collections.map.split;
     exports com.telenav.kivakit.primitive.collections.set;
     exports com.telenav.kivakit.primitive.collections.map.multi;
-    exports com.telenav.kivakit.primitive.collections.lexakai;
 }
