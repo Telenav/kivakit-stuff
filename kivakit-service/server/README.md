@@ -14,7 +14,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-service-server &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/images/icons/server-32.png" srcset="https://telenav.github.io/telenav-assets/images/images/icons/server-32-2x.png 2x"/>
+# kivakit-service-server &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/server-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/server-32-2x.png 2x"/>
 
 This module provides port registration services to kivakit-service-client
 

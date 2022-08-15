@@ -4,7 +4,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-data-formats-xml &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/images/icons/bits-32.png" srcset="https://telenav.github.io/telenav-assets/images/images/icons/bits-32-2x.png 2x"/>
+# kivakit-data-formats-xml &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/bits-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/bits-32-2x.png 2x"/>
 
 This module reads and writes XML data using Java's StAX pull parser.
 

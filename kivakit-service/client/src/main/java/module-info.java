@@ -12,5 +12,4 @@ open module kivakit.service.client
 
     // Module exports
     exports com.telenav.kivakit.service.registry.client;
-    exports com.telenav.kivakit.service.registry.client.lexakai;
 }

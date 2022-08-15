@@ -14,7 +14,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-serialization yaml &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/images/icons/communicate-32.png" srcset="https://telenav.github.io/telenav-assets/images/images/icons/communicate-32-2x.png 2x"/>
+# kivakit-serialization yaml &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/communicate-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/communicate-32-2x.png 2x"/>
 
 This project contains support for serializing objects to YAML.
 

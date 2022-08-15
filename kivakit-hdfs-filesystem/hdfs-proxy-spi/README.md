@@ -14,7 +14,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-filesystems-hdfs-proxy-spi &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/images/icons/communicate-32.png" srcset="https://telenav.github.io/telenav-assets/images/images/icons/communicate-32-2x.png 2x"/>
+# kivakit-filesystems-hdfs-proxy-spi &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/communicate-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/communicate-32-2x.png 2x"/>
 
 Service provider interface for HDFS proxy.
 

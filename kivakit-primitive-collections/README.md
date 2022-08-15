@@ -14,7 +14,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-primitive-collections &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/images/icons/set-32.png" srcset="https://telenav.github.io/telenav-assets/images/images/icons/set-32-2x.png 2x"/>
+# kivakit-primitive-collections &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/set-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/set-32-2x.png 2x"/>
 
 The primitive collections store data in primitive data structures.
 
