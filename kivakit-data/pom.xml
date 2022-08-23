@@ -28,8 +28,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>compression</module>
         <module>formats</module>
+        <module>compression</module>
     </modules>
 
 </project>
