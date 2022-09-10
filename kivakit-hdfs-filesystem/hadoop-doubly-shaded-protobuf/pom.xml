@@ -32,9 +32,9 @@
 
     <properties>
         <enforcer.skip>true</enforcer.skip>
-        <mastfrog.version>2.8.3</mastfrog.version>
-        <smart-jar-merge.version>${mastfrog.version}.5</smart-jar-merge.version>
-        <maven-merge-configuration.version>${mastfrog.version}.4</maven-merge-configuration.version>
+        <mastfrog.version>2.8.5</mastfrog.version>
+        <smart-jar-merge.version>${mastfrog.version}</smart-jar-merge.version>
+        <maven-merge-configuration.version>${mastfrog.version}</maven-merge-configuration.version>
         <moduleinfo-synthesizer-parent.version>1.0.2</moduleinfo-synthesizer-parent.version>
         <!-- Hadoop version override of 3.3.0 to 3.3.3 is intentional -->
         <hadoop.version>3.3.3</hadoop.version>
