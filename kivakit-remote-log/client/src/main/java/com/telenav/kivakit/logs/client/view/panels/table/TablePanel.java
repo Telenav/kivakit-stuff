@@ -2,6 +2,7 @@ package com.telenav.kivakit.logs.client.view.panels.table;
 
 import com.telenav.kivakit.core.collections.list.StringList;
 import com.telenav.kivakit.core.logging.LogEntry;
+import com.telenav.kivakit.core.logging.logs.text.formatters.WideLogFormatter;
 import com.telenav.kivakit.core.string.Align;
 import com.telenav.kivakit.core.string.StringTo;
 import com.telenav.kivakit.core.time.Duration;
@@ -25,7 +26,6 @@ import java.awt.event.ComponentEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.telenav.kivakit.core.logging.logs.text.formatters.ColumnarLogFormatter.DEFAULT;
 import static com.telenav.kivakit.core.string.Formatter.Format.WITHOUT_EXCEPTION;
 import static com.telenav.kivakit.interfaces.string.Stringable.Format.USER_LABEL;
 import static com.telenav.kivakit.logs.client.view.panels.table.TableModel.CONTEXT;
@@ -191,7 +191,7 @@ public class TablePanel extends KivaKitPanel
                     {
                         var modelIndex = table().convertRowIndexToModel(rowIndex);
                         var row = model.row(modelIndex);
-                        lines.add(row.format(DEFAULT, WITHOUT_EXCEPTION));
+                        lines.add(row.format(WideLogFormatter.INSTANCE, WITHOUT_EXCEPTION));
                         var stackTrace = row.stackTrace();
                         if (stackTrace != null)
                         {

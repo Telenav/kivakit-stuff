@@ -38,7 +38,7 @@ import com.telenav.kivakit.service.registry.ServiceMetadata;
 import com.telenav.kivakit.service.registry.ServiceRegistry;
 import com.telenav.kivakit.service.registry.ServiceRegistrySettings;
 import com.telenav.kivakit.service.registry.ServiceType;
-import com.telenav.kivakit.service.registry.client.lexakai.DiagramClient;
+import com.telenav.kivakit.service.registry.client.internal.lexakai.DiagramClient;
 import com.telenav.kivakit.service.registry.protocol.BaseRequest;
 import com.telenav.kivakit.service.registry.protocol.BaseResponse;
 import com.telenav.kivakit.service.registry.protocol.discover.DiscoverApplicationsRequest;

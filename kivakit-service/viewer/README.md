@@ -4,7 +4,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-service-viewer &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/images/icons/server-32f.png" srcset="https://telenav.github.io/telenav-assets/images/images/icons/server-32f-2x.png 2x"/>
+# kivakit-service-viewer &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/server-32f.png" srcset="https://telenav.github.io/telenav-assets/images/icons/server-32f-2x.png 2x"/>
 
 This module allows users to view service information.
 
@@ -20,14 +20,14 @@ This module allows users to view service information.
 
 ### Dependencies <a name="dependencies"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/dependencies-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/dependencies-32-2x.png 2x"/>
 
-[*Dependency Diagram*](https://www.kivakit.org/1.6.1/lexakai/kivakit-stuff/kivakit-service/viewer/documentation/diagrams/dependencies.svg)
+[*Dependency Diagram*](https://www.kivakit.org/1.7.0/lexakai/kivakit-stuff/kivakit-service/viewer/documentation/diagrams/dependencies.svg)
 
 #### Maven Dependency
 
     <dependency>
         <groupId>com.telenav.kivakit</groupId>
         <artifactId>kivakit-service-viewer</artifactId>
-        <version>1.6.1</version>
+        <version>1.7.0</version>
     </dependency>
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
@@ -48,7 +48,7 @@ None
 
 ### Package Diagrams <a name="package-diagrams"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/box-24.png" srcset="https://telenav.github.io/telenav-assets/images/icons/box-24-2x.png 2x"/>
 
-[*com.telenav.kivakit.service.viewer*](https://www.kivakit.org/1.6.1/lexakai/kivakit-stuff/kivakit-service/viewer/documentation/diagrams/com.telenav.kivakit.service.viewer.svg)
+[*com.telenav.kivakit.service.viewer*](https://www.kivakit.org/1.7.0/lexakai/kivakit-stuff/kivakit-service/viewer/documentation/diagrams/com.telenav.kivakit.service.viewer.svg)
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
@@ -61,11 +61,11 @@ Javadoc coverage for this project is 33.3%.
 
 The following significant classes are undocumented:  
 
-- com.telenav.kivakit.service.viewer
+- com.telenav.kivakit.service.viewer.ServiceRegistryViewerApplication
 
 | Class | Documentation Sections |
 |---|---|
-| [*ServiceRegistryViewerApplication*](https://www.kivakit.org/1.6.1/javadoc/kivakit-stuff/kivakit.service.viewer////////////////////////////////////////////////////////////////////.html) |  |  
+| [*ServiceRegistryViewerApplication*](https://www.kivakit.org/1.7.0/javadoc/kivakit-stuff/kivakit.service.viewer////////////////////////////////////////////////////////////////////.html) |  |  
 
 [//]: # (start-user-text)
 

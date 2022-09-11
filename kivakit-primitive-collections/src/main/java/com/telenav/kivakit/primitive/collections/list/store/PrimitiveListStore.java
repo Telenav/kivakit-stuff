@@ -19,7 +19,7 @@
 package com.telenav.kivakit.primitive.collections.list.store;
 
 import com.telenav.kivakit.primitive.collections.PrimitiveCollection;
-import com.telenav.kivakit.primitive.collections.lexakai.DiagramPrimitiveList;
+import com.telenav.kivakit.primitive.collections.internal.lexakai.DiagramPrimitiveList;
 import com.telenav.lexakai.annotations.UmlClassDiagram;
 
 /**

@@ -14,7 +14,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-filesystems-hdfs &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/images/icons/communicate-32.png" srcset="https://telenav.github.io/telenav-assets/images/images/icons/communicate-32-2x.png 2x"/>
+# kivakit-filesystems-hdfs &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/communicate-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/communicate-32-2x.png 2x"/>
 
 HDFS proxy due to large number of conflicts between HDFS and other projects, especially Spark.
 
@@ -32,14 +32,14 @@ HDFS proxy due to large number of conflicts between HDFS and other projects, esp
 
 ### Dependencies <a name="dependencies"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/dependencies-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/dependencies-32-2x.png 2x"/>
 
-[*Dependency Diagram*](https://www.kivakit.org/1.6.1/lexakai/kivakit-stuff/kivakit-hdfs-filesystem/hdfs/documentation/diagrams/dependencies.svg)
+[*Dependency Diagram*](https://www.kivakit.org/1.7.0/lexakai/kivakit-stuff/kivakit-hdfs-filesystem/hdfs/documentation/diagrams/dependencies.svg)
 
 #### Maven Dependency
 
     <dependency>
         <groupId>com.telenav.kivakit</groupId>
         <artifactId>kivakit-filesystems-hdfs</artifactId>
-        <version>1.6.1</version>
+        <version>1.7.0</version>
     </dependency>
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
@@ -85,14 +85,14 @@ any application.
 
 ### Class Diagrams <a name="class-diagrams"></a> &nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/diagram-40.png" srcset="https://telenav.github.io/telenav-assets/images/icons/diagram-40-2x.png 2x"/>
 
-[*diagram-hdfs*](https://www.kivakit.org/1.6.1/lexakai/kivakit-stuff/kivakit-hdfs-filesystem/hdfs/documentation/diagrams/diagram-hdfs.svg)
+[*diagram-hdfs*](https://www.kivakit.org/1.7.0/lexakai/kivakit-stuff/kivakit-hdfs-filesystem/hdfs/documentation/diagrams/diagram-hdfs.svg)
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
 ### Package Diagrams <a name="package-diagrams"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/box-24.png" srcset="https://telenav.github.io/telenav-assets/images/icons/box-24-2x.png 2x"/>
 
-[*com.telenav.kivakit.filesystems.hdfs*](https://www.kivakit.org/1.6.1/lexakai/kivakit-stuff/kivakit-hdfs-filesystem/hdfs/documentation/diagrams/com.telenav.kivakit.filesystems.hdfs.svg)  
-[*com.telenav.kivakit.filesystems.hdfs.lexakai*](https://www.kivakit.org/1.6.1/lexakai/kivakit-stuff/kivakit-hdfs-filesystem/hdfs/documentation/diagrams/com.telenav.kivakit.filesystems.hdfs.lexakai.svg)
+[*com.telenav.kivakit.filesystems.hdfs*](https://www.kivakit.org/1.7.0/lexakai/kivakit-stuff/kivakit-hdfs-filesystem/hdfs/documentation/diagrams/com.telenav.kivakit.filesystems.hdfs.svg)  
+[*com.telenav.kivakit.filesystems.hdfs.internal.lexakai*](https://www.kivakit.org/1.7.0/lexakai/kivakit-stuff/kivakit-hdfs-filesystem/hdfs/documentation/diagrams/com.telenav.kivakit.filesystems.hdfs.internal.lexakai.svg)
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
@@ -107,13 +107,13 @@ Javadoc coverage for this project is 82.3%.
 
 | Class | Documentation Sections |
 |---|---|
-| [*DiagramHdfs*](https://www.kivakit.org/1.6.1/javadoc/kivakit-stuff/kivakit.filesystems.hdfs/////////////////////////////////////////////////////////.html) |  |  
-| [*HdfsFile*](https://www.kivakit.org/1.6.1/javadoc/kivakit-stuff/kivakit.filesystems.hdfs//////////////////////////////////////////////.html) |  |  
-| [*HdfsFileSystemService*](https://www.kivakit.org/1.6.1/javadoc/kivakit-stuff/kivakit.filesystems.hdfs///////////////////////////////////////////////////////////.html) |  |  
-| [*HdfsFolder*](https://www.kivakit.org/1.6.1/javadoc/kivakit-stuff/kivakit.filesystems.hdfs////////////////////////////////////////////////.html) |  |  
-| [*HdfsProxyClient*](https://www.kivakit.org/1.6.1/javadoc/kivakit-stuff/kivakit.filesystems.hdfs/////////////////////////////////////////////////////.html) |  |  
-| [*HdfsProxyIO*](https://www.kivakit.org/1.6.1/javadoc/kivakit-stuff/kivakit.filesystems.hdfs/////////////////////////////////////////////////.html) |  |  
-| [*HdfsSettings*](https://www.kivakit.org/1.6.1/javadoc/kivakit-stuff/kivakit.filesystems.hdfs//////////////////////////////////////////////////.html) | Settings |  
+| [*DiagramHdfs*](https://www.kivakit.org/1.7.0/javadoc/kivakit-stuff/kivakit.filesystems.hdfs//////////////////////////////////////////////////////////////////.html) |  |  
+| [*HdfsFile*](https://www.kivakit.org/1.7.0/javadoc/kivakit-stuff/kivakit.filesystems.hdfs//////////////////////////////////////////////.html) |  |  
+| [*HdfsFileSystemService*](https://www.kivakit.org/1.7.0/javadoc/kivakit-stuff/kivakit.filesystems.hdfs///////////////////////////////////////////////////////////.html) |  |  
+| [*HdfsFolder*](https://www.kivakit.org/1.7.0/javadoc/kivakit-stuff/kivakit.filesystems.hdfs////////////////////////////////////////////////.html) |  |  
+| [*HdfsProxyClient*](https://www.kivakit.org/1.7.0/javadoc/kivakit-stuff/kivakit.filesystems.hdfs/////////////////////////////////////////////////////.html) |  |  
+| [*HdfsProxyIO*](https://www.kivakit.org/1.7.0/javadoc/kivakit-stuff/kivakit.filesystems.hdfs/////////////////////////////////////////////////.html) |  |  
+| [*HdfsSettings*](https://www.kivakit.org/1.7.0/javadoc/kivakit-stuff/kivakit.filesystems.hdfs//////////////////////////////////////////////////.html) | Settings |  
 
 [//]: # (start-user-text)
 
