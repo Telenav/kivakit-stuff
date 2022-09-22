@@ -51,7 +51,7 @@ import static com.telenav.kivakit.serialization.core.SerializationSession.Sessio
     }
 
     @Override
-    public Duration maximumWaitTime()
+    public Duration maximumStopTime()
     {
         return Duration.MAXIMUM;
     }
