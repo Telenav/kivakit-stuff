@@ -44,7 +44,6 @@
         
         <module>kivakit-math</module>
         <module>kivakit-service</module>
-        <module>kivakit-hdfs-filesystem</module>
         <module>kivakit-security</module>
         <module>kivakit-ui</module>
         <module>kivakit-primitive-collections</module>
