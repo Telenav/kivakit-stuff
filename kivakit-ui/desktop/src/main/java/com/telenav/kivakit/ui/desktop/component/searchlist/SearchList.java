@@ -89,7 +89,7 @@ public class SearchList<T> extends KivaKitPanel
             var selected = list.getSelectedValue();
             if (selected != null)
             {
-                selectionListener.callback(selected);
+                selectionListener.call(selected);
             }
         });
     }

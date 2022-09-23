@@ -60,7 +60,7 @@ public abstract class BaseResponse<T>
     {
         result.ifPresent(this::value);
 
-        problem = (Problem) result.messages().find(Problem.class);
+        problem = (Problem) result.messages().findFirst(Problem.class);
     }
 
     @KivaKitIncludeProperty

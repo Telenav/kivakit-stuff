@@ -1,6 +1,6 @@
 package com.telenav.kivakit.primitive.collections;
 
-import com.telenav.kivakit.annotations.code.CodeQuality;
+import com.telenav.kivakit.annotations.code.ApiQuality;
 import com.telenav.kivakit.interfaces.numeric.Zeroable;
 
 import static com.telenav.kivakit.annotations.code.ApiStability.STABLE;
@@ -13,9 +13,9 @@ import static com.telenav.kivakit.annotations.code.TestingQuality.UNNECESSARY;
  * @author jonathanl (shibo)
  * @see Quantizable
  */
-@CodeQuality(stability = STABLE,
-             testing = UNNECESSARY,
-             documentation = SUFFICIENT)
+@ApiQuality(stability = STABLE,
+            testing = UNNECESSARY,
+            documentation = SUFFICIENT)
 public interface DoubleQuantizable extends Zeroable
 {
     /**

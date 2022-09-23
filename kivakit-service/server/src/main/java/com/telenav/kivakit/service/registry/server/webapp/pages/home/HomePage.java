@@ -100,7 +100,7 @@ public class HomePage extends ServiceRegistryWebPage
             }
         });
 
-        updatingContainer.add(new Label("error", () -> services.getObject().messages().find(Problem.class).description())
+        updatingContainer.add(new Label("error", () -> services.getObject().messages().findFirst(Problem.class).description())
         {
             @Override
             public boolean isVisible()
