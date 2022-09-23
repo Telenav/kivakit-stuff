@@ -997,7 +997,7 @@ public abstract class PrimitiveCollection implements
             {
                 // show both dimensions of the primitive collection
                 LOGGER.log(new Activity(stack, "$ $ $($ x $ = $)", who, why, what, Count.count(initialSize),
-                        Count.count(estimatedChildSize), Count.count(initialSize / estimatedChildSize).minimum(Count._16)));
+                        Count.count(estimatedChildSize), Count.count(initialSize / estimatedChildSize).minimize(Count._16)));
             }
             else
             {

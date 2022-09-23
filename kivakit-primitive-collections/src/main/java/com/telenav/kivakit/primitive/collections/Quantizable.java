@@ -81,7 +81,7 @@ public interface Quantizable extends
                 return quantumAsSimpleString();
 
             default:
-                return quantumAsCommaSeparatedString();
+                return asCommaSeparatedString();
         }
     }
 
@@ -96,7 +96,7 @@ public interface Quantizable extends
      */
     long quantum();
 
-    default String quantumAsCommaSeparatedString()
+    default String asCommaSeparatedString()
     {
         return String.format("%,d", quantum());
     }
