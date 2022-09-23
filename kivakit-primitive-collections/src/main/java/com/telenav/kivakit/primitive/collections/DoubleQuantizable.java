@@ -4,8 +4,8 @@ import com.telenav.kivakit.annotations.code.ApiQuality;
 import com.telenav.kivakit.interfaces.numeric.Zeroable;
 
 import static com.telenav.kivakit.annotations.code.ApiStability.STABLE;
-import static com.telenav.kivakit.annotations.code.DocumentationQuality.SUFFICIENT;
-import static com.telenav.kivakit.annotations.code.TestingQuality.UNNECESSARY;
+import static com.telenav.kivakit.annotations.code.DocumentationQuality.DOCUMENTED;
+import static com.telenav.kivakit.annotations.code.TestingQuality.TESTING_NOT_REQUIRED;
 
 /***
  * A quantizable object that can be turned into a <i>double</i> value.
@@ -14,8 +14,8 @@ import static com.telenav.kivakit.annotations.code.TestingQuality.UNNECESSARY;
  * @see Quantizable
  */
 @ApiQuality(stability = STABLE,
-            testing = UNNECESSARY,
-            documentation = SUFFICIENT)
+            testing = TESTING_NOT_REQUIRED,
+            documentation = DOCUMENTED)
 public interface DoubleQuantizable extends Zeroable
 {
     /**

@@ -25,8 +25,8 @@ import com.telenav.kivakit.interfaces.model.Identifiable;
 import com.telenav.kivakit.interfaces.string.StringFormattable;
 
 import static com.telenav.kivakit.annotations.code.ApiStability.STABLE;
-import static com.telenav.kivakit.annotations.code.DocumentationQuality.SUFFICIENT;
-import static com.telenav.kivakit.annotations.code.TestingQuality.UNNECESSARY;
+import static com.telenav.kivakit.annotations.code.DocumentationQuality.DOCUMENTED;
+import static com.telenav.kivakit.annotations.code.TestingQuality.TESTING_NOT_REQUIRED;
 
 /**
  * A quantizable object can be turned into a quantum. A quantum is a discrete value and is represented by the Java
@@ -66,8 +66,8 @@ import static com.telenav.kivakit.annotations.code.TestingQuality.UNNECESSARY;
 @SuppressWarnings("unused")
 @FunctionalInterface
 @ApiQuality(stability = STABLE,
-            testing = UNNECESSARY,
-            documentation = SUFFICIENT)
+            testing = TESTING_NOT_REQUIRED,
+            documentation = DOCUMENTED)
 public interface Quantizable extends
         DoubleQuantizable,
         StringFormattable
