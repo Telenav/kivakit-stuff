@@ -18,6 +18,8 @@
 
 package com.telenav.kivakit.service.registry.server.rest;
 
+import com.telenav.kivakit.core.function.ResultTrait;
+import com.telenav.kivakit.core.project.ProjectTrait;
 import com.telenav.kivakit.service.registry.Service;
 import com.telenav.kivakit.service.registry.ServiceRegistry;
 import com.telenav.kivakit.service.registry.ServiceRegistrySettings;
@@ -88,7 +90,9 @@ import javax.ws.rs.core.Response;
 )
 @Path("api/1.1.0")
 @LexakaiJavadoc(complete = true)
-public class ServiceRegistryRestResource extends BaseRestResource
+public class ServiceRegistryRestResource extends BaseRestResource implements
+        ProjectTrait,
+        ResultTrait
 {
     /** The service registry to query and update */
     private final ServiceRegistry registry = ServiceRegistryServer.get().serviceRegistry();

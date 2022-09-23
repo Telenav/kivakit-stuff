@@ -22,6 +22,7 @@ import com.telenav.kivakit.application.Application;
 import com.telenav.kivakit.collections.set.MultiSet;
 import com.telenav.kivakit.core.collections.Sets;
 import com.telenav.kivakit.core.function.Result;
+import com.telenav.kivakit.core.function.ResultTrait;
 import com.telenav.kivakit.core.messaging.repeaters.BaseRepeater;
 import com.telenav.kivakit.core.thread.KivaKitThread;
 import com.telenav.kivakit.core.thread.locks.ReadWriteLock;
@@ -101,10 +102,14 @@ import static com.telenav.kivakit.core.vm.ShutdownHook.Order.FIRST;
  * @see Application.Identifier
  * @see Port
  */
+@SuppressWarnings("unused")
 @UmlClassDiagram(diagram = DiagramRegistry.class)
 @UmlNotPublicApi
 @UmlExcludeSuperTypes({ Startable.class })
-public abstract class BaseServiceRegistry extends BaseRepeater implements ServiceRegistry, Startable
+public abstract class BaseServiceRegistry extends BaseRepeater implements
+        ServiceRegistry,
+        Startable,
+        ResultTrait
 {
     /** Services by application */
     private MultiSet<Application.Identifier, Service> applicationToServices = new MultiSet<>();

@@ -23,8 +23,10 @@ import com.telenav.kivakit.application.Application;
 import com.telenav.kivakit.application.Server;
 import com.telenav.kivakit.component.BaseComponent;
 import com.telenav.kivakit.core.function.Result;
+import com.telenav.kivakit.core.function.ResultTrait;
 import com.telenav.kivakit.core.language.reflection.Type;
 import com.telenav.kivakit.core.os.OperatingSystem;
+import com.telenav.kivakit.core.project.ProjectTrait;
 import com.telenav.kivakit.core.thread.KivaKitThread;
 import com.telenav.kivakit.core.time.Duration;
 import com.telenav.kivakit.core.version.Version;
@@ -204,7 +206,9 @@ import static com.telenav.kivakit.service.registry.protocol.discover.DiscoverSer
 @UmlRelation(label = "discovers applications", referent = Application.Identifier.class)
 @UmlRelation(label = "discovers services", referent = Provider.Service.class)
 @UmlRelation(label = "searches within", referent = Scope.class)
-public class ServiceRegistryClient extends BaseComponent
+public class ServiceRegistryClient extends BaseComponent implements
+        ProjectTrait,
+        ResultTrait
 {
     /** True if the client is connected */
     private boolean connected;
@@ -556,6 +560,7 @@ public class ServiceRegistryClient extends BaseComponent
                         .path(this, settings().restApiPath())
                         .withChild(request.path());
                 trace("Posting $ to $", request.getClass().getSimpleName(), path);
+                @SuppressWarnings("resource")
                 var jaxResponse = client
                         .target(path.toString())
                         .request("application/json")

@@ -30,6 +30,7 @@ import com.telenav.kivakit.core.progress.ProgressReporter;
 import com.telenav.kivakit.core.progress.reporters.BroadcastingProgressReporter;
 import com.telenav.kivakit.core.progress.reporters.ProgressiveInputStream;
 import com.telenav.kivakit.core.progress.reporters.ProgressiveOutputStream;
+import com.telenav.kivakit.core.project.ProjectTrait;
 import com.telenav.kivakit.core.thread.KivaKitThread;
 import com.telenav.kivakit.core.thread.Monitor;
 import com.telenav.kivakit.core.time.Duration;
@@ -64,7 +65,9 @@ import static com.telenav.kivakit.serialization.core.SerializationSession.Sessio
 import static com.telenav.kivakit.serialization.core.SerializationSession.SessionType.SERVER;
 
 @SuppressWarnings("UnusedReturnValue")
-public class ServerLog extends BaseTextLog implements ComponentMixin
+public class ServerLog extends BaseTextLog implements
+        ComponentMixin,
+        ProjectTrait
 {
     public static final ServiceType SERVER_LOG = new ServiceType("kivakit-server-log");
 

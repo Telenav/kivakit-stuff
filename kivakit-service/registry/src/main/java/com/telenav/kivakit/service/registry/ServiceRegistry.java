@@ -21,6 +21,7 @@ package com.telenav.kivakit.service.registry;
 import com.telenav.kivakit.application.Application;
 import com.telenav.kivakit.component.ComponentMixin;
 import com.telenav.kivakit.core.function.Result;
+import com.telenav.kivakit.core.function.ResultTrait;
 import com.telenav.kivakit.network.core.Host;
 import com.telenav.kivakit.network.core.Port;
 import com.telenav.kivakit.service.registry.internal.lexakai.DiagramRegistry;
@@ -56,11 +57,12 @@ import static com.telenav.kivakit.core.ensure.Ensure.unsupported;
  * @see Port
  * @see Result
  */
+@SuppressWarnings("unused")
 @UmlClassDiagram(diagram = DiagramRegistry.class)
 @UmlNote(text = "Use ServiceRegistryClient to register and discover services")
 @UmlNotPublicApi
 @LexakaiJavadoc(complete = true)
-public interface ServiceRegistry extends ComponentMixin
+public interface ServiceRegistry extends ComponentMixin, ResultTrait
 {
     /**
      * <b>Not public API</b>

@@ -6,6 +6,7 @@ import com.telenav.kivakit.core.logging.LogEntry;
 import com.telenav.kivakit.core.logging.logs.text.formatters.NarrowLogFormatter;
 import com.telenav.kivakit.core.object.Lazy;
 import com.telenav.kivakit.core.progress.ProgressReporter;
+import com.telenav.kivakit.core.project.ProjectTrait;
 import com.telenav.kivakit.core.string.Strings;
 import com.telenav.kivakit.filesystem.File;
 import com.telenav.kivakit.filesystem.Folder;
@@ -34,7 +35,7 @@ import static com.telenav.kivakit.serialization.core.SerializationSession.Sessio
  */
 @SuppressWarnings("unused")
 public class
-SessionStore extends BaseComponent
+SessionStore extends BaseComponent implements ProjectTrait
 {
     private static final Lazy<SessionStore> store = Lazy.of(SessionStore::new);
 
