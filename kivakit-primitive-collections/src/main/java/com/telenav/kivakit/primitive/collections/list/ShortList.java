@@ -20,7 +20,7 @@ package com.telenav.kivakit.primitive.collections.list;
 
 import com.telenav.kivakit.interfaces.collection.Sized;
 import com.telenav.kivakit.interfaces.naming.Named;
-import com.telenav.kivakit.interfaces.numeric.Quantizable;
+import com.telenav.kivakit.primitive.collections.Quantizable;
 import com.telenav.kivakit.primitive.collections.ShortCollection;
 import com.telenav.kivakit.primitive.collections.iteration.ShortIterable;
 import com.telenav.kivakit.primitive.collections.iteration.ShortIterator;

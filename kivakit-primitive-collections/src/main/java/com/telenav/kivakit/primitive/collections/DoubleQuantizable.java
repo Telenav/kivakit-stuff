@@ -1,0 +1,31 @@
+package com.telenav.kivakit.primitive.collections;
+
+import com.telenav.kivakit.annotations.code.CodeQuality;
+import com.telenav.kivakit.interfaces.numeric.Zeroable;
+
+import static com.telenav.kivakit.annotations.code.ApiStability.STABLE;
+import static com.telenav.kivakit.annotations.code.DocumentationQuality.SUFFICIENT;
+import static com.telenav.kivakit.annotations.code.TestingQuality.UNNECESSARY;
+
+/***
+ * A quantizable object that can be turned into a <i>double</i> value.
+ *
+ * @author jonathanl (shibo)
+ * @see Quantizable
+ */
+@CodeQuality(stability = STABLE,
+             testing = UNNECESSARY,
+             documentation = SUFFICIENT)
+public interface DoubleQuantizable extends Zeroable
+{
+    /**
+     * Returns the double quantum value
+     */
+    double quantumDouble();
+
+    @Override
+    default boolean isZero()
+    {
+        return quantumDouble() == 0.0;
+    }
+}

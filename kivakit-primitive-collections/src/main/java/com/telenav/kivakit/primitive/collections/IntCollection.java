@@ -21,7 +21,6 @@ package com.telenav.kivakit.primitive.collections;
 import com.telenav.kivakit.interfaces.collection.Sized;
 import com.telenav.kivakit.interfaces.naming.Named;
 import com.telenav.kivakit.interfaces.naming.NamedObject;
-import com.telenav.kivakit.interfaces.numeric.Quantizable;
 import com.telenav.kivakit.primitive.collections.iteration.IntIterable;
 import com.telenav.kivakit.primitive.collections.iteration.IntIterator;
 import com.telenav.kivakit.primitive.collections.internal.lexakai.DiagramPrimitiveCollection;

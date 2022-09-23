@@ -16,22 +16,27 @@
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-package com.telenav.kivakit.primitive.collections.map.multi;
+package com.telenav.kivakit.primitive.collections;
 
-import com.telenav.kivakit.interfaces.collection.Sized;
-import com.telenav.kivakit.primitive.collections.Quantizable;
-import com.telenav.kivakit.primitive.collections.array.scalars.LongArray;
-import com.telenav.kivakit.primitive.collections.internal.lexakai.DiagramPrimitiveMultiMap;
-import com.telenav.lexakai.annotations.UmlClassDiagram;
-
-import java.util.List;
-
-@UmlClassDiagram(diagram = DiagramPrimitiveMultiMap.class)
-public interface LongMultiMap extends Sized
+/**
+ * An object which has a long key value and is also {@link Quantizable} as are many objects.
+ *
+ * @author jonathanl (shibo)
+ * @see Quantizable
+ */
+public interface LongKeyed extends Quantizable
 {
-    LongArray get(long key);
+    /**
+     * @return The key
+     */
+    long key();
 
-    void putAll(long key, LongArray values);
-
-    void putAll(long key, List<? extends Quantizable> values);
+    /**
+     * @return The key as a quantum
+     */
+    @Override
+    default long quantum()
+    {
+        return key();
+    }
 }
