@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.telenav.kivakit.core.language.object.KivaKitFormatProperty;
 import com.telenav.kivakit.core.language.object.ObjectFormatter;
 import com.telenav.kivakit.core.language.reflection.property.KivaKitIncludeProperty;
-import com.telenav.kivakit.interfaces.string.Stringable;
+import com.telenav.kivakit.interfaces.string.StringFormattable;
 import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeMember;
 import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeType;
 import com.telenav.kivakit.service.registry.Service;
@@ -48,7 +48,7 @@ public class RenewServiceResponse extends BaseResponse<Service>
     private Service service;
 
     @KivaKitIncludeProperty
-    @KivaKitFormatProperty(format = Stringable.Format.LOG)
+    @KivaKitFormatProperty(format = StringFormattable.Format.LOG)
     public Service service()
     {
         return service;

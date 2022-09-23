@@ -26,7 +26,7 @@ import com.telenav.kivakit.core.language.object.ObjectFormatter;
 import com.telenav.kivakit.core.language.reflection.property.KivaKitIncludeProperty;
 import com.telenav.kivakit.core.time.Time;
 import com.telenav.kivakit.core.vm.JavaVirtualMachineHealth;
-import com.telenav.kivakit.interfaces.string.Stringable;
+import com.telenav.kivakit.interfaces.string.StringFormattable;
 import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeMember;
 import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeType;
 import com.telenav.kivakit.network.core.Host;
@@ -87,7 +87,7 @@ import static com.telenav.kivakit.core.language.object.ObjectFormatter.Format.SI
 @UmlClassDiagram(diagram = DiagramRegistry.class)
 @UmlExcludeSuperTypes
 @LexakaiJavadoc(complete = true)
-public class Service extends BaseComponent implements Comparable<Service>, Stringable
+public class Service extends BaseComponent implements Comparable<Service>, StringFormattable
 {
     public static final Port UNBOUND = Host.local().port(0);
 

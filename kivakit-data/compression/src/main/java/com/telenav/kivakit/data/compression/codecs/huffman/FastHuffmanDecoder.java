@@ -27,7 +27,7 @@ import com.telenav.kivakit.core.string.Strings;
 import com.telenav.kivakit.data.compression.SymbolConsumer;
 import com.telenav.kivakit.data.compression.SymbolConsumer.Directive;
 import com.telenav.kivakit.data.compression.codecs.huffman.tree.CodedSymbol;
-import com.telenav.kivakit.interfaces.string.Stringable;
+import com.telenav.kivakit.interfaces.string.StringFormattable;
 import com.telenav.kivakit.primitive.collections.array.bits.BitArray;
 import com.telenav.kivakit.primitive.collections.array.scalars.ByteArray;
 import com.telenav.kivakit.primitive.collections.list.ByteList;
@@ -61,10 +61,10 @@ public final class FastHuffmanDecoder<Symbol>
      * of this, including an example set of decoding tables, see page 69 of <a href="https://people.ucalgary.ca/~dfeder/449/Huffman.pdf">Fast
      * Huffman Decoding</a>
      */
-    public static class Table<Symbol> implements Stringable
+    public static class Table<Symbol> implements StringFormattable
     {
         /** An entry in this fast decoder table */
-        public static class Entry<Symbol> implements Stringable
+        public static class Entry<Symbol> implements StringFormattable
         {
             /** The table that owns this entry */
             private Table<Symbol> table;
