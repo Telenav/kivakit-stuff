@@ -60,9 +60,12 @@ import com.telenav.lexakai.annotations.UmlClassDiagram;
  * @see CsvReader
  * @see CsvWriter
  */
+@SuppressWarnings({ "unused", "SpellCheckingInspection" })
 @UmlClassDiagram(diagram = DiagramCsv.class)
 @LexakaiJavadoc(complete = true)
-public class CsvLine extends StringList implements PropertyValues, RepeaterMixin
+public class CsvLine extends StringList implements
+        PropertyValues,
+        RepeaterMixin
 {
     /** The schema that this line obeys */
     private final transient CsvSchema schema;
@@ -231,7 +234,7 @@ public class CsvLine extends StringList implements PropertyValues, RepeaterMixin
     }
 
     @Override
-    protected String separator()
+    public String separator()
     {
         return Character.toString(delimiter());
     }

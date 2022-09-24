@@ -25,7 +25,7 @@ import com.telenav.kivakit.interfaces.model.Identifiable;
 import com.telenav.kivakit.interfaces.string.StringFormattable;
 
 import static com.telenav.kivakit.annotations.code.ApiStability.STABLE;
-import static com.telenav.kivakit.annotations.code.DocumentationQuality.DOCUMENTED;
+import static com.telenav.kivakit.annotations.code.DocumentationQuality.FULLY_DOCUMENTED;
 import static com.telenav.kivakit.annotations.code.TestingQuality.TESTING_NOT_REQUIRED;
 
 /**
@@ -47,7 +47,7 @@ import static com.telenav.kivakit.annotations.code.TestingQuality.TESTING_NOT_RE
  * </p>
  *
  * <p>
- * Clients may extend <i>QuantizableConverter</i> (see <i>kivakit-core</i>) to quickly create a converter for any
+ * Clients may extend <i>LongValuedConverter</i> (see <i>kivakit-core</i>) to quickly create a converter for any
  * {@link Quantizable} value. For example, EdgeIdentifier provides a converter between String values and EdgeIdentifiers
  * like this:
  * </p>
@@ -67,7 +67,7 @@ import static com.telenav.kivakit.annotations.code.TestingQuality.TESTING_NOT_RE
 @FunctionalInterface
 @ApiQuality(stability = STABLE,
             testing = TESTING_NOT_REQUIRED,
-            documentation = DOCUMENTED)
+            documentation = FULLY_DOCUMENTED)
 public interface Quantizable extends
         DoubleQuantizable,
         StringFormattable

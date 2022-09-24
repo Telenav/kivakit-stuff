@@ -28,7 +28,6 @@ import java.util.List;
 import static com.telenav.kivakit.core.messaging.Listener.emptyListener;
 import static com.telenav.kivakit.core.value.count.Count._10;
 import static com.telenav.kivakit.core.value.count.Count._100;
-import static com.telenav.kivakit.interfaces.code.FilteredLoopBody.FilterAction.ACCEPT;
 
 public class HuffmanStringCodecTest extends DataCompressionUnitTest
 {
@@ -47,23 +46,21 @@ public class HuffmanStringCodecTest extends DataCompressionUnitTest
     public void testRandom()
     {
         var progress = BroadcastingProgressReporter.create(emptyListener(), "codec");
-        _10.loop(codecNumber ->
+        _10.forEachInteger(codecNumber ->
         {
             var symbols = randomStringSymbols(2, 100, 1, 100);
             var codec = HuffmanStringCodec.from(symbols);
             var choices = symbols.symbols();
 
             var test = BroadcastingProgressReporter.create(emptyListener(), "test");
-            _100.loop(testNumber ->
+            _100.forEachInteger(testNumber ->
             {
                 var input = new ArrayList<String>();
                 random().rangeInclusive(1, 200).loop(() -> input.add(choices.get(random().randomIntExclusive(0, choices.size() - 1))));
                 test(codec, input);
                 test.next();
-                return ACCEPT;
             });
             progress.next();
-            return ACCEPT;
         });
     }
 }

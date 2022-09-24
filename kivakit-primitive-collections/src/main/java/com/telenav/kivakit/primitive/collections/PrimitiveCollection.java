@@ -32,6 +32,7 @@ import com.telenav.kivakit.core.logging.LoggerFactory;
 import com.telenav.kivakit.core.logging.logs.BaseLog;
 import com.telenav.kivakit.core.messaging.Debug;
 import com.telenav.kivakit.core.messaging.context.CallStack;
+import com.telenav.kivakit.core.messaging.messages.status.Warning;
 import com.telenav.kivakit.core.messaging.messages.status.activity.Activity;
 import com.telenav.kivakit.core.string.Indent;
 import com.telenav.kivakit.core.string.Strings;
@@ -49,6 +50,7 @@ import com.telenav.kivakit.core.vm.JavaVirtualMachine;
 import com.telenav.kivakit.core.vm.Properties;
 import com.telenav.kivakit.core.vm.ShutdownHook;
 import com.telenav.kivakit.interfaces.code.TripwireTrait;
+import com.telenav.kivakit.interfaces.collection.Emptiness;
 import com.telenav.kivakit.interfaces.collection.Sized;
 import com.telenav.kivakit.interfaces.lifecycle.Initializable;
 import com.telenav.kivakit.interfaces.naming.Named;
@@ -82,6 +84,7 @@ import static com.telenav.kivakit.core.messaging.context.CallStack.Matching.SUBC
 import static com.telenav.kivakit.core.messaging.context.CallStack.Proximity.IMMEDIATE;
 import static com.telenav.kivakit.core.project.Project.resolveProject;
 import static com.telenav.kivakit.core.time.Duration.MAXIMUM;
+import static com.telenav.kivakit.core.time.Frequency.EVERY_5_SECONDS;
 import static com.telenav.kivakit.core.vm.ShutdownHook.Order.FIRST;
 
 /**
@@ -160,9 +163,12 @@ import static com.telenav.kivakit.core.vm.ShutdownHook.Order.FIRST;
  * @see Debug
  * @see Sized
  */
-@SuppressWarnings({ "unused", "UnusedReturnValue" }) @UmlClassDiagram(diagram = DiagramPrimitiveCollection.class)
+@SuppressWarnings({ "unused", "UnusedReturnValue", "SpellCheckingInspection" })
+@UmlClassDiagram(diagram = DiagramPrimitiveCollection.class)
 public abstract class PrimitiveCollection implements
         KryoSerializable,
+        Emptiness,
+        Sized,
         NamedObject,
         Initializable,
         Countable,
@@ -992,7 +998,7 @@ public abstract class PrimitiveCollection implements
                 stack = new AllocationStackTrace();
             }
 
-            // If there is a child (as in a multi-map),
+            // If there is a child (as in a multimap),
             if (estimatedChildSize != -1)
             {
                 // show both dimensions of the primitive collection
@@ -1129,8 +1135,9 @@ public abstract class PrimitiveCollection implements
 
         if (size + increase > maximumSize)
         {
-            LOGGER.warning(Frequency.EVERY_5_SECONDS, new AllocationStackTrace(), "Maximum size of ${debug} elements would have been exceeded. " +
-                    "Ignoring operation (this is not an exception, just a warning)", maximumSize);
+            LOGGER.transmit(new Warning(new AllocationStackTrace(), "Maximum size of ${debug} elements would have been exceeded. " +
+                    "Ignoring operation (this is not an exception, just a warning)", maximumSize)
+                    .maximumFrequency(EVERY_5_SECONDS));
             return false;
         }
 

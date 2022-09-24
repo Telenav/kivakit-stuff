@@ -92,7 +92,7 @@ public class DataCompressionUnitTest extends KryoUnitTest
                                                   int maximumLength)
     {
         var frequencies = new CountMap<String>();
-        var count = random().randomInt(minimum, maximum);
+        var count = random().randomIntInclusive(minimum, maximum);
         for (var at = 0; at < count; at++)
         {
             while (true)
