@@ -22,7 +22,7 @@ import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.io.Input;
 import com.esotericsoftware.kryo.io.Output;
 import com.telenav.kivakit.core.value.count.Count;
-import com.telenav.kivakit.primitive.collections.Quantizable;
+import com.telenav.kivakit.interfaces.value.LongValued;
 import com.telenav.kivakit.primitive.collections.array.scalars.IntArray;
 import com.telenav.kivakit.primitive.collections.array.scalars.LongArray;
 import com.telenav.kivakit.primitive.collections.iteration.LongIterator;
@@ -40,7 +40,7 @@ import java.util.List;
  *
  * @author jonathanl (shibo)
  * @see LongIterator
- * @see Quantizable
+ * @see LongValued
  */
 @SuppressWarnings("DuplicatedCode") @UmlClassDiagram(diagram = DiagramPrimitiveList.class)
 public class LongLinkedListStore extends PrimitiveListStore
@@ -116,11 +116,11 @@ public class LongLinkedListStore extends PrimitiveListStore
     /**
      * Adds the quantum of each value to the identified list
      */
-    public int addAll(int list, List<? extends Quantizable> values)
+    public int addAll(int list, List<? extends LongValued> values)
     {
         for (var value : values)
         {
-            list = add(list, value.quantum());
+            list = add(list, value.longValue());
         }
         return list;
     }

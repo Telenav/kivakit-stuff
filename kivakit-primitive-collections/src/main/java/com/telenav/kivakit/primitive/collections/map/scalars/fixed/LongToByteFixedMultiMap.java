@@ -22,7 +22,7 @@ import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.KryoSerializable;
 import com.esotericsoftware.kryo.io.Input;
 import com.esotericsoftware.kryo.io.Output;
-import com.telenav.kivakit.primitive.collections.Quantizable;
+import com.telenav.kivakit.interfaces.value.LongValued;
 import com.telenav.kivakit.primitive.collections.CompressibleCollection;
 import com.telenav.kivakit.primitive.collections.array.scalars.ByteArray;
 import com.telenav.kivakit.primitive.collections.iteration.LongIterator;
@@ -177,7 +177,7 @@ public final class LongToByteFixedMultiMap extends PrimitiveMultiMap implements 
         putAll(key, values.asArray());
     }
 
-    public void putAll(long key, List<? extends Quantizable> values)
+    public void putAll(long key, List<? extends LongValued> values)
     {
         // If we haven't already put a value for this key
         assert isNull(indexes.get((int) key));
@@ -204,7 +204,7 @@ public final class LongToByteFixedMultiMap extends PrimitiveMultiMap implements 
     }
 
     @Override
-    public void putPrimitiveList(long key, List<? extends Quantizable> values)
+    public void putPrimitiveList(long key, List<? extends LongValued> values)
     {
         putAll(key, values);
     }

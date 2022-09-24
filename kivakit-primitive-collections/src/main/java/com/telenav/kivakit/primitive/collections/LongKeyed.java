@@ -18,13 +18,15 @@
 
 package com.telenav.kivakit.primitive.collections;
 
+import com.telenav.kivakit.interfaces.value.LongValued;
+
 /**
- * An object which has a long key value and is also {@link Quantizable} as are many objects.
+ * An object which has a long key value and is also {@link LongValued} as are many objects.
  *
  * @author jonathanl (shibo)
- * @see Quantizable
+ * @see LongValued
  */
-public interface LongKeyed extends Quantizable
+public interface LongKeyed extends LongValued
 {
     /**
      * @return The key
@@ -35,7 +37,7 @@ public interface LongKeyed extends Quantizable
      * @return The key as a quantum
      */
     @Override
-    default long quantum()
+    default long longValue()
     {
         return key();
     }

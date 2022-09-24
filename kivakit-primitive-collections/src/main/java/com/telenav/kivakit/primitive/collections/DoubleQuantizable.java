@@ -11,7 +11,7 @@ import static com.telenav.kivakit.annotations.code.TestingQuality.TESTING_NOT_RE
  * A quantizable object that can be turned into a <i>double</i> value.
  *
  * @author jonathanl (shibo)
- * @see Quantizable
+ * @see LongValued
  */
 @ApiQuality(stability = STABLE,
             testing = TESTING_NOT_REQUIRED,

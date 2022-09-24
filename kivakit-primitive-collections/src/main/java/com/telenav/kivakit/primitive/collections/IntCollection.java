@@ -21,6 +21,7 @@ package com.telenav.kivakit.primitive.collections;
 import com.telenav.kivakit.interfaces.collection.Sized;
 import com.telenav.kivakit.interfaces.naming.Named;
 import com.telenav.kivakit.interfaces.naming.NamedObject;
+import com.telenav.kivakit.interfaces.value.LongValued;
 import com.telenav.kivakit.primitive.collections.iteration.IntIterable;
 import com.telenav.kivakit.primitive.collections.iteration.IntIterator;
 import com.telenav.kivakit.primitive.collections.internal.lexakai.DiagramPrimitiveCollection;
@@ -42,8 +43,8 @@ import static com.telenav.kivakit.core.ensure.Ensure.unsupported;
  * value.
  * <p>
  * New values can be added with {@link #add(int)}, {@link #addAll(IntCollection)} and {@link #addAll(int[])} and removed
- * with {@link #remove(int)}. In addition, {@link Quantizable} values can be added with {@link #addAll(List)}, where
- * each value is quantized via {@link Quantizable#quantum()} before being added. Since many objects are quantizable,
+ * with {@link #remove(int)}. In addition, {@link LongValued} values can be added with {@link #addAll(List)}, where
+ * each value is quantized via {@link LongValued#longValue()} before being added. Since many objects are quantizable,
  * this method is especially useful.
  * <p>
  * Whether a given value or collection of values is in the collection can be determined with {@link #contains(int)} and
@@ -53,8 +54,9 @@ import static com.telenav.kivakit.core.ensure.Ensure.unsupported;
  * @see Named
  * @see Sized
  * @see IntIterable
- * @see Quantizable
+ * @see LongValued
  */
+@SuppressWarnings("unused")
 @UmlClassDiagram(diagram = DiagramPrimitiveCollection.class)
 public interface IntCollection extends IntIterable, Sized, NamedObject
 {
@@ -83,11 +85,11 @@ public interface IntCollection extends IntIterable, Sized, NamedObject
     /**
      * Adds the given quantizable values
      */
-    default void addAll(List<? extends Quantizable> values)
+    default void addAll(List<? extends LongValued> values)
     {
-        for (Quantizable value : values)
+        for (var value : values)
         {
-            add((int) value.quantum());
+            add((int) value.longValue());
         }
     }
 
@@ -119,6 +121,7 @@ public interface IntCollection extends IntIterable, Sized, NamedObject
      * @return True if this collection contains the given value. Some collections may choose not to implement this
      * method if the search is too inefficient.
      */
+    @SuppressWarnings("unused")
     default boolean contains(int value)
     {
         return unsupported();

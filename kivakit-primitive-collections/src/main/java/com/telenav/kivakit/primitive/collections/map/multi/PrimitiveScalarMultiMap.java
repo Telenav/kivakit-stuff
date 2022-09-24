@@ -18,11 +18,11 @@
 
 package com.telenav.kivakit.primitive.collections.map.multi;
 
-import com.telenav.kivakit.primitive.collections.Quantizable;
+import com.telenav.kivakit.interfaces.value.LongValued;
+import com.telenav.kivakit.primitive.collections.internal.lexakai.DiagramPrimitiveMultiMap;
 import com.telenav.kivakit.primitive.collections.list.PrimitiveList;
 import com.telenav.kivakit.primitive.collections.map.scalars.fixed.IntToByteFixedMultiMap;
 import com.telenav.kivakit.primitive.collections.map.scalars.fixed.LongToLongFixedMultiMap;
-import com.telenav.kivakit.primitive.collections.internal.lexakai.DiagramPrimitiveMultiMap;
 import com.telenav.lexakai.annotations.UmlClassDiagram;
 
 import java.util.List;
@@ -32,7 +32,7 @@ import java.util.List;
  * This interface allows all such maps to be treated the same, by widening the keys and values to long primitives.
  *
  * @author jonathanl (shibo)
- * @see Quantizable
+ * @see LongValued
  */
 @UmlClassDiagram(diagram = DiagramPrimitiveMultiMap.class)
 public interface PrimitiveScalarMultiMap
@@ -63,5 +63,5 @@ public interface PrimitiveScalarMultiMap
     /**
      * Stores the given list of values under the given key
      */
-    void putPrimitiveList(long key, List<? extends Quantizable> values);
+    void putPrimitiveList(long key, List<? extends LongValued> values);
 }

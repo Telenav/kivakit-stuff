@@ -22,7 +22,7 @@ import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.KryoSerializable;
 import com.esotericsoftware.kryo.io.Input;
 import com.esotericsoftware.kryo.io.Output;
-import com.telenav.kivakit.primitive.collections.Quantizable;
+import com.telenav.kivakit.interfaces.value.LongValued;
 import com.telenav.kivakit.primitive.collections.CompressibleCollection;
 import com.telenav.kivakit.primitive.collections.array.scalars.IntArray;
 import com.telenav.kivakit.primitive.collections.iteration.IntIterator;
@@ -37,16 +37,18 @@ import com.telenav.lexakai.annotations.UmlClassDiagram;
 import java.util.List;
 
 /**
- * A compact multi-map which allows one-time put of a fixed list of values. Adding more values is not supported.
+ * A compact multimap which allows one-time put of a fixed list of values. Adding more values is not supported.
  *
  * @author jonathanl (shibo)
  * @see IntArray
  * @see PrimitiveMultiMap
  * @see KryoSerializable
  */
-@SuppressWarnings({ "ConstantConditions", "DuplicatedCode" })
+@SuppressWarnings({ "ConstantConditions", "DuplicatedCode", "unused" })
 @UmlClassDiagram(diagram = DiagramPrimitiveMultiMap.class)
-public final class IntToIntFixedMultiMap extends PrimitiveMultiMap implements IntMultiMap, PrimitiveScalarMultiMap
+public final class IntToIntFixedMultiMap extends PrimitiveMultiMap implements
+        IntMultiMap,
+        PrimitiveScalarMultiMap
 {
     private static final int TERMINATOR = Integer.MAX_VALUE - 1;
 
@@ -168,7 +170,7 @@ public final class IntToIntFixedMultiMap extends PrimitiveMultiMap implements In
     }
 
     @Override
-    public void putAll(long key, List<? extends Quantizable> values)
+    public void putAll(long key, List<? extends LongValued> values)
     {
         // If we haven't already put a value for this key
         assert isNull(indexes.get((int) key));
@@ -241,7 +243,7 @@ public final class IntToIntFixedMultiMap extends PrimitiveMultiMap implements In
     }
 
     @Override
-    public void putPrimitiveList(long key, List<? extends Quantizable> values)
+    public void putPrimitiveList(long key, List<? extends LongValued> values)
     {
         putAll((int) key, values);
     }

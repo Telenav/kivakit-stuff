@@ -21,9 +21,10 @@ package com.telenav.kivakit.primitive.collections;
 import com.telenav.kivakit.interfaces.collection.Sized;
 import com.telenav.kivakit.interfaces.naming.Named;
 import com.telenav.kivakit.interfaces.naming.NamedObject;
+import com.telenav.kivakit.interfaces.value.LongValued;
+import com.telenav.kivakit.primitive.collections.internal.lexakai.DiagramPrimitiveCollection;
 import com.telenav.kivakit.primitive.collections.iteration.ByteIterable;
 import com.telenav.kivakit.primitive.collections.iteration.ByteIterator;
-import com.telenav.kivakit.primitive.collections.internal.lexakai.DiagramPrimitiveCollection;
 import com.telenav.lexakai.annotations.UmlClassDiagram;
 
 import java.util.List;
@@ -31,10 +32,10 @@ import java.util.List;
 import static com.telenav.kivakit.core.ensure.Ensure.unsupported;
 
 /**
- * A collection of primitive byte values. All primitive collections have a name that can be retrieved with {@link
- * #objectName()} and a size retrieved with {@link Sized#size()} and they can be emptied with {@link #clear()}. Values
- * in this collection can be iterated with an {@link ByteIterator} returned by the {@link ByteIterable#iterator()}
- * method.
+ * A collection of primitive byte values. All primitive collections have a name that can be retrieved with
+ * {@link #objectName()} and a size retrieved with {@link Sized#size()} and they can be emptied with {@link #clear()}.
+ * Values in this collection can be iterated with an {@link ByteIterator} returned by the
+ * {@link ByteIterable#iterator()} method.
  * <p>
  * A null value can be assigned to the collection with {@link #nullByte()} and a value can be tested for nullity with
  * {@link #isNull(byte)}. In the case where null values may not be desired, {@link #hasNullByte(boolean)} can be used to
@@ -42,8 +43,8 @@ import static com.telenav.kivakit.core.ensure.Ensure.unsupported;
  * null value.
  * <p>
  * New values can be added with {@link #add(byte)}, {@link #addAll(ByteIterable)} and {@link #addAll(byte[])} and
- * removed with {@link #remove(byte)}. In addition, {@link Quantizable} values can be added with {@link #addAll(List)},
- * where each value is quantized via {@link Quantizable#quantum()} before being added. Since many objects are
+ * removed with {@link #remove(byte)}. In addition, {@link LongValued} values can be added with {@link #addAll(List)},
+ * where each value is quantized via {@link LongValued#longValue()} before being added. Since many objects are
  * quantizable, this method is especially useful.
  * <p>
  * Whether a given value or collection of values is in the collection can be determined with {@link #contains(byte)} and
@@ -53,10 +54,14 @@ import static com.telenav.kivakit.core.ensure.Ensure.unsupported;
  * @see Named
  * @see Sized
  * @see ByteIterable
- * @see Quantizable
+ * @see LongValued
  */
+@SuppressWarnings("unused")
 @UmlClassDiagram(diagram = DiagramPrimitiveCollection.class)
-public interface ByteCollection extends ByteIterable, Sized, NamedObject
+public interface ByteCollection extends
+        ByteIterable,
+        Sized,
+        NamedObject
 {
     /**
      * Adds a value to this collection
@@ -83,11 +88,11 @@ public interface ByteCollection extends ByteIterable, Sized, NamedObject
     /**
      * Adds the given quantizable values
      */
-    default void addAll(List<? extends Quantizable> values)
+    default void addAll(List<? extends LongValued> values)
     {
-        for (Quantizable value : values)
+        for (var value : values)
         {
-            add((byte) value.quantum());
+            add((byte) value.longValue());
         }
     }
 
