@@ -46,6 +46,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import java.util.Set;
 
+import static com.telenav.kivakit.core.collections.Collections.sortedCollection;
 import static com.telenav.kivakit.service.registry.server.ServiceRegistryServerSettings.WICKET_AJAX_REFRESH_FREQUENCY;
 
 /**
@@ -142,7 +143,7 @@ public class HomePage extends ServiceRegistryWebPage
     private List<Service> list(DropDownChoice<String> scopeDropdown)
     {
         var scope = scopeDropdown.getModelObject();
-        return Collections.sorted(services(scope).get());
+        return sortedCollection(services(scope).get());
     }
 
     private Result<Set<Service>> services(String scopeString)
