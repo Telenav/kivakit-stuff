@@ -41,7 +41,7 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static com.telenav.kivakit.core.collections.Collections.sortedCollection;
+import static com.telenav.kivakit.core.collections.list.ObjectList.objectList;
 import static com.telenav.kivakit.core.ensure.Ensure.ensure;
 import static com.telenav.kivakit.core.ensure.Ensure.unsupported;
 import static com.telenav.kivakit.service.registry.Scope.Type.CLUSTER;
@@ -76,10 +76,11 @@ public class Scope implements Named, Comparable<Scope>
 
     public static List<String> names(Result<Set<Service>> result)
     {
-        return sortedCollection(scopes(result)
+        return objectList(scopes(result)
                 .stream()
                 .map(Scope::name)
-                .collect(Collectors.toSet()));
+                .collect(Collectors.toSet()))
+                .sorted();
     }
 
     /**
