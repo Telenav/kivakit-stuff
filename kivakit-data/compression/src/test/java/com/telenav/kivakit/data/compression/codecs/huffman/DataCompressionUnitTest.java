@@ -58,10 +58,10 @@ public class DataCompressionUnitTest extends KryoUnitTest
     protected Symbols<String> fixedSymbolSet()
     {
         return new Symbols<>(new CountMap<String>()
-                .add("abc", Count._1_000)
-                .add("def", Count._100)
-                .add("ghi", _10)
-                .add("jkl", Count._1));
+                .plus("abc", Count._1_000)
+                .plus("def", Count._100)
+                .plus("ghi", _10)
+                .plus("jkl", Count._1));
     }
 
     @Override
@@ -80,9 +80,9 @@ public class DataCompressionUnitTest extends KryoUnitTest
     {
         var frequencies = new CountMap<Character>();
         random().rangeInclusive(minimum, maximum).loop(() ->
-                frequencies.add(random().letter(), Count.count(random().randomIntExclusive(1, 10_000))));
-        frequencies.add(HuffmanCharacterCodec.ESCAPE, Count._1024);
-        frequencies.add(HuffmanCharacterCodec.END_OF_STRING, Count._1024);
+                frequencies.plus(random().letter(), Count.count(random().randomIntExclusive(1, 10_000))));
+        frequencies.plus(HuffmanCharacterCodec.ESCAPE, Count._1024);
+        frequencies.plus(HuffmanCharacterCodec.END_OF_STRING, Count._1024);
         return new Symbols<>(frequencies, HuffmanCharacterCodec.ESCAPE, Minimum._1);
     }
 
@@ -100,9 +100,9 @@ public class DataCompressionUnitTest extends KryoUnitTest
                 var value = random().letters(minimumLength, maximumLength);
                 if (value.length() > 1)
                 {
-                    if (!frequencies.contains(value))
+                    if (!frequencies.containsKey(value))
                     {
-                        frequencies.add(value, Count.count(random().randomIntExclusive(2, 10_000)));
+                        frequencies.plus(value, Count.count(random().randomIntExclusive(2, 10_000)));
                         break;
                     }
                 }

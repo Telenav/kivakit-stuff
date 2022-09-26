@@ -106,7 +106,7 @@ public class Symbols<Symbol>
             ensure(!key.contains("="));
             var symbol = converter.convert(key);
             var count = properties.asCount(key);
-            counts.add(symbol, count);
+            counts.plus(symbol, count);
         }
         return new Symbols<>(counts, escape, Minimum._0);
     }

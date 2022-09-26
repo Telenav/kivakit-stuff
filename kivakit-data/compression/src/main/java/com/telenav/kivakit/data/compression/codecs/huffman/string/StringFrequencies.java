@@ -38,9 +38,9 @@ public class StringFrequencies
     /** The maximum number of strings to track */
     private final Maximum maximum;
 
-    public StringFrequencies(Count initialSize, Maximum maximum)
+    public StringFrequencies(Maximum maximum)
     {
-        frequencies = new CountMap<>(initialSize);
+        frequencies = new CountMap<>(maximum);
         this.maximum = maximum;
     }
 
