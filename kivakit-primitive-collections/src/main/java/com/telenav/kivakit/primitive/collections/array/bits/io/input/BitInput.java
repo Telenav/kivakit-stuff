@@ -19,6 +19,7 @@
 package com.telenav.kivakit.primitive.collections.array.bits.io.input;
 
 import com.telenav.kivakit.core.io.IO;
+import com.telenav.kivakit.core.messaging.Listener;
 import com.telenav.kivakit.primitive.collections.array.bits.io.BitReader;
 import com.telenav.kivakit.primitive.collections.internal.lexakai.DiagramPrimitiveArrayBitIo;
 import com.telenav.lexakai.annotations.LexakaiJavadoc;
@@ -39,6 +40,9 @@ import static com.telenav.kivakit.core.ensure.Ensure.unsupported;
 @LexakaiJavadoc(complete = true)
 public class BitInput extends BaseBitReader
 {
+    /** Listener to report errors to */
+    private final Listener listener;
+
     /** The input stream to read */
     private final InputStream in;
 
@@ -51,10 +55,11 @@ public class BitInput extends BaseBitReader
     /**
      * Construct from an input stream
      */
-    public BitInput(InputStream in)
+    public BitInput(Listener listener, InputStream in)
     {
+        this.listener = listener;
         this.in = in;
-        next = IO.readByte(in);
+        next = IO.readByte(listener, in);
         if (next >= 0)
         {
             cursor++;
@@ -67,7 +72,7 @@ public class BitInput extends BaseBitReader
     @Override
     public void onClose()
     {
-        IO.close(in);
+        IO.close(listener, in);
     }
 
     @Override
@@ -92,7 +97,7 @@ public class BitInput extends BaseBitReader
     protected byte nextByte()
     {
         var current = next;
-        next = IO.readByte(in);
+        next = IO.readByte(listener, in);
         cursor++;
         return (byte) current;
     }
