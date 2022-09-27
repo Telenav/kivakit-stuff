@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import static com.telenav.kivakit.core.string.Formatter.Format.WITHOUT_EXCEPTION;
+import static com.telenav.kivakit.core.messaging.MessageFormat.WITHOUT_EXCEPTION;
 import static com.telenav.kivakit.resource.Extension.KRYO;
 import static com.telenav.kivakit.resource.Extension.TXT;
 import static com.telenav.kivakit.serialization.core.SerializationSession.SessionType.RESOURCE;

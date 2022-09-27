@@ -33,7 +33,7 @@ import com.telenav.kivakit.service.registry.ServiceType;
 import com.telenav.kivakit.service.registry.client.ServiceRegistryClient;
 
 import static com.telenav.kivakit.core.collections.set.ObjectSet.objectSet;
-import static com.telenav.kivakit.core.string.Formatter.Format.WITH_EXCEPTION;
+import static com.telenav.kivakit.core.messaging.MessageFormat.WITH_EXCEPTION;
 import static com.telenav.kivakit.service.registry.Scope.Type.scopeTypeSwitchParser;
 
 /**
