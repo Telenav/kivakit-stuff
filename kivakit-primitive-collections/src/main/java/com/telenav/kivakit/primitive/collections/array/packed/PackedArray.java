@@ -181,7 +181,7 @@ public final class PackedArray extends PrimitiveArray implements LongList, Packe
         if (object instanceof PackedArray)
         {
             var that = (PackedArray) object;
-            return Objects.equalPairs(bits, that.bits, data, that.data);
+            return Objects.areEqualPairs(bits, that.bits, data, that.data);
         }
         return false;
     }
@@ -247,7 +247,7 @@ public final class PackedArray extends PrimitiveArray implements LongList, Packe
     @Override
     public int hashCode()
     {
-        return Hash.many(bits, data);
+        return Hash.hashMany(bits, data);
     }
 
     /**

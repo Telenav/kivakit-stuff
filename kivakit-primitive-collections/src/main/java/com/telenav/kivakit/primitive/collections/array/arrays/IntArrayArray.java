@@ -129,7 +129,7 @@ public final class IntArrayArray extends PrimitiveArrayArray
         if (object instanceof IntArrayArray)
         {
             var that = (IntArrayArray) object;
-            return Objects.equalPairs(indexes, that.indexes, sizes, that.sizes, store, that.store);
+            return Objects.areEqualPairs(indexes, that.indexes, sizes, that.sizes, store, that.store);
         }
         return false;
     }
@@ -148,7 +148,7 @@ public final class IntArrayArray extends PrimitiveArrayArray
     @Override
     public int hashCode()
     {
-        return Hash.many(indexes, sizes, store);
+        return Hash.hashMany(indexes, sizes, store);
     }
 
     /**
