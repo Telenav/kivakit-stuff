@@ -162,7 +162,7 @@ SessionStore extends BaseComponent implements ProjectTrait
             {
                 for (var row : entries)
                 {
-                    output.println(row.format(NarrowLogFormatter.INSTANCE, WITHOUT_EXCEPTION));
+                    output.println(row.format(new NarrowLogFormatter(), WITHOUT_EXCEPTION));
                 }
             }
         }
