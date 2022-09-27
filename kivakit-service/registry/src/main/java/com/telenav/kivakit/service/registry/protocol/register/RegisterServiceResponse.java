@@ -19,8 +19,8 @@
 package com.telenav.kivakit.service.registry.protocol.register;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.telenav.kivakit.core.language.object.KivaKitFormatProperty;
-import com.telenav.kivakit.core.language.object.ObjectFormatter;
+import com.telenav.kivakit.core.string.KivaKitFormat;
+import com.telenav.kivakit.core.string.ObjectFormatter;
 import com.telenav.kivakit.core.language.reflection.property.KivaKitIncludeProperty;
 import com.telenav.kivakit.interfaces.string.StringFormattable;
 import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeMember;
@@ -31,7 +31,7 @@ import com.telenav.kivakit.service.registry.protocol.BaseResponse;
 import com.telenav.lexakai.annotations.LexakaiJavadoc;
 import com.telenav.lexakai.annotations.UmlClassDiagram;
 
-import static com.telenav.kivakit.core.language.object.ObjectFormatter.Format.MULTILINE;
+import static com.telenav.kivakit.core.string.ObjectFormatter.ObjectFormat.MULTILINE;
 
 /**
  * The registered service, including a port binding provided by the service registry.
@@ -48,7 +48,7 @@ public class RegisterServiceResponse extends BaseResponse<Service>
     private Service service;
 
     @KivaKitIncludeProperty
-    @KivaKitFormatProperty(format = StringFormattable.Format.LOG)
+    @KivaKitFormat(format = StringFormattable.Format.LOG)
     public Service service()
     {
         return service;
@@ -63,7 +63,7 @@ public class RegisterServiceResponse extends BaseResponse<Service>
     @Override
     public String toString()
     {
-        return new ObjectFormatter(this).toString(MULTILINE);
+        return new ObjectFormatter(this).asString(MULTILINE);
     }
 
     @Override

@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.telenav.kivakit.application.Application;
 import com.telenav.kivakit.component.BaseComponent;
-import com.telenav.kivakit.core.language.object.ObjectFormatter;
+import com.telenav.kivakit.core.string.ObjectFormatter;
 import com.telenav.kivakit.core.language.reflection.property.KivaKitIncludeProperty;
 import com.telenav.kivakit.core.time.Time;
 import com.telenav.kivakit.core.vm.JavaVirtualMachineHealth;
@@ -40,7 +40,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
-import static com.telenav.kivakit.core.language.object.ObjectFormatter.Format.SINGLE_LINE;
+import static com.telenav.kivakit.core.string.ObjectFormatter.ObjectFormat.SINGLE_LINE;
 
 /**
  * A logical service of a particular type that can be registered by an application with a local or network service
@@ -145,7 +145,7 @@ public class Service extends BaseComponent implements Comparable<Service>, Strin
         switch (format)
         {
             case LOG:
-                return new ObjectFormatter(this).toString(SINGLE_LINE);
+                return new ObjectFormatter(this).asString(SINGLE_LINE);
 
             default:
                 return toString();
@@ -293,7 +293,7 @@ public class Service extends BaseComponent implements Comparable<Service>, Strin
     @Override
     public String toString()
     {
-        return new ObjectFormatter(this).toString(SINGLE_LINE);
+        return new ObjectFormatter(this).asString(SINGLE_LINE);
     }
 
     public Service type(ServiceType type)

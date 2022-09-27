@@ -23,7 +23,7 @@ import com.telenav.kivakit.conversion.core.language.primitive.IntegerConverter;
 import com.telenav.kivakit.conversion.core.time.DurationConverter;
 import com.telenav.kivakit.conversion.core.time.FrequencyConverter;
 import com.telenav.kivakit.conversion.core.value.VersionConverter;
-import com.telenav.kivakit.core.language.object.ObjectFormatter;
+import com.telenav.kivakit.core.string.ObjectFormatter;
 import com.telenav.kivakit.core.language.reflection.property.KivaKitIncludeProperty;
 import com.telenav.kivakit.core.messaging.Listener;
 import com.telenav.kivakit.core.time.Duration;
