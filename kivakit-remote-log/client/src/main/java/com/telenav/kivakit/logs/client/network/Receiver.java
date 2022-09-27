@@ -112,7 +112,7 @@ import static com.telenav.kivakit.serialization.core.SerializationSession.Sessio
             warning("Don't know how to talk to a server log of version $", version);
         }
 
-        IO.close(connection.input());
+        IO.close(this, connection.input());
     }
 
     @Override

@@ -25,7 +25,7 @@ import com.telenav.kivakit.core.collections.list.ObjectList;
 import com.telenav.kivakit.core.collections.list.StringList;
 import com.telenav.kivakit.core.language.reflection.Type;
 import com.telenav.kivakit.core.language.reflection.property.Property;
-import com.telenav.kivakit.core.language.reflection.property.PropertyValues;
+import com.telenav.kivakit.core.language.reflection.property.PropertyValue;
 import com.telenav.kivakit.core.messaging.repeaters.RepeaterMixin;
 import com.telenav.kivakit.core.string.Strings;
 import com.telenav.kivakit.core.value.count.Maximum;
@@ -51,7 +51,7 @@ import com.telenav.lexakai.annotations.UmlClassDiagram;
  * <p>
  * A {@link CsvLine} can be converted directly to an object with {@link #populatedObject(Class)}. A new instance of the
  * class is created and its properties are populated using the {@link CsvSchema} of this line. For details, see {@link
- * #populatedObject(Class)} and {@link #valueFor(Property)}.
+ * #populatedObject(Class)} and {@link #propertyValue(Property)}.
  * </p>
  *
  * @author jonathanl (shibo)
@@ -64,7 +64,7 @@ import com.telenav.lexakai.annotations.UmlClassDiagram;
 @UmlClassDiagram(diagram = DiagramCsv.class)
 @LexakaiJavadoc(complete = true)
 public class CsvLine extends StringList implements
-        PropertyValues,
+        PropertyValue,
         RepeaterMixin
 {
     /** The schema that this line obeys */
@@ -129,7 +129,7 @@ public class CsvLine extends StringList implements
     /**
      * @return An object of the given type with its properties populated by {@link ObjectPopulator} using {@link
      * CsvPropertyFilter}. Properties of the object that correspond to {@link CsvColumn}s using KivaKit property naming
-     * are retrieved with {@link PropertyValues#valueFor(Property)} (see below) and set on the new object by reflection.
+     * are retrieved with {@link PropertyValue#propertyValue(Property)} (see below) and set on the new object by reflection.
      * The result is an object corresponding to this line.
      */
     public <T> T populatedObject(Class<T> type)
@@ -211,11 +211,11 @@ public class CsvLine extends StringList implements
     }
 
     /**
-     * Implementation of {@link PropertyValues} used by {@link ObjectPopulator} in {@link #populatedObject(Class)} to
+     * Implementation of {@link PropertyValue} used by {@link ObjectPopulator} in {@link #populatedObject(Class)} to
      * get the value of the given property using the property name to find the {@link CsvColumn}.
      */
     @Override
-    public Object valueFor(Property property)
+    public Object propertyValue(Property property)
     {
         var column = schema().columnForName(property.name());
         if (column != null)

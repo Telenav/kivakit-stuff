@@ -19,7 +19,6 @@
 package com.telenav.kivakit.data.compression.codecs.huffman.string;
 
 import com.telenav.kivakit.core.collections.map.CountMap;
-import com.telenav.kivakit.core.value.count.Count;
 import com.telenav.kivakit.core.value.count.Maximum;
 import com.telenav.kivakit.core.value.count.Minimum;
 import com.telenav.kivakit.data.compression.codecs.huffman.tree.Symbols;
@@ -44,7 +43,7 @@ public class StringFrequencies
         this.maximum = maximum;
     }
 
-    private StringFrequencies(CountMap<String> frequencies, Maximum maximum)
+    public StringFrequencies(CountMap<String> frequencies, Maximum maximum)
     {
         this.frequencies = frequencies;
         this.maximum = maximum;

@@ -61,7 +61,7 @@ SessionStore extends BaseComponent implements ProjectTrait
     public synchronized void add(Session session, byte[] bytes, ProgressReporter reporter)
     {
         add(session);
-        sessionFile(session, KRYO).reader(reporter).bytes();
+        sessionFile(session, KRYO).reader(reporter).bytes(this);
     }
 
     public synchronized void addAll(Session session, List<LogEntry> toAdd)
@@ -139,7 +139,7 @@ SessionStore extends BaseComponent implements ProjectTrait
 
     public byte[] read(Session session, ProgressReporter reporter)
     {
-        return sessionFile(session, KRYO).reader(reporter).bytes();
+        return sessionFile(session, KRYO).reader(reporter).bytes(this);
     }
 
     public synchronized void save(Session session)
