@@ -58,7 +58,7 @@ public interface CompressibleCollection
         return JavaVirtualMachine.local().traceSizeChange(listener, "compress", root, Bytes.megabytes(1), () ->
         {
             // Go through all reachable sub-objects
-            var values = Type.of(root).reachableObjectsImplementing(root, CompressibleCollection.class);
+            var values = Type.type(root).reachableObjectsImplementing(root, CompressibleCollection.class);
             Map<Object, Boolean> compressed = new IdentityHashMap<>();
             for (var value : values)
             {

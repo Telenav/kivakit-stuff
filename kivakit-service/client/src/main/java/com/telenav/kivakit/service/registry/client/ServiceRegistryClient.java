@@ -589,7 +589,7 @@ public class ServiceRegistryClient extends BaseComponent implements
         }
 
         // If the host is not resolvable or an exception occurred, so fail
-        var response = (Response) Type.forClass(responseType).newInstance();
+        var response = (Response) Type.typeForClass(responseType).newInstance();
         response.problem("Unable to connect to $", server);
         problem("Could not resolve ${lower} registry on host $", scope, server.host().name());
         return response;

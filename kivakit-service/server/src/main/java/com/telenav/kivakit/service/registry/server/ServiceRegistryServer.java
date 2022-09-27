@@ -168,7 +168,7 @@ public class ServiceRegistryServer extends Server
      */
     protected ResourceFolder<?> openApiAssetsFolder()
     {
-        var type = ensureNotNull(Type.forName("com.telenav.kivakit.web.swagger.SwaggerJettyPlugin"));
+        var type = ensureNotNull(Type.typeForName("com.telenav.kivakit.web.swagger.SwaggerJettyPlugin"));
         return Package.parsePackage(this, type.type(), "assets/openapi");
     }
 

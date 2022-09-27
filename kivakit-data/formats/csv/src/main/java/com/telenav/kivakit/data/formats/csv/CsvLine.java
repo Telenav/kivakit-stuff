@@ -137,7 +137,7 @@ public class CsvLine extends StringList implements
         try
         {
             return new ObjectPopulator(new CsvPropertyFilter(schema()), () -> this)
-                    .populate(Type.forClass(type).newInstance());
+                    .populate(Type.typeForClass(type).newInstance());
         }
         catch (Exception e)
         {
