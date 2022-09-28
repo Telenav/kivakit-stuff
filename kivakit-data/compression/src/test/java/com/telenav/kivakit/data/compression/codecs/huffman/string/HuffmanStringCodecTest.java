@@ -45,14 +45,14 @@ public class HuffmanStringCodecTest extends DataCompressionUnitTest
     @Test
     public void testRandom()
     {
-        var progress = BroadcastingProgressReporter.create(emptyListener(), "codec");
+        var progress = BroadcastingProgressReporter.createProgressReporter(emptyListener(), "codec");
         _10.forEachInteger(codecNumber ->
         {
             var symbols = randomStringSymbols(2, 100, 1, 100);
             var codec = HuffmanStringCodec.from(symbols);
             var choices = symbols.symbols();
 
-            var test = BroadcastingProgressReporter.create(emptyListener(), "test");
+            var test = BroadcastingProgressReporter.createProgressReporter(emptyListener(), "test");
             _100.forEachInteger(testNumber ->
             {
                 var input = new ArrayList<String>();

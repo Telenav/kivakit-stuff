@@ -136,7 +136,7 @@ public class ServerLog extends BaseTextLog implements
         {
             maximumEntries = Maximum.parseMaximum(Listener.consoleListener(), maximum);
         }
-        listen(BroadcastingProgressReporter.create(LOGGER, "bytes"));
+        listen(BroadcastingProgressReporter.createProgressReporter(LOGGER, "bytes"));
     }
 
     public ServerLog listen(ProgressReporter reporter)
