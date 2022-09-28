@@ -105,7 +105,7 @@ import static com.telenav.kivakit.serialization.core.SerializationSession.Sessio
                 }
             }
             state = STOPPED;
-            stopping.completed();
+            stopping.threadCompleted();
         }
         else
         {
@@ -121,7 +121,7 @@ import static com.telenav.kivakit.serialization.core.SerializationSession.Sessio
         if (state == RUNNING)
         {
             state = STOPPING;
-            stopping.waitForCompletion(wait);
+            stopping.waitForAllThreadsToComplete(wait);
         }
     }
 
