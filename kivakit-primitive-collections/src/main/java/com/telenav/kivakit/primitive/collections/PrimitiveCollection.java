@@ -1362,7 +1362,7 @@ public abstract class PrimitiveCollection implements
             builder.append(separator);
             builder.append("[...]");
         }
-        return Indent.by(4, builder.toString());
+        return Indent.indentBy(4, builder.toString());
     }
 
     private Boolean logAllocations()

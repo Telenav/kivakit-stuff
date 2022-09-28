@@ -22,7 +22,7 @@ import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.KryoSerializable;
 import com.esotericsoftware.kryo.io.Input;
 import com.esotericsoftware.kryo.io.Output;
-import com.telenav.kivakit.core.string.StringTo;
+import com.telenav.kivakit.core.string.StringConversions;
 import com.telenav.kivakit.primitive.collections.CompressibleCollection;
 import com.telenav.kivakit.primitive.collections.PrimitiveCollection;
 import com.telenav.kivakit.primitive.collections.array.PrimitiveArray;
@@ -346,7 +346,7 @@ public class ByteArray extends PrimitiveArray implements ByteList
 
     public String toBinaryString()
     {
-        return toString(", ", 10, "\n", index -> StringTo.binary(getUnsigned(index), 8), 49);
+        return toString(", ", 10, "\n", index -> StringConversions.toBinaryString(getUnsigned(index), 8), 49);
     }
 
     public String toHexString()

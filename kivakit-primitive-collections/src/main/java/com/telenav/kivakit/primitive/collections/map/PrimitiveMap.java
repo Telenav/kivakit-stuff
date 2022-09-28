@@ -677,7 +677,7 @@ public abstract class PrimitiveMap extends PrimitiveCollection
     protected String toString(PrimitiveIterator keys, PrimitiveIterator values,
                               MapToString toStringer)
     {
-        return Indent.by(4, toString(keys, values, ", ", 5, "\n", toStringer));
+        return Indent.indentBy(4, toString(keys, values, ", ", 5, "\n", toStringer));
     }
 
     protected String toString(PrimitiveIterator keys, PrimitiveIterator values, String separator,

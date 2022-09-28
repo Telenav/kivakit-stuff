@@ -22,7 +22,7 @@ import com.telenav.kivakit.core.collections.list.StringList;
 import com.telenav.kivakit.core.logging.Logger;
 import com.telenav.kivakit.core.logging.LoggerFactory;
 import com.telenav.kivakit.core.messaging.Debug;
-import com.telenav.kivakit.core.string.StringTo;
+import com.telenav.kivakit.core.string.StringConversions;
 import com.telenav.kivakit.core.string.Strings;
 import com.telenav.kivakit.data.compression.SymbolConsumer;
 import com.telenav.kivakit.data.compression.SymbolConsumer.Directive;
@@ -174,7 +174,7 @@ public final class FastHuffmanDecoder<Symbol>
             for (var index = 0; index < byteToEntry.length; index++)
             {
                 var entry = byteToEntry[index];
-                entries.append(StringTo.binary(index, 8) + " = " + entry.asString());
+                entries.append(StringConversions.toBinaryString(index, 8) + " = " + entry.asString());
             }
             return Strings.format("[Table prefix = '$']\n    ", prefix) + entries.join("\n    ");
         }
@@ -222,7 +222,7 @@ public final class FastHuffmanDecoder<Symbol>
         Table<Symbol> prefixToTable(int prefix, int bits)
         {
             // If we don't have a table for the prefix already,
-            var key = StringTo.binary(prefix, bits);
+            var key = StringConversions.toBinaryString(prefix, bits);
             var table = decoder.prefixToTable.get(key);
             if (table == null)
             {
