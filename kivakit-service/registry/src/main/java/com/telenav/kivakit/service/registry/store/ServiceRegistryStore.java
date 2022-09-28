@@ -115,7 +115,7 @@ public class ServiceRegistryStore extends BaseComponent
      */
     public synchronized void save(ServiceRegistry registry)
     {
-        if (Booleans.isTrue(Properties.property("KIVAKIT_SAVE_REGISTRY", "true")))
+        if (Booleans.isTrue(Properties.systemPropertyOrEnvironmentVariable("KIVAKIT_SAVE_REGISTRY", "true")))
         {
             var file = file(registry.getClass()).withExtension(TMP);
             trace("Saving service registry to $", file.messageSource());

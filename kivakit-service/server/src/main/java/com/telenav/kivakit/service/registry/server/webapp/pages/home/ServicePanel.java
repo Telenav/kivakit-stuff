@@ -71,18 +71,18 @@ public class ServicePanel extends Panel
         add(new Label("description", metadata::description));
         add(new Label("renewed", () -> service.renewedAt().elapsedSince()));
         add(new Label("up-time", health::upTime));
-        add(new Label("cpu-time", () -> health.elapsedCpuTime().toString()));
+        add(new Label("cpu-time", () -> health.elapsedCpuTimeSinceLastSnapshot().toString()));
         add(new Label("cpu-use", () -> (int) health.cpuUse()));
         add(new Label("memory-used", health::usedMemory));
         add(new Label("memory-maximum", health::maximumMemory));
         add(new Label("memory-use", () -> (int) health.memoryUse()));
         add(new Label("version", () -> metadata.version().toString()));
         add(new Label("contact-email", metadata::contactEmail));
-        add(new Label("critical-alerts", () -> health.count("CriticalAlert")));
-        add(new Label("alerts", () -> health.count("Alert")));
-        add(new Label("problems", () -> health.count("Problem")));
-        add(new Label("warnings", () -> health.count("Warning")));
-        add(new Label("glitches", () -> health.count("Glitch")));
+        add(new Label("critical-alerts", () -> health.loggedMessageCount("CriticalAlert")));
+        add(new Label("alerts", () -> health.loggedMessageCount("Alert")));
+        add(new Label("problems", () -> health.loggedMessageCount("Problem")));
+        add(new Label("warnings", () -> health.loggedMessageCount("Warning")));
+        add(new Label("glitches", () -> health.loggedMessageCount("Glitch")));
         add(new Label("threads", () -> health.threadSnapshot().snapshot().size()));
 
         var states = new CountMap<Thread.State>();

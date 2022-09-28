@@ -993,7 +993,7 @@ public abstract class PrimitiveCollection implements
 
             // If we want to record stack traces, get a stack trace by creating a throwable (AllocationStackTrace)
             AllocationStackTrace stack = null;
-            if (Booleans.isTrue(Properties.property("KIVAKIT_LOG_ALLOCATION_STACK_TRACES", "false")))
+            if (Booleans.isTrue(Properties.systemPropertyOrEnvironmentVariable("KIVAKIT_LOG_ALLOCATION_STACK_TRACES", "false")))
             {
                 stack = new AllocationStackTrace();
             }
@@ -1015,7 +1015,7 @@ public abstract class PrimitiveCollection implements
 
                     // compute the size of this object from the estimated size (initial capacity)
                     // and the size of the primitive type in bytes,
-                    var size = JavaVirtualMachine.local().sizeOfPrimitiveType(componentType).times(initialSize);
+                    var size = JavaVirtualMachine.javaVirtualMachine().sizeOfPrimitiveType(componentType).times(initialSize);
 
                     // add to the total
                     var total = totalAllocated.addAndGet(size.asBytes());

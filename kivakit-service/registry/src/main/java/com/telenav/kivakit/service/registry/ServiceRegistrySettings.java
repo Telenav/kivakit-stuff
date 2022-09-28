@@ -125,7 +125,7 @@ public class ServiceRegistrySettings
     public Port network()
     {
         @SuppressWarnings("SpellCheckingInspection")
-        var port = Properties.property
+        var port = Properties.systemPropertyOrEnvironmentVariable
                 (
                         "KIVAKIT_NETWORK_SERVICE_REGISTRY_PORT",
                         "kivakit-network-service-registry.mypna.com:23575"
