@@ -71,7 +71,7 @@ import static com.telenav.kivakit.core.ensure.Ensure.ensureNotNull;
 @LexakaiJavadoc(complete = true)
 public class ServiceRegistryServer extends Server
 {
-    private static final Lazy<ServiceRegistryServer> project = Lazy.of(ServiceRegistryServer::new);
+    private static final Lazy<ServiceRegistryServer> project = Lazy.lazy(ServiceRegistryServer::new);
 
     public static ServiceRegistryServer get()
     {
@@ -95,7 +95,7 @@ public class ServiceRegistryServer extends Server
             .optional()
             .build();
 
-    private transient final Lazy<ServiceRegistry> serviceRegistry = Lazy.of(() ->
+    private transient final Lazy<ServiceRegistry> serviceRegistry = Lazy.lazy(() ->
     {
         var registry = listenTo(get(SCOPE) == Scope.Type.NETWORK
                 ? new NetworkServiceRegistry()

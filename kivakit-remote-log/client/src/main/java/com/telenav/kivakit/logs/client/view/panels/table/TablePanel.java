@@ -191,7 +191,7 @@ public class TablePanel extends KivaKitPanel
                     {
                         var modelIndex = table().convertRowIndexToModel(rowIndex);
                         var row = model.row(modelIndex);
-                        lines.add(row.format(WideLogFormatter.INSTANCE, WITHOUT_EXCEPTION));
+                        lines.add(row.format(WideLogFormatte.INSTANCE, WITHOUT_EXCEPTION));
                         var stackTrace = row.stackTrace();
                         if (stackTrace != null)
                         {

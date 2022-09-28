@@ -33,7 +33,7 @@ import com.telenav.kivakit.core.logging.logs.BaseLog;
 import com.telenav.kivakit.core.messaging.Debug;
 import com.telenav.kivakit.core.messaging.context.CallStack;
 import com.telenav.kivakit.core.messaging.messages.status.Warning;
-import com.telenav.kivakit.core.messaging.messages.status.activity.Activity;
+import com.telenav.kivakit.core.messaging.messages.status.activity.Step;
 import com.telenav.kivakit.core.string.Indent;
 import com.telenav.kivakit.core.string.Strings;
 import com.telenav.kivakit.core.time.Duration;
@@ -407,7 +407,7 @@ public abstract class PrimitiveCollection implements
                 {
                     if (DEBUG.isDebugOn())
                     {
-                        LOGGER.log(new Activity("Collection '$' ($ x $ = $) is big",
+                        LOGGER.log(new Step("Collection '$' ($ x $ = $) is big",
                                 objectName, initialSize(), initialChildSize(), initialSize().times(initialChildSize())));
                     }
                 }
@@ -415,7 +415,7 @@ public abstract class PrimitiveCollection implements
                 {
                     if (DEBUG.isDebugOn())
                     {
-                        LOGGER.log(new Activity("Collection '$' ($) is big", objectName, initialSize()));
+                        LOGGER.log(new Step("Collection '$' ($) is big", objectName, initialSize()));
                     }
                 }
             }
@@ -426,7 +426,7 @@ public abstract class PrimitiveCollection implements
                 // then report this, but only once
                 if (DEBUG.isDebugOn())
                 {
-                    LOGGER.log(new Activity("Collection '$' has been allocated a lot", objectName).maximumFrequency(Frequency.ONCE));
+                    LOGGER.log(new Step("Collection '$' has been allocated a lot", objectName).maximumFrequency(Frequency.ONCE));
                 }
             }
         }
@@ -1002,7 +1002,7 @@ public abstract class PrimitiveCollection implements
             if (estimatedChildSize != -1)
             {
                 // show both dimensions of the primitive collection
-                LOGGER.log(new Activity(stack, "$ $ $($ x $ = $)", who, why, what, Count.count(initialSize),
+                LOGGER.log(new Step(stack, "$ $ $($ x $ = $)", who, why, what, Count.count(initialSize),
                         Count.count(estimatedChildSize), Count.count(initialSize / estimatedChildSize).minimize(Count._16)));
             }
             else
@@ -1024,7 +1024,7 @@ public abstract class PrimitiveCollection implements
                     // and then show what exactly was allocated
                     if (DEBUG.isDebugOn())
                     {
-                        LOGGER.log(new Activity(stack, "$ $ $[$] $ (total $, $)", who, why, what, initialSize,
+                        LOGGER.log(new Step(stack, "$ $ $[$] $ (total $, $)", who, why, what, initialSize,
                                 size, Bytes.bytes(totalAllocatedByAllocator.count(who)), Bytes.bytes(total)));
                     }
                 }
@@ -1033,7 +1033,7 @@ public abstract class PrimitiveCollection implements
                     // show the number of non-primitives allocated
                     if (DEBUG.isDebugOn())
                     {
-                        LOGGER.log(new Activity(stack, "$ $ $ $\n$", who, why, what, initialSize, allocated));
+                        LOGGER.log(new Step(stack, "$ $ $ $\n$", who, why, what, initialSize, allocated));
                     }
                 }
             }
@@ -1046,7 +1046,7 @@ public abstract class PrimitiveCollection implements
                 {
                     if (DEBUG.isDebugOn())
                     {
-                        LOGGER.log(new Activity("$ allocated large primitive collection $[$][$] (total $)", who, what, initialSize,
+                        LOGGER.log(new Step("$ allocated large primitive collection $[$][$] (total $)", who, what, initialSize,
                                 estimatedChildSize, Bytes.bytes(totalAllocated.get())));
                     }
                 }
@@ -1054,7 +1054,7 @@ public abstract class PrimitiveCollection implements
                 {
                     if (DEBUG.isDebugOn())
                     {
-                        LOGGER.log(new Activity("$ allocated large primitive collection $[$] (total $)", who, what, initialSize,
+                        LOGGER.log(new Step("$ allocated large primitive collection $[$] (total $)", who, what, initialSize,
                                 Bytes.bytes(totalAllocated.get())));
                     }
                 }
@@ -1408,7 +1408,7 @@ public abstract class PrimitiveCollection implements
         {
             if (size > LARGE_ALLOCATION)
             {
-                LOGGER.log(new Activity("Allocated large array for ${class} ($) with $ elements",
+                LOGGER.log(new Step("Allocated large array for ${class} ($) with $ elements",
                         getClass(), objectName(), size));
             }
         }
