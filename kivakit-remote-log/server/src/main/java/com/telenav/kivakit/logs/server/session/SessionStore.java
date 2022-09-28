@@ -37,7 +37,7 @@ import static com.telenav.kivakit.serialization.core.SerializationSession.Sessio
 public class
 SessionStore extends BaseComponent implements ProjectTrait
 {
-    private static final Lazy<SessionStore> store = Lazy.of(SessionStore::new);
+    private static final Lazy<SessionStore> store = Lazy.lazy(SessionStore::new);
 
     public static SessionStore get()
     {

@@ -73,7 +73,7 @@ public class ServerLog extends BaseTextLog implements
 
     private static final ConsoleLogger LOGGER = new ConsoleLogger();
 
-    private static final Lazy<ServerLog> singleton = Lazy.of(ServerLog::new);
+    private static final Lazy<ServerLog> singleton = Lazy.lazy(ServerLog::new);
 
     public static ServerLog get()
     {
@@ -92,7 +92,7 @@ public class ServerLog extends BaseTextLog implements
 
     private final Time started = Time.now();
 
-    private final Lazy<Session> session = Lazy.of(() ->
+    private final Lazy<Session> session = Lazy.lazy(() ->
     {
         var application = Application.get();
         if (application != null)

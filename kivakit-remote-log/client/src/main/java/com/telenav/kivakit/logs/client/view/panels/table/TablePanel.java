@@ -187,11 +187,12 @@ public class TablePanel extends KivaKitPanel
                 else
                 {
                     var lines = new StringList();
+                    var formatter = new WideLogFormatter();
                     for (var rowIndex = from; rowIndex <= to; rowIndex++)
                     {
                         var modelIndex = table().convertRowIndexToModel(rowIndex);
                         var row = model.row(modelIndex);
-                        lines.add(row.format(WideLogFormatter.INSTANCE, WITHOUT_EXCEPTION));
+                        lines.add(row.format(formatter, WITHOUT_EXCEPTION));
                         var stackTrace = row.stackTrace();
                         if (stackTrace != null)
                         {

@@ -392,11 +392,11 @@ public class ServiceRegistryClient extends BaseComponent implements
         var application = Application.get();
 
         // and this process' id
-        var pid = OperatingSystem.get().processIdentifier();
+        var pid = OperatingSystem.operatingSystem().processIdentifier();
 
         // then compose an identifier for the service application
         var applicationIdentifier = application == null
-                ? new Application.Identifier("Unknown (pid " + OperatingSystem.get().processIdentifier() + ")")
+                ? new Application.Identifier("Unknown (pid " + OperatingSystem.operatingSystem().processIdentifier() + ")")
                 : application.identifier();
 
         // and a name to use in the description
