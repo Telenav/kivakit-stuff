@@ -61,7 +61,7 @@ public final class DefaultHashingStrategy implements HashingStrategy
     private DefaultHashingStrategy(Estimate capacity, Percent maximumOccupancy)
     {
         this.maximumOccupancy = maximumOccupancy;
-        recommendedSize = capacity.nextPrime();
+        recommendedSize = capacity.asPrimeAllocationSize();
         rehashThreshold = recommendedSize.percent(maximumOccupancy).asCount();
     }
 

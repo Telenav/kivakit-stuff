@@ -56,9 +56,9 @@ public class PackedStringArray extends PrimitiveArray
 
     private static final Debug DEBUG = new Debug(LOGGER);
 
-    private static final int TYPE_MASK = (int) BitCount.bitCount(Type.UNICODE.ordinal()).mask();
+    private static final int TYPE_MASK = (int) BitCount.bits(Type.UNICODE.ordinal()).mask();
 
-    private static final int TYPE_SHIFT = 32 - 1 - BitCount.bitCount(Type.UNICODE.ordinal()).asInt();
+    private static final int TYPE_SHIFT = 32 - 1 - BitCount.bits(Type.UNICODE.ordinal()).asInt();
 
     private enum Type
     {
