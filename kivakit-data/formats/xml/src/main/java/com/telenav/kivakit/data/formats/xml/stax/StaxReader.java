@@ -199,7 +199,7 @@ public class StaxReader extends BaseComponent implements Closeable
     @Override
     public void close()
     {
-        IO.close(in);
+        IO.close(resource, in);
     }
 
     /**

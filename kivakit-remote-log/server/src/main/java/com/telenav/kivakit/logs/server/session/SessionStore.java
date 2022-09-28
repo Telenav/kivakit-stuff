@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import static com.telenav.kivakit.core.string.Formatter.Format.WITHOUT_EXCEPTION;
+import static com.telenav.kivakit.core.messaging.MessageFormat.WITHOUT_EXCEPTION;
 import static com.telenav.kivakit.resource.Extension.KRYO;
 import static com.telenav.kivakit.resource.Extension.TXT;
 import static com.telenav.kivakit.serialization.core.SerializationSession.SessionType.RESOURCE;
@@ -61,7 +61,7 @@ SessionStore extends BaseComponent implements ProjectTrait
     public synchronized void add(Session session, byte[] bytes, ProgressReporter reporter)
     {
         add(session);
-        sessionFile(session, KRYO).reader(reporter).bytes();
+        sessionFile(session, KRYO).reader(reporter).bytes(this);
     }
 
     public synchronized void addAll(Session session, List<LogEntry> toAdd)
@@ -139,7 +139,7 @@ SessionStore extends BaseComponent implements ProjectTrait
 
     public byte[] read(Session session, ProgressReporter reporter)
     {
-        return sessionFile(session, KRYO).reader(reporter).bytes();
+        return sessionFile(session, KRYO).reader(reporter).bytes(this);
     }
 
     public synchronized void save(Session session)
@@ -162,7 +162,7 @@ SessionStore extends BaseComponent implements ProjectTrait
             {
                 for (var row : entries)
                 {
-                    output.println(row.format(NarrowLogFormatter.INSTANCE, WITHOUT_EXCEPTION));
+                    output.println(row.format(new NarrowLogFormatter(), WITHOUT_EXCEPTION));
                 }
             }
         }

@@ -38,7 +38,7 @@ public class BitArrayTest extends PrimitiveCollectionsUnitTest
         {
             writer.write(i, 5);
         }
-        IO.close(writer);
+        IO.close(this, writer);
         ensureEqual("00000 00001 00010 00011 00100 00101 00110 00111".replaceAll(" ", ""),
                 bits.toBitString().replaceAll(" ", ""));
         BitReader reader = bits.reader();
@@ -46,7 +46,7 @@ public class BitArrayTest extends PrimitiveCollectionsUnitTest
         {
             ensureEqual(i, reader.read(5));
         }
-        IO.close(reader);
+        IO.close(this, reader);
     }
 
     @Test
@@ -80,7 +80,7 @@ public class BitArrayTest extends PrimitiveCollectionsUnitTest
                 writer.write(i, j);
             }
         }
-        IO.close(writer);
+        IO.close(this, writer);
 
         BitReader reader = bits.reader();
         for (var i = 0; i < 1_000; i++)
@@ -91,7 +91,7 @@ public class BitArrayTest extends PrimitiveCollectionsUnitTest
                 ensureEqual(i & mask, reader.read(j));
             }
         }
-        IO.close(reader);
+        IO.close(this, reader);
     }
 
     @Test
@@ -101,11 +101,11 @@ public class BitArrayTest extends PrimitiveCollectionsUnitTest
         bits.initialize();
         BitWriter writer = bits.writer();
         writer.write(0xf0f0f0f0, 32);
-        IO.close(writer);
+        IO.close(this, writer);
         BitReader reader = bits.reader();
         var read = reader.read(32);
         ensureEqual(0xf0f0f0f0, read);
-        IO.close(reader);
+        IO.close(this, reader);
     }
 
     @Test
@@ -122,7 +122,7 @@ public class BitArrayTest extends PrimitiveCollectionsUnitTest
         writer.write(10, 5);
         long end = writer.cursor();
         ensureEqual(10L, end);
-        IO.close(writer);
+        IO.close(this, writer);
         BitReader reader = bits.reader();
         ensureEqual(0L, reader.cursor());
         reader.cursor(middle);
