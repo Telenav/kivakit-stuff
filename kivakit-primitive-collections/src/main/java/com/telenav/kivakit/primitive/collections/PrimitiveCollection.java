@@ -1013,14 +1013,6 @@ public abstract class PrimitiveCollection implements
                     // get the component type of the collection,
                     var componentType = type.getComponentType();
 
-                    // compute the size of this object from the estimated size (initial capacity)
-                    // and the size of the primitive type in bytes,
-                    var size = JavaVirtualMachine.javaVirtualMachine().sizeOfPrimitiveType(componentType).times(initialSize);
-
-                    // add to the total
-                    var total = totalAllocated.addAndGet(size.asBytes());
-                    totalAllocatedByAllocator.add(who, size);
-
                     // and then show what exactly was allocated
                     if (DEBUG.isDebugOn())
                     {

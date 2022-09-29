@@ -30,7 +30,6 @@ import com.telenav.kivakit.core.string.Strings;
 import com.telenav.kivakit.core.value.count.BitCount;
 import com.telenav.kivakit.core.value.count.Estimate;
 import com.telenav.kivakit.core.value.count.Maximum;
-import com.telenav.kivakit.core.vm.JavaVirtualMachine;
 import com.telenav.kivakit.primitive.collections.CompressibleCollection;
 import com.telenav.kivakit.primitive.collections.array.PrimitiveArray;
 import com.telenav.kivakit.primitive.collections.array.scalars.SplitByteArray;
@@ -49,6 +48,7 @@ import com.telenav.lexakai.annotations.UmlClassDiagram;
  *
  * @author jonathanl (shibo)
  */
+@SuppressWarnings("unused")
 @UmlClassDiagram(diagram = DiagramPrimitiveArray.class)
 public class PackedStringArray extends PrimitiveArray
 {
@@ -115,7 +115,6 @@ public class PackedStringArray extends PrimitiveArray
      * String pooling map used while loading to avoid duplicating frequently occurring strings. This effectively
      * compresses the input ala LZW.
      */
-    @JavaVirtualMachine.KivaKitExcludeFromSizeOf
     private transient CacheMap<String, Integer> pool = new CacheMap<>(Maximum._65536);
 
     public PackedStringArray(String objectName)
