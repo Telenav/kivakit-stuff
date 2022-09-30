@@ -70,7 +70,7 @@ public class ServiceRegistryStore extends BaseComponent
         if (file.exists())
         {
             // and if the data is not too old
-            var lastModified = file.modifiedAt();
+            var lastModified = file.lastModified();
             var expirationTime = settings().serviceRegistryStoreExpirationTime();
             if (lastModified.elapsedSince().isLessThan(expirationTime))
             {
