@@ -24,7 +24,7 @@ import com.telenav.kivakit.core.messaging.messages.status.Problem;
 import com.telenav.kivakit.core.version.Version;
 import com.telenav.kivakit.service.registry.ServiceRegistrySettings;
 import com.telenav.kivakit.service.registry.internal.lexakai.DiagramRest;
-import com.telenav.kivakit.settings.Settings;
+import com.telenav.kivakit.settings.SettingsRegistry;
 import com.telenav.lexakai.annotations.LexakaiJavadoc;
 import com.telenav.lexakai.annotations.UmlClassDiagram;
 
@@ -66,7 +66,7 @@ public abstract class BaseResponse<T>
     @KivaKitIncludeProperty
     public Version version()
     {
-        return Settings.of(this).requireSettings(ServiceRegistrySettings.class).version();
+        return SettingsRegistry.settingsRegistryFor(this).requireSettings(ServiceRegistrySettings.class).version();
     }
 
     protected abstract void value(T value);
