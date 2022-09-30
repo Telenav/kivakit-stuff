@@ -23,16 +23,15 @@ import com.telenav.kivakit.conversion.core.language.primitive.IntegerConverter;
 import com.telenav.kivakit.conversion.core.time.DurationConverter;
 import com.telenav.kivakit.conversion.core.time.FrequencyConverter;
 import com.telenav.kivakit.conversion.core.value.VersionConverter;
-import com.telenav.kivakit.core.string.ObjectFormatter;
 import com.telenav.kivakit.core.language.reflection.property.KivaKitIncludeProperty;
 import com.telenav.kivakit.core.messaging.Listener;
+import com.telenav.kivakit.core.string.ObjectFormatter;
 import com.telenav.kivakit.core.time.Duration;
 import com.telenav.kivakit.core.time.Frequency;
 import com.telenav.kivakit.core.version.Version;
 import com.telenav.kivakit.core.vm.Properties;
 import com.telenav.kivakit.network.core.Host;
 import com.telenav.kivakit.network.core.Port;
-import com.telenav.lexakai.annotations.LexakaiJavadoc;
 
 import static com.telenav.kivakit.network.core.Loopback.loopback;
 
@@ -121,8 +120,8 @@ public class ServiceRegistrySettings
 
     /**
      * <b>Not public API</b>
-     *
-     * @return The service registry for the network (normally some kind of intranet)
+     * <p>
+     * Returns the service registry for the network (normally some kind of intranet)
      */
     public Port network()
     {
