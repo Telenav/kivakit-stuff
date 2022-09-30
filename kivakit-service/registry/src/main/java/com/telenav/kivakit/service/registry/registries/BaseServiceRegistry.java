@@ -19,7 +19,7 @@
 package com.telenav.kivakit.service.registry.registries;
 
 import com.telenav.kivakit.application.Application;
-import com.telenav.kivakit.collections.set.MultiSet;
+import com.telenav.kivakit.core.collections.set.MultiSet;
 import com.telenav.kivakit.core.collections.Sets;
 import com.telenav.kivakit.core.function.Result;
 import com.telenav.kivakit.core.function.ResultTrait;
