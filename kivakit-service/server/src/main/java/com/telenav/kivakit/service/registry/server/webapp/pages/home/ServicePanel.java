@@ -67,7 +67,7 @@ public class ServicePanel extends Panel
 
         add(new Label("scope", () -> service.scope().name()));
         add(new Label("host", () -> service.port().host().toString()));
-        add(new Label("port", () -> service.port().number()));
+        add(new Label("port", () -> service.port().portNumber()));
         add(new Label("description", metadata::description));
         add(new Label("renewed", () -> service.renewedAt().elapsedSince()));
         add(new Label("up-time", health::upTime));

@@ -133,7 +133,7 @@ public class LocalServiceRegistry extends BaseServiceRegistry
                 // would be to carefully select a range of ephemeral port numbers that no other application
                 // on the host will try to use.
 
-                var port = Host.local().port(portNumber);
+                var port = Host.localhost().port(portNumber);
                 if (port.isAvailable())
                 {
                     return port;

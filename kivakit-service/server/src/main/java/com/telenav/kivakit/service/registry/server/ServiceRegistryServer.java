@@ -143,7 +143,7 @@ public class ServiceRegistryServer extends Server
         // Determine what port to use for the server,
         var settings = require(ServiceRegistrySettings.class);
         var port = isNetwork()
-                ? settings.networkServiceRegistryPort().number()
+                ? settings.networkServiceRegistryPort().portNumber()
                 : settings.localServiceRegistryPort();
 
         // create the Jersey REST application,

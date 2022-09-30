@@ -34,6 +34,8 @@ import com.telenav.kivakit.network.core.Host;
 import com.telenav.kivakit.network.core.Port;
 import com.telenav.lexakai.annotations.LexakaiJavadoc;
 
+import static com.telenav.kivakit.network.core.Loopback.loopback;
+
 /**
  * Service registry settings. For defaults, see ServiceRegistrySettings.properties below:
  *
@@ -65,7 +67,7 @@ import com.telenav.lexakai.annotations.LexakaiJavadoc;
  *
  * @author jonathanl (shibo)
  */
-@LexakaiJavadoc(complete = true)
+@SuppressWarnings("unused")
 public class ServiceRegistrySettings
 {
     /** The port used by the local service registry */
@@ -101,7 +103,7 @@ public class ServiceRegistrySettings
      */
     public Port local()
     {
-        return port(Host.loopback());
+        return port(loopback());
     }
 
     @KivaKitConverted(IntegerConverter.class)

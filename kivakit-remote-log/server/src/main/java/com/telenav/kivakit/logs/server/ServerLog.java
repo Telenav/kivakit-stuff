@@ -122,7 +122,7 @@ public class ServerLog extends BaseTextLog implements
         }
         else
         {
-            port = service.get().port().number();
+            port = service.get().port().portNumber();
         }
     }
 

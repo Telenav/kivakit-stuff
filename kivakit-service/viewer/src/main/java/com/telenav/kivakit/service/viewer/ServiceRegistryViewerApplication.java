@@ -84,7 +84,7 @@ public class ServiceRegistryViewerApplication extends Application
             var sorted = ObjectList.objectList(services.get()).sorted();
             for (var service : sorted)
             {
-                lines.add(String.format(format, service.renewedAt().elapsedSince() + " ago", service.port().number(), service.type(), service.application(), service.metadata().description()));
+                lines.add(String.format(format, service.renewedAt().elapsedSince() + " ago", service.port().portNumber(), service.type(), service.application(), service.metadata().description()));
             }
             lines.add("");
             System.out.println(lines.join("\n"));
