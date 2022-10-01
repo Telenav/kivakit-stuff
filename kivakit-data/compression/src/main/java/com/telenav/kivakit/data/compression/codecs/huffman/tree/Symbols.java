@@ -49,7 +49,7 @@ import static com.telenav.kivakit.core.ensure.Ensure.ensure;
  * <p>
  * Once a set of symbols has been constructed, it can be converted to a {@link PropertyMap} object with {@link
  * #asProperties(StringConverter, Function)}  and saved to a file with {@link PropertyMap#save(WritableResource)}. The
- * properties can later be loaded with {@link PropertyMap#load(Listener, Resource)} and passed to {@link
+ * properties can later be loaded with {@link PropertyMap#loadPropertyMap(Listener, Resource)} and passed to {@link
  * #load(PropertyMap, Object, StringConverter)} along with the escape symbol and a converter that can convert property
  * keys into symbols.
  * <p>
@@ -176,7 +176,7 @@ public class Symbols<Symbol>
      */
     public PropertyMap asProperties(StringConverter<Symbol> converter, Function<Symbol, String> commenter)
     {
-        var properties = PropertyMap.create();
+        var properties = PropertyMap.propertyMap();
         for (var symbol : sortedByFrequency())
         {
             var key = converter.unconvert(symbol.value());
