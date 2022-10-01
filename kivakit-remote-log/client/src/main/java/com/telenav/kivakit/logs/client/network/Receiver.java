@@ -148,7 +148,7 @@ import static com.telenav.kivakit.serialization.core.SerializationSession.Sessio
         for (var session : desiredSessions)
         {
             VersionedObject<byte[]> bytes = serializationSession.read();
-            SessionStore.get().add(session, bytes.object(), ProgressReporter.none());
+            SessionStore.get().add(session, bytes.object(), ProgressReporter.nullProgressReporter());
         }
     }
 }
