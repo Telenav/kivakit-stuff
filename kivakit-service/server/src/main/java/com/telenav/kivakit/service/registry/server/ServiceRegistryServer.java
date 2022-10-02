@@ -38,10 +38,10 @@ import com.telenav.kivakit.service.registry.server.webapp.ServiceRegistryWebAppl
 import com.telenav.kivakit.service.registry.store.ServiceRegistryStore;
 import com.telenav.kivakit.web.jersey.JerseyJettyPlugin;
 import com.telenav.kivakit.web.jetty.JettyServer;
-import com.telenav.kivakit.web.swagger.SwaggerJettyPlugin;
+import com.telenav.kivakit.web.swagger.SwaggerIndexJettyPlugin;
 import com.telenav.kivakit.web.swagger.SwaggerOpenApiJettyPlugin;
-import com.telenav.kivakit.web.swagger.SwaggerWebAppJettyPlugin;
-import com.telenav.kivakit.web.swagger.SwaggerWebJarJettyPlugin;
+import com.telenav.kivakit.web.swagger.SwaggerAssetsJettyPlugin;
+import com.telenav.kivakit.web.swagger.SwaggerWebJarAssetJettyPlugin;
 import com.telenav.kivakit.web.wicket.WicketJettyPlugin;
 import com.telenav.lexakai.annotations.LexakaiJavadoc;
 import com.telenav.lexakai.annotations.UmlClassDiagram;
@@ -154,9 +154,9 @@ public class ServiceRegistryServer extends Server
                 .port(port)
                 .mount("/*", new WicketJettyPlugin(ServiceRegistryWebApplication.class))
                 .mount("/open-api/*", new SwaggerOpenApiJettyPlugin(application))
-                .mount("/docs/*", new SwaggerJettyPlugin(openApiAssetsFolder(), port))
-                .mount("/webapp/*", new SwaggerWebAppJettyPlugin())
-                .mount("/webjar/*", new SwaggerWebJarJettyPlugin())
+                .mount("/docs/*", new SwaggerIndexJettyPlugin(openApiAssetsFolder(), port))
+                .mount("/webapp/*", new SwaggerAssetsJettyPlugin())
+                .mount("/webjar/*", new SwaggerWebJarAssetJettyPlugin())
                 .mount("/*", new JerseyJettyPlugin(application))
                 .start();
     }
@@ -168,7 +168,7 @@ public class ServiceRegistryServer extends Server
      */
     protected ResourceFolder<?> openApiAssetsFolder()
     {
-        var type = ensureNotNull(Type.typeForName("com.telenav.kivakit.web.swagger.SwaggerJettyPlugin"));
+        var type = ensureNotNull(Type.typeForName("com.telenav.kivakit.web.swagger.SwaggerIndexJettyPlugin"));
         return Package.parsePackage(this, type.type(), "assets/openapi");
     }
 
