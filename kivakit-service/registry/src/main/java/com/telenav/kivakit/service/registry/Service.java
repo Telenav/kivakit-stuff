@@ -140,7 +140,7 @@ public class Service extends BaseComponent implements Comparable<Service>, Strin
 
     @Override
     @SuppressWarnings("SwitchStatementWithTooFewBranches")
-    public String asString(Format format)
+    public String asString(@NotNull Format format)
     {
         switch (format)
         {

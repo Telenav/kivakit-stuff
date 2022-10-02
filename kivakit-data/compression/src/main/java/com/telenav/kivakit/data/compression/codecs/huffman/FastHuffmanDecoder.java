@@ -31,6 +31,7 @@ import com.telenav.kivakit.interfaces.string.StringFormattable;
 import com.telenav.kivakit.primitive.collections.array.bits.BitArray;
 import com.telenav.kivakit.primitive.collections.array.scalars.ByteArray;
 import com.telenav.kivakit.primitive.collections.list.ByteList;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -85,7 +86,7 @@ public final class FastHuffmanDecoder<Symbol>
             }
 
             @Override
-            public String asString(Format format)
+            public String asString(@NotNull Format format)
             {
                 return Strings.format("[Entry next = '$', values = $]", next.prefix,
                         new StringList(values).join(", "));
@@ -168,7 +169,7 @@ public final class FastHuffmanDecoder<Symbol>
         }
 
         @Override
-        public String asString(Format format)
+        public String asString(@NotNull Format format)
         {
             var entries = new StringList();
             for (var index = 0; index < byteToEntry.length; index++)
