@@ -28,7 +28,7 @@ import com.telenav.kivakit.serialization.gson.factory.GsonFactory;
 import com.telenav.kivakit.serialization.gson.serializers.ProblemGsonSerializer;
 import com.telenav.kivakit.serialization.gson.serializers.TimeInMillisecondsGsonSerializer;
 import com.telenav.kivakit.serialization.kryo.KryoSerializationSessionFactory;
-import com.telenav.kivakit.serialization.kryo.types.CoreKryoTypes;
+import com.telenav.kivakit.serialization.kryo.types.KivaKitCoreKryoTypes;
 import com.telenav.kivakit.service.registry.serialization.serializers.ApplicationIdentifierGsonSerializer;
 import com.telenav.kivakit.service.registry.serialization.serializers.ServiceTypeGsonSerializer;
 
@@ -46,7 +46,7 @@ public class ServiceRegistryProject extends Project
     private ServiceRegistryProject()
     {
         register(new KryoSerializationSessionFactory(new ServiceRegistryKryoTypes()
-                .mergedWith(new CoreKryoTypes())));
+                .mergedWith(new KivaKitCoreKryoTypes())));
     }
 
     @Override

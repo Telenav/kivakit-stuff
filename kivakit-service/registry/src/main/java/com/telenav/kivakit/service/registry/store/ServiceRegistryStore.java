@@ -27,7 +27,7 @@ import com.telenav.kivakit.filesystem.File;
 import com.telenav.kivakit.filesystem.Folder;
 import com.telenav.kivakit.resource.serialization.SerializableObject;
 import com.telenav.kivakit.serialization.kryo.KryoSerializationSession;
-import com.telenav.kivakit.serialization.kryo.types.CoreKryoTypes;
+import com.telenav.kivakit.serialization.kryo.types.KivaKitCoreKryoTypes;
 import com.telenav.kivakit.serialization.kryo.types.KryoTypes;
 import com.telenav.kivakit.service.registry.ServiceRegistry;
 import com.telenav.kivakit.service.registry.ServiceRegistrySettings;
@@ -38,7 +38,7 @@ import com.telenav.lexakai.annotations.associations.UmlRelation;
 import com.telenav.lexakai.annotations.visibility.UmlNotPublicApi;
 
 import static com.telenav.kivakit.resource.Extension.TMP;
-import static com.telenav.kivakit.serialization.core.SerializationSession.SessionType.RESOURCE;
+import static com.telenav.kivakit.serialization.core.SerializationSession.SessionType.RESOURCE_SERIALIZATION_SESSION;
 
 /**
  * <b>Not public API</b>
@@ -79,7 +79,7 @@ public class ServiceRegistryStore extends BaseComponent
                 try (var input = file.openForReading())
                 {
                     // create a serialization object and read the serialized registry
-                    try (var session = new KryoSerializationSession(new CoreKryoTypes()))
+                    try (var session = new KryoSerializationSession(new KivaKitCoreKryoTypes()))
                     {
                         session.open(input);
                         var object = session.read();
@@ -124,7 +124,7 @@ public class ServiceRegistryStore extends BaseComponent
                 try (var output = file.openForWriting())
                 {
                     var session = new KryoSerializationSession(new KryoTypes());
-                    session.open(output, RESOURCE, settings().version());
+                    session.open(output, RESOURCE_SERIALIZATION_SESSION, settings().version());
                     session.write(new SerializableObject<>(registry, settings().version()));
                     session.close();
                 }

@@ -19,7 +19,7 @@
 package com.telenav.kivakit.primitive.collections;
 
 import com.telenav.kivakit.serialization.kryo.test.KryoUnitTest;
-import com.telenav.kivakit.serialization.kryo.types.CoreKryoTypes;
+import com.telenav.kivakit.serialization.kryo.types.KivaKitCoreKryoTypes;
 import com.telenav.kivakit.serialization.kryo.types.KryoTypes;
 
 /**
@@ -32,6 +32,6 @@ public abstract class PrimitiveCollectionsUnitTest extends KryoUnitTest
     @Override
     protected KryoTypes kryoTypes()
     {
-        return new CoreKryoTypes().mergedWith(new PrimitiveCollectionsKryoTypes());
+        return new KivaKitCoreKryoTypes().mergedWith(new PrimitiveCollectionsKryoTypes());
     }
 }

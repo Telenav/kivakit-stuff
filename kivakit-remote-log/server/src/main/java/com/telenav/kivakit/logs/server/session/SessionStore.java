@@ -28,7 +28,7 @@ import java.util.Set;
 import static com.telenav.kivakit.core.messaging.MessageFormat.WITHOUT_EXCEPTION;
 import static com.telenav.kivakit.resource.Extension.KRYO;
 import static com.telenav.kivakit.resource.Extension.TXT;
-import static com.telenav.kivakit.serialization.core.SerializationSession.SessionType.RESOURCE;
+import static com.telenav.kivakit.serialization.core.SerializationSession.SessionType.RESOURCE_SERIALIZATION_SESSION;
 
 /**
  * @author jonathanl (shibo)
@@ -98,7 +98,7 @@ SessionStore extends BaseComponent implements ProjectTrait
                 {
                     @SuppressWarnings("resource")
                     var serializationSession = session();
-                    var version = serializationSession.open(input, RESOURCE);
+                    var version = serializationSession.open(input, RESOURCE_SERIALIZATION_SESSION);
                     trace("Loaded session '$' (KivaKit version $)", session, version);
                     entries = (LinkedList<LogEntry>) serializationSession.read().object();
                     sessionNameToEntries.put(session, entries);
@@ -150,7 +150,7 @@ SessionStore extends BaseComponent implements ProjectTrait
             try (var output = sessionFile(session, KRYO).openForWriting())
             {
                 var serializer = session();
-                serializer.open(output, RESOURCE, kivakitVersion());
+                serializer.open(output, RESOURCE_SERIALIZATION_SESSION, kivakitVersion());
                 serializer.write(new SerializableObject<>(entries, project(ServerLogProject.class).projectVersion()));
                 serializer.close();
             }
