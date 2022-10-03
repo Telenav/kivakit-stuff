@@ -22,9 +22,9 @@ import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.KryoSerializable;
 import com.esotericsoftware.kryo.io.Input;
 import com.esotericsoftware.kryo.io.Output;
-import com.telenav.kivakit.collections.map.ConcurrentCountMap;
 import com.telenav.kivakit.core.KivaKit;
 import com.telenav.kivakit.core.collections.list.ObjectList;
+import com.telenav.kivakit.core.collections.map.CountMap;
 import com.telenav.kivakit.core.language.Classes;
 import com.telenav.kivakit.core.language.primitive.Booleans;
 import com.telenav.kivakit.core.logging.Logger;
@@ -46,7 +46,6 @@ import com.telenav.kivakit.core.value.count.Countable;
 import com.telenav.kivakit.core.value.count.Estimate;
 import com.telenav.kivakit.core.value.count.Maximum;
 import com.telenav.kivakit.core.version.Version;
-import com.telenav.kivakit.core.vm.JavaVirtualMachine;
 import com.telenav.kivakit.core.vm.Properties;
 import com.telenav.kivakit.core.vm.ShutdownHook;
 import com.telenav.kivakit.interfaces.code.TripwireTrait;
@@ -85,6 +84,7 @@ import static com.telenav.kivakit.core.messaging.context.CallStack.Proximity.IMM
 import static com.telenav.kivakit.core.project.Project.resolveProject;
 import static com.telenav.kivakit.core.time.Duration.MAXIMUM;
 import static com.telenav.kivakit.core.time.Frequency.EVERY_5_SECONDS;
+import static com.telenav.kivakit.core.value.count.Bytes.bytes;
 import static com.telenav.kivakit.core.vm.ShutdownHook.Order.FIRST;
 
 /**
@@ -189,10 +189,10 @@ public abstract class PrimitiveCollection implements
     private static Boolean logAllocations;
 
     /** The bytes allocated by an individual allocator */
-    private static final ConcurrentCountMap<String> totalAllocatedByAllocator = new ConcurrentCountMap<>();
+    private static final CountMap<String> totalAllocatedByAllocator = new CountMap<>();
 
     /** The number of allocations of collections with a given {@link NamedObject#objectName()} */
-    private static final ConcurrentCountMap<String> allocations = new ConcurrentCountMap<>();
+    private static final CountMap<String> allocations = new CountMap<>();
 
     /** The minimum size of a collection considered "big" */
     private static final int LARGE_ALLOCATION = 5_000_000;
@@ -214,7 +214,7 @@ public abstract class PrimitiveCollection implements
                     totalDelta += Math.abs(trim.delta());
                 }
 
-                DEBUG.trace("Compressed collections by $:\n$", Bytes.bytes(totalDelta), compressionRecords.bulleted());
+                DEBUG.trace("Compressed collections by $:\n$", bytes(totalDelta), compressionRecords.bulleted());
                 LOGGER.flush(MAXIMUM);
             }
         });
@@ -1017,7 +1017,7 @@ public abstract class PrimitiveCollection implements
                     if (DEBUG.isDebugOn())
                     {
                         LOGGER.log(new Step(stack, "$ $ $[$] $ (total $, $)", who, why, what, initialSize,
-                                size, Bytes.bytes(totalAllocatedByAllocator.count(who)), Bytes.bytes(total)));
+                                size, bytes(totalAllocatedByAllocator.count(who)), bytes(totalAllocated.get())));
                     }
                 }
                 else
@@ -1039,7 +1039,7 @@ public abstract class PrimitiveCollection implements
                     if (DEBUG.isDebugOn())
                     {
                         LOGGER.log(new Step("$ allocated large primitive collection $[$][$] (total $)", who, what, initialSize,
-                                estimatedChildSize, Bytes.bytes(totalAllocated.get())));
+                                estimatedChildSize, bytes(totalAllocated.get())));
                     }
                 }
                 else
@@ -1047,7 +1047,7 @@ public abstract class PrimitiveCollection implements
                     if (DEBUG.isDebugOn())
                     {
                         LOGGER.log(new Step("$ allocated large primitive collection $[$] (total $)", who, what, initialSize,
-                                Bytes.bytes(totalAllocated.get())));
+                                bytes(totalAllocated.get())));
                     }
                 }
             }

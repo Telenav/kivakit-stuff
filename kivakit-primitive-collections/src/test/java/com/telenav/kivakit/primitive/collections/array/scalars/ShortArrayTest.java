@@ -18,15 +18,14 @@
 
 package com.telenav.kivakit.primitive.collections.array.scalars;
 
-import com.telenav.kivakit.core.value.mutable.MutableInteger;
 import com.telenav.kivakit.primitive.collections.PrimitiveCollectionsUnitTest;
 import org.junit.Test;
 
 import java.util.HashMap;
 
+import static com.telenav.kivakit.core.value.count.Count._10;
 import static com.telenav.kivakit.internal.testing.Repeats.ALLOW_REPEATS;
 import static com.telenav.kivakit.internal.testing.Repeats.NO_REPEATS;
-import static com.telenav.kivakit.core.value.count.Count._10;
 
 public class ShortArrayTest extends PrimitiveCollectionsUnitTest
 {
@@ -97,16 +96,16 @@ public class ShortArrayTest extends PrimitiveCollectionsUnitTest
         ensureThrows(array::first);
         ensureThrows(array::last);
 
-        var last = new MutableInteger(Integer.MIN_VALUE);
+        maximumIndex = Integer.MIN_VALUE;
 
         index = 0;
         random().shortSequence(value ->
         {
             index++;
             array.set(index, value);
-            last.maximum(index);
+            maximumIndex = Math.max(index, maximumIndex);
             ensureEqual(array.get(0), array.first());
-            ensureEqual(array.get(last.get()), array.last());
+            ensureEqual(array.get(maximumIndex), array.last());
         });
     }
 
@@ -175,18 +174,18 @@ public class ShortArrayTest extends PrimitiveCollectionsUnitTest
         array.set(32, (short) 100);
 
         var values = array.iterator();
-        ensureEqual((short)0, values.next());
-        ensureEqual((short)1, values.next());
-        ensureEqual((short)2, values.next());
+        ensureEqual((short) 0, values.next());
+        ensureEqual((short) 1, values.next());
+        ensureEqual((short) 2, values.next());
         ensureEqual(array.nullShort(), values.next());
         ensure(values.hasNext());
 
         array.hasNullShort(true);
 
         values = array.iterator();
-        ensureEqual((short)1, values.next());
-        ensureEqual((short)2, values.next());
-        ensureEqual((short)100, values.next());
+        ensureEqual((short) 1, values.next());
+        ensureEqual((short) 2, values.next());
+        ensureEqual((short) 100, values.next());
         ensureFalse(values.hasNext());
     }
 
@@ -223,13 +222,13 @@ public class ShortArrayTest extends PrimitiveCollectionsUnitTest
         ensure(array.size() == 0);
 
         index = 0;
-        var maximum = new MutableInteger(Integer.MIN_VALUE);
+        maximumIndex = Integer.MIN_VALUE;
         random().shortSequence(value ->
         {
             index++;
-            maximum.maximum(index);
+            maximumIndex = Math.max(index, maximumIndex);
             array.set(index, value);
-            ensure(array.size() == maximum.get() + 1);
+            ensure(array.size() == maximumIndex + 1);
         });
     }
 

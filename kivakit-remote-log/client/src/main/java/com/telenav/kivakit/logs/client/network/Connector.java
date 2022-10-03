@@ -88,7 +88,7 @@ public class Connector extends BaseRepeater
         if (port.host().isResolvable())
         {
             // start trying to connect to the port on a background thread
-            listenTo(KivaKitThread.run("LogConnector", () -> autoConnect(port)));
+            listenTo(KivaKitThread.run(this, "LogConnector", () -> autoConnect(port)));
         }
         else
         {
@@ -153,7 +153,7 @@ public class Connector extends BaseRepeater
         // then start auto-connecting on a new thread.
         state(CONNECTING);
         connectingTo = port;
-        autoConnectThread = listenTo(KivaKitThread.run("LogAutoConnector", () ->
+        autoConnectThread = listenTo(KivaKitThread.run(this, "LogAutoConnector", () ->
         {
             // Loop while we are not yet connected, and we haven't been told to give up
             while (state.isNot(CONNECTED) && state.isNot(STOP_CONNECTING))

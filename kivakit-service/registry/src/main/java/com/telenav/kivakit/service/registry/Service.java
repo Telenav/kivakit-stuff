@@ -30,6 +30,7 @@ import com.telenav.kivakit.interfaces.string.StringFormattable;
 import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeMember;
 import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeType;
 import com.telenav.kivakit.network.core.Host;
+import com.telenav.kivakit.network.core.LocalHost;
 import com.telenav.kivakit.network.core.Port;
 import com.telenav.kivakit.service.registry.internal.lexakai.DiagramRegistry;
 import com.telenav.lexakai.annotations.LexakaiJavadoc;
@@ -89,7 +90,7 @@ import static com.telenav.kivakit.core.string.ObjectFormatter.ObjectFormat.SINGL
 @LexakaiJavadoc(complete = true)
 public class Service extends BaseComponent implements Comparable<Service>, StringFormattable
 {
-    public static final Port UNBOUND = Host.localhost().port(0);
+    public static final Port UNBOUND = LocalHost.localhost().port(0);
 
     @JsonProperty
     @OpenApiIncludeMember(description = "The application that is running the service")

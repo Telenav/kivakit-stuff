@@ -29,6 +29,8 @@ import com.telenav.kivakit.serialization.kryo.types.KryoTypes;
  */
 public abstract class PrimitiveCollectionsUnitTest extends KryoUnitTest
 {
+    protected int maximumIndex;
+
     @Override
     protected KryoTypes kryoTypes()
     {

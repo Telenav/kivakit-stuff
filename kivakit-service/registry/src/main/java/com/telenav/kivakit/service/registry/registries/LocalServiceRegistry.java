@@ -20,6 +20,7 @@ package com.telenav.kivakit.service.registry.registries;
 
 import com.telenav.kivakit.core.function.Result;
 import com.telenav.kivakit.network.core.Host;
+import com.telenav.kivakit.network.core.LocalHost;
 import com.telenav.kivakit.network.core.Port;
 import com.telenav.kivakit.service.registry.Service;
 import com.telenav.kivakit.service.registry.internal.lexakai.DiagramRegistry;
@@ -133,7 +134,7 @@ public class LocalServiceRegistry extends BaseServiceRegistry
                 // would be to carefully select a range of ephemeral port numbers that no other application
                 // on the host will try to use.
 
-                var port = Host.localhost().port(portNumber);
+                var port = LocalHost.localhost().port(portNumber);
                 if (port.isAvailable())
                 {
                     return port;

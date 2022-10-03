@@ -294,7 +294,7 @@ public class ClientLogPanel extends KivaKitPanel
             });
             progress.setVisible(true);
 
-            listenTo(KivaKitThread.run("LogReceiver", () -> receiver.receive(connection, newSessionListener, objectListener)));
+            listenTo(KivaKitThread.run(this, "LogReceiver", () -> receiver.receive(connection, newSessionListener, objectListener)));
         };
     }
 
