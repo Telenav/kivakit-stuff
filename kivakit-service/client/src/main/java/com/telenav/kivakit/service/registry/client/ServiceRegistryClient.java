@@ -332,7 +332,7 @@ public class ServiceRegistryClient extends BaseComponent implements
     {
         // Register the service
         trace("Registering with local registry: $", service);
-        service.health(JavaVirtualMachine.local().health());
+        service.health(JavaVirtualMachine.javaVirtualMachine().health());
         var request = new RegisterServiceRequest(service);
         var result = request(Scope.localhost(), request, RegisterServiceResponse.class).asResult();
         if (result.succeeded())
@@ -347,7 +347,7 @@ public class ServiceRegistryClient extends BaseComponent implements
                     {
                         settings().serviceLeaseRenewalFrequency().cycleLength().sleep();
                         trace("Renewing lease on registered service: $", registered);
-                        var health = JavaVirtualMachine.local().health();
+                        var health = JavaVirtualMachine.javaVirtualMachine().health();
                         if (health != null)
                         {
                             registered.health(health.update());

@@ -38,7 +38,7 @@ public class ServiceRegistryRestApplication extends BaseRestApplication
 {
     public ServiceRegistryRestApplication()
     {
-        Registry.of(this).register(new ServiceRegistryRestResource());
-        Registry.of(this).register(new ServiceRegistryJerseySerializer<>(this));
+        Registry.registryFor(this).register(new ServiceRegistryRestResource());
+        Registry.registryFor(this).register(new ServiceRegistryJerseySerializer<>(this));
     }
 }

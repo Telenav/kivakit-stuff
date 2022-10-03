@@ -48,7 +48,7 @@ public class ProgressPanel extends KivaKitPanel
                 .add(cancel);
 
         // and update the progress bar as the reporter reports progress.
-        reporter.listener(at ->
+        reporter.progressReporter(at ->
         {
             var percentComplete = (int) at.asUnitValue();
             progressBar.setValue(percentComplete);

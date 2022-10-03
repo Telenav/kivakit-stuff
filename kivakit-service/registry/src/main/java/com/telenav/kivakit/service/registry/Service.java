@@ -30,6 +30,7 @@ import com.telenav.kivakit.interfaces.string.StringFormattable;
 import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeMember;
 import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeType;
 import com.telenav.kivakit.network.core.Host;
+import com.telenav.kivakit.network.core.LocalHost;
 import com.telenav.kivakit.network.core.Port;
 import com.telenav.kivakit.service.registry.internal.lexakai.DiagramRegistry;
 import com.telenav.lexakai.annotations.LexakaiJavadoc;
@@ -89,7 +90,7 @@ import static com.telenav.kivakit.core.string.ObjectFormatter.ObjectFormat.SINGL
 @LexakaiJavadoc(complete = true)
 public class Service extends BaseComponent implements Comparable<Service>, StringFormattable
 {
-    public static final Port UNBOUND = Host.local().port(0);
+    public static final Port UNBOUND = LocalHost.localhost().port(0);
 
     @JsonProperty
     @OpenApiIncludeMember(description = "The application that is running the service")
@@ -140,7 +141,7 @@ public class Service extends BaseComponent implements Comparable<Service>, Strin
 
     @Override
     @SuppressWarnings("SwitchStatementWithTooFewBranches")
-    public String asString(Format format)
+    public String asString(@NotNull Format format)
     {
         switch (format)
         {
@@ -155,7 +156,7 @@ public class Service extends BaseComponent implements Comparable<Service>, Strin
     @Override
     public int compareTo(@NotNull Service that)
     {
-        return Long.compare(port.number(), that.port.number());
+        return Long.compare(port.portNumber(), that.port.portNumber());
     }
 
     public String descriptor()
@@ -206,7 +207,7 @@ public class Service extends BaseComponent implements Comparable<Service>, Strin
     @NotNull
     public String hostApplicationAndPort()
     {
-        return hostAndApplication() + ":" + port.number();
+        return hostAndApplication() + ":" + port.portNumber();
     }
 
     @JsonIgnore

@@ -18,7 +18,6 @@
 
 package com.telenav.kivakit.primitive.collections.array.scalars;
 
-import com.telenav.kivakit.core.value.mutable.MutableInteger;
 import com.telenav.kivakit.primitive.collections.PrimitiveCollectionsUnitTest;
 import org.junit.Test;
 
@@ -98,13 +97,13 @@ public class IntArrayTest extends PrimitiveCollectionsUnitTest
         ensureThrows(array::last);
 
         index = 0;
-        var last = new MutableInteger(Integer.MIN_VALUE);
+        maximumIndex = Integer.MIN_VALUE;
         random().intSequence(value ->
         {
             array.set(index, value);
-            last.maximum(index);
+            maximumIndex = Math.max(index, maximumIndex);
             ensureEqual(array.get(0), array.first());
-            ensureEqual(array.get(last.get()), array.last());
+            ensureEqual(array.get(maximumIndex), array.last());
             index++;
         });
     }
@@ -135,7 +134,7 @@ public class IntArrayTest extends PrimitiveCollectionsUnitTest
         random().intSequence(value -> !value.equals(-1), array::add);
         random().loop(() ->
         {
-            final int index = random().randomIndex(array.size() * 2);
+            int index = random().randomIndex(array.size() * 2);
             var value = array.safeGet(index);
             ensureEqual(index >= array.size(), array.isNull(value));
         });
@@ -217,14 +216,14 @@ public class IntArrayTest extends PrimitiveCollectionsUnitTest
         ensure(array.isEmpty());
         ensure(array.size() == 0);
 
-        var maximum = new MutableInteger(Integer.MIN_VALUE);
+        maximumIndex = Integer.MIN_VALUE;
         index = 0;
         random().intSequence(value ->
         {
             index++;
-            maximum.maximum(index);
+            maximumIndex = Math.max(index, maximumIndex);
             array.set(index, value);
-            ensure(array.size() == maximum.get() + 1);
+            ensure(array.size() == maximumIndex + 1);
         });
     }
 
@@ -234,8 +233,8 @@ public class IntArrayTest extends PrimitiveCollectionsUnitTest
         var array = array();
         random().intSequence(array::add);
         var last = array.size() - 1;
-        final int offset = Math.abs(random().randomIntExclusive(0, last));
-        final int length = Math.abs(random().randomIntExclusive(0, last - offset));
+        int offset = Math.abs(random().randomIntExclusive(0, last));
+        int length = Math.abs(random().randomIntExclusive(0, last - offset));
         ensure(offset < array.size());
         ensure(length >= 0);
         ensure(offset + length < array.size());

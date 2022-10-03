@@ -23,16 +23,17 @@ import com.telenav.kivakit.conversion.core.language.primitive.IntegerConverter;
 import com.telenav.kivakit.conversion.core.time.DurationConverter;
 import com.telenav.kivakit.conversion.core.time.FrequencyConverter;
 import com.telenav.kivakit.conversion.core.value.VersionConverter;
-import com.telenav.kivakit.core.string.ObjectFormatter;
 import com.telenav.kivakit.core.language.reflection.property.KivaKitIncludeProperty;
 import com.telenav.kivakit.core.messaging.Listener;
+import com.telenav.kivakit.core.string.ObjectFormatter;
 import com.telenav.kivakit.core.time.Duration;
 import com.telenav.kivakit.core.time.Frequency;
 import com.telenav.kivakit.core.version.Version;
 import com.telenav.kivakit.core.vm.Properties;
 import com.telenav.kivakit.network.core.Host;
 import com.telenav.kivakit.network.core.Port;
-import com.telenav.lexakai.annotations.LexakaiJavadoc;
+
+import static com.telenav.kivakit.network.core.Loopback.loopback;
 
 /**
  * Service registry settings. For defaults, see ServiceRegistrySettings.properties below:
@@ -65,7 +66,7 @@ import com.telenav.lexakai.annotations.LexakaiJavadoc;
  *
  * @author jonathanl (shibo)
  */
-@LexakaiJavadoc(complete = true)
+@SuppressWarnings("unused")
 public class ServiceRegistrySettings
 {
     /** The port used by the local service registry */
@@ -101,7 +102,7 @@ public class ServiceRegistrySettings
      */
     public Port local()
     {
-        return port(Host.loopback());
+        return port(loopback());
     }
 
     @KivaKitConverted(IntegerConverter.class)
@@ -119,13 +120,13 @@ public class ServiceRegistrySettings
 
     /**
      * <b>Not public API</b>
-     *
-     * @return The service registry for the network (normally some kind of intranet)
+     * <p>
+     * Returns the service registry for the network (normally some kind of intranet)
      */
     public Port network()
     {
         @SuppressWarnings("SpellCheckingInspection")
-        var port = Properties.property
+        var port = Properties.systemPropertyOrEnvironmentVariable
                 (
                         "KIVAKIT_NETWORK_SERVICE_REGISTRY_PORT",
                         "kivakit-network-service-registry.mypna.com:23575"

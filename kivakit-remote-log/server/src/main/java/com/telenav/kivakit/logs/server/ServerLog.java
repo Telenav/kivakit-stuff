@@ -61,8 +61,8 @@ import static com.telenav.kivakit.core.ensure.Ensure.fail;
 import static com.telenav.kivakit.core.project.Project.resolveProject;
 import static com.telenav.kivakit.core.time.Duration.MAXIMUM;
 import static com.telenav.kivakit.core.vm.ShutdownHook.Order.LAST;
-import static com.telenav.kivakit.serialization.core.SerializationSession.SessionType.CLIENT;
-import static com.telenav.kivakit.serialization.core.SerializationSession.SessionType.SERVER;
+import static com.telenav.kivakit.serialization.core.SerializationSession.SessionType.CLIENT_SOCKET_SERIALIZATION_SESSION;
+import static com.telenav.kivakit.serialization.core.SerializationSession.SessionType.SERVER_SOCKET_SERIALIZATION_SESSION;
 
 @SuppressWarnings("UnusedReturnValue")
 public class ServerLog extends BaseTextLog implements
@@ -122,7 +122,7 @@ public class ServerLog extends BaseTextLog implements
         }
         else
         {
-            port = service.get().port().number();
+            port = service.get().port().portNumber();
         }
     }
 
@@ -136,7 +136,7 @@ public class ServerLog extends BaseTextLog implements
         {
             maximumEntries = Maximum.parseMaximum(Listener.consoleListener(), maximum);
         }
-        listen(BroadcastingProgressReporter.create(LOGGER, "bytes"));
+        listen(BroadcastingProgressReporter.createProgressReporter(LOGGER, "bytes"));
     }
 
     public ServerLog listen(ProgressReporter reporter)
@@ -258,8 +258,8 @@ public class ServerLog extends BaseTextLog implements
                 {
                     // Create a serializer and start writing to the connection
                     var serializer = require(SerializationSessionFactory.class).newSession(this);
-                    serializer.open(input, CLIENT);
-                    serializer.open(output, SERVER, kivakit().kivakitVersion());
+                    serializer.open(input, CLIENT_SOCKET_SERIALIZATION_SESSION);
+                    serializer.open(output, SERVER_SOCKET_SERIALIZATION_SESSION, kivakit().kivakitVersion());
 
                     // then send the client our application name
                     serializer.write(new SerializableObject<>(Application.get().name(), Application.get().version()));

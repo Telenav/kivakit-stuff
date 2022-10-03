@@ -25,7 +25,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.telenav.kivakit.core.messaging.Listener.emptyListener;
+import static com.telenav.kivakit.core.messaging.Listener.nullListener;
 import static com.telenav.kivakit.core.value.count.Count._10;
 import static com.telenav.kivakit.core.value.count.Count._100;
 
@@ -45,14 +45,14 @@ public class HuffmanStringCodecTest extends DataCompressionUnitTest
     @Test
     public void testRandom()
     {
-        var progress = BroadcastingProgressReporter.create(emptyListener(), "codec");
+        var progress = BroadcastingProgressReporter.createProgressReporter(nullListener(), "codec");
         _10.forEachInteger(codecNumber ->
         {
             var symbols = randomStringSymbols(2, 100, 1, 100);
             var codec = HuffmanStringCodec.from(symbols);
             var choices = symbols.symbols();
 
-            var test = BroadcastingProgressReporter.create(emptyListener(), "test");
+            var test = BroadcastingProgressReporter.createProgressReporter(nullListener(), "test");
             _100.forEachInteger(testNumber ->
             {
                 var input = new ArrayList<String>();

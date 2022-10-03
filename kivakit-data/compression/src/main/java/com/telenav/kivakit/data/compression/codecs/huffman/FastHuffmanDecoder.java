@@ -22,7 +22,7 @@ import com.telenav.kivakit.core.collections.list.StringList;
 import com.telenav.kivakit.core.logging.Logger;
 import com.telenav.kivakit.core.logging.LoggerFactory;
 import com.telenav.kivakit.core.messaging.Debug;
-import com.telenav.kivakit.core.string.StringTo;
+import com.telenav.kivakit.core.string.StringConversions;
 import com.telenav.kivakit.core.string.Strings;
 import com.telenav.kivakit.data.compression.SymbolConsumer;
 import com.telenav.kivakit.data.compression.SymbolConsumer.Directive;
@@ -31,6 +31,7 @@ import com.telenav.kivakit.interfaces.string.StringFormattable;
 import com.telenav.kivakit.primitive.collections.array.bits.BitArray;
 import com.telenav.kivakit.primitive.collections.array.scalars.ByteArray;
 import com.telenav.kivakit.primitive.collections.list.ByteList;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -85,7 +86,7 @@ public final class FastHuffmanDecoder<Symbol>
             }
 
             @Override
-            public String asString(Format format)
+            public String asString(@NotNull Format format)
             {
                 return Strings.format("[Entry next = '$', values = $]", next.prefix,
                         new StringList(values).join(", "));
@@ -168,13 +169,13 @@ public final class FastHuffmanDecoder<Symbol>
         }
 
         @Override
-        public String asString(Format format)
+        public String asString(@NotNull Format format)
         {
             var entries = new StringList();
             for (var index = 0; index < byteToEntry.length; index++)
             {
                 var entry = byteToEntry[index];
-                entries.append(StringTo.binary(index, 8) + " = " + entry.asString());
+                entries.append(StringConversions.toBinaryString(index, 8) + " = " + entry.asString());
             }
             return Strings.format("[Table prefix = '$']\n    ", prefix) + entries.join("\n    ");
         }
@@ -222,7 +223,7 @@ public final class FastHuffmanDecoder<Symbol>
         Table<Symbol> prefixToTable(int prefix, int bits)
         {
             // If we don't have a table for the prefix already,
-            var key = StringTo.binary(prefix, bits);
+            var key = StringConversions.toBinaryString(prefix, bits);
             var table = decoder.prefixToTable.get(key);
             if (table == null)
             {

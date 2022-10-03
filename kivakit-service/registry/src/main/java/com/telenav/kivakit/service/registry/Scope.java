@@ -67,7 +67,7 @@ public class Scope implements Named, Comparable<Scope>
     }
 
     /**
-     * @return The local host scope
+     * Returns the local host scope
      */
     public static Scope localhost()
     {
@@ -84,7 +84,7 @@ public class Scope implements Named, Comparable<Scope>
     }
 
     /**
-     * @return The network-wide scope
+     * Returns the network-wide scope
      */
     public static Scope network()
     {

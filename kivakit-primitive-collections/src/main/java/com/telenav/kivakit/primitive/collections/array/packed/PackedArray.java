@@ -116,7 +116,7 @@ public final class PackedArray extends PrimitiveArray implements LongList, Packe
     @Override
     public BitCount bits()
     {
-        return BitCount.bitCount(bits);
+        return BitCount.bits(bits);
     }
 
     /**
