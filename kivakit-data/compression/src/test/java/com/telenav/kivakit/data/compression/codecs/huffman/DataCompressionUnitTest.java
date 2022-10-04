@@ -25,7 +25,6 @@ import com.telenav.kivakit.core.value.count.MutableCount;
 import com.telenav.kivakit.core.value.mutable.MutableValue;
 import com.telenav.kivakit.data.compression.Codec;
 import com.telenav.kivakit.data.compression.DataCompressionKryoTypes;
-import com.telenav.kivakit.data.compression.SymbolConsumer;
 import com.telenav.kivakit.data.compression.SymbolProducer;
 import com.telenav.kivakit.data.compression.codecs.huffman.character.HuffmanCharacterCodec;
 import com.telenav.kivakit.data.compression.codecs.huffman.tree.Symbols;
@@ -40,6 +39,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 import static com.telenav.kivakit.core.value.count.Count._10;
+import static com.telenav.kivakit.data.compression.SymbolConsumer.Directive.CONTINUE;
+import static com.telenav.kivakit.data.compression.SymbolConsumer.Directive.STOP;
 
 /**
  * @author jonathanl (shibo)
@@ -129,7 +130,7 @@ public class DataCompressionUnitTest extends KryoUnitTest
             ensureEqual(next, expected.get(index));
             indexValue.set(index);
             count.increment();
-            return index < expected.size() - 1 ? SymbolConsumer.Directive.CONTINUE : SymbolConsumer.Directive.STOP;
+            return index < expected.size() - 1 ? CONTINUE : STOP;
         });
         ensureEqual((int) count.asLong(), expected.size());
         ensureEqual(indexValue.get(), expected.size() - 1);
