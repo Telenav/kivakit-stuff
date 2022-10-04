@@ -40,14 +40,14 @@ import static com.telenav.kivakit.data.compression.SymbolConsumer.Directive.CONT
 
 /**
  * Huffman compression of an entire <b>sequence</b> of strings using {@link HuffmanCodec} to compress individual
- * characters in each string. A Huffman character codec can be created by calling {@link #from(Symbols)} or {@link
- * #from(Symbols, Maximum)}, passing in a symbol set and optionally the maximum number of bits to allow for a code.
+ * characters in each string. A Huffman character codec can be created by calling {@link #characterCodec(Symbols)} or {@link
+ * #characterCodec(Symbols, Maximum)}, passing in a symbol set and optionally the maximum number of bits to allow for a code.
  * Compressed bits are written to a {@link ByteList} with {@link #encode(ByteList, SymbolProducer)} and read back with
  * {@link #decode(ByteList, SymbolConsumer)}.
  * <p>
- * A Huffman character codec can be created by calling {@link #from(Symbols, Maximum)} with a set of symbols and their
+ * A Huffman character codec can be created by calling {@link #characterCodec(Symbols, Maximum)} with a set of symbols and their
  * frequencies and a maximum number of bits for the longest allowable code. A codec can also be loaded from a .codec
- * file containing string frequencies with {@link #from(Listener, PropertyMap, Character)}. For details on how to create
+ * file containing string frequencies with {@link #characterCodec(Listener, PropertyMap, Character)}. For details on how to create
  * codec files, see {@link Symbols}.
  *
  * @author jonathanl (shibo)
@@ -71,9 +71,9 @@ public class HuffmanCharacterCodec extends BaseRepeater implements CharacterCode
     /**
      * @return A codec from the symbol frequencies in the given properties object
      */
-    public static HuffmanCharacterCodec from(Listener listener, PropertyMap frequencies, Character escape)
+    public static HuffmanCharacterCodec characterCodec(Listener listener, PropertyMap frequencies, Character escape)
     {
-        return from(Symbols.load(frequencies, escape, new Converter(listener)));
+        return characterCodec(Symbols.loadSymbols(frequencies, escape, new Converter(listener)));
     }
 
     /**
@@ -81,7 +81,7 @@ public class HuffmanCharacterCodec extends BaseRepeater implements CharacterCode
      * @param bits The maximum number of bits allowed for a code
      * @return A codec for the symbols
      */
-    public static HuffmanCharacterCodec from(Symbols<Character> symbols, Maximum bits)
+    public static HuffmanCharacterCodec characterCodec(Symbols<Character> symbols, Maximum bits)
     {
         return new HuffmanCharacterCodec(symbols, bits);
     }
@@ -90,9 +90,9 @@ public class HuffmanCharacterCodec extends BaseRepeater implements CharacterCode
      * @param symbols A set of symbols and their frequencies
      * @return A codec for the symbols
      */
-    public static HuffmanCharacterCodec from(Symbols<Character> symbols)
+    public static HuffmanCharacterCodec characterCodec(Symbols<Character> symbols)
     {
-        return from(symbols, Maximum._16);
+        return characterCodec(symbols, Maximum._16);
     }
 
     public static class Converter extends BaseStringConverter<Character>
@@ -128,7 +128,7 @@ public class HuffmanCharacterCodec extends BaseRepeater implements CharacterCode
     private HuffmanCharacterCodec(Symbols<Character> symbols, Maximum bits)
     {
         this.symbols = symbols;
-        codec = HuffmanCodec.from(symbols, bits);
+        codec = HuffmanCodec.huffmanCodec(symbols, bits);
     }
 
     /**

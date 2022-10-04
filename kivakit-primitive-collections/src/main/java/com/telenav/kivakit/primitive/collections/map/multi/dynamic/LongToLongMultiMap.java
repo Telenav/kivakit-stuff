@@ -21,7 +21,7 @@ package com.telenav.kivakit.primitive.collections.map.multi.dynamic;
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.io.Input;
 import com.esotericsoftware.kryo.io.Output;
-import com.telenav.kivakit.interfaces.numeric.Quantizable;
+import com.telenav.kivakit.interfaces.value.LongValued;
 import com.telenav.kivakit.primitive.collections.CompressibleCollection;
 import com.telenav.kivakit.primitive.collections.array.scalars.LongArray;
 import com.telenav.kivakit.primitive.collections.iteration.LongIterator;
@@ -39,7 +39,8 @@ import java.util.List;
 /**
  * A map from long -&gt; list of longs.
  */
-@SuppressWarnings("DuplicatedCode") @UmlClassDiagram(diagram = DiagramPrimitiveMultiMap.class)
+@SuppressWarnings({ "DuplicatedCode", "unused" })
+@UmlClassDiagram(diagram = DiagramPrimitiveMultiMap.class)
 public final class LongToLongMultiMap extends PrimitiveMultiMap implements
         LongMultiMap,
         PrimitiveScalarMultiMap
@@ -184,7 +185,7 @@ public final class LongToLongMultiMap extends PrimitiveMultiMap implements
     }
 
     @Override
-    public void putAll(long key, List<? extends Quantizable> values)
+    public void putAll(long key, List<? extends LongValued> values)
     {
         if (ensureHasRoomFor(1))
         {
@@ -219,7 +220,7 @@ public final class LongToLongMultiMap extends PrimitiveMultiMap implements
     }
 
     @Override
-    public void putPrimitiveList(long key, List<? extends Quantizable> values)
+    public void putPrimitiveList(long key, List<? extends LongValued> values)
     {
         putAll(key, values);
     }

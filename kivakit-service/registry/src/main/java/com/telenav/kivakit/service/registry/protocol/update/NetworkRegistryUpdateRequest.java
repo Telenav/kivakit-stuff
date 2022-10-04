@@ -19,7 +19,7 @@
 package com.telenav.kivakit.service.registry.protocol.update;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.telenav.kivakit.core.language.object.ObjectFormatter;
+import com.telenav.kivakit.core.string.ObjectFormatter;
 import com.telenav.kivakit.core.language.reflection.property.KivaKitIncludeProperty;
 import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeMember;
 import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeType;
@@ -27,7 +27,7 @@ import com.telenav.kivakit.service.registry.Service;
 import com.telenav.kivakit.service.registry.protocol.BaseRequest;
 import com.telenav.lexakai.annotations.LexakaiJavadoc;
 
-import static com.telenav.kivakit.core.language.object.ObjectFormatter.Format.MULTILINE;
+import static com.telenav.kivakit.core.string.ObjectFormatter.ObjectFormat.MULTILINE;
 import static com.telenav.kivakit.service.registry.protocol.ServiceRegistryProtocol.NETWORK_REGISTRY_UPDATE;
 
 /**
@@ -65,6 +65,6 @@ public class NetworkRegistryUpdateRequest extends BaseRequest
     @Override
     public String toString()
     {
-        return new ObjectFormatter(this).toString(MULTILINE);
+        return new ObjectFormatter(this).asString(MULTILINE);
     }
 }

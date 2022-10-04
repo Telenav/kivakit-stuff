@@ -57,7 +57,7 @@ public class SplitPackedArrayTest extends PrimitiveCollectionsUnitTest
         for (var bits = 1; bits <= Long.SIZE; bits++)
         {
             // Create packed array with given bit-length
-            var count = BitCount.bitCount(bits);
+            var count = BitCount.bits(bits);
             var values = new PackedArray("test");
             values.initialSize(32);
             values.bits(count, PackedPrimitiveArray.OverflowHandling.NO_OVERFLOW);
@@ -88,7 +88,7 @@ public class SplitPackedArrayTest extends PrimitiveCollectionsUnitTest
     {
         {
             var values = new SplitPackedArray("test");
-            values.bits(BitCount.bitCount(3), PackedPrimitiveArray.OverflowHandling.NO_OVERFLOW);
+            values.bits(BitCount.bits(3), PackedPrimitiveArray.OverflowHandling.NO_OVERFLOW);
             values.initialChildSize(100);
             values.nullLong(7);
             values.initialize();

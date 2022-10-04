@@ -19,7 +19,7 @@
 package com.telenav.kivakit.data.formats.csv;
 
 import com.telenav.kivakit.core.collections.list.ObjectList;
-import com.telenav.kivakit.core.collections.map.NameMap;
+import com.telenav.kivakit.core.collections.map.CaseFoldingStringMap;
 import com.telenav.kivakit.core.collections.set.ObjectSet;
 import com.telenav.kivakit.core.messaging.repeaters.BaseRepeater;
 import com.telenav.kivakit.core.value.count.Maximum;
@@ -28,28 +28,27 @@ import com.telenav.lexakai.annotations.LexakaiJavadoc;
 import com.telenav.lexakai.annotations.UmlClassDiagram;
 import com.telenav.lexakai.annotations.associations.UmlAggregation;
 
-import java.util.LinkedHashMap;
 import java.util.List;
 
 /**
  * An ordered collection of {@link CsvColumn} objects, specifying the structure of a line in a CSV (Comma Separated
- * Data) file. {@link CsvColumn} objects are passed to the constructor, {@link CsvSchema(CsvColumn[])} or added with
+ * Data) file. {@link CsvColumn} objects are passed to the variable arguments constructor or added with
  * {@link #add(CsvColumn)}. Columns are assigned indexes in the order that they are added. The columns can then be
  * retrieved by name with {@link #columnForName(String)}.
  *
  * @author jonathanl (shibo)
  */
-@UmlClassDiagram(diagram = DiagramCsv.class)
+@SuppressWarnings({ "unused", "UnusedReturnValue" }) @UmlClassDiagram(diagram = DiagramCsv.class)
 @LexakaiJavadoc(complete = true)
 public class CsvSchema extends BaseRepeater
 {
-    public static CsvSchema of(CsvColumn<?>... columns)
+    public static CsvSchema csvSchema(CsvColumn<?>... columns)
     {
         return new CsvSchema(columns);
     }
 
     /** Columns by name */
-    private final NameMap<CsvColumn<?>> columnForName = new NameMap<>(Maximum._1_000, new LinkedHashMap<>());
+    private final CaseFoldingStringMap<CsvColumn<?>> columnForName = new CaseFoldingStringMap<>(Maximum._1_000);
 
     /** List of columns */
     @UmlAggregation
@@ -78,7 +77,7 @@ public class CsvSchema extends BaseRepeater
         {
             column.schema(this);
             column.index(index++);
-            columnForName.add(column);
+            columnForName.put(column.name(), column);
             columns.add(column);
             included.add(column);
         }
@@ -88,12 +87,13 @@ public class CsvSchema extends BaseRepeater
     /**
      * Adds a list of columns to this schema
      */
-    public void addAll(List<? extends CsvColumn<?>> columns)
+    public CsvSchema addAll(List<? extends CsvColumn<?>> columns)
     {
         for (CsvColumn<?> column : columns)
         {
             add(column);
         }
+        return this;
     }
 
     /**

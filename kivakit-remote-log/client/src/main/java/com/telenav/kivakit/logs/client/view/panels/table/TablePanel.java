@@ -4,7 +4,7 @@ import com.telenav.kivakit.core.collections.list.StringList;
 import com.telenav.kivakit.core.logging.LogEntry;
 import com.telenav.kivakit.core.logging.logs.text.formatters.WideLogFormatter;
 import com.telenav.kivakit.core.string.Align;
-import com.telenav.kivakit.core.string.StringTo;
+import com.telenav.kivakit.core.string.StringConversions;
 import com.telenav.kivakit.core.time.Duration;
 import com.telenav.kivakit.core.time.Frequency;
 import com.telenav.kivakit.core.value.count.Count;
@@ -26,8 +26,8 @@ import java.awt.event.ComponentEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.telenav.kivakit.core.string.Formatter.Format.WITHOUT_EXCEPTION;
-import static com.telenav.kivakit.interfaces.string.Stringable.Format.USER_LABEL;
+import static com.telenav.kivakit.core.messaging.MessageFormat.WITHOUT_EXCEPTION;
+import static com.telenav.kivakit.interfaces.string.StringFormattable.Format.USER_LABEL;
 import static com.telenav.kivakit.logs.client.view.panels.table.TableModel.CONTEXT;
 import static com.telenav.kivakit.logs.client.view.panels.table.TableModel.ELAPSED;
 import static com.telenav.kivakit.logs.client.view.panels.table.TableModel.MESSAGE;
@@ -179,19 +179,20 @@ public class TablePanel extends KivaKitPanel
                     final int fontSize = 14;
                     consolePanel.text(
                             "<html><font style='font-size: " + fontSize + "'>"
-                                    + "<p><font color='#0096ff'>" + StringTo.html(lines.join('\n')) + "</font></p>"
-                                    + "<p><font color='#FF9300'>" + StringTo.html(row.formattedMessage()) + "</font></p>"
-                                    + (stackTrace == null ? "" : ("<p><font color='#8EFA00'>" + StringTo.html(stackTrace.toString()) + "</font></p>"))
+                                    + "<p><font color='#0096ff'>" + StringConversions.toHtmlString(lines.join('\n')) + "</font></p>"
+                                    + "<p><font color='#FF9300'>" + StringConversions.toHtmlString(row.formattedMessage()) + "</font></p>"
+                                    + (stackTrace == null ? "" : ("<p><font color='#8EFA00'>" + StringConversions.toHtmlString(stackTrace.toString()) + "</font></p>"))
                                     + "</font></html>");
                 }
                 else
                 {
                     var lines = new StringList();
+                    var formatter = new WideLogFormatter();
                     for (var rowIndex = from; rowIndex <= to; rowIndex++)
                     {
                         var modelIndex = table().convertRowIndexToModel(rowIndex);
                         var row = model.row(modelIndex);
-                        lines.add(row.format(WideLogFormatter.INSTANCE, WITHOUT_EXCEPTION));
+                        lines.add(row.format(formatter, WITHOUT_EXCEPTION));
                         var stackTrace = row.stackTrace();
                         if (stackTrace != null)
                         {
@@ -199,7 +200,7 @@ public class TablePanel extends KivaKitPanel
                         }
                     }
                     consolePanel.text("<html><p><font color='#FF9300'>"
-                            + StringTo.html(lines.join('\n'))
+                            + StringConversions.toHtmlString(lines.join('\n'))
                             + "</font></p></html>");
                 }
                 firstSelectedIndex = from;

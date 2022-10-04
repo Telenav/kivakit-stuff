@@ -61,7 +61,7 @@ public abstract class PrimitiveMultiMap extends PrimitiveMap
     protected String toString(PrimitiveIterator keys, Keyed<Long, PrimitiveIterator> values,
                               MultiMapToString toStringer)
     {
-        return Indent.by(4, toString(keys, values, ", ", 5, "\n", toStringer));
+        return Indent.indentBy(4, toString(keys, values, ", ", 5, "\n", toStringer));
     }
 
     protected String toString(PrimitiveIterator keys, Keyed<Long, PrimitiveIterator> values,

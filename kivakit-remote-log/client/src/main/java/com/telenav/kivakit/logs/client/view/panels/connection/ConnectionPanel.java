@@ -69,11 +69,11 @@ public class ConnectionPanel extends KivaKitPanel
         if (service != null)
         {
             information("Connecting to $", service);
-            KivaKitThread.run("LogConnector", () -> connector.connect(service.port()));
+            KivaKitThread.run(this, "LogConnector", () -> connector.connect(service.port()));
         }
         else
         {
-            KivaKitThread.run("LogDisconnector", connector::disconnect);
+            KivaKitThread.run(this, "LogDisconnector", connector::disconnect);
         }
     }
 

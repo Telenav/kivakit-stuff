@@ -19,7 +19,7 @@
 package com.telenav.kivakit.service.registry.serialization;
 
 import com.telenav.kivakit.core.messaging.repeaters.BaseRepeater;
-import com.telenav.kivakit.serialization.gson.factory.CoreGsonFactory;
+import com.telenav.kivakit.serialization.gson.factory.KivaKitCoreGsonFactory;
 import com.telenav.kivakit.serialization.gson.factory.GsonFactory;
 import com.telenav.kivakit.serialization.gson.factory.GsonFactorySource;
 import com.telenav.lexakai.annotations.LexakaiJavadoc;
@@ -35,6 +35,6 @@ public class ServiceRegistryGsonFactorySource extends BaseRepeater implements Gs
     @Override
     public GsonFactory gsonFactory()
     {
-        return new CoreGsonFactory(this);
+        return new KivaKitCoreGsonFactory(this);
     }
 }

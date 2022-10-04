@@ -18,22 +18,27 @@
 
 package com.telenav.kivakit.primitive.collections;
 
-import com.telenav.kivakit.serialization.kryo.test.KryoUnitTest;
-import com.telenav.kivakit.serialization.kryo.types.KivaKitCoreKryoTypes;
-import com.telenav.kivakit.serialization.kryo.types.KryoTypes;
+import com.telenav.kivakit.interfaces.value.LongValued;
 
 /**
- * This is the base test class for all unit tests. It provides some methods common to all tests.
+ * An object which has a long key value and is also {@link LongValued} as are many objects.
  *
  * @author jonathanl (shibo)
+ * @see LongValued
  */
-public abstract class PrimitiveCollectionsUnitTest extends KryoUnitTest
+public interface LongKeyed extends LongValued
 {
-    protected int maximumIndex;
+    /**
+     * @return The key
+     */
+    long key();
 
+    /**
+     * @return The key as a quantum
+     */
     @Override
-    protected KryoTypes kryoTypes()
+    default long longValue()
     {
-        return new KivaKitCoreKryoTypes().mergedWith(new PrimitiveCollectionsKryoTypes());
+        return key();
     }
 }

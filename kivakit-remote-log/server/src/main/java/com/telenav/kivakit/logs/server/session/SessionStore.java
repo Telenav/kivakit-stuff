@@ -6,6 +6,7 @@ import com.telenav.kivakit.core.logging.LogEntry;
 import com.telenav.kivakit.core.logging.logs.text.formatters.NarrowLogFormatter;
 import com.telenav.kivakit.core.object.Lazy;
 import com.telenav.kivakit.core.progress.ProgressReporter;
+import com.telenav.kivakit.core.project.ProjectTrait;
 import com.telenav.kivakit.core.string.Strings;
 import com.telenav.kivakit.filesystem.File;
 import com.telenav.kivakit.filesystem.Folder;
@@ -24,19 +25,19 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import static com.telenav.kivakit.core.string.Formatter.Format.WITHOUT_EXCEPTION;
+import static com.telenav.kivakit.core.messaging.MessageFormat.WITHOUT_EXCEPTION;
 import static com.telenav.kivakit.resource.Extension.KRYO;
 import static com.telenav.kivakit.resource.Extension.TXT;
-import static com.telenav.kivakit.serialization.core.SerializationSession.SessionType.RESOURCE;
+import static com.telenav.kivakit.serialization.core.SerializationSession.SessionType.RESOURCE_SERIALIZATION_SESSION;
 
 /**
  * @author jonathanl (shibo)
  */
 @SuppressWarnings("unused")
 public class
-SessionStore extends BaseComponent
+SessionStore extends BaseComponent implements ProjectTrait
 {
-    private static final Lazy<SessionStore> store = Lazy.of(SessionStore::new);
+    private static final Lazy<SessionStore> store = Lazy.lazy(SessionStore::new);
 
     public static SessionStore get()
     {
@@ -60,7 +61,7 @@ SessionStore extends BaseComponent
     public synchronized void add(Session session, byte[] bytes, ProgressReporter reporter)
     {
         add(session);
-        sessionFile(session, KRYO).reader(reporter).bytes();
+        listenTo(sessionFile(session, KRYO).reader(reporter)).readBytes();
     }
 
     public synchronized void addAll(Session session, List<LogEntry> toAdd)
@@ -97,7 +98,7 @@ SessionStore extends BaseComponent
                 {
                     @SuppressWarnings("resource")
                     var serializationSession = session();
-                    var version = serializationSession.open(input, RESOURCE);
+                    var version = serializationSession.open(input, RESOURCE_SERIALIZATION_SESSION);
                     trace("Loaded session '$' (KivaKit version $)", session, version);
                     entries = (LinkedList<LogEntry>) serializationSession.read().object();
                     sessionNameToEntries.put(session, entries);
@@ -138,7 +139,7 @@ SessionStore extends BaseComponent
 
     public byte[] read(Session session, ProgressReporter reporter)
     {
-        return sessionFile(session, KRYO).reader(reporter).bytes();
+        return listenTo(sessionFile(session, KRYO).reader(reporter)).readBytes();
     }
 
     public synchronized void save(Session session)
@@ -149,7 +150,7 @@ SessionStore extends BaseComponent
             try (var output = sessionFile(session, KRYO).openForWriting())
             {
                 var serializer = session();
-                serializer.open(output, RESOURCE, kivakitVersion());
+                serializer.open(output, RESOURCE_SERIALIZATION_SESSION, kivakitVersion());
                 serializer.write(new SerializableObject<>(entries, project(ServerLogProject.class).projectVersion()));
                 serializer.close();
             }
@@ -161,7 +162,7 @@ SessionStore extends BaseComponent
             {
                 for (var row : entries)
                 {
-                    output.println(row.format(NarrowLogFormatter.INSTANCE, WITHOUT_EXCEPTION));
+                    output.println(row.format(new NarrowLogFormatter(), WITHOUT_EXCEPTION));
                 }
             }
         }

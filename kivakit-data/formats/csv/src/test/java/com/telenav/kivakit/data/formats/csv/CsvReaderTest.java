@@ -38,7 +38,7 @@ public class CsvReaderTest extends UnitTest implements PackageTrait
         var schema = new CsvSchema(year, make, model, description, price);
 
         var resource = packageResource("SampleCsv.csv");
-        try (var myReader = new CsvReader(resource, schema, ',', ProgressReporter.none()))
+        try (var myReader = new CsvReader(resource, schema, ',', ProgressReporter.nullProgressReporter()))
         {
             myReader.skipLines(1);
             ensure(myReader.hasNext());

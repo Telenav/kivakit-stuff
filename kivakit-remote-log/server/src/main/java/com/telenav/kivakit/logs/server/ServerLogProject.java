@@ -3,7 +3,7 @@ package com.telenav.kivakit.logs.server;
 import com.telenav.kivakit.core.project.Project;
 import com.telenav.kivakit.core.project.ProjectTrait;
 import com.telenav.kivakit.serialization.kryo.KryoSerializationSessionFactory;
-import com.telenav.kivakit.serialization.kryo.types.CoreKryoTypes;
+import com.telenav.kivakit.serialization.kryo.types.KivaKitCoreKryoTypes;
 
 /**
  * This class defines a KivaKit {@link Project}. It cannot be constructed with the new operator since it has a private
@@ -16,7 +16,7 @@ public class ServerLogProject extends Project
 {
     public ServerLogProject()
     {
-        register(new KryoSerializationSessionFactory(new CoreKryoTypes()
+        register(new KryoSerializationSessionFactory(new KivaKitCoreKryoTypes()
                 .mergedWith(new ServerLogKryoTypes())));
     }
 }

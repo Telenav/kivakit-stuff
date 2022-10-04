@@ -18,6 +18,8 @@
 
 package com.telenav.kivakit.service.registry.server.rest;
 
+import com.telenav.kivakit.core.function.ResultTrait;
+import com.telenav.kivakit.core.project.ProjectTrait;
 import com.telenav.kivakit.service.registry.Service;
 import com.telenav.kivakit.service.registry.ServiceRegistry;
 import com.telenav.kivakit.service.registry.ServiceRegistrySettings;
@@ -37,7 +39,7 @@ import com.telenav.kivakit.service.registry.protocol.update.NetworkRegistryUpdat
 import com.telenav.kivakit.service.registry.registries.LocalServiceRegistry;
 import com.telenav.kivakit.service.registry.registries.NetworkServiceRegistry;
 import com.telenav.kivakit.service.registry.server.ServiceRegistryServer;
-import com.telenav.kivakit.settings.Settings;
+import com.telenav.kivakit.settings.SettingsRegistry;
 import com.telenav.kivakit.web.jersey.BaseRestResource;
 import com.telenav.lexakai.annotations.LexakaiJavadoc;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
@@ -88,7 +90,9 @@ import javax.ws.rs.core.Response;
 )
 @Path("api/1.1.0")
 @LexakaiJavadoc(complete = true)
-public class ServiceRegistryRestResource extends BaseRestResource
+public class ServiceRegistryRestResource extends BaseRestResource implements
+        ProjectTrait,
+        ResultTrait
 {
     /** The service registry to query and update */
     private final ServiceRegistry registry = ServiceRegistryServer.get().serviceRegistry();
@@ -373,7 +377,7 @@ public class ServiceRegistryRestResource extends BaseRestResource
     public Response onVersion()
     {
         String output = "KivaKit Service Registry "
-                + Settings.of(this).requireSettings(ServiceRegistrySettings.class).version()
+                + SettingsRegistry.settingsRegistryFor(this).requireSettings(ServiceRegistrySettings.class).version()
                 + "\n"
                 + "KivaKit "
                 + kivakit().projectVersion()

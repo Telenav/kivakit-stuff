@@ -21,7 +21,7 @@ package com.telenav.kivakit.primitive.collections;
 import com.telenav.kivakit.interfaces.collection.Sized;
 import com.telenav.kivakit.interfaces.naming.Named;
 import com.telenav.kivakit.interfaces.naming.NamedObject;
-import com.telenav.kivakit.interfaces.numeric.Quantizable;
+import com.telenav.kivakit.interfaces.value.LongValued;
 import com.telenav.kivakit.primitive.collections.iteration.LongIterable;
 import com.telenav.kivakit.primitive.collections.iteration.LongIterator;
 import com.telenav.kivakit.primitive.collections.internal.lexakai.DiagramPrimitiveCollection;
@@ -43,8 +43,8 @@ import static com.telenav.kivakit.core.ensure.Ensure.unsupported;
  * null value.
  * <p>
  * New values can be added with {@link #add(long)}, {@link #addAll(LongCollection)} and {@link #addAll(long[])} and
- * removed with {@link #remove(long)}. In addition, {@link Quantizable} values can be added with {@link #addAll(List)},
- * where each value is quantized via {@link Quantizable#quantum()} before being added. Since many objects are
+ * removed with {@link #remove(long)}. In addition, {@link LongValued} values can be added with {@link #addAll(List)},
+ * where each value is quantized via {@link LongValued#longValue()} before being added. Since many objects are
  * quantizable, this method is especially useful.
  * <p>
  * Whether a given value or collection of values is in the collection can be determined with {@link #contains(long)} and
@@ -54,8 +54,9 @@ import static com.telenav.kivakit.core.ensure.Ensure.unsupported;
  * @see Named
  * @see Sized
  * @see LongIterable
- * @see Quantizable
+ * @see LongValued
  */
+@SuppressWarnings("unused")
 @UmlClassDiagram(diagram = DiagramPrimitiveCollection.class)
 public interface LongCollection extends LongIterable, Sized, NamedObject
 {
@@ -84,13 +85,13 @@ public interface LongCollection extends LongIterable, Sized, NamedObject
     /**
      * Adds the given quantizable values
      */
-    default void addAll(List<? extends Quantizable> values)
+    default void addAll(List<? extends LongValued> values)
     {
-        for (Quantizable value : values)
+        for (var value : values)
         {
             if (value != null)
             {
-                add(value.quantum());
+                add(value.longValue());
             }
         }
     }

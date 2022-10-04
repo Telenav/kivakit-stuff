@@ -33,14 +33,17 @@ import com.telenav.kivakit.data.compression.codecs.huffman.tree.Symbols;
 import com.telenav.kivakit.primitive.collections.list.ByteList;
 import com.telenav.kivakit.properties.PropertyMap;
 
+import static com.telenav.kivakit.data.compression.codecs.huffman.HuffmanCodec.huffmanCodec;
+import static com.telenav.kivakit.data.compression.codecs.huffman.tree.Symbols.loadSymbols;
+
 /**
  * A Huffman compression codec where strings are treated as symbols instead of characters. Frequent strings in map data
  * input, like "highway" can often be compressed to a single byte this way. Less frequent strings can be compressed one
  * character at a time with a {@link CharacterCodec} like {@link HuffmanCharacterCodec}.
  * <p>
- * A Huffman string codec can be created by calling {@link #from(Symbols, Maximum)} with a set of symbols and their
+ * A Huffman string codec can be created by calling {@link #stringCodec(Symbols, Maximum)} with a set of symbols and their
  * frequencies and a maximum number of bits for the longest allowable code. A codec can also be loaded from a .codec
- * file containing string frequencies with {@link #from(PropertyMap)}. For details on how to create codec symbols, see
+ * file containing string frequencies with {@link #stringCodec(PropertyMap)}. For details on how to create codec symbols, see
  * {@link Symbols}.
  * <p>
  * Note that this codec doesn't support escaping of symbols because symbols that cannot be encoded are instead encoded
@@ -60,9 +63,9 @@ public class HuffmanStringCodec implements StringCodec
     /**
      * @return A codec from the symbol frequencies in the given properties object
      */
-    public static HuffmanStringCodec from(PropertyMap frequencies)
+    public static HuffmanStringCodec stringCodec(PropertyMap frequencies)
     {
-        return from(Symbols.load(frequencies, new Converter(LOGGER)));
+        return stringCodec(loadSymbols(frequencies, new Converter(LOGGER)));
     }
 
     /**
@@ -70,7 +73,7 @@ public class HuffmanStringCodec implements StringCodec
      * @param bits The maximum number of bits allowed for a code
      * @return A codec for the symbols
      */
-    public static HuffmanStringCodec from(Symbols<String> symbols, Maximum bits)
+    public static HuffmanStringCodec stringCodec(Symbols<String> symbols, Maximum bits)
     {
         return new HuffmanStringCodec(symbols, bits);
     }
@@ -79,9 +82,9 @@ public class HuffmanStringCodec implements StringCodec
      * @param symbols A set of symbols and their frequencies
      * @return A codec for the symbols
      */
-    public static HuffmanStringCodec from(Symbols<String> symbols)
+    public static HuffmanStringCodec stringCodec(Symbols<String> symbols)
     {
-        return from(symbols, Maximum._16);
+        return stringCodec(symbols, Maximum._16);
     }
 
     public static class Converter extends BaseStringConverter<String>
@@ -111,7 +114,7 @@ public class HuffmanStringCodec implements StringCodec
     private HuffmanStringCodec(Symbols<String> symbols, Maximum bits)
     {
         this.symbols = symbols;
-        codec = HuffmanCodec.from(symbols, bits);
+        codec = huffmanCodec(symbols, bits);
     }
 
     /**

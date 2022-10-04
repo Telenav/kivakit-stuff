@@ -67,7 +67,7 @@ public class PackedArrayTest extends PrimitiveCollectionsUnitTest
             trace("Testing " + bits + " bit array");
 
             // Create packed array with given bit-length
-            var count = BitCount.bitCount(bits);
+            var count = BitCount.bits(bits);
 
             var values = new PackedArray("test");
             values.initialSize(32);

@@ -18,7 +18,7 @@
 
 package com.telenav.kivakit.service.registry.protocol;
 
-import com.telenav.kivakit.settings.Settings;
+import com.telenav.kivakit.settings.SettingsRegistry;
 import com.telenav.kivakit.core.language.reflection.property.KivaKitIncludeProperty;
 import com.telenav.kivakit.core.version.Version;
 import com.telenav.kivakit.service.registry.ServiceRegistrySettings;
@@ -40,6 +40,6 @@ public abstract class BaseRequest
     @KivaKitIncludeProperty
     public Version version()
     {
-        return Settings.of(this).requireSettings(ServiceRegistrySettings.class).version();
+        return SettingsRegistry.settingsRegistryFor(this).requireSettings(ServiceRegistrySettings.class).version();
     }
 }
