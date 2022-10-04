@@ -20,14 +20,14 @@ package com.telenav.kivakit.primitive.collections.list;
 
 import com.telenav.kivakit.primitive.collections.ByteCollection;
 import com.telenav.kivakit.primitive.collections.CompressibleCollection;
-import com.telenav.kivakit.primitive.collections.iteration.ByteIterator;
 import com.telenav.kivakit.primitive.collections.internal.lexakai.DiagramPrimitiveList;
+import com.telenav.kivakit.primitive.collections.iteration.ByteIterator;
 import com.telenav.lexakai.annotations.UmlClassDiagram;
 
 /**
- * A byte collection supporting indexed operations. The first and last values in the list can be retrieved with {@link
- * #first()} and {@link #last()}. Values at a given index can be altered and retrieved with {@link #clear(int)}, {@link
- * #get(int)}, {@link #safeGet(int)} and {@link #set(int, byte)}.
+ * A byte collection supporting indexed operations. The first and last values in the list can be retrieved with
+ * {@link #first()} and {@link #last()}. Values at a given index can be altered and retrieved with {@link #clear(int)},
+ * {@link #get(int)}, {@link #safeGet(int)} and {@link #set(int, byte)}.
  * <p>
  * If the list is sorted, it can be searched with {@link #binarySearch(byte)}, which returns the index of the value if
  * it is found and a value less than zero if it is not.
@@ -37,7 +37,8 @@ import com.telenav.lexakai.annotations.UmlClassDiagram;
  * @author jonathanl (shibo)
  * @see ByteCollection
  */
-@SuppressWarnings("DuplicatedCode") @UmlClassDiagram(diagram = DiagramPrimitiveList.class)
+@SuppressWarnings({ "DuplicatedCode", "unused" })
+@UmlClassDiagram(diagram = DiagramPrimitiveList.class)
 public interface ByteList extends
         ByteCollection,
         PrimitiveList,

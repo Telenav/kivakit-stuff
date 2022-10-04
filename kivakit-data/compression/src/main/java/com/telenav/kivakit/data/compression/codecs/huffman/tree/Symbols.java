@@ -50,7 +50,7 @@ import static com.telenav.kivakit.core.ensure.Ensure.ensure;
  * Once a set of symbols has been constructed, it can be converted to a {@link PropertyMap} object with {@link
  * #asProperties(StringConverter, Function)}  and saved to a file with {@link PropertyMap#save(WritableResource)}. The
  * properties can later be loaded with {@link PropertyMap#loadPropertyMap(Listener, Resource)} and passed to {@link
- * #load(PropertyMap, Object, StringConverter)} along with the escape symbol and a converter that can convert property
+ * #loadSymbols(PropertyMap, Object, StringConverter)} along with the escape symbol and a converter that can convert property
  * keys into symbols.
  * <p>
  * PropertyMap files for creating tag codecs can easily be constructed by running the <i>CodecGeneratorApplication</i>
@@ -83,9 +83,9 @@ public class Symbols<Symbol>
      * @param converter A converter that converts key values in the properties object into symbols
      * @return A set of symbols
      */
-    public static <Symbol> Symbols<Symbol> load(PropertyMap properties, StringConverter<Symbol> converter)
+    public static <Symbol> Symbols<Symbol> loadSymbols(PropertyMap properties, StringConverter<Symbol> converter)
     {
-        return load(properties, null, converter);
+        return loadSymbols(properties, null, converter);
     }
 
     /**
@@ -96,9 +96,9 @@ public class Symbols<Symbol>
      * @param converter A converter that converts key values in the properties object into symbols
      * @return A set of symbols
      */
-    public static <Symbol> Symbols<Symbol> load(PropertyMap properties,
-                                                Symbol escape,
-                                                StringConverter<Symbol> converter)
+    public static <Symbol> Symbols<Symbol> loadSymbols(PropertyMap properties,
+                                                       Symbol escape,
+                                                       StringConverter<Symbol> converter)
     {
         var counts = new CountMap<Symbol>();
         for (var key : properties.keySet())

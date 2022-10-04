@@ -41,6 +41,8 @@ import java.util.List;
 import static com.telenav.kivakit.core.value.count.Count._10;
 import static com.telenav.kivakit.data.compression.SymbolConsumer.Directive.CONTINUE;
 import static com.telenav.kivakit.data.compression.SymbolConsumer.Directive.STOP;
+import static com.telenav.kivakit.data.compression.SymbolProducer.symbolProducer;
+import static com.telenav.kivakit.properties.PropertyMap.loadPropertyMap;
 
 /**
  * @author jonathanl (shibo)
@@ -52,7 +54,7 @@ public class DataCompressionUnitTest extends KryoUnitTest
     {
         var data = new ByteArray("data");
         data.initialize();
-        return codec.encode(data, SymbolProducer.fromList(values));
+        return codec.encode(data, symbolProducer(values));
     }
 
     @NotNull
@@ -73,7 +75,7 @@ public class DataCompressionUnitTest extends KryoUnitTest
 
     protected PropertyMap properties(String name)
     {
-        return PropertyMap.loadPropertyMap(this, packageResource(name));
+        return loadPropertyMap(this, packageResource(name));
     }
 
     @NotNull

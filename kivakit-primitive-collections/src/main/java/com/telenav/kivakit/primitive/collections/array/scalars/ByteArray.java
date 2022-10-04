@@ -22,6 +22,7 @@ import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.KryoSerializable;
 import com.esotericsoftware.kryo.io.Input;
 import com.esotericsoftware.kryo.io.Output;
+import com.telenav.kivakit.core.os.Console;
 import com.telenav.kivakit.core.string.StringConversions;
 import com.telenav.kivakit.primitive.collections.CompressibleCollection;
 import com.telenav.kivakit.primitive.collections.PrimitiveCollection;
@@ -383,6 +384,10 @@ public class ByteArray extends PrimitiveArray implements ByteList
     /** Resizes this dynamic array's capacity to the given size */
     private void resize(int size)
     {
+        if (size < size())
+        {
+            Console.println("hi");
+        }
         assert size >= size();
 
         // If we're writable and the size is increasing we can resize,

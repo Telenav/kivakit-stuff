@@ -53,7 +53,7 @@ public class HuffmanCodecTest extends DataCompressionUnitTest
                 .plus("d", _100)
                 .plus("last", Count._10_000));
 
-        var codec = HuffmanCodec.from(symbols, Maximum._8);
+        var codec = HuffmanCodec.huffmanCodec(symbols, Maximum._8);
 
         //        [HuffmanCodec size = 4, bits = 3]:
         //        1. 000 -> a (1)
@@ -77,7 +77,7 @@ public class HuffmanCodecTest extends DataCompressionUnitTest
     public void testDecode()
     {
         var symbols = fixedSymbolSet();
-        var codec = HuffmanCodec.from(symbols, Maximum._8);
+        var codec = HuffmanCodec.huffmanCodec(symbols, Maximum._8);
 
         //        [HuffmanCodec size = 4, bits = 3]:
         //        1. 000 -> jkl (1)
@@ -98,7 +98,7 @@ public class HuffmanCodecTest extends DataCompressionUnitTest
     {
         var symbols = fixedSymbolSet();
 
-        var codec = HuffmanCodec.from(symbols, Maximum._8);
+        var codec = HuffmanCodec.huffmanCodec(symbols, Maximum._8);
 
         //        [HuffmanCodec size = 4, bits = 3]:
         //        1. 000 -> jkl (1)
@@ -124,7 +124,7 @@ public class HuffmanCodecTest extends DataCompressionUnitTest
                 .plus("vkl", Count._1)
                 .plus("oonpv", Count._1));
 
-        var codec = HuffmanCodec.from(symbols, Maximum._8);
+        var codec = HuffmanCodec.huffmanCodec(symbols, Maximum._8);
 
         test(codec, List.of("db", "qts", "vkl", "qts", "oonpv", "db", "db", "db"));
         test(codec, List.of("db", "oonpv", "vkl", "qts", "oonpv", "db"));
@@ -141,7 +141,7 @@ public class HuffmanCodecTest extends DataCompressionUnitTest
                 .plus("i", Count.count(7_088))
                 .plus("zvgupm", Count.count(7_486)));
 
-        var codec = HuffmanCodec.from(symbols, Maximum._8);
+        var codec = HuffmanCodec.huffmanCodec(symbols, Maximum._8);
 
         //        [HuffmanCodec size = 4, bits = 3]:
         //        1. 100 -> stxq (803)
@@ -164,7 +164,7 @@ public class HuffmanCodecTest extends DataCompressionUnitTest
                 .plus("d", Count._1)
                 .plus("end", Count._1));
 
-        var codec = HuffmanCodec.from(symbols, Maximum._8);
+        var codec = HuffmanCodec.huffmanCodec(symbols, Maximum._8);
 
         //        [HuffmanCodec size = 5, bits = 3]:
         //        1. 00 -> a (1)
@@ -196,7 +196,7 @@ public class HuffmanCodecTest extends DataCompressionUnitTest
         _10.forEachInteger(codecNumber ->
         {
             var symbols = randomStringSymbols(2, 200, 1, 8);
-            var codec = HuffmanCodec.from(symbols, Maximum._8);
+            var codec = HuffmanCodec.huffmanCodec(symbols, Maximum._8);
 
             // test it a few times
             _10.forEachInteger(testNumber ->

@@ -49,13 +49,13 @@ import static com.telenav.kivakit.core.ensure.Ensure.ensure;
  * and value strings occur very frequently. Table-based Huffman decoding of symbols from {@link ByteList} input is
  * implemented with {@link FastHuffmanDecoder}.
  * <p>
- * A codec can be constructed with {@link #from(Symbols, Maximum)}, passing in the symbols to be used and the maximum
- * number of bits for the longest allowable Huffman code. The {@link #toString()} method returns a useful representation
- * of codes and their bit patterns.
+ * A codec can be constructed with {@link #huffmanCodec(Symbols, Maximum)}, passing in the symbols to be used and the
+ * maximum number of bits for the longest allowable Huffman code. The {@link #toString()} method returns a useful
+ * representation of codes and their bit patterns.
  * <p>
- * Once the codec has been constructed, it can be used like any other {@link Codec}, by calling {@link
- * Codec#encode(ByteList, SymbolProducer)} to encode a series of values and {@link Codec#decode(ByteList,
- * SymbolConsumer)} to decode values from a byte array.
+ * Once the codec has been constructed, it can be used like any other {@link Codec}, by calling
+ * {@link Codec#encode(ByteList, SymbolProducer)} to encode a series of values and
+ * {@link Codec#decode(ByteList, SymbolConsumer)} to decode values from a byte array.
  *
  * @param <Symbol> The symbol value type to compress and decompress, for example Character or String
  * @author jonathanl (shibo)
@@ -72,7 +72,7 @@ public class HuffmanCodec<Symbol> implements Codec<Symbol>
      * @return A Huffman codec for the given symbol frequencies and escape symbol where no code is longer than the given
      * number of bits. Only symbols that have at least the given number of occurrences are included.
      */
-    public static <Symbol> HuffmanCodec<Symbol> from(Symbols<Symbol> symbols, Maximum bits)
+    public static <Symbol> HuffmanCodec<Symbol> huffmanCodec(Symbols<Symbol> symbols, Maximum bits)
     {
         return new HuffmanCodec<>(symbols, bits);
     }

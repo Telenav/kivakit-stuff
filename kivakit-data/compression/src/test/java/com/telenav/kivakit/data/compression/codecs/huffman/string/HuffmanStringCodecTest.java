@@ -35,7 +35,7 @@ public class HuffmanStringCodecTest extends DataCompressionUnitTest
     @Test
     public void testDecode()
     {
-        var codec = HuffmanStringCodec.from(properties("string.codec"));
+        var codec = HuffmanStringCodec.stringCodec(properties("string.codec"));
 
         test(codec, List.of("bicycle", "barrier", "highway"));
         test(codec, List.of("oneway", "foot", "access", "footway"));
@@ -49,7 +49,7 @@ public class HuffmanStringCodecTest extends DataCompressionUnitTest
         _10.forEachInteger(codecNumber ->
         {
             var symbols = randomStringSymbols(2, 100, 1, 100);
-            var codec = HuffmanStringCodec.from(symbols);
+            var codec = HuffmanStringCodec.stringCodec(symbols);
             var choices = symbols.symbols();
 
             var test = BroadcastingProgressReporter.createProgressReporter(nullListener(), "test");
