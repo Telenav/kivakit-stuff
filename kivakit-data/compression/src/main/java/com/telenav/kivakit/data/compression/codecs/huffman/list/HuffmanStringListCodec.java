@@ -27,12 +27,22 @@ import com.telenav.kivakit.data.compression.codecs.StringListCodec;
 import com.telenav.kivakit.data.compression.codecs.huffman.HuffmanCodec;
 import com.telenav.kivakit.primitive.collections.list.ByteList;
 
+import static com.telenav.kivakit.core.ensure.Ensure.ensure;
+import static com.telenav.kivakit.data.compression.SymbolConsumer.Directive.CONTINUE;
+import static com.telenav.kivakit.data.compression.SymbolConsumer.Directive.STOP;
+
 /**
  * Compression and decompression of lists of strings using a {@link StringCodec} and a {@link CharacterCodec}. The
- * method {@link #encode(ByteList, SymbolProducer)} receives a sequence of strings produced by the {@link
- * SymbolProducer} interface. If the string codec cannot be used to compress the entire string at once, the character
- * codec will be used. When the {@link #decode(ByteList, SymbolConsumer)} method is called, this codec will send the
- * same strings in the same order to the {@link SymbolConsumer} consumer.
+ * method {@link #encode(ByteList, SymbolProducer)} receives a sequence of strings produced by the
+ * {@link SymbolProducer} interface. If the string codec cannot be used to compress the entire string at once, the
+ * character codec will be used. When the {@link #decode(ByteList, SymbolConsumer)} method is called, this codec will
+ * send the same strings in the same order to the {@link SymbolConsumer} consumer.
+ *
+ * <p><b>NOTE</b></p>
+ *
+ * <p>
+ * Huffman encoded string lists are limited to 32,767 elements.
+ * </p>
  *
  * @author jonathanl (shibo)
  * @see HuffmanCodec
@@ -94,16 +104,16 @@ public class HuffmanStringListCodec implements StringListCodec
         {
             stringCodec.decode(input, (ordinal, value) ->
             {
-                for (var i = at.get(); i < size; i++)
+                for (var i = at.index(); i < size; i++)
                 {
                     if (isStringEncoded[i])
                     {
                         consumer.next(i, value);
-                        at.set(i + 1);
-                        return ordinal < stringEncoded - 1 ? SymbolConsumer.Directive.CONTINUE : SymbolConsumer.Directive.STOP;
+                        at.index(i + 1);
+                        return ordinal < stringEncoded - 1 ? CONTINUE : STOP;
                     }
                 }
-                return SymbolConsumer.Directive.STOP;
+                return STOP;
             });
         }
 
@@ -111,19 +121,19 @@ public class HuffmanStringListCodec implements StringListCodec
         var characterEncoded = size - stringEncoded;
         if (characterEncoded > 0)
         {
-            at.set(0);
+            at.index(0);
             characterCodec.decode(input, (ordinal, value) ->
             {
-                for (var i = at.get(); i < size; i++)
+                for (var i = at.index(); i < size; i++)
                 {
                     if (!isStringEncoded[i])
                     {
                         consumer.next(i, value);
-                        at.set(i + 1);
-                        return ordinal < characterEncoded - 1 ? SymbolConsumer.Directive.CONTINUE : SymbolConsumer.Directive.STOP;
+                        at.index(i + 1);
+                        return ordinal < characterEncoded - 1 ? CONTINUE : STOP;
                     }
                 }
-                return SymbolConsumer.Directive.STOP;
+                return STOP;
             });
         }
     }
@@ -137,7 +147,8 @@ public class HuffmanStringListCodec implements StringListCodec
         // Get the number of symbols that will be produced
         var size = producer.size();
 
-        // and write it to the output (we only support 64K entry string lists)
+        // and write it to the output (we only support 32,767 entry string lists)
+        ensure(size < Short.MAX_VALUE, "Huffman compressed string lists are limited to 32,767 elements");
         output.writeFlexibleShort((short) size);
 
         // then create a boolean map of which strings in the list will be string-encoded and which will be character-encoded
@@ -165,7 +176,7 @@ public class HuffmanStringListCodec implements StringListCodec
             {
                 while (true)
                 {
-                    var at = index.increment();
+                    var at = (int) index.increment();
                     if (at < size)
                     {
                         if (isStringEncoded[at])
@@ -190,7 +201,7 @@ public class HuffmanStringListCodec implements StringListCodec
             {
                 while (true)
                 {
-                    var at = index.increment();
+                    var at = (int) index.increment();
                     if (at < size)
                     {
                         if (!isStringEncoded[at])

@@ -677,7 +677,7 @@ public abstract class PrimitiveMap extends PrimitiveCollection
     protected String toString(PrimitiveIterator keys, PrimitiveIterator values,
                               MapToString toStringer)
     {
-        return Indent.by(4, toString(keys, values, ", ", 5, "\n", toStringer));
+        return Indent.indentBy(4, toString(keys, values, ", ", 5, "\n", toStringer));
     }
 
     protected String toString(PrimitiveIterator keys, PrimitiveIterator values, String separator,
@@ -734,8 +734,8 @@ public abstract class PrimitiveMap extends PrimitiveCollection
         // then copy the entries from this object into the copy
         copy.initialize();
         var progress = size() > 10_000_000
-                ? BroadcastingProgressReporter.create(LOGGER, "entries")
-                : ProgressReporter.none();
+                ? BroadcastingProgressReporter.createProgressReporter(LOGGER, "entries")
+                : ProgressReporter.nullProgressReporter();
         progress.steps(count().asMaximum());
         progress.start("Rehashing " + objectName());
         copy.copyEntries(this, progress);

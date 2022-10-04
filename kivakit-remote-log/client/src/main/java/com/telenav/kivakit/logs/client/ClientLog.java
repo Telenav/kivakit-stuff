@@ -66,7 +66,7 @@ public class ClientLog extends BaseLog
 
     public void exit()
     {
-        session.completed();
+        session.threadCompleted();
     }
 
     public Maximum maximumEntries()

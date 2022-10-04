@@ -50,7 +50,7 @@ public interface CharIterator extends PrimitiveIterator
         var hashCode = 1;
         while (hasNext())
         {
-            hashCode = hashCode + Hash.code(next());
+            hashCode = hashCode + Hash.hashCode(next());
         }
         return hashCode;
     }

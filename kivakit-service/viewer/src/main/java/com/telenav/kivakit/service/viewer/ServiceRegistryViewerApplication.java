@@ -33,7 +33,7 @@ import com.telenav.kivakit.service.registry.ServiceType;
 import com.telenav.kivakit.service.registry.client.ServiceRegistryClient;
 
 import static com.telenav.kivakit.core.collections.set.ObjectSet.objectSet;
-import static com.telenav.kivakit.core.string.Formatter.Format.WITH_EXCEPTION;
+import static com.telenav.kivakit.core.messaging.MessageFormat.WITH_EXCEPTION;
 import static com.telenav.kivakit.service.registry.Scope.Type.scopeTypeSwitchParser;
 
 /**
@@ -72,7 +72,7 @@ public class ServiceRegistryViewerApplication extends Application
         var services = client.discoverServices(Scope.scope(get(SCOPE_TYPE)));
         if (services.failed())
         {
-            Console.println("\nUnable to find services: $\n", services.messages().find(Problem.class).formatted(WITH_EXCEPTION));
+            Console.println("\nUnable to find services: $\n", services.messages().findFirst(Problem.class).formatted(WITH_EXCEPTION));
         }
         else
         {
@@ -84,7 +84,7 @@ public class ServiceRegistryViewerApplication extends Application
             var sorted = ObjectList.objectList(services.get()).sorted();
             for (var service : sorted)
             {
-                lines.add(String.format(format, service.renewedAt().elapsedSince() + " ago", service.port().number(), service.type(), service.application(), service.metadata().description()));
+                lines.add(String.format(format, service.renewedAt().elapsedSince() + " ago", service.port().portNumber(), service.type(), service.application(), service.metadata().description()));
             }
             lines.add("");
             System.out.println(lines.join("\n"));

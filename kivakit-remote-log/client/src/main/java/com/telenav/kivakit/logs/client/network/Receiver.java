@@ -24,7 +24,7 @@ import static com.telenav.kivakit.core.project.Project.resolveProject;
 import static com.telenav.kivakit.logs.client.network.Receiver.State.RUNNING;
 import static com.telenav.kivakit.logs.client.network.Receiver.State.STOPPED;
 import static com.telenav.kivakit.logs.client.network.Receiver.State.STOPPING;
-import static com.telenav.kivakit.serialization.core.SerializationSession.SessionType.CLIENT;
+import static com.telenav.kivakit.serialization.core.SerializationSession.SessionType.CLIENT_SOCKET_SERIALIZATION_SESSION;
 
 /**
  * @author jonathanl (shibo)
@@ -51,7 +51,7 @@ import static com.telenav.kivakit.serialization.core.SerializationSession.Sessio
     }
 
     @Override
-    public Duration maximumWaitTime()
+    public Duration maximumStopTime()
     {
         return Duration.MAXIMUM;
     }
@@ -67,7 +67,7 @@ import static com.telenav.kivakit.serialization.core.SerializationSession.Sessio
     {
         // Create a serializer and read the framework version from the server
         var serializationSession = require(SerializationSessionFactory.class).newSession(this);
-        var version = serializationSession.open(connection.input(), CLIENT);
+        var version = serializationSession.open(connection.input(), CLIENT_SOCKET_SERIALIZATION_SESSION);
 
         // and if we are compatible with it,
         if (version.isOlderThanOrEqualTo(resolveProject(KivaKit.class).kivakitVersion()))
@@ -105,14 +105,14 @@ import static com.telenav.kivakit.serialization.core.SerializationSession.Sessio
                 }
             }
             state = STOPPED;
-            stopping.completed();
+            stopping.threadCompleted();
         }
         else
         {
             warning("Don't know how to talk to a server log of version $", version);
         }
 
-        IO.close(connection.input());
+        IO.close(this, connection.input());
     }
 
     @Override
@@ -121,7 +121,7 @@ import static com.telenav.kivakit.serialization.core.SerializationSession.Sessio
         if (state == RUNNING)
         {
             state = STOPPING;
-            stopping.waitForCompletion(wait);
+            stopping.waitForAllThreadsToComplete(wait);
         }
     }
 
@@ -148,7 +148,7 @@ import static com.telenav.kivakit.serialization.core.SerializationSession.Sessio
         for (var session : desiredSessions)
         {
             VersionedObject<byte[]> bytes = serializationSession.read();
-            SessionStore.get().add(session, bytes.object(), ProgressReporter.none());
+            SessionStore.get().add(session, bytes.object(), ProgressReporter.nullProgressReporter());
         }
     }
 }

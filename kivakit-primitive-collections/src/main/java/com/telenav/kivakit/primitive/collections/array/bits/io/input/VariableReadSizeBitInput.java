@@ -18,17 +18,19 @@
 
 package com.telenav.kivakit.primitive.collections.array.bits.io.input;
 
+import com.telenav.kivakit.core.messaging.Listener;
 import com.telenav.kivakit.primitive.collections.internal.lexakai.DiagramPrimitiveArrayBitIo;
 import com.telenav.lexakai.annotations.UmlClassDiagram;
 
 import java.io.InputStream;
 
+@SuppressWarnings("unused")
 @UmlClassDiagram(diagram = DiagramPrimitiveArrayBitIo.class)
 public class VariableReadSizeBitInput extends BitInput
 {
-    public VariableReadSizeBitInput(InputStream in)
+    public VariableReadSizeBitInput(Listener listener, InputStream in)
     {
-        super(in);
+        super(listener, in);
     }
 
     /**

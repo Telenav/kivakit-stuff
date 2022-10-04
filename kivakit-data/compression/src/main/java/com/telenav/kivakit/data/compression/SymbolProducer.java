@@ -24,15 +24,21 @@ import java.util.Collections;
 import java.util.List;
 
 import static com.telenav.kivakit.core.ensure.Ensure.unsupported;
+import static java.util.Collections.singletonList;
 
 /**
- * A source of input symbols for a {@link Codec} to compress. Symbols can be retrieved by the codec through the {@link
- * #get(int)} method. When the codec cannot encode a symbol, it will call {@link #onEscape(ByteList, Object)} to allow
- * the implementer of this interface to write the symbol to codec output.
+ * A source of input symbols for a {@link Codec} to compress. Symbols can be retrieved by the codec through the
+ * {@link #get(int)} method. When the codec cannot encode a symbol, it will call {@link #onEscape(ByteList, Object)} to
+ * allow the implementer of this interface to write the symbol to codec output.
  */
 public interface SymbolProducer<Symbol>
 {
-    static <Symbol> SymbolProducer<Symbol> fromList(List<Symbol> symbols)
+    static <Symbol> SymbolProducer<Symbol> symbolProducer(Symbol symbol)
+    {
+        return symbolProducer(singletonList(symbol));
+    }
+
+    static <Symbol> SymbolProducer<Symbol> symbolProducer(List<Symbol> symbols)
     {
         return new SymbolProducer<>()
         {
@@ -48,11 +54,6 @@ public interface SymbolProducer<Symbol>
                 return symbols.size();
             }
         };
-    }
-
-    static <Symbol> SymbolProducer<Symbol> singleton(Symbol symbol)
-    {
-        return fromList(Collections.singletonList(symbol));
     }
 
     /**

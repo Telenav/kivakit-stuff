@@ -22,7 +22,7 @@ import com.telenav.kivakit.core.project.Project;
 import com.telenav.kivakit.core.project.ProjectTrait;
 import com.telenav.kivakit.core.version.Version;
 import com.telenav.kivakit.service.registry.ServiceRegistrySettings;
-import com.telenav.kivakit.settings.Settings;
+import com.telenav.kivakit.settings.SettingsRegistry;
 import com.telenav.lexakai.annotations.LexakaiJavadoc;
 
 /**
@@ -39,6 +39,6 @@ public class ServiceRegistryServerProject extends Project
     @Override
     public Version projectVersion()
     {
-        return Settings.of(this).requireSettings(ServiceRegistrySettings.class).version();
+        return SettingsRegistry.settingsRegistryFor(this).requireSettings(ServiceRegistrySettings.class).version();
     }
 }

@@ -1,6 +1,6 @@
 package com.telenav.kivakit.logs.client.view.panels.table;
 
-import com.telenav.kivakit.core.string.StringTo;
+import com.telenav.kivakit.core.string.StringConversions;
 import com.telenav.kivakit.core.time.Duration;
 import com.telenav.kivakit.core.messaging.Message;
 import com.telenav.kivakit.core.messaging.messages.status.Information;
@@ -13,7 +13,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 import java.awt.Component;
 
-import static com.telenav.kivakit.interfaces.string.Stringable.Format.USER_LABEL;
+import static com.telenav.kivakit.interfaces.string.StringFormattable.Format.USER_LABEL;
 import static com.telenav.kivakit.logs.client.view.panels.table.TableModel.COLUMNS;
 
 /**
@@ -42,7 +42,7 @@ class TableCellRenderer extends DefaultTableCellRenderer
             for (var at = 0; at < COLUMNS; at++)
             {
                 var value = table.getModel().getValueAt(modelRow, at);
-                String text = StringTo.string(value).trim();
+                String text = StringConversions.toString(value).trim();
                 if (text.startsWith("!") || text.endsWith("!"))
                 {
                     highlight = Problem.class;

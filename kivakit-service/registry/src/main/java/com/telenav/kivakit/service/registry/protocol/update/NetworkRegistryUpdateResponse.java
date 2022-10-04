@@ -19,7 +19,7 @@
 package com.telenav.kivakit.service.registry.protocol.update;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.telenav.kivakit.core.language.object.ObjectFormatter;
+import com.telenav.kivakit.core.string.ObjectFormatter;
 import com.telenav.kivakit.core.language.reflection.property.KivaKitIncludeProperty;
 import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeMember;
 import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeType;
@@ -28,7 +28,7 @@ import com.telenav.kivakit.service.registry.protocol.BaseResponse;
 import com.telenav.lexakai.annotations.LexakaiJavadoc;
 import com.telenav.lexakai.annotations.UmlClassDiagram;
 
-import static com.telenav.kivakit.core.language.object.ObjectFormatter.Format.MULTILINE;
+import static com.telenav.kivakit.core.string.ObjectFormatter.ObjectFormat.MULTILINE;
 
 /**
  * The response to a network registry update request. {@link #added()} returns true if the service was added to the
@@ -60,7 +60,7 @@ public class NetworkRegistryUpdateResponse extends BaseResponse<Boolean>
     @Override
     public String toString()
     {
-        return new ObjectFormatter(this).toString(MULTILINE);
+        return new ObjectFormatter(this).asString(MULTILINE);
     }
 
     @Override

@@ -54,10 +54,10 @@ public class Components
             if (newAlpha == 255)
             {
                 timer.cancel();
-                completed.completed();
+                completed.threadCompleted();
             }
         });
-        completed.waitForCompletion();
+        completed.waitForAllThreadsToComplete();
     }
 
     public static void fadeOut(Component component, Color color, Duration update, int step)
@@ -74,10 +74,10 @@ public class Components
             if (newAlpha == 0)
             {
                 timer.cancel();
-                completed.completed();
+                completed.threadCompleted();
             }
         });
-        completed.waitForCompletion();
+        completed.waitForAllThreadsToComplete();
     }
 
     public static <T> java.util.List<T> items(JComboBox<T> dropdown)

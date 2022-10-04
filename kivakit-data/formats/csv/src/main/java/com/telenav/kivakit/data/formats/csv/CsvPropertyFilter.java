@@ -1,10 +1,9 @@
 package com.telenav.kivakit.data.formats.csv;
 
+import com.telenav.kivakit.core.language.reflection.Field;
+import com.telenav.kivakit.core.language.reflection.Method;
 import com.telenav.kivakit.core.language.reflection.property.PropertyFilter;
 import com.telenav.lexakai.annotations.LexakaiJavadoc;
-
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 
 /**
  * A {@link PropertyFilter} that uses a {@link CsvSchema} to filter methods and fields to those whose names match
@@ -26,30 +25,30 @@ public class CsvPropertyFilter implements PropertyFilter
     @Override
     public boolean includeAsGetter(Method method)
     {
-        return schema.columnForName(method.getName()) != null;
+        return schema.columnForName(method.name()) != null;
     }
 
     @Override
     public boolean includeAsSetter(Method method)
     {
-        return schema.columnForName(method.getName()) != null;
+        return schema.columnForName(method.name()) != null;
     }
 
     @Override
     public boolean includeField(Field field)
     {
-        return schema.columnForName(field.getName()) != null;
+        return schema.columnForName(field.name()) != null;
     }
 
     @Override
     public String nameForField(Field field)
     {
-        return field.getName();
+        return field.name();
     }
 
     @Override
     public String nameForMethod(Method method)
     {
-        return method.getName();
+        return method.name();
     }
 }

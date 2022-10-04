@@ -2,7 +2,6 @@ package com.telenav.kivakit.data.formats.xml.stax;
 
 import com.telenav.kivakit.component.BaseComponent;
 import com.telenav.kivakit.core.io.IO;
-import com.telenav.kivakit.interfaces.function.BooleanFunction;
 import com.telenav.kivakit.resource.Resource;
 
 import javax.xml.stream.XMLEventReader;
@@ -15,6 +14,7 @@ import javax.xml.stream.events.StartElement;
 import javax.xml.stream.events.XMLEvent;
 import java.io.Closeable;
 import java.io.InputStream;
+import java.util.function.Function;
 
 import static com.telenav.kivakit.core.ensure.Ensure.ensure;
 import static com.telenav.kivakit.core.ensure.Ensure.ensureNotNull;
@@ -107,6 +107,7 @@ import static com.telenav.kivakit.data.formats.xml.stax.StaxReader.Match.NOT_FOU
  * @see Matcher
  * @see Resource
  */
+@SuppressWarnings("unused")
 public class StaxReader extends BaseComponent implements Closeable
 {
     /**
@@ -141,12 +142,12 @@ public class StaxReader extends BaseComponent implements Closeable
     /**
      * A {@link Matcher} implementation for a boolean function
      */
-    public interface BooleanMatcher extends BooleanFunction<XMLEvent>, Matcher
+    public interface BooleanMatcher extends Function<XMLEvent, Boolean>, Matcher
     {
         @Override
         default Match matcher(XMLEvent event)
         {
-            return isTrue(event) ? FOUND : NOT_FOUND;
+            return apply(event) ? FOUND : NOT_FOUND;
         }
     }
 
@@ -198,7 +199,7 @@ public class StaxReader extends BaseComponent implements Closeable
     @Override
     public void close()
     {
-        IO.close(in);
+        IO.close(resource, in);
     }
 
     /**

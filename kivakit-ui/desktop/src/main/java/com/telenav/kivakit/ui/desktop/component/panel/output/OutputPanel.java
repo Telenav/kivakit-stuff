@@ -1,6 +1,6 @@
 package com.telenav.kivakit.ui.desktop.component.panel.output;
 
-import com.telenav.kivakit.core.string.StringTo;
+import com.telenav.kivakit.core.string.StringConversions;
 import com.telenav.kivakit.core.string.Strings;
 import com.telenav.kivakit.ui.desktop.component.KivaKitPanel;
 import com.telenav.kivakit.ui.desktop.graphics.drawing.style.Fonts;
@@ -92,7 +92,7 @@ public class OutputPanel extends KivaKitPanel
 
     public void text(String text, Object... arguments)
     {
-        html(StringTo.html(Strings.format(text, arguments)));
+        html(StringConversions.toHtmlString(Strings.format(text, arguments)));
     }
 
     private JScrollPane scrollPane()

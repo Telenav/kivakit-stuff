@@ -22,9 +22,9 @@ import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.KryoSerializable;
 import com.esotericsoftware.kryo.io.Input;
 import com.esotericsoftware.kryo.io.Output;
-import com.telenav.kivakit.collections.map.ConcurrentCountMap;
 import com.telenav.kivakit.core.KivaKit;
 import com.telenav.kivakit.core.collections.list.ObjectList;
+import com.telenav.kivakit.core.collections.map.CountMap;
 import com.telenav.kivakit.core.language.Classes;
 import com.telenav.kivakit.core.language.primitive.Booleans;
 import com.telenav.kivakit.core.logging.Logger;
@@ -32,7 +32,9 @@ import com.telenav.kivakit.core.logging.LoggerFactory;
 import com.telenav.kivakit.core.logging.logs.BaseLog;
 import com.telenav.kivakit.core.messaging.Debug;
 import com.telenav.kivakit.core.messaging.context.CallStack;
-import com.telenav.kivakit.core.messaging.messages.status.activity.Activity;
+import com.telenav.kivakit.core.messaging.messages.status.Warning;
+import com.telenav.kivakit.core.messaging.messages.status.activity.Step;
+import com.telenav.kivakit.core.os.Console;
 import com.telenav.kivakit.core.string.Indent;
 import com.telenav.kivakit.core.string.Strings;
 import com.telenav.kivakit.core.time.Duration;
@@ -45,10 +47,10 @@ import com.telenav.kivakit.core.value.count.Countable;
 import com.telenav.kivakit.core.value.count.Estimate;
 import com.telenav.kivakit.core.value.count.Maximum;
 import com.telenav.kivakit.core.version.Version;
-import com.telenav.kivakit.core.vm.JavaVirtualMachine;
 import com.telenav.kivakit.core.vm.Properties;
 import com.telenav.kivakit.core.vm.ShutdownHook;
 import com.telenav.kivakit.interfaces.code.TripwireTrait;
+import com.telenav.kivakit.interfaces.collection.Emptiness;
 import com.telenav.kivakit.interfaces.collection.Sized;
 import com.telenav.kivakit.interfaces.lifecycle.Initializable;
 import com.telenav.kivakit.interfaces.naming.Named;
@@ -82,6 +84,8 @@ import static com.telenav.kivakit.core.messaging.context.CallStack.Matching.SUBC
 import static com.telenav.kivakit.core.messaging.context.CallStack.Proximity.IMMEDIATE;
 import static com.telenav.kivakit.core.project.Project.resolveProject;
 import static com.telenav.kivakit.core.time.Duration.MAXIMUM;
+import static com.telenav.kivakit.core.time.Frequency.EVERY_5_SECONDS;
+import static com.telenav.kivakit.core.value.count.Bytes.bytes;
 import static com.telenav.kivakit.core.vm.ShutdownHook.Order.FIRST;
 
 /**
@@ -160,9 +164,12 @@ import static com.telenav.kivakit.core.vm.ShutdownHook.Order.FIRST;
  * @see Debug
  * @see Sized
  */
-@SuppressWarnings({ "unused", "UnusedReturnValue" }) @UmlClassDiagram(diagram = DiagramPrimitiveCollection.class)
+@SuppressWarnings({ "unused", "UnusedReturnValue", "SpellCheckingInspection" })
+@UmlClassDiagram(diagram = DiagramPrimitiveCollection.class)
 public abstract class PrimitiveCollection implements
         KryoSerializable,
+        Emptiness,
+        Sized,
         NamedObject,
         Initializable,
         Countable,
@@ -183,10 +190,10 @@ public abstract class PrimitiveCollection implements
     private static Boolean logAllocations;
 
     /** The bytes allocated by an individual allocator */
-    private static final ConcurrentCountMap<String> totalAllocatedByAllocator = new ConcurrentCountMap<>();
+    private static final CountMap<String> totalAllocatedByAllocator = new CountMap<>();
 
     /** The number of allocations of collections with a given {@link NamedObject#objectName()} */
-    private static final ConcurrentCountMap<String> allocations = new ConcurrentCountMap<>();
+    private static final CountMap<String> allocations = new CountMap<>();
 
     /** The minimum size of a collection considered "big" */
     private static final int LARGE_ALLOCATION = 5_000_000;
@@ -208,7 +215,7 @@ public abstract class PrimitiveCollection implements
                     totalDelta += Math.abs(trim.delta());
                 }
 
-                DEBUG.trace("Compressed collections by $:\n$", Bytes.bytes(totalDelta), compressionRecords.bulleted());
+                DEBUG.trace("Compressed collections by $:\n$", bytes(totalDelta), compressionRecords.bulleted());
                 LOGGER.flush(MAXIMUM);
             }
         });
@@ -401,7 +408,7 @@ public abstract class PrimitiveCollection implements
                 {
                     if (DEBUG.isDebugOn())
                     {
-                        LOGGER.log(new Activity("Collection '$' ($ x $ = $) is big",
+                        LOGGER.log(new Step("Collection '$' ($ x $ = $) is big",
                                 objectName, initialSize(), initialChildSize(), initialSize().times(initialChildSize())));
                     }
                 }
@@ -409,7 +416,7 @@ public abstract class PrimitiveCollection implements
                 {
                     if (DEBUG.isDebugOn())
                     {
-                        LOGGER.log(new Activity("Collection '$' ($) is big", objectName, initialSize()));
+                        LOGGER.log(new Step("Collection '$' ($) is big", objectName, initialSize()));
                     }
                 }
             }
@@ -420,7 +427,7 @@ public abstract class PrimitiveCollection implements
                 // then report this, but only once
                 if (DEBUG.isDebugOn())
                 {
-                    LOGGER.log(new Activity("Collection '$' has been allocated a lot", objectName).maximumFrequency(Frequency.ONCE));
+                    LOGGER.log(new Step("Collection '$' has been allocated a lot", objectName).maximumFrequency(Frequency.ONCE));
                 }
             }
         }
@@ -961,7 +968,7 @@ public abstract class PrimitiveCollection implements
                             PrimitiveMap.class, PrimitiveSet.class, PrimitiveListStore.class, PackedStringStore.class);
                     if (method != null)
                     {
-                        var caller = method.type();
+                        var caller = method.parentType();
                         who = caller.simpleName();
                     }
                     else
@@ -987,17 +994,17 @@ public abstract class PrimitiveCollection implements
 
             // If we want to record stack traces, get a stack trace by creating a throwable (AllocationStackTrace)
             AllocationStackTrace stack = null;
-            if (Booleans.isTrue(Properties.property("KIVAKIT_LOG_ALLOCATION_STACK_TRACES", "false")))
+            if (Booleans.isTrue(Properties.systemPropertyOrEnvironmentVariable("KIVAKIT_LOG_ALLOCATION_STACK_TRACES", "false")))
             {
                 stack = new AllocationStackTrace();
             }
 
-            // If there is a child (as in a multi-map),
+            // If there is a child (as in a multimap),
             if (estimatedChildSize != -1)
             {
                 // show both dimensions of the primitive collection
-                LOGGER.log(new Activity(stack, "$ $ $($ x $ = $)", who, why, what, Count.count(initialSize),
-                        Count.count(estimatedChildSize), Count.count(initialSize / estimatedChildSize).minimum(Count._16)));
+                LOGGER.log(new Step(stack, "$ $ $($ x $ = $)", who, why, what, Count.count(initialSize),
+                        Count.count(estimatedChildSize), Count.count(initialSize / estimatedChildSize).minimize(Count._16)));
             }
             else
             {
@@ -1007,19 +1014,11 @@ public abstract class PrimitiveCollection implements
                     // get the component type of the collection,
                     var componentType = type.getComponentType();
 
-                    // compute the size of this object from the estimated size (initial capacity)
-                    // and the size of the primitive type in bytes,
-                    var size = JavaVirtualMachine.local().sizeOfPrimitiveType(componentType).times(initialSize);
-
-                    // add to the total
-                    var total = totalAllocated.addAndGet(size.asBytes());
-                    totalAllocatedByAllocator.add(who, size);
-
                     // and then show what exactly was allocated
                     if (DEBUG.isDebugOn())
                     {
-                        LOGGER.log(new Activity(stack, "$ $ $[$] $ (total $, $)", who, why, what, initialSize,
-                                size, Bytes.bytes(totalAllocatedByAllocator.count(who)), Bytes.bytes(total)));
+                        LOGGER.log(new Step(stack, "$ $ $[$] $ (total $, $)", who, why, what, initialSize,
+                                size, bytes(totalAllocatedByAllocator.count(who)), bytes(totalAllocated.get())));
                     }
                 }
                 else
@@ -1027,7 +1026,7 @@ public abstract class PrimitiveCollection implements
                     // show the number of non-primitives allocated
                     if (DEBUG.isDebugOn())
                     {
-                        LOGGER.log(new Activity(stack, "$ $ $ $\n$", who, why, what, initialSize, allocated));
+                        LOGGER.log(new Step(stack, "$ $ $ $\n$", who, why, what, initialSize, allocated));
                     }
                 }
             }
@@ -1040,16 +1039,16 @@ public abstract class PrimitiveCollection implements
                 {
                     if (DEBUG.isDebugOn())
                     {
-                        LOGGER.log(new Activity("$ allocated large primitive collection $[$][$] (total $)", who, what, initialSize,
-                                estimatedChildSize, Bytes.bytes(totalAllocated.get())));
+                        LOGGER.log(new Step("$ allocated large primitive collection $[$][$] (total $)", who, what, initialSize,
+                                estimatedChildSize, bytes(totalAllocated.get())));
                     }
                 }
                 else
                 {
                     if (DEBUG.isDebugOn())
                     {
-                        LOGGER.log(new Activity("$ allocated large primitive collection $[$] (total $)", who, what, initialSize,
-                                Bytes.bytes(totalAllocated.get())));
+                        LOGGER.log(new Step("$ allocated large primitive collection $[$] (total $)", who, what, initialSize,
+                                bytes(totalAllocated.get())));
                     }
                 }
             }
@@ -1129,8 +1128,9 @@ public abstract class PrimitiveCollection implements
 
         if (size + increase > maximumSize)
         {
-            LOGGER.warning(Frequency.EVERY_5_SECONDS, new AllocationStackTrace(), "Maximum size of ${debug} elements would have been exceeded. " +
-                    "Ignoring operation (this is not an exception, just a warning)", maximumSize);
+            LOGGER.transmit(new Warning(new AllocationStackTrace(), "Maximum size of ${debug} elements would have been exceeded. " +
+                    "Ignoring operation (this is not an exception, just a warning)", maximumSize)
+                    .maximumFrequency(EVERY_5_SECONDS));
             return false;
         }
 
@@ -1240,6 +1240,10 @@ public abstract class PrimitiveCollection implements
     protected long[] newLongArray(Object who, String why, int size)
     {
         tracePrimitiveAllocation(size);
+        if (size > 1_000_000)
+        {
+            Console.println("hi");
+        }
         var values = new long[size];
         if (nullLong() != 0)
         {
@@ -1355,7 +1359,7 @@ public abstract class PrimitiveCollection implements
             builder.append(separator);
             builder.append("[...]");
         }
-        return Indent.by(4, builder.toString());
+        return Indent.indentBy(4, builder.toString());
     }
 
     private Boolean logAllocations()
@@ -1401,7 +1405,7 @@ public abstract class PrimitiveCollection implements
         {
             if (size > LARGE_ALLOCATION)
             {
-                LOGGER.log(new Activity("Allocated large array for ${class} ($) with $ elements",
+                LOGGER.log(new Step("Allocated large array for ${class} ($) with $ elements",
                         getClass(), objectName(), size));
             }
         }

@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import static com.telenav.kivakit.interfaces.string.Stringable.Format.USER_LABEL;
+import static com.telenav.kivakit.interfaces.string.StringFormattable.Format.USER_LABEL;
 import static com.telenav.kivakit.core.ensure.Ensure.ensure;
 
 /**

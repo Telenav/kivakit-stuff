@@ -83,7 +83,7 @@ public abstract class PrimitiveSet extends PrimitiveMap
             builder.append(separator);
             builder.append("[...]");
         }
-        return Indent.by(4, builder.toString());
+        return Indent.indentBy(4, builder.toString());
     }
 
     protected String toString(Object[] values)

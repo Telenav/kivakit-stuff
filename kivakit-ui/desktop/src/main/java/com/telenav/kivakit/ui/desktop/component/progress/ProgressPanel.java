@@ -36,7 +36,7 @@ public class ProgressPanel extends KivaKitPanel
         progressBar.setMaximum(100);
 
         // and the cancel button
-        var cancel = theme.newButton("cancel", ignored -> done.callback(CompletionStatus.CANCELLED));
+        var cancel = theme.newButton("cancel", ignored -> done.call(CompletionStatus.CANCELLED));
 
         // then add them to this panel
         setOpaque(false);
@@ -48,7 +48,7 @@ public class ProgressPanel extends KivaKitPanel
                 .add(cancel);
 
         // and update the progress bar as the reporter reports progress.
-        reporter.listener(at ->
+        reporter.progressReporter(at ->
         {
             var percentComplete = (int) at.asUnitValue();
             progressBar.setValue(percentComplete);
@@ -56,7 +56,7 @@ public class ProgressPanel extends KivaKitPanel
             progressBar.setStringPainted(false);
             if (at.equals(Percent._100))
             {
-                done.callback(CompletionStatus.COMPLETED);
+                done.call(CompletionStatus.COMPLETED);
             }
         });
     }

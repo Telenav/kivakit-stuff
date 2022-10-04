@@ -16,13 +16,29 @@
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-package com.telenav.kivakit.filesystems.hdfs.internal.lexakai;
+package com.telenav.kivakit.primitive.collections;
 
-import com.telenav.lexakai.annotations.diagrams.UmlDiagramIdentifier;
+import com.telenav.kivakit.interfaces.value.LongValued;
 
 /**
+ * An object which has a long key value and is also {@link LongValued} as are many objects.
+ *
  * @author jonathanl (shibo)
+ * @see LongValued
  */
-public class DiagramHdfs implements UmlDiagramIdentifier
+public interface LongKeyed extends LongValued
 {
+    /**
+     * @return The key
+     */
+    long key();
+
+    /**
+     * @return The key as a quantum
+     */
+    @Override
+    default long longValue()
+    {
+        return key();
+    }
 }

@@ -22,14 +22,15 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.telenav.kivakit.application.Application;
 import com.telenav.kivakit.component.BaseComponent;
-import com.telenav.kivakit.core.language.object.ObjectFormatter;
+import com.telenav.kivakit.core.string.ObjectFormatter;
 import com.telenav.kivakit.core.language.reflection.property.KivaKitIncludeProperty;
 import com.telenav.kivakit.core.time.Time;
 import com.telenav.kivakit.core.vm.JavaVirtualMachineHealth;
-import com.telenav.kivakit.interfaces.string.Stringable;
+import com.telenav.kivakit.interfaces.string.StringFormattable;
 import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeMember;
 import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeType;
 import com.telenav.kivakit.network.core.Host;
+import com.telenav.kivakit.network.core.LocalHost;
 import com.telenav.kivakit.network.core.Port;
 import com.telenav.kivakit.service.registry.internal.lexakai.DiagramRegistry;
 import com.telenav.lexakai.annotations.LexakaiJavadoc;
@@ -40,7 +41,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
-import static com.telenav.kivakit.core.language.object.ObjectFormatter.Format.SINGLE_LINE;
+import static com.telenav.kivakit.core.string.ObjectFormatter.ObjectFormat.SINGLE_LINE;
 
 /**
  * A logical service of a particular type that can be registered by an application with a local or network service
@@ -87,9 +88,9 @@ import static com.telenav.kivakit.core.language.object.ObjectFormatter.Format.SI
 @UmlClassDiagram(diagram = DiagramRegistry.class)
 @UmlExcludeSuperTypes
 @LexakaiJavadoc(complete = true)
-public class Service extends BaseComponent implements Comparable<Service>, Stringable
+public class Service extends BaseComponent implements Comparable<Service>, StringFormattable
 {
-    public static final Port UNBOUND = Host.local().port(0);
+    public static final Port UNBOUND = LocalHost.localhost().port(0);
 
     @JsonProperty
     @OpenApiIncludeMember(description = "The application that is running the service")
@@ -140,12 +141,12 @@ public class Service extends BaseComponent implements Comparable<Service>, Strin
 
     @Override
     @SuppressWarnings("SwitchStatementWithTooFewBranches")
-    public String asString(Format format)
+    public String asString(@NotNull Format format)
     {
         switch (format)
         {
             case LOG:
-                return new ObjectFormatter(this).toString(SINGLE_LINE);
+                return new ObjectFormatter(this).asString(SINGLE_LINE);
 
             default:
                 return toString();
@@ -155,7 +156,7 @@ public class Service extends BaseComponent implements Comparable<Service>, Strin
     @Override
     public int compareTo(@NotNull Service that)
     {
-        return Long.compare(port.number(), that.port.number());
+        return Long.compare(port.portNumber(), that.port.portNumber());
     }
 
     public String descriptor()
@@ -206,7 +207,7 @@ public class Service extends BaseComponent implements Comparable<Service>, Strin
     @NotNull
     public String hostApplicationAndPort()
     {
-        return hostAndApplication() + ":" + port.number();
+        return hostAndApplication() + ":" + port.portNumber();
     }
 
     @JsonIgnore
@@ -293,7 +294,7 @@ public class Service extends BaseComponent implements Comparable<Service>, Strin
     @Override
     public String toString()
     {
-        return new ObjectFormatter(this).toString(SINGLE_LINE);
+        return new ObjectFormatter(this).asString(SINGLE_LINE);
     }
 
     public Service type(ServiceType type)

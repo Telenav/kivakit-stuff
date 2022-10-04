@@ -25,7 +25,6 @@ import com.telenav.kivakit.core.value.count.MutableCount;
 import com.telenav.kivakit.core.value.mutable.MutableValue;
 import com.telenav.kivakit.data.compression.Codec;
 import com.telenav.kivakit.data.compression.DataCompressionKryoTypes;
-import com.telenav.kivakit.data.compression.SymbolConsumer;
 import com.telenav.kivakit.data.compression.SymbolProducer;
 import com.telenav.kivakit.data.compression.codecs.huffman.character.HuffmanCharacterCodec;
 import com.telenav.kivakit.data.compression.codecs.huffman.tree.Symbols;
@@ -33,13 +32,17 @@ import com.telenav.kivakit.primitive.collections.array.scalars.ByteArray;
 import com.telenav.kivakit.primitive.collections.list.ByteList;
 import com.telenav.kivakit.properties.PropertyMap;
 import com.telenav.kivakit.serialization.kryo.test.KryoUnitTest;
-import com.telenav.kivakit.serialization.kryo.types.CoreKryoTypes;
+import com.telenav.kivakit.serialization.kryo.types.KivaKitCoreKryoTypes;
 import com.telenav.kivakit.serialization.kryo.types.KryoTypes;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
 import static com.telenav.kivakit.core.value.count.Count._10;
+import static com.telenav.kivakit.data.compression.SymbolConsumer.Directive.CONTINUE;
+import static com.telenav.kivakit.data.compression.SymbolConsumer.Directive.STOP;
+import static com.telenav.kivakit.data.compression.SymbolProducer.symbolProducer;
+import static com.telenav.kivakit.properties.PropertyMap.loadPropertyMap;
 
 /**
  * @author jonathanl (shibo)
@@ -51,28 +54,28 @@ public class DataCompressionUnitTest extends KryoUnitTest
     {
         var data = new ByteArray("data");
         data.initialize();
-        return codec.encode(data, SymbolProducer.fromList(values));
+        return codec.encode(data, symbolProducer(values));
     }
 
     @NotNull
     protected Symbols<String> fixedSymbolSet()
     {
         return new Symbols<>(new CountMap<String>()
-                .add("abc", Count._1_000)
-                .add("def", Count._100)
-                .add("ghi", _10)
-                .add("jkl", Count._1));
+                .plus("abc", Count._1_000)
+                .plus("def", Count._100)
+                .plus("ghi", _10)
+                .plus("jkl", Count._1));
     }
 
     @Override
     protected KryoTypes kryoTypes()
     {
-        return new CoreKryoTypes().mergedWith(new DataCompressionKryoTypes());
+        return new KivaKitCoreKryoTypes().mergedWith(new DataCompressionKryoTypes());
     }
 
     protected PropertyMap properties(String name)
     {
-        return PropertyMap.load(this, packageResource(name));
+        return loadPropertyMap(this, packageResource(name));
     }
 
     @NotNull
@@ -80,9 +83,9 @@ public class DataCompressionUnitTest extends KryoUnitTest
     {
         var frequencies = new CountMap<Character>();
         random().rangeInclusive(minimum, maximum).loop(() ->
-                frequencies.add(random().letter(), Count.count(random().randomIntExclusive(1, 10_000))));
-        frequencies.add(HuffmanCharacterCodec.ESCAPE, Count._1024);
-        frequencies.add(HuffmanCharacterCodec.END_OF_STRING, Count._1024);
+                frequencies.plus(random().letter(), Count.count(random().randomIntExclusive(1, 10_000))));
+        frequencies.plus(HuffmanCharacterCodec.ESCAPE, Count._1024);
+        frequencies.plus(HuffmanCharacterCodec.END_OF_STRING, Count._1024);
         return new Symbols<>(frequencies, HuffmanCharacterCodec.ESCAPE, Minimum._1);
     }
 
@@ -92,7 +95,7 @@ public class DataCompressionUnitTest extends KryoUnitTest
                                                   int maximumLength)
     {
         var frequencies = new CountMap<String>();
-        var count = random().randomInt(minimum, maximum);
+        var count = random().randomIntInclusive(minimum, maximum);
         for (var at = 0; at < count; at++)
         {
             while (true)
@@ -100,9 +103,9 @@ public class DataCompressionUnitTest extends KryoUnitTest
                 var value = random().letters(minimumLength, maximumLength);
                 if (value.length() > 1)
                 {
-                    if (!frequencies.contains(value))
+                    if (!frequencies.containsKey(value))
                     {
-                        frequencies.add(value, Count.count(random().randomIntExclusive(2, 10_000)));
+                        frequencies.plus(value, Count.count(random().randomIntExclusive(2, 10_000)));
                         break;
                     }
                 }
@@ -129,7 +132,7 @@ public class DataCompressionUnitTest extends KryoUnitTest
             ensureEqual(next, expected.get(index));
             indexValue.set(index);
             count.increment();
-            return index < expected.size() - 1 ? SymbolConsumer.Directive.CONTINUE : SymbolConsumer.Directive.STOP;
+            return index < expected.size() - 1 ? CONTINUE : STOP;
         });
         ensureEqual((int) count.asLong(), expected.size());
         ensureEqual(indexValue.get(), expected.size() - 1);
