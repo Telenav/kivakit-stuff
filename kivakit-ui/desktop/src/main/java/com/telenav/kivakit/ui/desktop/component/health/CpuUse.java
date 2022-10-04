@@ -28,8 +28,8 @@ public class CpuUse extends KivaKitPanel
     {
         cpuUse.setString(Strings.format("$% cpu", (int) health.cpuUse()));
         cpuUse.setStringPainted(true);
-        cpuUse.setMaximum((int) health.elapsed().asSeconds());
-        cpuUse.setValue((int) health.elapsedCpuTime().asSeconds());
+        cpuUse.setMaximum((int) health.elapsedSinceLastSnapshot().asSeconds());
+        cpuUse.setValue((int) health.elapsedCpuTimeSinceLastSnapshot().asSeconds());
 
         return this;
     }

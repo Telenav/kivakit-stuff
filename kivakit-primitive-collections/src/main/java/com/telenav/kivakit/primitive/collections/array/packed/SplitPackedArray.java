@@ -169,7 +169,7 @@ public final class SplitPackedArray extends PrimitiveSplitArray implements
         if (object instanceof SplitPackedArray)
         {
             var that = (SplitPackedArray) object;
-            return Objects.equalPairs(children, that.children, bits, that.bits);
+            return Objects.areEqualPairs(children, that.children, bits, that.bits);
         }
         return false;
     }
@@ -223,7 +223,7 @@ public final class SplitPackedArray extends PrimitiveSplitArray implements
     @Override
     public int hashCode()
     {
-        return Hash.many(Arrays.hashCode(children), bits);
+        return Hash.hashMany(Arrays.hashCode(children), bits);
     }
 
     public void initializeElements(boolean initializeElements)

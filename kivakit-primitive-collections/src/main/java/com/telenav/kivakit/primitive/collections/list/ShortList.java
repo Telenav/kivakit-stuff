@@ -20,24 +20,24 @@ package com.telenav.kivakit.primitive.collections.list;
 
 import com.telenav.kivakit.interfaces.collection.Sized;
 import com.telenav.kivakit.interfaces.naming.Named;
-import com.telenav.kivakit.interfaces.numeric.Quantizable;
+import com.telenav.kivakit.interfaces.value.LongValued;
 import com.telenav.kivakit.primitive.collections.ShortCollection;
+import com.telenav.kivakit.primitive.collections.internal.lexakai.DiagramPrimitiveList;
 import com.telenav.kivakit.primitive.collections.iteration.ShortIterable;
 import com.telenav.kivakit.primitive.collections.iteration.ShortIterator;
-import com.telenav.kivakit.primitive.collections.internal.lexakai.DiagramPrimitiveList;
 import com.telenav.lexakai.annotations.UmlClassDiagram;
 
 import java.util.List;
 
 /**
- * A collection of primitive short values. All primitive collections have a name that can be retrieved with {@link
- * #objectName()} and a size retrieved with {@link Sized#size()} and they can be emptied with {@link #clear()}. Values
- * in this collection can be iterated with an {@link ShortIterator} returned by the {@link ShortIterable#iterator()}
- * method.
+ * A collection of primitive short values. All primitive collections have a name that can be retrieved with
+ * {@link #objectName()} and a size retrieved with {@link Sized#size()} and they can be emptied with {@link #clear()}.
+ * Values in this collection can be iterated with an {@link ShortIterator} returned by the
+ * {@link ShortIterable#iterator()} method.
  * <p>
  * New values can be added with {@link #add(short)}, {@link #addAll(ShortCollection)} and {@link #addAll(short[])} and
- * removed with {@link #remove(short)}. In addition, {@link Quantizable} values can be added with {@link #addAll(List)},
- * where each value is quantized via {@link Quantizable#quantum()} before being added.
+ * removed with {@link #remove(short)}. In addition, {@link LongValued} values can be added with {@link #addAll(List)},
+ * where each value is quantized via {@link LongValued#longValue()} ()} before being added.
  * <p>
  * Whether a given value or collection of values is in the collection can be determined with {@link #contains(short)}
  * and {@link #containsAll(ShortCollection)}.
@@ -126,6 +126,8 @@ public interface ShortList extends ShortCollection, PrimitiveList
     {
         return new ShortIterator()
         {
+            int index;
+
             @Override
             public boolean hasNext()
             {
@@ -143,8 +145,6 @@ public interface ShortList extends ShortCollection, PrimitiveList
                 while (isNull(next) && index < size());
                 return next;
             }
-
-            int index;
         };
     }
 

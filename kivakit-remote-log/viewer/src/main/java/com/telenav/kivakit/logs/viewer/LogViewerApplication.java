@@ -63,7 +63,7 @@ public class LogViewerApplication extends Application
         var icon = ImageResource.of(packageResource( "kivakit-128.png")).image();
         Taskbar.getTaskbar().setIconImage(icon);
 
-        var configuration = PropertyMap.create();
+        var configuration = PropertyMap.propertyMap();
         configuration.put("maximum-entries", get(MAXIMUM_ENTRIES).toString());
 
         // Create and show client log

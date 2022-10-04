@@ -18,32 +18,32 @@
 
 package com.telenav.kivakit.data.compression.codecs.huffman.list;
 
-import com.telenav.kivakit.core.collections.Lists;
 import com.telenav.kivakit.core.collections.map.CountMap;
-import com.telenav.kivakit.core.messaging.Listener;
-import com.telenav.kivakit.core.progress.reporters.BroadcastingProgressReporter;
-import com.telenav.kivakit.core.value.count.Count;
 import com.telenav.kivakit.core.value.count.Maximum;
 import com.telenav.kivakit.core.value.count.Minimum;
 import com.telenav.kivakit.data.compression.Codec;
-import com.telenav.kivakit.data.compression.SymbolConsumer;
 import com.telenav.kivakit.data.compression.codecs.huffman.DataCompressionUnitTest;
-import com.telenav.kivakit.data.compression.codecs.huffman.character.HuffmanCharacterCodec;
-import com.telenav.kivakit.data.compression.codecs.huffman.string.HuffmanStringCodec;
 import com.telenav.kivakit.data.compression.codecs.huffman.tree.Symbols;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
+import static com.telenav.kivakit.core.collections.Lists.arrayList;
 import static com.telenav.kivakit.core.value.count.Count._10;
 import static com.telenav.kivakit.core.value.count.Count._100;
-import static com.telenav.kivakit.interfaces.code.FilteredLoopBody.FilterAction.ACCEPT;
+import static com.telenav.kivakit.core.value.count.Count._1024;
+import static com.telenav.kivakit.core.value.count.Count.parseCount;
+import static com.telenav.kivakit.data.compression.SymbolConsumer.Directive.CONTINUE;
+import static com.telenav.kivakit.data.compression.codecs.huffman.character.HuffmanCharacterCodec.END_OF_STRING;
+import static com.telenav.kivakit.data.compression.codecs.huffman.character.HuffmanCharacterCodec.ESCAPE;
+import static com.telenav.kivakit.data.compression.codecs.huffman.character.HuffmanCharacterCodec.characterCodec;
+import static com.telenav.kivakit.data.compression.codecs.huffman.string.HuffmanStringCodec.stringCodec;
 
 @SuppressWarnings("SpellCheckingInspection")
 public class HuffmanStringListCodecTest extends DataCompressionUnitTest
 {
+    @SuppressWarnings("ConstantConditions")
     @Test
     public void testBug()
     {
@@ -62,86 +62,87 @@ public class HuffmanStringListCodecTest extends DataCompressionUnitTest
         //    input: [ohkh, m, ohkh, m, gxafxac, ohkh, gxafxac, m, m, gxafxac, ohkh, m, gxafxac, gxafxac, gxafxac, ohkh, m, m, m]
 
         var stringSymbols = new Symbols<>(new CountMap<String>()
-                .add("m", Objects.requireNonNull(Count.parseCount(this, "8,524")))
-                .add("gxafxac", Objects.requireNonNull(Count.parseCount(this, "9,202"))));
+                .plus("m", parseCount(this, "8,524"))
+                .plus("gxafxac", parseCount(this, "9,202")));
 
-        var string = HuffmanStringCodec.from(stringSymbols, Maximum._8);
+        var stringCodec = stringCodec(stringSymbols, Maximum._8);
 
         var characterSymbols = new Symbols<>(new CountMap<Character>()
-                .add('m', Objects.requireNonNull(Count.parseCount(this, "10,826")))
-                .add('d', Objects.requireNonNull(Count.parseCount(this, "8,154")))
-                .add('j', Objects.requireNonNull(Count.parseCount(this, "8,098")))
-                .add('e', Objects.requireNonNull(Count.parseCount(this, "6,379")))
-                .add('x', Objects.requireNonNull(Count.parseCount(this, "5,566")))
-                .add(HuffmanCharacterCodec.ESCAPE, Count._1024)
-                .add(HuffmanCharacterCodec.END_OF_STRING, Count._1024), HuffmanCharacterCodec.ESCAPE, Minimum._2);
+                .plus('m', parseCount(this, "10,826"))
+                .plus('d', parseCount(this, "8,154"))
+                .plus('j', parseCount(this, "8,098"))
+                .plus('e', parseCount(this, "6,379"))
+                .plus('x', parseCount(this, "5,566"))
+                .plus(ESCAPE, _1024)
+                .plus(END_OF_STRING, _1024), ESCAPE, Minimum._2);
 
-        var character = HuffmanCharacterCodec.from(characterSymbols, Maximum._8);
+        var characterCodec = characterCodec(characterSymbols, Maximum._8);
 
-        var codec = new HuffmanStringListCodec(string, character);
+        var codec = new HuffmanStringListCodec(stringCodec, characterCodec);
 
-        test(codec, Lists.arrayList("ohkh", "m", "ohkh", "m", "gxafxac", "ohkh", "gxafxac",
+        test(codec, arrayList("ohkh", "m", "ohkh", "m", "gxafxac", "ohkh", "gxafxac",
                 "m", "m", "gxafxac", "ohkh", "m", "gxafxac", "gxafxac", "gxafxac", "ohkh", "m", "m", "m"));
 
-        test(codec, Lists.arrayList("ohkh"));
+        test(codec, arrayList("ohkh"));
     }
 
     @Test
     public void testDecode()
     {
-        var string = HuffmanStringCodec.from(properties("string.codec"));
-        var character = HuffmanCharacterCodec.from(this, properties("character.codec"), HuffmanCharacterCodec.ESCAPE);
-        var codec = new HuffmanStringListCodec(string, character);
+        var stringCodec = stringCodec(properties("string.codec"));
+        var characterCodec = characterCodec(this, properties("character.codec"), ESCAPE);
+        var codec = new HuffmanStringListCodec(stringCodec, characterCodec);
 
-        test(codec, Lists.arrayList("bicycle", "barrier", "highway", "banana"));
-        test(codec, Lists.arrayList("oneway", "turkey", "foot", "access", "footway"));
-        test(codec, Lists.arrayList("gorilla", "amenity", "footway", "monkey", "maxspeed", "footway"));
+        test(codec, arrayList("bicycle", "barrier", "highway", "banana"));
+        test(codec, arrayList("oneway", "turkey", "foot", "access", "footway"));
+        test(codec, arrayList("gorilla", "amenity", "footway", "monkey", "maxspeed", "footway"));
     }
 
     @Test
     public void testRandom()
     {
-        var progress = BroadcastingProgressReporter.create(Listener.emptyListener(), "codec");
-        _10.loop(codecNumber ->
+        _10.forEachInteger(codecNumber ->
         {
             var stringSymbols = randomStringSymbols(2, 16, 2, 32);
-            var string = HuffmanStringCodec.from(stringSymbols, Maximum._8);
+            var string = stringCodec(stringSymbols, Maximum._8);
 
             var characterSymbols = randomCharacterSymbols(2, 25);
-            var character = HuffmanCharacterCodec.from(characterSymbols, Maximum._8);
+            var character = characterCodec(characterSymbols, Maximum._8);
 
             var codec = new HuffmanStringListCodec(string, character);
 
             var choices = stringSymbols.symbols();
             choices.addAll(randomStringSymbols(2, 8, 2, 32).symbols());
 
-            var test = BroadcastingProgressReporter.create(Listener.emptyListener(), "test");
-            _100.loop(testNumber ->
+            _100.forEachInteger(testNumber ->
             {
                 var input = new ArrayList<String>();
                 random().rangeInclusive(2, 32).loop(() -> input.add(choices.get(random().randomIntExclusive(0, choices.size() - 1))));
                 test(codec, input);
-                test.next();
-                return ACCEPT;
             });
-
-            progress.next();
-            return ACCEPT;
         });
     }
 
     @Override
     protected void test(Codec<String> codec, List<String> symbols)
     {
-        var data = encode(codec, symbols);
+        // Encode symbols with codec,
+        var encoded = encode(codec, symbols);
+        encoded.reset();
+
+        // create a destination array, decoded, and fill it with nulls,
         var decoded = new ArrayList<>();
-        Count.count(symbols).loop(() -> decoded.add(null));
-        data.reset();
-        codec.decode(data, (index, value) ->
+        count(symbols).loop(() -> decoded.add(null));
+
+        // then decode the data,
+        codec.decode(encoded, (index, value) ->
         {
+            // setting each value into decoded array
             decoded.set(index, value);
-            return SymbolConsumer.Directive.CONTINUE;
+            return CONTINUE;
         });
+
+        // Finally, the input symbols and the decoded data should be the same.
         ensureEqual(decoded, symbols);
     }
 }

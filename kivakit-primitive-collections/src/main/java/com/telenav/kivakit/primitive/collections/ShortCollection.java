@@ -21,7 +21,7 @@ package com.telenav.kivakit.primitive.collections;
 import com.telenav.kivakit.interfaces.collection.Sized;
 import com.telenav.kivakit.interfaces.naming.Named;
 import com.telenav.kivakit.interfaces.naming.NamedObject;
-import com.telenav.kivakit.interfaces.numeric.Quantizable;
+import com.telenav.kivakit.interfaces.value.LongValued;
 import com.telenav.kivakit.primitive.collections.iteration.ShortIterable;
 import com.telenav.kivakit.primitive.collections.iteration.ShortIterator;
 import com.telenav.kivakit.primitive.collections.internal.lexakai.DiagramPrimitiveCollection;
@@ -43,8 +43,8 @@ import static com.telenav.kivakit.core.ensure.Ensure.unsupported;
  * null value.
  * <p>
  * New values can be added with {@link #add(short)}, {@link #addAll(ShortCollection)} and {@link #addAll(short[])} and
- * removed with {@link #remove(short)}. In addition, {@link Quantizable} values can be added with {@link #addAll(List)},
- * where each value is quantized via {@link Quantizable#quantum()} before being added. Since many objects are
+ * removed with {@link #remove(short)}. In addition, {@link LongValued} values can be added with {@link #addAll(List)},
+ * where each value is quantized via {@link LongValued#longValue()} ()} before being added. Since many objects are
  * quantizable, this method is especially useful.
  * <p>
  * Whether a given value or collection of values is in the collection can be determined with {@link #contains(short)}
@@ -54,9 +54,9 @@ import static com.telenav.kivakit.core.ensure.Ensure.unsupported;
  * @see Named
  * @see Sized
  * @see ShortIterable
- * @see Quantizable
+ * @see LongValued
  */
-@UmlClassDiagram(diagram = DiagramPrimitiveCollection.class)
+@SuppressWarnings("unused") @UmlClassDiagram(diagram = DiagramPrimitiveCollection.class)
 public interface ShortCollection extends ShortIterable, Sized, NamedObject
 {
     /**
@@ -80,11 +80,11 @@ public interface ShortCollection extends ShortIterable, Sized, NamedObject
     /**
      * Adds the given quantizable values
      */
-    default void addAll(List<? extends Quantizable> values)
+    default void addAll(List<? extends LongValued> values)
     {
-        for (Quantizable value : values)
+        for (var value : values)
         {
-            add((short) value.quantum());
+            add((short) value.longValue());
         }
     }
 
@@ -116,6 +116,7 @@ public interface ShortCollection extends ShortIterable, Sized, NamedObject
      * @return True if this collection contains the given value. Some collections may choose not to implement this
      * method if the search is too inefficient.
      */
+    @SuppressWarnings("unused")
     default boolean contains(short value)
     {
         return unsupported();

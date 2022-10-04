@@ -135,7 +135,7 @@ public final class StringToObjectMap<T> extends PrimitiveMap
             {
                 var key = keys.next();
                 var value = get(key);
-                if (!Objects.equal(value, that.get(key)))
+                if (!Objects.isEqual(value, that.get(key)))
                 {
                     return false;
                 }

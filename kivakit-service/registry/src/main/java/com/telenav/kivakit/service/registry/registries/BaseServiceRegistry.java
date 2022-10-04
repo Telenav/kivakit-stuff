@@ -19,9 +19,10 @@
 package com.telenav.kivakit.service.registry.registries;
 
 import com.telenav.kivakit.application.Application;
-import com.telenav.kivakit.collections.set.MultiSet;
+import com.telenav.kivakit.core.collections.set.MultiSet;
 import com.telenav.kivakit.core.collections.Sets;
 import com.telenav.kivakit.core.function.Result;
+import com.telenav.kivakit.core.function.ResultTrait;
 import com.telenav.kivakit.core.messaging.repeaters.BaseRepeater;
 import com.telenav.kivakit.core.thread.KivaKitThread;
 import com.telenav.kivakit.core.thread.locks.ReadWriteLock;
@@ -101,10 +102,14 @@ import static com.telenav.kivakit.core.vm.ShutdownHook.Order.FIRST;
  * @see Application.Identifier
  * @see Port
  */
+@SuppressWarnings("unused")
 @UmlClassDiagram(diagram = DiagramRegistry.class)
 @UmlNotPublicApi
 @UmlExcludeSuperTypes({ Startable.class })
-public abstract class BaseServiceRegistry extends BaseRepeater implements ServiceRegistry, Startable
+public abstract class BaseServiceRegistry extends BaseRepeater implements
+        ServiceRegistry,
+        Startable,
+        ResultTrait
 {
     /** Services by application */
     private MultiSet<Application.Identifier, Service> applicationToServices = new MultiSet<>();
@@ -163,7 +168,7 @@ public abstract class BaseServiceRegistry extends BaseRepeater implements Servic
 
                 // index the service for retrieval
                 trace("Adding service to indexes: $", service);
-                registeredPorts.add(service.port().number());
+                registeredPorts.add(service.port().portNumber());
                 portToService.put(service.port(), service);
                 serviceTypeToServices.replaceValue(service.type(), service);
                 applicationToServices.replaceValue(service.application(), service);
@@ -416,12 +421,12 @@ public abstract class BaseServiceRegistry extends BaseRepeater implements Servic
             applicationToServices.removeFromSet(service.application(), service);
 
             // remove it from the set of registered ports,
-            registeredPorts.remove(port.number());
+            registeredPorts.remove(port.portNumber());
 
             // then add it to the map of reserved ports. If the expired service comes back online before
             // PORT_RESERVATION_TIME expires, it will still be able to reclaim its port. After then, the
             // port will be re-used.
-            reservedPortToExpirationTime.put(port.number(), Time.now());
+            reservedPortToExpirationTime.put(port.portNumber(), Time.now());
             information("Removed service $", service);
         });
     }

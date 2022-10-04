@@ -20,8 +20,6 @@ package com.telenav.kivakit.primitive.collections;
 
 import com.telenav.kivakit.core.language.reflection.Type;
 import com.telenav.kivakit.core.messaging.Listener;
-import com.telenav.kivakit.core.value.count.Bytes;
-import com.telenav.kivakit.core.vm.JavaVirtualMachine;
 import com.telenav.kivakit.interfaces.messaging.Receiver;
 import com.telenav.kivakit.interfaces.messaging.Transmittable;
 import com.telenav.kivakit.primitive.collections.internal.lexakai.DiagramPrimitiveCollection;
@@ -47,7 +45,7 @@ public interface CompressibleCollection
      * @param root The object to compress
      * @return Size of the object after compressing
      */
-    static Bytes compressReachableObjects
+    static void compressReachableObjects
     (
             Listener listener,
             Object root,
@@ -55,31 +53,28 @@ public interface CompressibleCollection
             Receiver receiver
     )
     {
-        return JavaVirtualMachine.local().traceSizeChange(listener, "compress", root, Bytes.megabytes(1), () ->
+        // Go through all reachable sub-objects
+        var values = Type.type(root).reachableObjectsImplementing(root, CompressibleCollection.class);
+        Map<Object, Boolean> compressed = new IdentityHashMap<>();
+        for (var value : values)
         {
-            // Go through all reachable sub-objects
-            var values = Type.of(root).reachableObjectsImplementing(root, CompressibleCollection.class);
-            Map<Object, Boolean> compressed = new IdentityHashMap<>();
-            for (var value : values)
+            // and if we haven't already compressed it, and it can be compressed,
+            if (compressed.get(value) != Boolean.TRUE)
             {
-                // and if we haven't already compressed it, and it can be compressed,
-                if (compressed.get(value) != Boolean.TRUE)
+                // compress it using the given method,
+                var compressible = (CompressibleCollection) value;
+                var methodUsed = compressible.compress(method);
+                assert methodUsed != null;
+                if (methodUsed != Method.NONE)
                 {
-                    // compress it using the given method,
-                    var compressible = (CompressibleCollection) value;
-                    var methodUsed = compressible.compress(method);
-                    assert methodUsed != null;
-                    if (methodUsed != Method.NONE)
-                    {
-                        // and if it did compress, notify the client,
-                        receiver.receive(new CompressionEvent(compressible, methodUsed));
-                    }
-
-                    // then mark it as compressed, so we don't try it again.
-                    compressed.put(value, Boolean.TRUE);
+                    // and if it did compress, notify the client,
+                    receiver.receive(new CompressionEvent(compressible, methodUsed));
                 }
+
+                // then mark it as compressed, so we don't try it again.
+                compressed.put(value, Boolean.TRUE);
             }
-        });
+        }
     }
 
     enum Method
@@ -112,8 +107,8 @@ public interface CompressibleCollection
     }
 
     /**
-     * A compression event when compressing objects with {@link #compressReachableObjects(Listener, Object, Method,
-     * Receiver)}
+     * A compression event when compressing objects with
+     * {@link #compressReachableObjects(Listener, Object, Method, Receiver)}
      */
     class CompressionEvent implements Transmittable
     {

@@ -22,7 +22,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.telenav.kivakit.commandline.SwitchParser;
 import com.telenav.kivakit.commandline.SwitchParsers;
-import com.telenav.kivakit.core.collections.Collections;
 import com.telenav.kivakit.core.function.Result;
 import com.telenav.kivakit.core.language.reflection.property.KivaKitIncludeProperty;
 import com.telenav.kivakit.core.messaging.Listener;
@@ -42,6 +41,7 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import static com.telenav.kivakit.core.collections.list.ObjectList.objectList;
 import static com.telenav.kivakit.core.ensure.Ensure.ensure;
 import static com.telenav.kivakit.core.ensure.Ensure.unsupported;
 import static com.telenav.kivakit.service.registry.Scope.Type.CLUSTER;
@@ -53,6 +53,7 @@ import static com.telenav.kivakit.service.registry.Scope.Type.NETWORK;
  *
  * @author jonathanl (shibo)
  */
+@SuppressWarnings("unused")
 @OpenApiIncludeType(
         description = "The scope of visibility of a service, used to limit what services are discovered by a locate request.")
 @UmlClassDiagram(diagram = DiagramRegistry.class)
@@ -66,7 +67,7 @@ public class Scope implements Named, Comparable<Scope>
     }
 
     /**
-     * @return The local host scope
+     * Returns the local host scope
      */
     public static Scope localhost()
     {
@@ -75,14 +76,15 @@ public class Scope implements Named, Comparable<Scope>
 
     public static List<String> names(Result<Set<Service>> result)
     {
-        return Collections.sorted(scopes(result)
+        return objectList(scopes(result)
                 .stream()
                 .map(Scope::name)
-                .collect(Collectors.toSet()));
+                .collect(Collectors.toSet()))
+                .sorted();
     }
 
     /**
-     * @return The network-wide scope
+     * Returns the network-wide scope
      */
     public static Scope network()
     {

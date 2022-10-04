@@ -23,8 +23,10 @@ import com.telenav.kivakit.application.Application;
 import com.telenav.kivakit.application.Server;
 import com.telenav.kivakit.component.BaseComponent;
 import com.telenav.kivakit.core.function.Result;
+import com.telenav.kivakit.core.function.ResultTrait;
 import com.telenav.kivakit.core.language.reflection.Type;
 import com.telenav.kivakit.core.os.OperatingSystem;
+import com.telenav.kivakit.core.project.ProjectTrait;
 import com.telenav.kivakit.core.thread.KivaKitThread;
 import com.telenav.kivakit.core.time.Duration;
 import com.telenav.kivakit.core.version.Version;
@@ -204,7 +206,9 @@ import static com.telenav.kivakit.service.registry.protocol.discover.DiscoverSer
 @UmlRelation(label = "discovers applications", referent = Application.Identifier.class)
 @UmlRelation(label = "discovers services", referent = Provider.Service.class)
 @UmlRelation(label = "searches within", referent = Scope.class)
-public class ServiceRegistryClient extends BaseComponent
+public class ServiceRegistryClient extends BaseComponent implements
+        ProjectTrait,
+        ResultTrait
 {
     /** True if the client is connected */
     private boolean connected;
@@ -328,7 +332,7 @@ public class ServiceRegistryClient extends BaseComponent
     {
         // Register the service
         trace("Registering with local registry: $", service);
-        service.health(JavaVirtualMachine.local().health());
+        service.health(JavaVirtualMachine.javaVirtualMachine().health());
         var request = new RegisterServiceRequest(service);
         var result = request(Scope.localhost(), request, RegisterServiceResponse.class).asResult();
         if (result.succeeded())
@@ -343,7 +347,7 @@ public class ServiceRegistryClient extends BaseComponent
                     {
                         settings().serviceLeaseRenewalFrequency().cycleLength().sleep();
                         trace("Renewing lease on registered service: $", registered);
-                        var health = JavaVirtualMachine.local().health();
+                        var health = JavaVirtualMachine.javaVirtualMachine().health();
                         if (health != null)
                         {
                             registered.health(health.update());
@@ -388,11 +392,11 @@ public class ServiceRegistryClient extends BaseComponent
         var application = Application.get();
 
         // and this process' id
-        var pid = OperatingSystem.get().processIdentifier();
+        var pid = OperatingSystem.operatingSystem().processIdentifier();
 
         // then compose an identifier for the service application
         var applicationIdentifier = application == null
-                ? new Application.Identifier("Unknown (pid " + OperatingSystem.get().processIdentifier() + ")")
+                ? new Application.Identifier("Unknown (pid " + OperatingSystem.operatingSystem().processIdentifier() + ")")
                 : application.identifier();
 
         // and a name to use in the description
@@ -556,6 +560,7 @@ public class ServiceRegistryClient extends BaseComponent
                         .path(this, settings().restApiPath())
                         .withChild(request.path());
                 trace("Posting $ to $", request.getClass().getSimpleName(), path);
+                @SuppressWarnings("resource")
                 var jaxResponse = client
                         .target(path.toString())
                         .request("application/json")
@@ -584,7 +589,7 @@ public class ServiceRegistryClient extends BaseComponent
         }
 
         // If the host is not resolvable or an exception occurred, so fail
-        var response = (Response) Type.forClass(responseType).newInstance();
+        var response = (Response) Type.typeForClass(responseType).newInstance();
         response.problem("Unable to connect to $", server);
         problem("Could not resolve ${lower} registry on host $", scope, server.host().name());
         return response;

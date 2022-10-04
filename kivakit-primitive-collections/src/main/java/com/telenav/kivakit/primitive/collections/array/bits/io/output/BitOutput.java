@@ -19,6 +19,7 @@
 package com.telenav.kivakit.primitive.collections.array.bits.io.output;
 
 import com.telenav.kivakit.core.io.IO;
+import com.telenav.kivakit.core.messaging.Listener;
 import com.telenav.kivakit.primitive.collections.array.bits.io.BitWriter;
 import com.telenav.kivakit.primitive.collections.internal.lexakai.DiagramPrimitiveArrayBitIo;
 import com.telenav.lexakai.annotations.LexakaiJavadoc;
@@ -40,13 +41,16 @@ import static com.telenav.kivakit.core.ensure.Ensure.unsupported;
 @LexakaiJavadoc(complete = true)
 public class BitOutput extends BaseBitWriter
 {
+    private final Listener listener;
+
     private final OutputStream out;
 
     /**
      * Construct from an output stream
      */
-    public BitOutput(OutputStream out)
+    public BitOutput(Listener listener, OutputStream out)
     {
+        this.listener = listener;
         this.out = out;
     }
 
@@ -56,7 +60,7 @@ public class BitOutput extends BaseBitWriter
     @Override
     public void onClose()
     {
-        IO.close(out);
+        IO.close(listener, out);
     }
 
     @Override

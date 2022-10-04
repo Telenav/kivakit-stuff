@@ -38,7 +38,7 @@ public class UnquotedCsvReaderTest extends UnitTest implements PackageTrait
         var schema = new CsvSchema(year, make, model, description, price);
 
         var resource = packageResource("SampleUnquotedCsv.csv");
-        try (var reader = new UnquotedCsvReader(resource, schema, ';', ProgressReporter.none()))
+        try (var reader = new UnquotedCsvReader(resource, schema, ';', ProgressReporter.nullProgressReporter()))
         {
             reader.skipLines(1);
             ensure(reader.hasNext());

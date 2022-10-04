@@ -284,7 +284,7 @@ public class ClientLogPanel extends KivaKitPanel
     {
         return connection ->
         {
-            var reporter = BroadcastingProgressReporter.create();
+            var reporter = BroadcastingProgressReporter.createProgressReporter();
             var progress = new ProgressPanel(reporter, 150, status ->
             {
                 if (status == CANCELLED)
@@ -294,7 +294,7 @@ public class ClientLogPanel extends KivaKitPanel
             });
             progress.setVisible(true);
 
-            listenTo(KivaKitThread.run("LogReceiver", () -> receiver.receive(connection, newSessionListener, objectListener)));
+            listenTo(KivaKitThread.run(this, "LogReceiver", () -> receiver.receive(connection, newSessionListener, objectListener)));
         };
     }
 

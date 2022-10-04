@@ -19,7 +19,7 @@
 package com.telenav.kivakit.primitive.collections.map.multi;
 
 import com.telenav.kivakit.interfaces.collection.Sized;
-import com.telenav.kivakit.interfaces.numeric.Quantizable;
+import com.telenav.kivakit.interfaces.value.LongValued;
 import com.telenav.kivakit.primitive.collections.array.scalars.IntArray;
 import com.telenav.kivakit.primitive.collections.internal.lexakai.DiagramPrimitiveMultiMap;
 import com.telenav.lexakai.annotations.UmlClassDiagram;
@@ -33,5 +33,5 @@ public interface IntMultiMap extends Sized
 
     void putAll(long key, IntArray values);
 
-    void putAll(long key, List<? extends Quantizable> values);
+    void putAll(long key, List<? extends LongValued> values);
 }

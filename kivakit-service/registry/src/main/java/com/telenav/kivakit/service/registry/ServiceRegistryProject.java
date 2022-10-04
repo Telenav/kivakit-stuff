@@ -28,11 +28,11 @@ import com.telenav.kivakit.serialization.gson.factory.GsonFactory;
 import com.telenav.kivakit.serialization.gson.serializers.ProblemGsonSerializer;
 import com.telenav.kivakit.serialization.gson.serializers.TimeInMillisecondsGsonSerializer;
 import com.telenav.kivakit.serialization.kryo.KryoSerializationSessionFactory;
-import com.telenav.kivakit.serialization.kryo.types.CoreKryoTypes;
+import com.telenav.kivakit.serialization.kryo.types.KivaKitCoreKryoTypes;
 import com.telenav.kivakit.service.registry.serialization.serializers.ApplicationIdentifierGsonSerializer;
 import com.telenav.kivakit.service.registry.serialization.serializers.ServiceTypeGsonSerializer;
 
-import static com.telenav.kivakit.core.string.Formatter.Format.WITH_EXCEPTION;
+import static com.telenav.kivakit.core.messaging.MessageFormat.WITH_EXCEPTION;
 
 /**
  * This class defines a KivaKit {@link Project}. It cannot be constructed with the new operator since it has a private
@@ -46,7 +46,7 @@ public class ServiceRegistryProject extends Project
     private ServiceRegistryProject()
     {
         register(new KryoSerializationSessionFactory(new ServiceRegistryKryoTypes()
-                .mergedWith(new CoreKryoTypes())));
+                .mergedWith(new KivaKitCoreKryoTypes())));
     }
 
     @Override
