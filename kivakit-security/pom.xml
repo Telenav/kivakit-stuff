@@ -35,12 +35,16 @@
         </dependency>
         
         <!-- Annotations -->
-        
+
         <dependency>
             <groupId>com.telenav.lexakai</groupId>
             <artifactId>lexakai-annotations</artifactId>
         </dependency>
-        
+        <dependency>
+            <groupId>com.telenav.kivakit</groupId>
+            <artifactId>kivakit-annotations</artifactId>
+        </dependency>
+
         <!-- Test -->
         
         <dependency>
@@ -52,7 +56,7 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>kivakit-testing</artifactId>
             <scope>test</scope>
-        </dependency>
+        </dependency><dependency><groupId>com.telenav.kivakit</groupId><artifactId>kivakit-annotations</artifactId><version>1.7.1-SNAPSHOT</version><scope>compile</scope></dependency>
     </dependencies>
     
 </project>
