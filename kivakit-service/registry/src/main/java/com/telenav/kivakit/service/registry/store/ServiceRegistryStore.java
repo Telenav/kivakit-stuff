@@ -37,7 +37,7 @@ import com.telenav.lexakai.annotations.UmlClassDiagram;
 import com.telenav.lexakai.annotations.associations.UmlRelation;
 import com.telenav.lexakai.annotations.visibility.UmlNotPublicApi;
 
-import static com.telenav.kivakit.resource.Extension.TMP;
+import static com.telenav.kivakit.resource.Extension.TEMPORARY;
 import static com.telenav.kivakit.serialization.core.SerializationSession.SessionType.RESOURCE_SERIALIZATION_SESSION;
 
 /**
@@ -117,7 +117,7 @@ public class ServiceRegistryStore extends BaseComponent
     {
         if (Booleans.isTrue(Properties.systemPropertyOrEnvironmentVariable("KIVAKIT_SAVE_REGISTRY", "true")))
         {
-            var file = file(registry.getClass()).withExtension(TMP);
+            var file = file(registry.getClass()).withExtension(TEMPORARY);
             trace("Saving service registry to $", file.messageSource());
             if (file.delete())
             {

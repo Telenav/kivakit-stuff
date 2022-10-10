@@ -62,7 +62,7 @@ public class Session implements Comparable<Session>
 
     public FileName fileName()
     {
-        return FileName.dateTime(started.asLocalTime()).prefixedWith(name + "-");
+        return FileName.fileNameForDateTime(started.asLocalTime()).prefixedWith(name + "-");
     }
 
     @Override
