@@ -34,7 +34,6 @@ import com.telenav.kivakit.core.messaging.Debug;
 import com.telenav.kivakit.core.messaging.context.CallStack;
 import com.telenav.kivakit.core.messaging.messages.status.Warning;
 import com.telenav.kivakit.core.messaging.messages.status.activity.Step;
-import com.telenav.kivakit.core.os.Console;
 import com.telenav.kivakit.core.string.Indent;
 import com.telenav.kivakit.core.string.Strings;
 import com.telenav.kivakit.core.time.Duration;
@@ -1240,10 +1239,6 @@ public abstract class PrimitiveCollection implements
     protected long[] newLongArray(Object who, String why, int size)
     {
         tracePrimitiveAllocation(size);
-        if (size > 1_000_000)
-        {
-            Console.println("hi");
-        }
         var values = new long[size];
         if (nullLong() != 0)
         {

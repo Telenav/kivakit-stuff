@@ -24,7 +24,6 @@ import com.telenav.kivakit.core.collections.list.ObjectList;
 import com.telenav.kivakit.core.collections.list.StringList;
 import com.telenav.kivakit.core.collections.set.ObjectSet;
 import com.telenav.kivakit.core.messaging.messages.status.Problem;
-import com.telenav.kivakit.core.os.Console;
 import com.telenav.kivakit.core.string.AsciiArt;
 import com.telenav.kivakit.service.registry.Scope;
 import com.telenav.kivakit.service.registry.Scope.Type;
@@ -34,6 +33,7 @@ import com.telenav.kivakit.service.registry.client.ServiceRegistryClient;
 
 import static com.telenav.kivakit.core.collections.set.ObjectSet.objectSet;
 import static com.telenav.kivakit.core.messaging.MessageFormat.WITH_EXCEPTION;
+import static com.telenav.kivakit.core.os.Console.console;
 import static com.telenav.kivakit.service.registry.Scope.Type.scopeTypeSwitchParser;
 
 /**
@@ -72,7 +72,7 @@ public class ServiceRegistryViewerApplication extends Application
         var services = client.discoverServices(Scope.scope(get(SCOPE_TYPE)));
         if (services.failed())
         {
-            Console.println("\nUnable to find services: $\n", services.messages().findFirst(Problem.class).formatted(WITH_EXCEPTION));
+            console().println("\nUnable to find services: $\n", services.messages().findFirst(Problem.class).formatted(WITH_EXCEPTION));
         }
         else
         {
@@ -87,9 +87,9 @@ public class ServiceRegistryViewerApplication extends Application
                 lines.add(String.format(format, service.renewedAt().elapsedSince() + " ago", service.port().portNumber(), service.type(), service.application(), service.metadata().description()));
             }
             lines.add("");
-            System.out.println(lines.join("\n"));
+            console().println(lines.join("\n"));
         }
-        System.out.flush();
+        console().flush();
     }
 
     @Override
