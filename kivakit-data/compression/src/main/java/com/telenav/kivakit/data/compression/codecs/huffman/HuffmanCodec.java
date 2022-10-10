@@ -240,7 +240,7 @@ public class HuffmanCodec<Symbol> implements Codec<Symbol>
             var string = value.toString();
             if (string.length() == 1 && Character.isISOControl(string.charAt(0)))
             {
-                string = "0x" + Ints.toHex(string.charAt(0), 2);
+                string = "0x" + Ints.intToHex(string.charAt(0), 2);
             }
             else
             {

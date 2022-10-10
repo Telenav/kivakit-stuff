@@ -105,7 +105,7 @@ public class HuffmanCharacterCodec extends BaseRepeater implements CharacterCode
         @Override
         protected String onToString(Character character)
         {
-            return "0x" + Ints.toHex(character, 2);
+            return "0x" + Ints.intToHex(character, 2);
         }
 
         @Override

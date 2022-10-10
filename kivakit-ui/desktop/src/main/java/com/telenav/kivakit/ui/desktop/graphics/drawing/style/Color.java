@@ -224,12 +224,12 @@ public class Color
 
     public String asHexString()
     {
-        return "#" + Ints.toHex(rgb(), 6);
+        return "#" + Ints.intToHex(rgb(), 6);
     }
 
     public String asHexStringWithAlpha()
     {
-        return "#" + Ints.toHex(rgba(), 8);
+        return "#" + Ints.intToHex(rgba(), 8);
     }
 
     public int blue()

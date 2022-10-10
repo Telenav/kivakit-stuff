@@ -20,7 +20,6 @@ package com.telenav.kivakit.service.registry.registries;
 
 import com.telenav.kivakit.application.Application;
 import com.telenav.kivakit.core.collections.set.MultiSet;
-import com.telenav.kivakit.core.collections.Sets;
 import com.telenav.kivakit.core.function.Result;
 import com.telenav.kivakit.core.function.ResultTrait;
 import com.telenav.kivakit.core.messaging.repeaters.BaseRepeater;
@@ -52,6 +51,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import static com.telenav.kivakit.core.collections.set.ObjectSet.objectSet;
 import static com.telenav.kivakit.core.vm.ShutdownHook.Order.FIRST;
 
 /**
@@ -452,7 +452,7 @@ public abstract class BaseServiceRegistry extends BaseRepeater implements
             return Result.success(bound);
         }
 
-        return result(Sets.empty());
+        return result(objectSet());
     }
 
     @NotNull
