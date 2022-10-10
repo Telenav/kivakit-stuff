@@ -236,7 +236,7 @@ public final class SplitCharArray extends PrimitiveSplitArray implements CharLis
     }
 
     /**
-     * @return The child array for the given index
+     * Returns the child array for the given index
      */
     private CharArray childArray(int childIndex)
     {

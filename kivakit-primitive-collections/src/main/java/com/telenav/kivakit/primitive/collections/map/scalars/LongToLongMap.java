@@ -104,7 +104,7 @@ public final class LongToLongMap extends PrimitiveMap implements PrimitiveScalar
     }
 
     /**
-     * @return True if this map contains the given key
+     * Returns true if this map contains the given key
      */
     public boolean containsKey(long key)
     {
@@ -157,7 +157,7 @@ public final class LongToLongMap extends PrimitiveMap implements PrimitiveScalar
     }
 
     /**
-     * @return The value for the given key. The returned value should be checked with {@link #isNull(long)} to determine
+     * Returns the value for the given key. The returned value should be checked with {@link #isNull(long)} to determine
      * if it represents null.
      */
     public long get(long key)
@@ -211,7 +211,7 @@ public final class LongToLongMap extends PrimitiveMap implements PrimitiveScalar
     }
 
     /**
-     * @return The keys in this map in an undefined order
+     * Returns the keys in this map in an undefined order
      */
     public LongIterator keys()
     {
@@ -347,7 +347,7 @@ public final class LongToLongMap extends PrimitiveMap implements PrimitiveScalar
     }
 
     /**
-     * @return The values in this map in an undefined order
+     * Returns the values in this map in an undefined order
      */
     public LongIterator values()
     {

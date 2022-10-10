@@ -193,7 +193,7 @@ public class Symbols<Symbol>
     }
 
     /**
-     * @return The set of encoded symbols
+     * Returns the set of encoded symbols
      */
     public Set<CodedSymbol<Symbol>> encoded()
     {
@@ -201,7 +201,7 @@ public class Symbols<Symbol>
     }
 
     /**
-     * @return The escape symbol, if any
+     * Returns the escape symbol, if any
      */
     public CodedSymbol<Symbol> escape()
     {
@@ -209,7 +209,7 @@ public class Symbols<Symbol>
     }
 
     /**
-     * @return The number of symbols in this set
+     * Returns the number of symbols in this set
      */
     public int size()
     {
@@ -217,7 +217,7 @@ public class Symbols<Symbol>
     }
 
     /**
-     * @return List of symbol values
+     * Returns list of symbol values
      */
     public ObjectList<Symbol> symbols()
     {
@@ -281,7 +281,7 @@ public class Symbols<Symbol>
     }
 
     /**
-     * @return A copy of the given symbols
+     * Returns a copy of the given symbols
      */
     private Symbols<Symbol> copy(Symbols<Symbol> that)
     {
@@ -292,7 +292,7 @@ public class Symbols<Symbol>
     }
 
     /**
-     * @return The least frequently occurring symbol removed from the given queue, but never the escape symbol
+     * Returns the least frequently occurring symbol removed from the given queue, but never the escape symbol
      */
     private CodedSymbol<Symbol> removeLeastFrequent(PriorityQueue<CodedSymbol<Symbol>> queue)
     {

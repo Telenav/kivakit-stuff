@@ -33,28 +33,28 @@ import com.telenav.lexakai.annotations.UmlClassDiagram;
 public interface HashingStrategy
 {
     /**
-     * @return The occupancy level for rehashing
+     * Returns the occupancy level for rehashing
      */
     Percent maximumOccupancy();
 
     /**
-     * @return The recommended capacity when initializing or resizing
+     * Returns the recommended capacity when initializing or resizing
      */
     Estimate recommendedSize();
 
     /**
-     * @return The number of elements at which resizing should occur. This will typically be a prime number to improve
+     * Returns the number of elements at which resizing should occur. This will typically be a prime number to improve
      * hashing performance
      */
     Count rehashThreshold();
 
     /**
-     * @return With the given capacity
+     * Returns with the given capacity
      */
     HashingStrategy withCapacity(Estimate size);
 
     /**
-     * @return With an acceptable increased capacity
+     * Returns with an acceptable increased capacity
      */
     HashingStrategy withIncreasedCapacity();
 }

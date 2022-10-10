@@ -57,7 +57,7 @@ public interface SymbolProducer<Symbol>
     }
 
     /**
-     * @return The next symbol in the sequence or null if the sequence has ended. The ordinal value is useful because
+     * Returns the next symbol in the sequence or null if the sequence has ended. The ordinal value is useful because
      * the implementation of this interface may be an anonymous inner class.
      */
     Symbol get(int ordinal);
@@ -84,7 +84,7 @@ public interface SymbolProducer<Symbol>
     }
 
     /**
-     * @return The number of symbols that will be encoded, or -1 if this value is unknown
+     * Returns the number of symbols that will be encoded, or -1 if this value is unknown
      */
     default int size()
     {

@@ -111,7 +111,7 @@ public final class PackedArray extends PrimitiveArray implements LongList, Packe
     }
 
     /**
-     * @return The bit width of this array
+     * Returns the bit width of this array
      */
     @Override
     public BitCount bits()
@@ -187,7 +187,7 @@ public final class PackedArray extends PrimitiveArray implements LongList, Packe
     }
 
     /**
-     * @return The value at the given index
+     * Returns the value at the given index
      */
     @Override
     public long get(int index)
@@ -328,7 +328,7 @@ public final class PackedArray extends PrimitiveArray implements LongList, Packe
     }
 
     /**
-     * @return The value at the given index. Null if the index is out of bounds or the value at the given index is the
+     * Returns the value at the given index. Null if the index is out of bounds or the value at the given index is the
      * null value
      */
     @Override

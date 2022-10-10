@@ -31,7 +31,7 @@ import java.util.Collection;
 public class Java2dShapes
 {
     /**
-     * @return The given non-null shapes combined into a compound {@link Area} shape
+     * Returns the given non-null shapes combined into a compound {@link Area} shape
      */
     public static Area combine(Shape... shapes)
     {
@@ -47,7 +47,7 @@ public class Java2dShapes
     }
 
     /**
-     * @return The given non-null shapes combined into a compound {@link Area} shape
+     * Returns the given non-null shapes combined into a compound {@link Area} shape
      */
     public static Area combine(Collection<Shape> shapes)
     {

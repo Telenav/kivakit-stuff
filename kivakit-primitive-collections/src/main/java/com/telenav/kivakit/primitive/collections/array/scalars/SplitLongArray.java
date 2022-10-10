@@ -251,7 +251,7 @@ public final class SplitLongArray extends PrimitiveSplitArray implements LongLis
     }
 
     /**
-     * @return The child array for the given index
+     * Returns the child array for the given index
      */
     private LongArray childArray(int childIndex)
     {

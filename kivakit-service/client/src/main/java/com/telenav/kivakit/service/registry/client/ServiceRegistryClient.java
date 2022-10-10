@@ -222,7 +222,7 @@ public class ServiceRegistryClient extends BaseComponent implements
     }
 
     /**
-     * @return All applications that have registered a service within the given scope
+     * Returns all applications that have registered a service within the given scope
      */
     public @NotNull
     Result<Set<Application.Identifier>> discoverApplications(Scope scope)
@@ -235,7 +235,7 @@ public class ServiceRegistryClient extends BaseComponent implements
     }
 
     /**
-     * @return Any service running on the given port. Since a {@link Port} includes the host it is unique and only a
+     * Returns any service running on the given port. Since a {@link Port} includes the host it is unique and only a
      * single service is returned since only one service can be running on a specific port on a specific host.
      */
     public @NotNull
@@ -251,7 +251,7 @@ public class ServiceRegistryClient extends BaseComponent implements
     }
 
     /**
-     * @return All services registered by the given application within the given scope
+     * Returns all services registered by the given application within the given scope
      */
     public @NotNull
     Result<Set<Service>> discoverServices(Scope scope, Application.Identifier application)
@@ -268,7 +268,7 @@ public class ServiceRegistryClient extends BaseComponent implements
     }
 
     /**
-     * @return All services registered with this registry within the given scope
+     * Returns all services registered with this registry within the given scope
      */
     public @NotNull
     Result<Set<Service>> discoverServices(Scope scope)
@@ -284,7 +284,7 @@ public class ServiceRegistryClient extends BaseComponent implements
     }
 
     /**
-     * @return All application services of the given type registered within the given scope
+     * Returns all application services of the given type registered within the given scope
      */
     public @NotNull
     Result<Set<Service>> discoverServices(
@@ -302,7 +302,7 @@ public class ServiceRegistryClient extends BaseComponent implements
     }
 
     /**
-     * @return All services of the given type that have been registered within the given scope
+     * Returns all services of the given type that have been registered within the given scope
      */
     public @NotNull
     Result<Set<Service>> discoverServices(Scope scope, ServiceType type)
@@ -458,7 +458,7 @@ public class ServiceRegistryClient extends BaseComponent implements
     }
 
     /**
-     * @return The version of this service registry client
+     * Returns the version of this service registry client
      */
     public Version version()
     {
@@ -466,7 +466,7 @@ public class ServiceRegistryClient extends BaseComponent implements
     }
 
     /**
-     * @return The connected client
+     * Returns the connected client
      */
     private synchronized ServiceRegistryClient connectToLocalRegistry()
     {

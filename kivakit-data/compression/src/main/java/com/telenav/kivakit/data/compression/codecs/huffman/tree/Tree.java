@@ -39,7 +39,7 @@ import static com.telenav.kivakit.core.ensure.Ensure.ensure;
 public abstract class Tree<Symbol> implements Comparable<Tree<Symbol>>
 {
     /**
-     * @return The Huffman tree for the given set of encoded symbols
+     * Returns the Huffman tree for the given set of encoded symbols
      */
     public static <Symbol> Tree<Symbol> tree(Symbols<Symbol> symbols)
     {
@@ -84,7 +84,7 @@ public abstract class Tree<Symbol> implements Comparable<Tree<Symbol>>
     }
 
     /**
-     * @return The coded symbols in this tree. Codes are only valid once {@link #encode()} has been called.
+     * Returns the coded symbols in this tree. Codes are only valid once {@link #encode()} has been called.
      */
     public Set<CodedSymbol<Symbol>> codedSymbols()
     {
@@ -100,7 +100,7 @@ public abstract class Tree<Symbol> implements Comparable<Tree<Symbol>>
     }
 
     /**
-     * @return A symbol decoded from the given input using this Huffman tree
+     * Returns a symbol decoded from the given input using this Huffman tree
      */
     public abstract CodedSymbol<Symbol> decode(BitReader bits);
 

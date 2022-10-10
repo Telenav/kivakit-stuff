@@ -21,7 +21,7 @@ package com.telenav.kivakit.primitive.collections.list;
 import com.telenav.kivakit.core.collections.list.ObjectList;
 import com.telenav.kivakit.core.value.count.Count;
 import com.telenav.kivakit.interfaces.collection.Sized;
-import com.telenav.kivakit.interfaces.factory.LongMapFactory;
+import com.telenav.kivakit.interfaces.function.LongMapper;
 import com.telenav.kivakit.primitive.collections.internal.lexakai.DiagramPrimitiveList;
 import com.telenav.lexakai.annotations.UmlClassDiagram;
 
@@ -38,18 +38,18 @@ import com.telenav.lexakai.annotations.UmlClassDiagram;
 @UmlClassDiagram(diagram = DiagramPrimitiveList.class)
 public interface PrimitiveList extends Sized
 {
-    default <T> ObjectList<T> asList(LongMapFactory<T> factory)
+    default <T> ObjectList<T> asList(LongMapper<T> factory)
     {
         var list = new ObjectList<T>();
         for (var at = 0; at < size(); at++)
         {
-            list.add(factory.newInstance(getPrimitive(at)));
+            list.add(factory.map(getPrimitive(at)));
         }
         return list;
     }
 
     /**
-     * @return The present maximum storage capacity of this list in elements without resizing
+     * Returns the present maximum storage capacity of this list in elements without resizing
      */
     Count capacity();
 
@@ -57,12 +57,12 @@ public interface PrimitiveList extends Sized
     long getPrimitive(int index);
 
     /**
-     * @return True if the given value is null
+     * Returns true if the given value is null
      */
     boolean isPrimitiveNull(long value);
 
     /**
-     * @return The value at the given index, but without a bounds check
+     * Returns the value at the given index, but without a bounds check
      */
     long safeGetPrimitive(int index);
 

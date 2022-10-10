@@ -39,7 +39,7 @@ import static com.telenav.kivakit.ui.desktop.graphics.drawing.geometry.DrawingCo
 public class DrawingPoint extends DrawingObject
 {
     /**
-     * @return The given x, y coordinate in an unbounded coordinate system of pixels
+     * Returns the given x, y coordinate in an unbounded coordinate system of pixels
      */
     public static DrawingPoint pixels(double x, double y)
     {
@@ -52,7 +52,7 @@ public class DrawingPoint extends DrawingObject
     }
 
     /**
-     * @return The given x, y coordinate in the given coordinate system
+     * Returns the given x, y coordinate in the given coordinate system
      */
     public static DrawingPoint point(Coordinated coordinates, double x, double y)
     {
@@ -79,7 +79,7 @@ public class DrawingPoint extends DrawingObject
     }
 
     /**
-     * @return This coordinate as a {@link DrawingSize}, where the x coordinate is the width and the y coordinate is the
+     * Returns this coordinate as a {@link DrawingSize}, where the x coordinate is the width and the y coordinate is the
      * height
      */
     public DrawingSize asSize()
@@ -111,7 +111,7 @@ public class DrawingPoint extends DrawingObject
     }
 
     /**
-     * @return This coordinate minus the given x and y delta values
+     * Returns this coordinate minus the given x and y delta values
      */
     public DrawingPoint minus(double dx, double dy)
     {
@@ -119,7 +119,7 @@ public class DrawingPoint extends DrawingObject
     }
 
     /**
-     * @return This coordinate's x and y values minus the given coordinate's x and y values
+     * Returns this coordinate's x and y values minus the given coordinate's x and y values
      */
     public DrawingPoint minus(DrawingPoint that)
     {
@@ -128,7 +128,7 @@ public class DrawingPoint extends DrawingObject
     }
 
     /**
-     * @return This coordinate plus the given x and y delta values
+     * Returns this coordinate plus the given x and y delta values
      */
     public DrawingPoint plus(double dx, double dy)
     {
@@ -136,7 +136,7 @@ public class DrawingPoint extends DrawingObject
     }
 
     /**
-     * @return This coordinate plus the given size as an offset
+     * Returns this coordinate plus the given size as an offset
      */
     public DrawingPoint plus(DrawingSize that)
     {
@@ -145,7 +145,7 @@ public class DrawingPoint extends DrawingObject
     }
 
     /**
-     * @return This coordinate's x and y values plus the given coordinate's x and y values
+     * Returns this coordinate's x and y values plus the given coordinate's x and y values
      */
     public DrawingPoint plus(DrawingPoint that)
     {
@@ -154,7 +154,7 @@ public class DrawingPoint extends DrawingObject
     }
 
     /**
-     * @return This coordinate as a rectangle whose width and height are determined by the given size
+     * Returns this coordinate as a rectangle whose width and height are determined by the given size
      */
     public DrawingRectangle rectangle(DrawingSize that)
     {
@@ -163,7 +163,7 @@ public class DrawingPoint extends DrawingObject
     }
 
     /**
-     * @return This coordinate rounded to the nearest integer x and y values
+     * Returns this coordinate rounded to the nearest integer x and y values
      */
     public DrawingPoint rounded()
     {
@@ -171,7 +171,7 @@ public class DrawingPoint extends DrawingObject
     }
 
     /**
-     * @return This coordinate with x and y values scaled by the given {@link Percent}
+     * Returns this coordinate with x and y values scaled by the given {@link Percent}
      */
     public DrawingPoint scaledBy(Percent percent)
     {
@@ -179,7 +179,7 @@ public class DrawingPoint extends DrawingObject
     }
 
     /**
-     * @return The width and height between this coordinate and the given one
+     * Returns the width and height between this coordinate and the given one
      */
     public DrawingSize sizeBetween(DrawingPoint that)
     {
@@ -192,7 +192,7 @@ public class DrawingPoint extends DrawingObject
     }
 
     /**
-     * @return This coordinate scaled by the given scale factor
+     * Returns this coordinate scaled by the given scale factor
      */
     public DrawingPoint times(double scaleFactor)
     {
@@ -200,7 +200,7 @@ public class DrawingPoint extends DrawingObject
     }
 
     /**
-     * @return This coordinate converted to the given coordinate system
+     * Returns this coordinate converted to the given coordinate system
      */
     public DrawingPoint toCoordinates(Coordinated that)
     {
@@ -214,7 +214,7 @@ public class DrawingPoint extends DrawingObject
     }
 
     /**
-     * @return The x location of this coordinate in {@link #coordinates()}
+     * Returns the x location of this coordinate in {@link #coordinates()}
      */
     public double x()
     {
@@ -222,7 +222,7 @@ public class DrawingPoint extends DrawingObject
     }
 
     /**
-     * @return The x location of this coordinate in {@link #coordinates()}
+     * Returns the x location of this coordinate in {@link #coordinates()}
      */
     public double y()
     {

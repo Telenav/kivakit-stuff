@@ -364,7 +364,7 @@ public class ServiceRegistryRestResource extends BaseRestResource implements
     //----------------------------------------------------------------------------------------------
 
     /**
-     * @return The version of this KivaKit service registry
+     * Returns the version of this KivaKit service registry
      */
     @GET
     @Path(ServiceRegistryProtocol.SHOW_VERSION)

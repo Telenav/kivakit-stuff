@@ -50,7 +50,7 @@ public class Leaf<T> extends Tree<T>
     }
 
     /**
-     * @return This leaf's symbol
+     * Returns this leaf's symbol
      */
     CodedSymbol<T> symbol()
     {

@@ -114,7 +114,7 @@ public final class LongSet extends PrimitiveSet implements LongCollection
     }
 
     /**
-     * @return True if this set contains the given value
+     * Returns true if this set contains the given value
      */
     @Override
     public boolean contains(long value)
@@ -158,7 +158,7 @@ public final class LongSet extends PrimitiveSet implements LongCollection
     }
 
     /**
-     * @return The values in this set
+     * Returns the values in this set
      */
     @Override
     public LongIterator iterator()
@@ -245,7 +245,7 @@ public final class LongSet extends PrimitiveSet implements LongCollection
     }
 
     /**
-     * @return The values in this set
+     * Returns the values in this set
      */
     public LongIterator values()
     {

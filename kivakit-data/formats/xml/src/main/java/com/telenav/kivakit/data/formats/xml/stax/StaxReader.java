@@ -111,7 +111,7 @@ import static com.telenav.kivakit.data.formats.xml.stax.StaxReader.Match.NOT_FOU
 public class StaxReader extends BaseComponent implements Closeable
 {
     /**
-     * @return A STAX reader (Java XML stream API) for the given resource, or an exception will be thrown
+     * Returns a STAX reader (Java XML stream API) for the given resource, or an exception will be thrown
      */
     public static StaxReader open(Resource resource)
     {
@@ -189,7 +189,7 @@ public class StaxReader extends BaseComponent implements Closeable
     }
 
     /**
-     * @return The current event
+     * Returns the current event
      */
     public XMLEvent at()
     {
@@ -203,7 +203,7 @@ public class StaxReader extends BaseComponent implements Closeable
     }
 
     /**
-     * @return The text enclosed by an open/end tag pair. Must be called at an open tag. The following character data is
+     * Returns the text enclosed by an open/end tag pair. Must be called at an open tag. The following character data is
      * read and the XML stream is advanced to the close tag.
      */
     public String enclosedText()
@@ -233,7 +233,7 @@ public class StaxReader extends BaseComponent implements Closeable
     }
 
     /**
-     * @return True if there is a next event
+     * Returns true if there is a next event
      */
     public boolean hasNext()
     {
@@ -241,7 +241,7 @@ public class StaxReader extends BaseComponent implements Closeable
     }
 
     /**
-     * @return True if this reader is at, but not under, the given path
+     * Returns true if this reader is at, but not under, the given path
      */
     public boolean isAt(StaxPath path)
     {
@@ -249,7 +249,7 @@ public class StaxReader extends BaseComponent implements Closeable
     }
 
     /**
-     * @return True if this reader is at a characters element
+     * Returns true if this reader is at a characters element
      */
     public boolean isAtCharacters()
     {
@@ -257,7 +257,7 @@ public class StaxReader extends BaseComponent implements Closeable
     }
 
     /**
-     * @return True if this reader is at a close tag
+     * Returns true if this reader is at a close tag
      */
     public boolean isAtCloseTag()
     {
@@ -265,7 +265,7 @@ public class StaxReader extends BaseComponent implements Closeable
     }
 
     /**
-     * @return True if the current position is the end of the document
+     * Returns true if the current position is the end of the document
      */
     public boolean isAtEnd()
     {
@@ -273,7 +273,7 @@ public class StaxReader extends BaseComponent implements Closeable
     }
 
     /**
-     * @return True if this reader is at an open/close tag like &lt;tag/&gt;
+     * Returns true if this reader is at an open/close tag like &lt;tag/&gt;
      */
     public boolean isAtOpenCloseTag()
     {
@@ -281,7 +281,7 @@ public class StaxReader extends BaseComponent implements Closeable
     }
 
     /**
-     * @return True if this reader is at an open tag with the given name
+     * Returns true if this reader is at an open tag with the given name
      */
     public boolean isAtOpenTag(String tagName)
     {
@@ -289,7 +289,7 @@ public class StaxReader extends BaseComponent implements Closeable
     }
 
     /**
-     * @return True if this reader is at an open tag
+     * Returns true if this reader is at an open tag
      */
     public boolean isAtOpenTag()
     {
@@ -297,7 +297,7 @@ public class StaxReader extends BaseComponent implements Closeable
     }
 
     /**
-     * @return True if this reader is at, or under, the given path
+     * Returns true if this reader is at, or under, the given path
      */
     public boolean isAtOrInside(StaxPath path)
     {
@@ -305,7 +305,7 @@ public class StaxReader extends BaseComponent implements Closeable
     }
 
     /**
-     * @return True if the this path is hierarchically "under" the given path. For example, if this path is a/b/c and
+     * Returns true if the this path is hierarchically "under" the given path. For example, if this path is a/b/c and
      * the given path is /a/b, this method would return true. However, if this path was a/b/c, and the given path was
      * /a/b/c or /a/b/c/d, it would return false.
      */
@@ -315,7 +315,7 @@ public class StaxReader extends BaseComponent implements Closeable
     }
 
     /**
-     * @return True if this reader is at, or under, the given path
+     * Returns true if this reader is at, or under, the given path
      */
     public boolean isOutside(StaxPath path)
     {
@@ -323,7 +323,7 @@ public class StaxReader extends BaseComponent implements Closeable
     }
 
     /**
-     * @return The next event, or null if there are no more events
+     * Returns the next event, or null if there are no more events
      */
     public XMLEvent next()
     {
@@ -379,7 +379,7 @@ public class StaxReader extends BaseComponent implements Closeable
     }
 
     /**
-     * @return The next attribute, or an exception is thrown
+     * Returns the next attribute, or an exception is thrown
      */
     public Attribute nextAttribute()
     {
@@ -387,7 +387,7 @@ public class StaxReader extends BaseComponent implements Closeable
     }
 
     /**
-     * @return The next characters block, or an exception is thrown
+     * Returns the next characters block, or an exception is thrown
      */
     public Characters nextCharacters()
     {
@@ -395,7 +395,7 @@ public class StaxReader extends BaseComponent implements Closeable
     }
 
     /**
-     * @return The next close tag, or an exception is thrown
+     * Returns the next close tag, or an exception is thrown
      */
     public EndElement nextCloseTag()
     {
@@ -429,7 +429,7 @@ public class StaxReader extends BaseComponent implements Closeable
     }
 
     /**
-     * @return The next open tag, or an exception is thrown
+     * Returns the next open tag, or an exception is thrown
      */
     public StartElement nextOpenTag()
     {
@@ -437,7 +437,7 @@ public class StaxReader extends BaseComponent implements Closeable
     }
 
     /**
-     * @return A copy of the current XML path
+     * Returns a copy of the current XML path
      */
     public StaxPath path()
     {

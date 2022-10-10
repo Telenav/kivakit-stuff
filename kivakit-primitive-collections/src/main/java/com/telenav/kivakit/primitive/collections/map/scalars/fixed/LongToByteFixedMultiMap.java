@@ -65,7 +65,7 @@ public final class LongToByteFixedMultiMap extends PrimitiveMultiMap implements 
     }
 
     /**
-     * @return True if this map contains the given key
+     * Returns true if this map contains the given key
      */
     public boolean containsKey(long key)
     {
@@ -73,7 +73,7 @@ public final class LongToByteFixedMultiMap extends PrimitiveMultiMap implements 
     }
 
     /**
-     * @return A byte array for the given key
+     * Returns a byte array for the given key
      */
     public ByteArray get(long key)
     {
@@ -111,7 +111,7 @@ public final class LongToByteFixedMultiMap extends PrimitiveMultiMap implements 
     }
 
     /**
-     * @return An iterator over the keys in this map
+     * Returns an iterator over the keys in this map
      */
     public LongIterator keys()
     {

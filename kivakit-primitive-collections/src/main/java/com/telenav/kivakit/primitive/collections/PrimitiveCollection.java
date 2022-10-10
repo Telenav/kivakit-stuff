@@ -222,7 +222,7 @@ public abstract class PrimitiveCollection implements
     }
 
     /**
-     * @return The given size, increased (used only by collection implementations)
+     * Returns the given size, increased (used only by collection implementations)
      */
     public static int increasedCapacity(int size)
     {
@@ -544,7 +544,7 @@ public abstract class PrimitiveCollection implements
     }
 
     /**
-     * @return Size of collection as a {@link Count} object
+     * Returns size of collection as a {@link Count} object
      */
     @Override
     public final Count count()
@@ -672,7 +672,7 @@ public abstract class PrimitiveCollection implements
     }
 
     /**
-     * @return True if this set is empty
+     * Returns true if this set is empty
      */
     @Override
     public boolean isEmpty()
@@ -687,7 +687,7 @@ public abstract class PrimitiveCollection implements
     }
 
     /**
-     * @return True if the value is the "null" byte value
+     * Returns true if the value is the "null" byte value
      */
     public final boolean isNull(byte value)
     {
@@ -696,7 +696,7 @@ public abstract class PrimitiveCollection implements
     }
 
     /**
-     * @return True if the value is the "null" integer value
+     * Returns true if the value is the "null" integer value
      */
     public final boolean isNull(int value)
     {
@@ -705,7 +705,7 @@ public abstract class PrimitiveCollection implements
     }
 
     /**
-     * @return True if the value is the "null" long value
+     * Returns true if the value is the "null" long value
      */
     public final boolean isNull(long value)
     {
@@ -714,7 +714,7 @@ public abstract class PrimitiveCollection implements
     }
 
     /**
-     * @return True if the value is the "null" short value
+     * Returns true if the value is the "null" short value
      */
     public final boolean isNull(short value)
     {
@@ -723,7 +723,7 @@ public abstract class PrimitiveCollection implements
     }
 
     /**
-     * @return True if the value is the "null" char value
+     * Returns true if the value is the "null" char value
      */
     public final boolean isNull(char value)
     {

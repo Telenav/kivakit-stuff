@@ -87,7 +87,7 @@ public final class SplitIntToIntMap extends SplitPrimitiveMap implements Primiti
     }
 
     /**
-     * @return True if this map contains the given key
+     * Returns true if this map contains the given key
      */
     public boolean containsKey(int key)
     {
@@ -138,7 +138,7 @@ public final class SplitIntToIntMap extends SplitPrimitiveMap implements Primiti
     }
 
     /**
-     * @return The value for the given key
+     * Returns the value for the given key
      */
     public int get(int key)
     {
@@ -174,7 +174,7 @@ public final class SplitIntToIntMap extends SplitPrimitiveMap implements Primiti
     }
 
     /**
-     * @return The keys in this map in an undefined order
+     * Returns the keys in this map in an undefined order
      */
     public IntIterator keys()
     {
@@ -307,7 +307,7 @@ public final class SplitIntToIntMap extends SplitPrimitiveMap implements Primiti
     }
 
     /**
-     * @return The values in this map in an undefined order
+     * Returns the values in this map in an undefined order
      */
     public IntIterator values()
     {
@@ -359,7 +359,7 @@ public final class SplitIntToIntMap extends SplitPrimitiveMap implements Primiti
     }
 
     /**
-     * @return Gets the child map for the given key. If there is no map, one is created if create is true.
+     * Returns gets the child map for the given key. If there is no map, one is created if create is true.
      */
     private IntToIntMap child(int key, boolean create)
     {

@@ -162,7 +162,7 @@ public class ServiceRegistryServer extends Server
     }
 
     /**
-     * @return The resource folder containing static assets for reference by OpenAPI .yaml files and KivaKit OpenApi
+     * Returns the resource folder containing static assets for reference by OpenAPI .yaml files and KivaKit OpenApi
      * annotations. For example, a microservice might want to include an OAS .yaml file. If this method is not
      * overridden, the default folder will be the "assets" sub-package of the rest application's package.
      */

@@ -60,7 +60,7 @@ public final class BitArray extends PrimitiveArray implements Named
     }
 
     /**
-     * @return The bit at the given index
+     * Returns the bit at the given index
      */
     public boolean bit(int index)
     {
@@ -69,7 +69,7 @@ public final class BitArray extends PrimitiveArray implements Named
     }
 
     /**
-     * @return The underlying bytes
+     * Returns the underlying bytes
      */
     public ByteList bytes()
     {
@@ -116,7 +116,7 @@ public final class BitArray extends PrimitiveArray implements Named
     }
 
     /**
-     * @return A reader that reads the bits in this bit array
+     * Returns a reader that reads the bits in this bit array
      */
     public BitReader reader()
     {
@@ -158,7 +158,7 @@ public final class BitArray extends PrimitiveArray implements Named
     }
 
     /**
-     * @return A writer that writes bits to this bit array
+     * Returns a writer that writes bits to this bit array
      */
     public BitWriter writer()
     {

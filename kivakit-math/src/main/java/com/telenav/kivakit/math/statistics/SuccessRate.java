@@ -52,7 +52,7 @@ public class SuccessRate
     }
 
     /**
-     * @return The success rate of attempts
+     * Returns the success rate of attempts
      */
     public Percent successRate()
     {

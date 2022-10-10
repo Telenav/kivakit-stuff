@@ -40,7 +40,7 @@ public abstract class BaseBitWriter implements BitWriter
     private long cursor;
 
     /**
-     * @return The current bit position being written to
+     * Returns the current bit position being written to
      */
     @Override
     public long cursor()

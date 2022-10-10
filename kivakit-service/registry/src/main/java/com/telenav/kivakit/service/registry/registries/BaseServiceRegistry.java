@@ -191,7 +191,7 @@ public abstract class BaseServiceRegistry extends BaseRepeater implements
     }
 
     /**
-     * @return All applications that have registered a service with this registry
+     * Returns all applications that have registered a service with this registry
      */
     @Override
     @NotNull
@@ -201,7 +201,7 @@ public abstract class BaseServiceRegistry extends BaseRepeater implements
     }
 
     /**
-     * @return Any service running on the given port
+     * Returns any service running on the given port
      */
     @Override
     public @NotNull
@@ -259,7 +259,7 @@ public abstract class BaseServiceRegistry extends BaseRepeater implements
     }
 
     /**
-     * @return All services registered with this registry
+     * Returns all services registered with this registry
      */
     @Override
     public @NotNull
@@ -284,7 +284,7 @@ public abstract class BaseServiceRegistry extends BaseRepeater implements
     }
 
     /**
-     * @return A new service registry instance loaded from the {@link ServiceRegistryStore} or this registry itself if
+     * Returns a new service registry instance loaded from the {@link ServiceRegistryStore} or this registry itself if
      * there is no serialized data to load
      */
     public ServiceRegistry load()

@@ -180,7 +180,7 @@ public class PackedStringArray extends PrimitiveArray
     }
 
     /**
-     * @return The string for the given identifier (returned by add)
+     * Returns the string for the given identifier (returned by add)
      */
     public String get(int identifier)
     {
@@ -229,7 +229,7 @@ public class PackedStringArray extends PrimitiveArray
     }
 
     /**
-     * @return The string for the given identifier (returned by add), or null if the identifier was invalid
+     * Returns the string for the given identifier (returned by add), or null if the identifier was invalid
      */
     public String safeGet(int identifier)
     {

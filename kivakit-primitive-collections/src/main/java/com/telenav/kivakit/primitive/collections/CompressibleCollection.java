@@ -144,13 +144,13 @@ public interface CompressibleCollection
     Method compress(Method method);
 
     /**
-     * @return Any compression method that has been applied to this collection. For subclasses of PrimitiveCollection,
+     * Returns any compression method that has been applied to this collection. For subclasses of PrimitiveCollection,
      * this will normally be the value that was returned from {@link #compress(Method)}.
      */
     Method compressionMethod();
 
     /**
-     * @return True if this collection has been compressed by some method
+     * Returns true if this collection has been compressed by some method
      */
     default boolean isCompressed()
     {

@@ -132,7 +132,7 @@ public class LongLinkedListStore extends PrimitiveListStore
     }
 
     /**
-     * @return An iterator over the values in the identifier list
+     * Returns an iterator over the values in the identifier list
      */
     public LongIterator list(int list)
     {

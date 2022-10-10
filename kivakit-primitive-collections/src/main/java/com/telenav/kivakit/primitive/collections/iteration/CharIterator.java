@@ -33,7 +33,7 @@ import com.telenav.lexakai.annotations.UmlClassDiagram;
 public interface CharIterator extends PrimitiveIterator
 {
     /**
-     * @return True if there is a next value
+     * Returns true if there is a next value
      */
     @Override
     boolean hasNext();
@@ -56,7 +56,7 @@ public interface CharIterator extends PrimitiveIterator
     }
 
     /**
-     * @return The next value in the sequence
+     * Returns the next value in the sequence
      */
     char next();
 

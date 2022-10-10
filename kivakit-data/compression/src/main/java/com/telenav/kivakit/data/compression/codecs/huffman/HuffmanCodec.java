@@ -69,7 +69,7 @@ import static com.telenav.kivakit.core.ensure.Ensure.ensure;
 public class HuffmanCodec<Symbol> implements Codec<Symbol>
 {
     /**
-     * @return A Huffman codec for the given symbol frequencies and escape symbol where no code is longer than the given
+     * Returns a Huffman codec for the given symbol frequencies and escape symbol where no code is longer than the given
      * number of bits. Only symbols that have at least the given number of occurrences are included.
      */
     public static <Symbol> HuffmanCodec<Symbol> huffmanCodec(Symbols<Symbol> symbols, Maximum bits)
@@ -132,7 +132,7 @@ public class HuffmanCodec<Symbol> implements Codec<Symbol>
     }
 
     /**
-     * @return This symbols for this codec as a property map
+     * Returns this symbols for this codec as a property map
      */
     public PropertyMap asProperties(StringConverter<Symbol> converter)
     {
@@ -252,7 +252,7 @@ public class HuffmanCodec<Symbol> implements Codec<Symbol>
     }
 
     /**
-     * @return The number of symbols in this codec
+     * Returns the number of symbols in this codec
      */
     int size()
     {

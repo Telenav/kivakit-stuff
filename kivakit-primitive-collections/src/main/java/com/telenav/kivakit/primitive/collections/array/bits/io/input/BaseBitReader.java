@@ -73,7 +73,7 @@ public abstract class BaseBitReader implements BitReader
     }
 
     /**
-     * @return The current bit position in the input
+     * Returns the current bit position in the input
      */
     @Override
     public long cursor()
@@ -101,7 +101,7 @@ public abstract class BaseBitReader implements BitReader
     }
 
     /**
-     * @return True if there is at least one more bit to read
+     * Returns true if there is at least one more bit to read
      */
     @Override
     public boolean hasNext()
@@ -121,7 +121,7 @@ public abstract class BaseBitReader implements BitReader
     }
 
     /**
-     * @return An integer of the specified size in bits
+     * Returns an integer of the specified size in bits
      */
     @Override
     public final int read(int bits)
@@ -149,7 +149,7 @@ public abstract class BaseBitReader implements BitReader
     }
 
     /**
-     * @return The next bit
+     * Returns the next bit
      */
     @Override
     public final boolean readBit()
@@ -189,7 +189,7 @@ public abstract class BaseBitReader implements BitReader
     }
 
     /**
-     * @return A long value of the specified size in bits
+     * Returns a long value of the specified size in bits
      */
     @Override
     public final long readLong(int bits)
@@ -219,7 +219,7 @@ public abstract class BaseBitReader implements BitReader
     }
 
     /**
-     * @return The position (in bytes) of the next byte that will be read
+     * Returns the position (in bytes) of the next byte that will be read
      */
     protected long byteCursor()
     {
@@ -235,7 +235,7 @@ public abstract class BaseBitReader implements BitReader
     }
 
     /**
-     * @return True if the underlying byte stream has a next byte
+     * Returns true if the underlying byte stream has a next byte
      */
     protected boolean hasNextByte()
     {
@@ -243,7 +243,7 @@ public abstract class BaseBitReader implements BitReader
     }
 
     /**
-     * @return The current bit mask
+     * Returns the current bit mask
      */
     protected final int mask()
     {

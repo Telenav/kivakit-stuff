@@ -34,17 +34,17 @@ import com.telenav.lexakai.annotations.UmlClassDiagram;
 public interface PrimitiveScalarMap
 {
     /**
-     * @return The value for the given key
+     * Returns the value for the given key
      */
     long getScalar(long key);
 
     /**
-     * @return True if the given key represents null
+     * Returns true if the given key represents null
      */
     boolean isScalarKeyNull(long key);
 
     /**
-     * @return True if the given value represents null
+     * Returns true if the given value represents null
      */
     boolean isScalarValueNull(long value);
 

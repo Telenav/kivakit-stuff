@@ -63,7 +63,7 @@ import static com.telenav.kivakit.ui.desktop.theme.KivaKitColors.TRANSPARENT;
 public class Style
 {
     /**
-     * @return A style where all colors are transparent
+     * Returns a style where all colors are transparent
      */
     public static Style create()
     {

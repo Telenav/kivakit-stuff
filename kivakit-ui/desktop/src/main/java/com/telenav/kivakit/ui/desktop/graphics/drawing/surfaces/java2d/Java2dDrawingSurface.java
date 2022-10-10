@@ -57,7 +57,7 @@ import static com.telenav.kivakit.core.ensure.Ensure.ensureNotNull;
 public class Java2dDrawingSurface extends DrawingCoordinateSystem implements DrawingSurface
 {
     /**
-     * @return A Java 2D drawing surface for the given {@link Graphics2D} context with the given origin and size
+     * Returns a Java 2D drawing surface for the given {@link Graphics2D} context with the given origin and size
      */
     public static Java2dDrawingSurface surface(String name,
                                                Graphics2D graphics,
@@ -273,7 +273,7 @@ public class Java2dDrawingSurface extends DrawingCoordinateSystem implements Dra
     }
 
     /**
-     * @return The scaling factor to apply to adjust for HiDPI (Retina) displays vs ordinary displays
+     * Returns the scaling factor to apply to adjust for HiDPI (Retina) displays vs ordinary displays
      */
     private static int scalingFactor()
     {
@@ -321,7 +321,7 @@ public class Java2dDrawingSurface extends DrawingCoordinateSystem implements Dra
     }
 
     /**
-     * @return The {@link FontMetrics} for the style's {@link Font}
+     * Returns the {@link FontMetrics} for the style's {@link Font}
      */
     private FontMetrics fontMetrics(Style style)
     {
@@ -334,7 +334,7 @@ public class Java2dDrawingSurface extends DrawingCoordinateSystem implements Dra
     }
 
     /**
-     * @return The height of the given text in the given style
+     * Returns the height of the given text in the given style
      */
     private double height(Style style, String text)
     {
@@ -342,7 +342,7 @@ public class Java2dDrawingSurface extends DrawingCoordinateSystem implements Dra
     }
 
     /**
-     * @return The bounds of the given text in the given style
+     * Returns the bounds of the given text in the given style
      */
     private Rectangle2D textBounds(Style style, String text)
     {

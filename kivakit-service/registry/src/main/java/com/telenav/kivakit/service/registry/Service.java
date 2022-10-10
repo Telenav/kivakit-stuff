@@ -222,7 +222,7 @@ public class Service extends BaseComponent implements Comparable<Service>, Strin
     }
 
     /**
-     * @return True if it has been too long since this service was renewed, and it is in danger of being expired "soon"
+     * Returns true if it has been too long since this service was renewed, and it is in danger of being expired "soon"
      */
     @JsonIgnore
     public boolean isStale()
@@ -259,7 +259,7 @@ public class Service extends BaseComponent implements Comparable<Service>, Strin
     }
 
     /**
-     * @return The port that this service is bound to
+     * Returns the port that this service is bound to
      */
     @KivaKitIncludeProperty
     public Port port()
@@ -304,7 +304,7 @@ public class Service extends BaseComponent implements Comparable<Service>, Strin
     }
 
     /**
-     * @return The type of service
+     * Returns the type of service
      */
     @KivaKitIncludeProperty
     public ServiceType type()

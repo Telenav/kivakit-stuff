@@ -94,7 +94,7 @@ public abstract class PrimitiveMap extends PrimitiveCollection
     }
 
     /**
-     * @return True if this set contains the given value
+     * Returns true if this set contains the given value
      */
     public final boolean contains(int[] values, int value)
     {
@@ -109,7 +109,7 @@ public abstract class PrimitiveMap extends PrimitiveCollection
     }
 
     /**
-     * @return True if this set contains the given value
+     * Returns true if this set contains the given value
      */
     public final boolean contains(long[] values, long value)
     {
@@ -124,7 +124,7 @@ public abstract class PrimitiveMap extends PrimitiveCollection
     }
 
     /**
-     * @return True if this set contains the given value
+     * Returns true if this set contains the given value
      */
     public final <T> boolean contains(T[] values, T value)
     {
@@ -220,7 +220,7 @@ public abstract class PrimitiveMap extends PrimitiveCollection
     protected abstract void copyEntries(PrimitiveMap that, ProgressReporter reporter);
 
     /**
-     * @return Hash of value
+     * Returns hash of value
      */
     protected final int hash(int value)
     {
@@ -229,7 +229,7 @@ public abstract class PrimitiveMap extends PrimitiveCollection
     }
 
     /**
-     * @return Hash of key
+     * Returns hash of key
      */
     protected final int hash(long value)
     {
@@ -271,7 +271,7 @@ public abstract class PrimitiveMap extends PrimitiveCollection
     }
 
     /**
-     * @return The index of the given value, resolved with linear probing
+     * Returns the index of the given value, resolved with linear probing
      */
     protected int index(int[] values, int value)
     {
@@ -314,7 +314,7 @@ public abstract class PrimitiveMap extends PrimitiveCollection
     }
 
     /**
-     * @return The index of the given value, resolved with linear probing
+     * Returns the index of the given value, resolved with linear probing
      */
     protected int index(long[] values, long value)
     {
@@ -353,7 +353,7 @@ public abstract class PrimitiveMap extends PrimitiveCollection
     }
 
     /**
-     * @return The index of the given value, resolved with linear probing
+     * Returns the index of the given value, resolved with linear probing
      */
     protected int index(Object[] values, Object value)
     {
@@ -409,7 +409,7 @@ public abstract class PrimitiveMap extends PrimitiveCollection
     protected abstract PrimitiveMap newMap();
 
     /**
-     * @return The indexes with values
+     * Returns the indexes with values
      */
     protected IntIterator nonEmptyIndexes(byte[] values)
     {
@@ -453,7 +453,7 @@ public abstract class PrimitiveMap extends PrimitiveCollection
     }
 
     /**
-     * @return The indexes with values
+     * Returns the indexes with values
      */
     protected IntIterator nonEmptyIndexes(int[] values)
     {
@@ -497,7 +497,7 @@ public abstract class PrimitiveMap extends PrimitiveCollection
     }
 
     /**
-     * @return The indexes with values
+     * Returns the indexes with values
      */
     protected IntIterator nonEmptyIndexes(long[] values)
     {
@@ -544,7 +544,7 @@ public abstract class PrimitiveMap extends PrimitiveCollection
     }
 
     /**
-     * @return The indexes with values
+     * Returns the indexes with values
      */
     protected <T> IntIterator nonEmptyIndexes(T[] values)
     {

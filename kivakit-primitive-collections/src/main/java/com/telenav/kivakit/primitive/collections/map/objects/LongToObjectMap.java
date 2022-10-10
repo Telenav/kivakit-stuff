@@ -72,7 +72,7 @@ public final class LongToObjectMap<T> extends PrimitiveMap
     }
 
     /**
-     * @return True if this map contains the given key
+     * Returns true if this map contains the given key
      */
     public boolean containsKey(long key)
     {
@@ -110,7 +110,7 @@ public final class LongToObjectMap<T> extends PrimitiveMap
     }
 
     /**
-     * @return The value for the given key. The returned value should be checked with {@link #isNull(long)} to determine
+     * Returns the value for the given key. The returned value should be checked with {@link #isNull(long)} to determine
      * if it represents a null value.
      */
     public T get(long key)
@@ -133,7 +133,7 @@ public final class LongToObjectMap<T> extends PrimitiveMap
     }
 
     /**
-     * @return The keys in this map
+     * Returns the keys in this map
      */
     public LongIterator keys()
     {

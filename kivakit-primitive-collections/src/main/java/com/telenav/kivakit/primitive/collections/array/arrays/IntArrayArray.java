@@ -135,7 +135,7 @@ public final class IntArrayArray extends PrimitiveArrayArray
     }
 
     /**
-     * @return The int array for the given identifier
+     * Returns the int array for the given identifier
      */
     public IntArray get(int identifier)
     {
@@ -152,7 +152,7 @@ public final class IntArrayArray extends PrimitiveArrayArray
     }
 
     /**
-     * @return The size of the identified array
+     * Returns the size of the identified array
      */
     public int length(int identifier)
     {

@@ -91,12 +91,12 @@ public interface DrawingSurface extends CoordinateSystem
     }
 
     /**
-     * @return The shape of the given text drawn im the given style at the given location
+     * Returns the shape of the given text drawn im the given style at the given location
      */
     Shape textShape(Style style, DrawingPoint at, String text);
 
     /**
-     * @return The size of the given text in the given style when rendered on this surface
+     * Returns the size of the given text in the given style when rendered on this surface
      */
     DrawingSize textSize(Style style, String text);
 }

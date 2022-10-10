@@ -65,7 +65,7 @@ public final class IntToByteFixedMultiMap extends PrimitiveMultiMap implements P
     }
 
     /**
-     * @return True if this map contains the given key
+     * Returns true if this map contains the given key
      */
     public boolean containsKey(int key)
     {
@@ -73,7 +73,7 @@ public final class IntToByteFixedMultiMap extends PrimitiveMultiMap implements P
     }
 
     /**
-     * @return A byte array for the given key
+     * Returns a byte array for the given key
      */
     public ByteArray get(int key)
     {
@@ -111,7 +111,7 @@ public final class IntToByteFixedMultiMap extends PrimitiveMultiMap implements P
     }
 
     /**
-     * @return An iterator over the keys in this map
+     * Returns an iterator over the keys in this map
      */
     public IntIterator keys()
     {

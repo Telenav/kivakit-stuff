@@ -98,7 +98,7 @@ public final class StringToObjectMap<T> extends PrimitiveMap
     }
 
     /**
-     * @return True if this map contains the given key
+     * Returns true if this map contains the given key
      */
     public boolean containsKey(String key)
     {
@@ -146,7 +146,7 @@ public final class StringToObjectMap<T> extends PrimitiveMap
     }
 
     /**
-     * @return The value for the given key. The returned value should be checked with {@link #isNull(int)} to determine
+     * Returns the value for the given key. The returned value should be checked with {@link #isNull(int)} to determine
      * if it represents a null value.
      */
     public T get(String key)
@@ -172,7 +172,7 @@ public final class StringToObjectMap<T> extends PrimitiveMap
     }
 
     /**
-     * @return The keys in this map
+     * Returns the keys in this map
      */
     public Iterator<String> keys()
     {
@@ -308,7 +308,7 @@ public final class StringToObjectMap<T> extends PrimitiveMap
     }
 
     /**
-     * @return The values in this map
+     * Returns the values in this map
      */
     public Iterator<T> values()
     {
@@ -394,7 +394,7 @@ public final class StringToObjectMap<T> extends PrimitiveMap
     }
 
     /**
-     * @return The indexes with key/value pairs
+     * Returns the indexes with key/value pairs
      */
     private IntIterator nonEmptyIndexes()
     {

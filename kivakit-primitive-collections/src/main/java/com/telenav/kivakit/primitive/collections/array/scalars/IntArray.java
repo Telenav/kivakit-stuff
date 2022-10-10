@@ -191,7 +191,7 @@ public final class IntArray extends PrimitiveArray implements IntList
     }
 
     /**
-     * @return The index of the add cursor
+     * Returns the index of the add cursor
      */
     @Override
     public int cursor()
@@ -217,7 +217,7 @@ public final class IntArray extends PrimitiveArray implements IntList
     }
 
     /**
-     * @return The value at the given logical index.
+     * Returns the value at the given logical index.
      */
     @Override
     public int get(int index)
@@ -273,7 +273,7 @@ public final class IntArray extends PrimitiveArray implements IntList
     }
 
     /**
-     * @return The value at the given index or the null value if the index is out of bounds
+     * Returns the value at the given index or the null value if the index is out of bounds
      */
     @Override
     public int safeGet(int index)
@@ -329,7 +329,7 @@ public final class IntArray extends PrimitiveArray implements IntList
     }
 
     /**
-     * @return A read-only sub-array which shares underlying data with this array.
+     * Returns a read-only sub-array which shares underlying data with this array.
      */
     public IntArray subArray(int index, int size)
     {

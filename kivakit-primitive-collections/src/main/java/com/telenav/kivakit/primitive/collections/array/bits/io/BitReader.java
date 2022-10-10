@@ -40,7 +40,7 @@ public interface BitReader extends AutoCloseable
     }
 
     /**
-     * @return The current read cursor position
+     * Returns the current read cursor position
      */
     long cursor();
 
@@ -61,7 +61,7 @@ public interface BitReader extends AutoCloseable
     }
 
     /**
-     * @return The next bit read
+     * Returns the next bit read
      */
     boolean readBit();
 
@@ -72,7 +72,7 @@ public interface BitReader extends AutoCloseable
     int readFlexibleInt(int smallBitCount, int bigBitCount);
 
     /**
-     * @return A long value of the specified size in bits
+     * Returns a long value of the specified size in bits
      */
     default long readLong(int bits)
     {
@@ -102,7 +102,7 @@ public interface BitReader extends AutoCloseable
     }
 
     /**
-     * @return The size of the data being read in bits, or -1 if it is unknown
+     * Returns the size of the data being read in bits, or -1 if it is unknown
      */
     default int size()
     {

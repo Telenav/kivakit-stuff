@@ -49,7 +49,7 @@ public class DrawingCoordinateSystem implements CoordinateSystem
             .unbounded();
 
     /**
-     * @return A new coordinate system with the given name, but no origin or size
+     * Returns a new coordinate system with the given name, but no origin or size
      */
     public static DrawingCoordinateSystem drawingCoordinateSystem(String name)
     {
@@ -118,7 +118,7 @@ public class DrawingCoordinateSystem implements CoordinateSystem
     }
 
     /**
-     * @return True if this coordinate system is bounded
+     * Returns true if this coordinate system is bounded
      */
     @Override
     public boolean isBounded()

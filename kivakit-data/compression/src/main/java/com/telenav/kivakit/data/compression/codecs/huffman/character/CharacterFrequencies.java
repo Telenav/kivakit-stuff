@@ -79,7 +79,7 @@ public class CharacterFrequencies
     }
 
     /**
-     * @return The set of symbols appearing at least the given minimum number of times
+     * Returns the set of symbols appearing at least the given minimum number of times
      */
     public Symbols<Character> symbols(Minimum occurrences)
     {
@@ -87,7 +87,7 @@ public class CharacterFrequencies
     }
 
     /**
-     * @return The set of symbols appearing at least once
+     * Returns the set of symbols appearing at least once
      */
     public Symbols<Character> symbols()
     {

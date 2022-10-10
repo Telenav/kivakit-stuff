@@ -76,7 +76,7 @@ public class CsvWriter extends BaseRepeater implements Closeable
     }
 
     /**
-     * @return The schema being used by this writer
+     * Returns the schema being used by this writer
      */
     public CsvSchema schema()
     {

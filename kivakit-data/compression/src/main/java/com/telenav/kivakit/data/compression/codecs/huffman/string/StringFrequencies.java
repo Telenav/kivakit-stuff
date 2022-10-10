@@ -72,7 +72,7 @@ public class StringFrequencies
     }
 
     /**
-     * @return The set of symbols appearing at least once
+     * Returns the set of symbols appearing at least once
      */
     public Symbols<String> symbols()
     {
@@ -80,7 +80,7 @@ public class StringFrequencies
     }
 
     /**
-     * @return The set of symbols appearing at least the given minimum number of times
+     * Returns the set of symbols appearing at least the given minimum number of times
      */
     public Symbols<String> symbols(Minimum occurrences)
     {

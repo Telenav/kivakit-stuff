@@ -91,7 +91,7 @@ public interface ShortList extends ShortCollection, PrimitiveList
     }
 
     /**
-     * @return The first element in this list
+     * Returns the first element in this list
      */
     default short first()
     {
@@ -99,7 +99,7 @@ public interface ShortList extends ShortCollection, PrimitiveList
     }
 
     /**
-     * @return The short at the given index
+     * Returns the short at the given index
      */
     short get(int index);
 
@@ -149,7 +149,7 @@ public interface ShortList extends ShortCollection, PrimitiveList
     }
 
     /**
-     * @return The last element in this list
+     * Returns the last element in this list
      */
     default short last()
     {
@@ -157,7 +157,7 @@ public interface ShortList extends ShortCollection, PrimitiveList
     }
 
     /**
-     * @return The value at the given index, but if the index is out of range, null is returned.
+     * Returns the value at the given index, but if the index is out of range, null is returned.
      */
     short safeGet(int index);
 

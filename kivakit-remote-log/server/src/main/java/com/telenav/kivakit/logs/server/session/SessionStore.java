@@ -84,7 +84,7 @@ SessionStore extends BaseComponent implements ProjectTrait
     }
 
     /**
-     * @return A copy of the list of log entries for the given session
+     * Returns a copy of the list of log entries for the given session
      */
     @SuppressWarnings("unchecked")
     public synchronized LinkedList<LogEntry> entries(Session session)
