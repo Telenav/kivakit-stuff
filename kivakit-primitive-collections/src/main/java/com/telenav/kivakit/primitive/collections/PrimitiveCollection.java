@@ -202,7 +202,7 @@ public abstract class PrimitiveCollection implements
 
     static
     {
-        ShutdownHook.register("PrimitiveCollectionShutdown", FIRST, () ->
+        ShutdownHook.registerShutdownHook("PrimitiveCollectionShutdown", FIRST, () ->
         {
             if (DEBUG.isDebugOn())
             {

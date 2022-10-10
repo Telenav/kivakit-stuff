@@ -87,7 +87,7 @@ public class ServiceRegistryStore extends BaseComponent
                         {
                             // then unregister the loaded class with the Debug class so the debug flag
                             // is re-considered for the newly loaded instance
-                            Debug.unregister(object.object().getClass());
+                            Debug.unregisterDebug(object.object().getClass());
 
                             // and add the listener to the registry.
                             trace("Loaded service registry");
@@ -140,7 +140,7 @@ public class ServiceRegistryStore extends BaseComponent
 
     private File file(Class<? extends ServiceRegistry> type)
     {
-        return Folders.kivakitCache()
+        return Folders.kivakitCacheFolder()
                 .folder("service-registry")
                 .mkdirs()
                 .file(CaseFormat.camelCaseToHyphenated(type.getSimpleName()) + ".kryo");

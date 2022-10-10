@@ -28,6 +28,7 @@ import java.util.List;
  * @author jonathanl (shibo)
  * @see StaxReader
  */
+@SuppressWarnings("unused")
 public class StaxPath extends StringPath
 {
     /**

@@ -30,6 +30,7 @@ import static com.telenav.kivakit.core.ensure.Ensure.fail;
  *
  * @author jonathanl (shibo)
  */
+@SuppressWarnings("unused")
 @UmlClassDiagram(diagram = DiagramDataFormat.class)
 @LexakaiJavadoc(complete = true)
 public enum DataFormat
@@ -41,7 +42,7 @@ public enum DataFormat
     PBF, // OpenStreetMap protobuf format
     ;
 
-    public static DataFormat of(Resource input)
+    public static DataFormat dataFormatOf(Resource input)
     {
         switch (input.extension().toString())
         {

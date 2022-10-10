@@ -21,14 +21,17 @@ package com.telenav.kivakit.data.formats.csv;
 import com.telenav.kivakit.testing.UnitTest;
 import org.junit.Test;
 
+import static com.telenav.kivakit.data.formats.csv.CsvColumn.csvColumn;
+import static com.telenav.kivakit.data.formats.csv.CsvSchema.csvSchema;
+
 public class CsvSchemaTest extends UnitTest
 {
     @Test
     public void testColumnForName()
     {
-        var identifierColumn = CsvColumn.of("roadSectionIdentifier");
-        var shapesColumn = CsvColumn.of("roadSectionShapes");
-        final CsvSchema schema = CsvSchema.csvSchema(identifierColumn, shapesColumn);
+        var identifierColumn = csvColumn("roadSectionIdentifier");
+        var shapesColumn = csvColumn("roadSectionShapes");
+        var schema = csvSchema(identifierColumn, shapesColumn);
         ensureEqual(identifierColumn, schema.columnForName("roadSectionIdentifier"));
         ensureEqual(shapesColumn, schema.columnForName("roadSectionShapes"));
     }

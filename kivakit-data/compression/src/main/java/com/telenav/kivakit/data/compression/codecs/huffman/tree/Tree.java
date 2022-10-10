@@ -41,7 +41,7 @@ public abstract class Tree<Symbol> implements Comparable<Tree<Symbol>>
     /**
      * Returns the Huffman tree for the given set of encoded symbols
      */
-    public static <Symbol> Tree<Symbol> tree(Symbols<Symbol> symbols)
+    public static <Symbol> Tree<Symbol> huffmanTree(Symbols<Symbol> symbols)
     {
         // Add a forest of leaves to a priority queue
         var queue = new PriorityQueue<Tree<Symbol>>();

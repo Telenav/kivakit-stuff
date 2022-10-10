@@ -734,7 +734,7 @@ public abstract class PrimitiveMap extends PrimitiveCollection
         // then copy the entries from this object into the copy
         copy.initialize();
         var progress = size() > 10_000_000
-                ? BroadcastingProgressReporter.createProgressReporter(LOGGER, "entries")
+                ? BroadcastingProgressReporter.progressReporter(LOGGER, "entries")
                 : ProgressReporter.nullProgressReporter();
         progress.steps(count().asMaximum());
         progress.start("Rehashing " + objectName());

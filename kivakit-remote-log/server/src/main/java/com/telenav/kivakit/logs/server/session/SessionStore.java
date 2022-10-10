@@ -176,7 +176,7 @@ SessionStore extends BaseComponent implements ProjectTrait
 
     private Folder logFolder()
     {
-        return Folders.kivakitCache()
+        return Folders.kivakitCacheFolder()
                 .folder("logs")
                 .mkdirs();
     }

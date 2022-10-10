@@ -65,7 +65,7 @@ public class HuffmanCodecTest extends DataCompressionUnitTest
 
         var encoded = encode(codec, List.of("a", "b", "a", "c", "a", "a", "a", "a", "last"));
 
-        var progress = BroadcastingProgressReporter.createProgressReporter(LOGGER);
+        var progress = BroadcastingProgressReporter.progressReporter(LOGGER);
         for (int i = 0; i < 1_000_000_000; i++)
         {
             codec.decode(encoded, (ordinal, next) -> "last".equals(next) ? SymbolConsumer.Directive.STOP : SymbolConsumer.Directive.CONTINUE);
@@ -190,7 +190,7 @@ public class HuffmanCodecTest extends DataCompressionUnitTest
     public void testRandom()
     {
         random().seed(485465258L);
-        var progress = BroadcastingProgressReporter.createProgressReporter();
+        var progress = BroadcastingProgressReporter.progressReporter();
 
         // For each random codec
         _10.forEachInteger(codecNumber ->

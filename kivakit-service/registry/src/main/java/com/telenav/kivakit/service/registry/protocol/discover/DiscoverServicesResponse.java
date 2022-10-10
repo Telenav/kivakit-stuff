@@ -51,7 +51,7 @@ public class DiscoverServicesResponse extends BaseResponse<Set<Service>>
 
     public Service service()
     {
-        return Sets.first(services);
+        return Sets.pickOne(services);
     }
 
     public DiscoverServicesResponse services(Set<Service> services)

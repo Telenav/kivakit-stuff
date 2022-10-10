@@ -389,7 +389,7 @@ public class ServiceRegistryClient extends BaseComponent implements
     )
     {
         // Get the current kivakit application, if any
-        var application = Application.get();
+        var application = Application.application();
 
         // and this process' id
         var pid = OperatingSystem.operatingSystem().processIdentifier();

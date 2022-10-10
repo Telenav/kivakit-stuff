@@ -31,7 +31,7 @@ import static com.telenav.kivakit.data.formats.xml.stax.StaxReader.Match.NOT_FOU
  * <p><b>Using a {@link StaxReader}</b></p>
  *
  * <p>
- * A STAX reader can be created with the {@link #open(Resource)} method. The method will either successfully return a
+ * A STAX reader can be created with the {@link #openXml(Resource)} method. The method will either successfully return a
  * {@link StaxReader} or it will throw and exception. After information from the resource's XML stream has been
  * processed, the reader can be closed with {@link #close()}. Since {@link StaxReader} implements {@link Closeable}, it
  * can be used within a try-with-resources statement.
@@ -113,7 +113,7 @@ public class StaxReader extends BaseComponent implements Closeable
     /**
      * Returns a STAX reader (Java XML stream API) for the given resource, or an exception will be thrown
      */
-    public static StaxReader open(Resource resource)
+    public static StaxReader openXml(Resource resource)
     {
         ensureNotNull(resource);
 

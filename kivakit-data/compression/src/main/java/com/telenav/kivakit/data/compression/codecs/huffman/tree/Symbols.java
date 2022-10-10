@@ -257,7 +257,7 @@ public class Symbols<Symbol>
         while (true)
         {
             // and build a Huffman tree from the symbols
-            var tree = Tree.tree(symbols);
+            var tree = Tree.huffmanTree(symbols);
 
             // check the height of the tree,
             assert tree != null;

@@ -44,12 +44,12 @@ import static com.telenav.kivakit.core.ensure.Ensure.ensureNotNull;
 @LexakaiJavadoc(complete = true)
 public class CsvColumn<Type> extends Name
 {
-    public static <T> CsvColumn<T> of(String name)
+    public static <T> CsvColumn<T> csvColumn(String name)
     {
-        return CsvColumn.of(name, null);
+        return CsvColumn.csvColumn(name, null);
     }
 
-    public static <T> CsvColumn<T> of(String name, StringConverter<T> converter)
+    public static <T> CsvColumn<T> csvColumn(String name, StringConverter<T> converter)
     {
         return new CsvColumn<>(name, converter);
     }

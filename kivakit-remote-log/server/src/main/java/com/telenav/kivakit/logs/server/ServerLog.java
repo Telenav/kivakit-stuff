@@ -94,7 +94,7 @@ public class ServerLog extends BaseTextLog implements
 
     private final Lazy<Session> session = Lazy.lazy(() ->
     {
-        var application = Application.get();
+        var application = Application.application();
         if (application != null)
         {
             var session = new Session(application.name(), started, null);
@@ -106,7 +106,7 @@ public class ServerLog extends BaseTextLog implements
 
     public ServerLog()
     {
-        ShutdownHook.register("ServerLogShutdown", LAST, () -> SessionStore.get().save(session.get()));
+        ShutdownHook.registerShutdownHook("ServerLogShutdown", LAST, () -> SessionStore.get().save(session.get()));
 
         resolveProject(ServerLogProject.class).initialize();
 
@@ -136,7 +136,7 @@ public class ServerLog extends BaseTextLog implements
         {
             maximumEntries = Maximum.parseMaximum(Listener.consoleListener(), maximum);
         }
-        listen(BroadcastingProgressReporter.createProgressReporter(LOGGER, "bytes"));
+        listen(BroadcastingProgressReporter.progressReporter(LOGGER, "bytes"));
     }
 
     public ServerLog listen(ProgressReporter reporter)
@@ -262,7 +262,7 @@ public class ServerLog extends BaseTextLog implements
                     serializer.open(output, SERVER_SOCKET_SERIALIZATION_SESSION, kivakit().kivakitVersion());
 
                     // then send the client our application name
-                    serializer.write(new SerializableObject<>(Application.get().name(), Application.get().version()));
+                    serializer.write(new SerializableObject<>(Application.application().name(), Application.application().version()));
 
                     // and synchronize sessions with it
                     synchronizeSessions(serializer, reporter);
@@ -289,7 +289,7 @@ public class ServerLog extends BaseTextLog implements
                                 synchronized (serializationLock)
                                 {
                                     // sends a health report on the JVM
-                                    serializer.write(new SerializableObject<>(new JavaVirtualMachineHealth(), Application.get().version()));
+                                    serializer.write(new SerializableObject<>(new JavaVirtualMachineHealth(), Application.application().version()));
                                 }
                             }
                             catch (Exception e)

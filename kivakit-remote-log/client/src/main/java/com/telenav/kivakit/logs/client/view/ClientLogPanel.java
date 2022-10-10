@@ -105,7 +105,7 @@ public class ClientLogPanel extends KivaKitPanel
         this.frame = frame;
         this.log = log;
 
-        ShutdownHook.register("ClientLogPanelShutdown", FIRST, this::saveConnectedSession);
+        ShutdownHook.registerShutdownHook("ClientLogPanelShutdown", FIRST, this::saveConnectedSession);
 
         receiver = statusPanel().listenTo(new Receiver());
 
@@ -284,7 +284,7 @@ public class ClientLogPanel extends KivaKitPanel
     {
         return connection ->
         {
-            var reporter = BroadcastingProgressReporter.createProgressReporter();
+            var reporter = BroadcastingProgressReporter.progressReporter();
             var progress = new ProgressPanel(reporter, 150, status ->
             {
                 if (status == CANCELLED)
