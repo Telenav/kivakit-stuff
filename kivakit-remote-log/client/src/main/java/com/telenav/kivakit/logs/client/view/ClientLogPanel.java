@@ -289,7 +289,7 @@ public class ClientLogPanel extends KivaKitPanel
             {
                 if (status == CANCELLED)
                 {
-                    receiver.stop(Duration.MAXIMUM);
+                    receiver.stop(Duration.FOREVER);
                 }
             });
             progress.setVisible(true);

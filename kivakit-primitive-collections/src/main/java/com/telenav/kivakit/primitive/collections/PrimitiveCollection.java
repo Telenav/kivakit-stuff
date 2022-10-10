@@ -82,7 +82,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import static com.telenav.kivakit.core.messaging.context.CallStack.Matching.SUBCLASS;
 import static com.telenav.kivakit.core.messaging.context.CallStack.Proximity.IMMEDIATE;
 import static com.telenav.kivakit.core.project.Project.resolveProject;
-import static com.telenav.kivakit.core.time.Duration.MAXIMUM;
+import static com.telenav.kivakit.core.time.Duration.FOREVER;
 import static com.telenav.kivakit.core.time.Frequency.EVERY_5_SECONDS;
 import static com.telenav.kivakit.core.value.count.Bytes.bytes;
 import static com.telenav.kivakit.core.vm.ShutdownHook.Order.FIRST;
@@ -215,7 +215,7 @@ public abstract class PrimitiveCollection implements
                 }
 
                 DEBUG.trace("Compressed collections by $:\n$", bytes(totalDelta), compressionRecords.bulleted());
-                LOGGER.flush(MAXIMUM);
+                LOGGER.flush(FOREVER);
             }
         });
     }
