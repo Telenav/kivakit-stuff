@@ -66,7 +66,7 @@ public abstract class BaseResponse<T>
     @KivaKitIncludeProperty
     public Version version()
     {
-        return SettingsRegistry.settingsRegistryFor(this).requireSettings(ServiceRegistrySettings.class).version();
+        return SettingsRegistry.settingsFor(this).requireSettings(ServiceRegistrySettings.class).version();
     }
 
     protected abstract void value(T value);

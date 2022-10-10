@@ -40,6 +40,6 @@ public abstract class BaseRequest
     @KivaKitIncludeProperty
     public Version version()
     {
-        return SettingsRegistry.settingsRegistryFor(this).requireSettings(ServiceRegistrySettings.class).version();
+        return SettingsRegistry.settingsFor(this).requireSettings(ServiceRegistrySettings.class).version();
     }
 }
