@@ -10,6 +10,7 @@ import com.telenav.kivakit.core.project.ProjectTrait;
 import com.telenav.kivakit.core.string.Strings;
 import com.telenav.kivakit.filesystem.File;
 import com.telenav.kivakit.filesystem.Folder;
+import com.telenav.kivakit.filesystem.Folders;
 import com.telenav.kivakit.logs.server.ServerLogProject;
 import com.telenav.kivakit.resource.Extension;
 import com.telenav.kivakit.resource.serialization.SerializableObject;
@@ -175,7 +176,7 @@ SessionStore extends BaseComponent implements ProjectTrait
 
     private Folder logFolder()
     {
-        return Folder.kivakitCache()
+        return Folders.kivakitCache()
                 .folder("logs")
                 .mkdirs();
     }

@@ -24,7 +24,7 @@ import com.telenav.kivakit.core.messaging.Debug;
 import com.telenav.kivakit.core.string.CaseFormat;
 import com.telenav.kivakit.core.vm.Properties;
 import com.telenav.kivakit.filesystem.File;
-import com.telenav.kivakit.filesystem.Folder;
+import com.telenav.kivakit.filesystem.Folders;
 import com.telenav.kivakit.resource.serialization.SerializableObject;
 import com.telenav.kivakit.serialization.kryo.KryoSerializationSession;
 import com.telenav.kivakit.serialization.kryo.types.KivaKitCoreKryoTypes;
@@ -140,7 +140,7 @@ public class ServiceRegistryStore extends BaseComponent
 
     private File file(Class<? extends ServiceRegistry> type)
     {
-        return Folder.kivakitCache()
+        return Folders.kivakitCache()
                 .folder("service-registry")
                 .mkdirs()
                 .file(CaseFormat.camelCaseToHyphenated(type.getSimpleName()) + ".kryo");

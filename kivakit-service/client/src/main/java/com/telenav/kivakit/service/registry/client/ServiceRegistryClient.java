@@ -31,7 +31,7 @@ import com.telenav.kivakit.core.thread.KivaKitThread;
 import com.telenav.kivakit.core.time.Duration;
 import com.telenav.kivakit.core.version.Version;
 import com.telenav.kivakit.core.vm.JavaVirtualMachine;
-import com.telenav.kivakit.filesystem.Folder;
+import com.telenav.kivakit.filesystem.Folders;
 import com.telenav.kivakit.launcher.JarLauncher;
 import com.telenav.kivakit.network.core.Port;
 import com.telenav.kivakit.service.registry.Scope;
@@ -479,7 +479,7 @@ public class ServiceRegistryClient extends BaseComponent implements
             {
                 // so launch the service from remote storage
                 trace("Connecting client to $", port);
-                var local = Folder.kivakitExtensionsHome()
+                var local = Folders.kivakitExtensionsHome()
                         .folder("kivakit-service/server/target")
                         .file("kivakit-service-server-" + kivakit().kivakitVersion() + ".jar");
                 var jar = settings.serverJar();
