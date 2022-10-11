@@ -90,7 +90,7 @@ public class ConnectionPanel extends KivaKitPanel
             var selected = (Service) connectComboBox.getSelectedItem();
             connectComboBox().removeAllItems();
             connectComboBox().addItem(null);
-            for (var service : ObjectList.objectList(services.get()).sorted())
+            for (var service : ObjectList.list(services.get()).sorted())
             {
                 connectComboBox().addItem(service);
             }

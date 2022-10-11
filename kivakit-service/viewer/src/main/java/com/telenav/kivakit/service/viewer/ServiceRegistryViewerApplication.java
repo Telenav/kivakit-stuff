@@ -31,7 +31,7 @@ import com.telenav.kivakit.service.registry.ServiceMetadata;
 import com.telenav.kivakit.service.registry.ServiceType;
 import com.telenav.kivakit.service.registry.client.ServiceRegistryClient;
 
-import static com.telenav.kivakit.core.collections.set.ObjectSet.objectSet;
+import static com.telenav.kivakit.core.collections.set.ObjectSet.set;
 import static com.telenav.kivakit.core.messaging.MessageFormat.WITH_EXCEPTION;
 import static com.telenav.kivakit.core.os.Console.console;
 import static com.telenav.kivakit.service.registry.Scope.Type.scopeTypeSwitchParser;
@@ -81,7 +81,7 @@ public class ServiceRegistryViewerApplication extends Application
             lines.add("");
             lines.add(String.format(format, "renewed", "port", "service", "application", "description"));
             lines.add(AsciiArt.line(200));
-            var sorted = ObjectList.objectList(services.get()).sorted();
+            var sorted = ObjectList.list(services.get()).sorted();
             for (var service : sorted)
             {
                 lines.add(String.format(format, service.renewedAt().elapsedSince() + " ago", service.port().portNumber(), service.type(), service.application(), service.metadata().description()));
@@ -95,6 +95,6 @@ public class ServiceRegistryViewerApplication extends Application
     @Override
     protected ObjectSet<SwitchParser<?>> switchParsers()
     {
-        return objectSet(SCOPE_TYPE);
+        return ObjectSet.set(SCOPE_TYPE);
     }
 }

@@ -236,7 +236,7 @@ public class Symbols<Symbol>
     public String toString()
     {
         return Strings.format("[Symbols escape = $, size = $]\n    $", escape(), size(),
-                ObjectList.objectList(encoded).join("\n    "));
+                ObjectList.list(encoded).join("\n    "));
     }
 
     /**

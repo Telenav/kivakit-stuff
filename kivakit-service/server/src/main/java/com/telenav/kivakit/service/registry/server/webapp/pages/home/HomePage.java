@@ -18,6 +18,7 @@
 
 package com.telenav.kivakit.service.registry.server.webapp.pages.home;
 
+import com.telenav.kivakit.core.collections.list.ObjectList;
 import com.telenav.kivakit.core.function.Result;
 import com.telenav.kivakit.core.logging.Logger;
 import com.telenav.kivakit.core.logging.LoggerFactory;
@@ -45,7 +46,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import java.util.Set;
 
-import static com.telenav.kivakit.core.collections.list.ObjectList.objectList;
 import static com.telenav.kivakit.service.registry.server.ServiceRegistryServerSettings.WICKET_AJAX_REFRESH_FREQUENCY;
 
 /**
@@ -142,7 +142,7 @@ public class HomePage extends ServiceRegistryWebPage
     private List<Service> list(DropDownChoice<String> scopeDropdown)
     {
         var scope = scopeDropdown.getModelObject();
-        return objectList(services(scope).get()).sorted();
+        return ObjectList.list(services(scope).get()).sorted();
     }
 
     private Result<Set<Service>> services(String scopeString)

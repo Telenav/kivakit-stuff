@@ -48,7 +48,7 @@ import com.telenav.lexakai.annotations.UmlClassDiagram;
 import com.telenav.lexakai.annotations.UmlNote;
 import com.telenav.lexakai.annotations.associations.UmlRelation;
 
-import static com.telenav.kivakit.core.collections.set.ObjectSet.objectSet;
+import static com.telenav.kivakit.core.collections.set.ObjectSet.set;
 import static com.telenav.kivakit.core.ensure.Ensure.ensureNotNull;
 
 /**
@@ -175,6 +175,6 @@ public class ServiceRegistryServer extends Server
     @Override
     protected ObjectSet<SwitchParser<?>> switchParsers()
     {
-        return objectSet(PORT, SCOPE);
+        return ObjectSet.set(PORT, SCOPE);
     }
 }
