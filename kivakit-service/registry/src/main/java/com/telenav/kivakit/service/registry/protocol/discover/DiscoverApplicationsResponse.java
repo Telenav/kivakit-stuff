@@ -21,7 +21,7 @@ package com.telenav.kivakit.service.registry.protocol.discover;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.telenav.kivakit.application.Application;
 import com.telenav.kivakit.core.string.ObjectFormatter;
-import com.telenav.kivakit.core.language.reflection.property.KivaKitIncludeProperty;
+import com.telenav.kivakit.core.language.reflection.property.IncludeProperty;
 import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeMember;
 import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeType;
 import com.telenav.kivakit.service.registry.internal.lexakai.DiagramRest;
@@ -48,7 +48,7 @@ public class DiscoverApplicationsResponse extends BaseResponse<Set<Application.I
     @OpenApiIncludeMember(description = "The applications that were found")
     private Set<Application.Identifier> applications = new HashSet<>();
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     public Set<Application.Identifier> applications()
     {
         return applications;

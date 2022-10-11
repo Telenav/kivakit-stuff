@@ -24,7 +24,7 @@ import com.telenav.kivakit.commandline.SwitchParser;
 import com.telenav.kivakit.commandline.SwitchParsers;
 import com.telenav.kivakit.core.collections.list.ObjectList;
 import com.telenav.kivakit.core.function.Result;
-import com.telenav.kivakit.core.language.reflection.property.KivaKitIncludeProperty;
+import com.telenav.kivakit.core.language.reflection.property.IncludeProperty;
 import com.telenav.kivakit.core.messaging.Listener;
 import com.telenav.kivakit.interfaces.naming.Named;
 import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeMember;
@@ -159,7 +159,7 @@ public class Scope implements Named, Comparable<Scope>
     {
     }
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     public ClusterIdentifier cluster()
     {
         return cluster;
@@ -231,7 +231,7 @@ public class Scope implements Named, Comparable<Scope>
         return name();
     }
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     public Type type()
     {
         return type;

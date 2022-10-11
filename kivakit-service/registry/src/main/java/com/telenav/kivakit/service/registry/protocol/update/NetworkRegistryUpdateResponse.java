@@ -20,7 +20,7 @@ package com.telenav.kivakit.service.registry.protocol.update;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.telenav.kivakit.core.string.ObjectFormatter;
-import com.telenav.kivakit.core.language.reflection.property.KivaKitIncludeProperty;
+import com.telenav.kivakit.core.language.reflection.property.IncludeProperty;
 import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeMember;
 import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeType;
 import com.telenav.kivakit.service.registry.internal.lexakai.DiagramRest;
@@ -51,7 +51,7 @@ public class NetworkRegistryUpdateResponse extends BaseResponse<Boolean>
         return this;
     }
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     public boolean added()
     {
         return added;

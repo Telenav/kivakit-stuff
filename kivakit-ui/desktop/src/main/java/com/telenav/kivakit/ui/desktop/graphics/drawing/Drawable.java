@@ -1,6 +1,6 @@
 package com.telenav.kivakit.ui.desktop.graphics.drawing;
 
-import com.telenav.kivakit.core.language.reflection.property.KivaKitIncludeProperty;
+import com.telenav.kivakit.core.language.reflection.property.IncludeProperty;
 import com.telenav.kivakit.core.value.level.Percent;
 import com.telenav.kivakit.ui.desktop.graphics.drawing.geometry.measurements.DrawingWidth;
 import com.telenav.kivakit.ui.desktop.graphics.drawing.geometry.objects.DrawingPoint;
@@ -54,7 +54,7 @@ public interface Drawable
     /**
      * Returns the style of this drawable
      */
-    @KivaKitIncludeProperty
+    @IncludeProperty
     Style style();
 
     Drawable withColors(Style style);
@@ -74,7 +74,7 @@ public interface Drawable
     /**
      * Returns the location of the drawable
      */
-    @KivaKitIncludeProperty
+    @IncludeProperty
     DrawingPoint withLocation();
 
     /**

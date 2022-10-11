@@ -18,11 +18,11 @@
 
 package com.telenav.kivakit.service.registry.client;
 
-import com.telenav.kivakit.conversion.core.language.object.KivaKitConverted;
+import com.telenav.kivakit.conversion.core.language.object.ConvertedProperty;
 import com.telenav.kivakit.conversion.core.time.DurationConverter;
 import com.telenav.kivakit.core.KivaKit;
 import com.telenav.kivakit.core.string.ObjectFormatter;
-import com.telenav.kivakit.core.language.reflection.property.KivaKitIncludeProperty;
+import com.telenav.kivakit.core.language.reflection.property.IncludeProperty;
 import com.telenav.kivakit.core.time.Duration;
 import com.telenav.kivakit.network.core.NetworkLocation;
 import com.telenav.kivakit.network.http.HttpNetworkLocation;
@@ -48,27 +48,27 @@ public class ServiceRegistryClientSettings
 
     private Resourceful serverJar;
 
-    @KivaKitConverted(DurationConverter.class)
+    @ConvertedProperty(DurationConverter.class)
     public ServiceRegistryClientSettings accessTimeout(Duration timeout)
     {
         accessTimeout = timeout;
         return this;
     }
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     public Duration accessTimeout()
     {
         return accessTimeout;
     }
 
-    @KivaKitConverted(HttpNetworkLocation.Converter.class)
+    @ConvertedProperty(HttpNetworkLocation.Converter.class)
     public ServiceRegistryClientSettings serverJar(Resourceful location)
     {
         serverJar = location;
         return this;
     }
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     public Resourceful serverJar()
     {
         return serverJar;

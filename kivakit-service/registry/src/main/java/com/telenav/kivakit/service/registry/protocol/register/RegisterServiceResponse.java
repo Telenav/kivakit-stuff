@@ -19,9 +19,9 @@
 package com.telenav.kivakit.service.registry.protocol.register;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.telenav.kivakit.core.string.KivaKitFormat;
+import com.telenav.kivakit.core.string.FormatProperty;
 import com.telenav.kivakit.core.string.ObjectFormatter;
-import com.telenav.kivakit.core.language.reflection.property.KivaKitIncludeProperty;
+import com.telenav.kivakit.core.language.reflection.property.IncludeProperty;
 import com.telenav.kivakit.interfaces.string.StringFormattable;
 import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeMember;
 import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeType;
@@ -47,8 +47,8 @@ public class RegisterServiceResponse extends BaseResponse<Service>
     @OpenApiIncludeMember(description = "The registered service, with an allocated port")
     private Service service;
 
-    @KivaKitIncludeProperty
-    @KivaKitFormat(format = StringFormattable.Format.LOG)
+    @IncludeProperty
+    @FormatProperty(format = StringFormattable.Format.LOG)
     public Service service()
     {
         return service;

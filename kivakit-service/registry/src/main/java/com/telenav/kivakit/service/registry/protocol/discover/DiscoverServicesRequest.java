@@ -21,7 +21,7 @@ package com.telenav.kivakit.service.registry.protocol.discover;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.telenav.kivakit.application.Application;
 import com.telenav.kivakit.core.string.ObjectFormatter;
-import com.telenav.kivakit.core.language.reflection.property.KivaKitIncludeProperty;
+import com.telenav.kivakit.core.language.reflection.property.IncludeProperty;
 import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeMember;
 import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeType;
 import com.telenav.kivakit.service.registry.Scope;
@@ -88,7 +88,7 @@ public class DiscoverServicesRequest extends BaseRequest
         return this;
     }
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     public Application.Identifier application()
     {
         return application;
@@ -117,7 +117,7 @@ public class DiscoverServicesRequest extends BaseRequest
         return this;
     }
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     public ServiceType serviceType()
     {
         return serviceType;
@@ -129,7 +129,7 @@ public class DiscoverServicesRequest extends BaseRequest
         return new ObjectFormatter(this).asString(MULTILINE);
     }
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     public SearchType type()
     {
         return type;

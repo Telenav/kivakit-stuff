@@ -22,7 +22,7 @@
 package com.telenav.kivakit.ui.desktop.graphics.drawing.style;
 
 import com.telenav.kivakit.core.string.ObjectFormatter;
-import com.telenav.kivakit.core.language.reflection.property.KivaKitIncludeProperty;
+import com.telenav.kivakit.core.language.reflection.property.IncludeProperty;
 import com.telenav.kivakit.core.value.level.Percent;
 import com.telenav.kivakit.ui.desktop.graphics.drawing.Drawable;
 import com.telenav.kivakit.ui.desktop.graphics.drawing.DrawingSurface;
@@ -69,21 +69,21 @@ public class Stroke
 
     private java.awt.Stroke stroke;
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     private int cap = CAP_ROUND;
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     private int join = JOIN_ROUND;
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     private int miterLimit = 0;
 
     private float[] dash;
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     private float dashPhase;
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     private DrawingWidth width = DrawingWidth.pixels(1);
 
     protected Stroke()
