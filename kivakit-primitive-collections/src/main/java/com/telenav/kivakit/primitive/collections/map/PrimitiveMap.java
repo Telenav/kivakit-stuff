@@ -224,7 +224,7 @@ public abstract class PrimitiveMap extends PrimitiveCollection
      */
     protected final int hash(int value)
     {
-        var hash = Hash.SEED * value;
+        var hash = Hash.HASH_SEED * value;
         return hash < 0 ? -hash : hash;
     }
 

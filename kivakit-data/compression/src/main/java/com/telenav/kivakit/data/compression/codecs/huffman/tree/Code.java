@@ -40,7 +40,7 @@ public class Code
      */
     public Code(String bits)
     {
-        if (Strings.isNullOrEmpty(bits))
+        if (Strings.isNullOrBlank(bits))
         {
             lengthInBits = 0;
             value = 0;
@@ -64,7 +64,7 @@ public class Code
     @Override
     public String toString()
     {
-        return Align.alignRight(Integer.toBinaryString(value), lengthInBits, '0');
+        return Align.rightAlign(Integer.toBinaryString(value), lengthInBits, '0');
     }
 
     public int value()

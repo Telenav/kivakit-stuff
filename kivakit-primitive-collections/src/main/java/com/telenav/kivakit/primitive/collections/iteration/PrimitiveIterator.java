@@ -33,7 +33,7 @@ public interface PrimitiveIterator
 
     default int hashValue()
     {
-        long hash = Hash.SEED;
+        long hash = Hash.HASH_SEED;
         while (hasNext())
         {
             hash = hash ^ nextLong();

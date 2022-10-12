@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.telenav.kivakit.core.messaging.MessageFormat.WITHOUT_EXCEPTION;
-import static com.telenav.kivakit.core.string.Align.alignRight;
+import static com.telenav.kivakit.core.string.Align.rightAlign;
 import static com.telenav.kivakit.interfaces.string.StringFormattable.Format.USER_LABEL;
 import static com.telenav.kivakit.logs.client.view.panels.table.TableModel.CONTEXT;
 import static com.telenav.kivakit.logs.client.view.panels.table.TableModel.ELAPSED;
@@ -166,14 +166,14 @@ public class TablePanel extends KivaKitPanel
                     var lines = new StringList();
                     final int align = 11;
 
-                    lines.add(alignRight("#: ", align, ' ') + row.sequenceNumber());
-                    lines.add(alignRight("elapsed: ", align, ' ') + row.created().elapsedSince().asString(USER_LABEL));
-                    lines.add(alignRight("time: ", align, ' ') + row.created());
-                    lines.add(alignRight("host: ", align, ' ') + row.context().host());
-                    lines.add(alignRight("thread: ", align, ' ') + row.threadName());
-                    lines.add(alignRight("context: ", align, ' ') + row.context().fullTypeName());
-                    lines.add(alignRight("type: ", align, ' ') + row.messageType());
-                    lines.add(alignRight("severity: ", align, ' ') + row.severity().toString().toUpperCase());
+                    lines.add(rightAlign("#: ", align, ' ') + row.sequenceNumber());
+                    lines.add(rightAlign("elapsed: ", align, ' ') + row.created().elapsedSince().asString(USER_LABEL));
+                    lines.add(rightAlign("time: ", align, ' ') + row.created());
+                    lines.add(rightAlign("host: ", align, ' ') + row.context().host());
+                    lines.add(rightAlign("thread: ", align, ' ') + row.threadName());
+                    lines.add(rightAlign("context: ", align, ' ') + row.context().fullTypeName());
+                    lines.add(rightAlign("type: ", align, ' ') + row.messageType());
+                    lines.add(rightAlign("severity: ", align, ' ') + row.severity().toString().toUpperCase());
 
                     var stackTrace = row.stackTrace();
                     final int fontSize = 14;
