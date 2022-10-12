@@ -126,7 +126,7 @@ public class CsvReader extends BaseIterator<CsvLine> implements RepeaterMixin, C
 
     public Iterable<CsvLine> lines()
     {
-        return () -> CsvReader.this;
+        return () -> this;
     }
 
     public void quote(char quote)

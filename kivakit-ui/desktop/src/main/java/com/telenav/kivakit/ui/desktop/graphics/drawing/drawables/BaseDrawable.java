@@ -52,7 +52,7 @@ public abstract class BaseDrawable implements Drawable
 
     private Shape shape;
 
-    public BaseDrawable(Style style, DrawingPoint at)
+    protected BaseDrawable(Style style, DrawingPoint at)
     {
         this(style);
         this.at = at;

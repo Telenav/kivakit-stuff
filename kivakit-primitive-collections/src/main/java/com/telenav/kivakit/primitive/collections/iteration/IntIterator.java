@@ -66,7 +66,7 @@ public interface IntIterator extends PrimitiveIterator
         var hashCode = 1;
         while (hasNext())
         {
-            hashCode = hashCode + Hash.hashCode(next());
+            hashCode = hashCode + Hash.hash(next());
         }
         return hashCode;
     }

@@ -42,7 +42,7 @@ class TableCellRenderer extends DefaultTableCellRenderer
             for (var at = 0; at < COLUMNS; at++)
             {
                 var value = table.getModel().getValueAt(modelRow, at);
-                String text = StringConversions.toString(value).trim();
+                String text = StringConversions.toHumanizedString(value).trim();
                 if (text.startsWith("!") || text.endsWith("!"))
                 {
                     highlight = Problem.class;

@@ -95,7 +95,7 @@ public class ServiceRegistryServer extends Server
             .optional()
             .build();
 
-    private transient final Lazy<ServiceRegistry> serviceRegistry = Lazy.lazy(() ->
+    private final transient Lazy<ServiceRegistry> serviceRegistry = Lazy.lazy(() ->
     {
         var registry = listenTo(get(SCOPE) == Scope.Type.NETWORK
                 ? new NetworkServiceRegistry()
@@ -175,6 +175,6 @@ public class ServiceRegistryServer extends Server
     @Override
     protected ObjectSet<SwitchParser<?>> switchParsers()
     {
-        return ObjectSet.set(PORT, SCOPE);
+        return set(PORT, SCOPE);
     }
 }

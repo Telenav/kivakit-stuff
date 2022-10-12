@@ -191,7 +191,7 @@ public class Scope implements Named, Comparable<Scope>
     @JsonIgnore
     public boolean isCluster()
     {
-        return type == Type.CLUSTER;
+        return type == CLUSTER;
     }
 
     @JsonIgnore
@@ -203,7 +203,7 @@ public class Scope implements Named, Comparable<Scope>
     @JsonIgnore
     public boolean isNetwork()
     {
-        return type == Type.NETWORK;
+        return type == NETWORK;
     }
 
     @Override

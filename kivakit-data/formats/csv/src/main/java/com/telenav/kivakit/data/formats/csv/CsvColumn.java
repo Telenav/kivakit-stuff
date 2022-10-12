@@ -46,7 +46,7 @@ public class CsvColumn<Type> extends Name
 {
     public static <T> CsvColumn<T> csvColumn(String name)
     {
-        return CsvColumn.csvColumn(name, null);
+        return csvColumn(name, null);
     }
 
     public static <T> CsvColumn<T> csvColumn(String name, StringConverter<T> converter)

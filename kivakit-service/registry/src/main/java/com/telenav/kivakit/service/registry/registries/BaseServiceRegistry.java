@@ -116,7 +116,7 @@ public abstract class BaseServiceRegistry extends BaseRepeater implements
     private MultiSet<Application.Identifier, Service> applicationToServices = new MultiSet<>();
 
     /** Lock accesses to data structures */
-    private transient final ReadWriteLock lock = new ReadWriteLock();
+    private final transient ReadWriteLock lock = new ReadWriteLock();
 
     /** Services by port */
     private Map<Port, Service> portToService = new HashMap<>();
@@ -143,7 +143,7 @@ public abstract class BaseServiceRegistry extends BaseRepeater implements
 
     private ServiceRegistryUpdater updater;
 
-    public BaseServiceRegistry()
+    protected BaseServiceRegistry()
     {
     }
 
@@ -453,7 +453,7 @@ public abstract class BaseServiceRegistry extends BaseRepeater implements
             return Result.success(bound);
         }
 
-        return result(ObjectSet.set());
+        return result(set());
     }
 
     @NotNull

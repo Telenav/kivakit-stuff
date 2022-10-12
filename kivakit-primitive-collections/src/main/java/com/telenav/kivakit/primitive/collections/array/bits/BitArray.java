@@ -18,7 +18,7 @@
 
 package com.telenav.kivakit.primitive.collections.array.bits;
 
-import com.telenav.kivakit.core.string.Strings;
+import com.telenav.kivakit.core.string.Formatter;
 import com.telenav.kivakit.core.value.count.Count;
 import com.telenav.kivakit.interfaces.naming.Named;
 import com.telenav.kivakit.primitive.collections.array.PrimitiveArray;
@@ -154,7 +154,7 @@ public final class BitArray extends PrimitiveArray implements Named
     @Override
     public String toString()
     {
-        return Strings.format("[BitArray name = '$', size = $, values = $]", name(), size(), toBitString());
+        return Formatter.format("[BitArray name = '$', size = $, values = $]", name(), size(), toBitString());
     }
 
     /**
@@ -171,7 +171,7 @@ public final class BitArray extends PrimitiveArray implements Named
                 try
                 {
                     super.close();
-                    size((int) super.cursor());
+                    size((int) cursor());
                 }
                 catch (Exception ignored)
                 {

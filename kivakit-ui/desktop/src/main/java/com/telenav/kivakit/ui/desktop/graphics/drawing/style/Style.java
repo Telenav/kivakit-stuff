@@ -164,7 +164,7 @@ public class Style
 
     public Style darkened()
     {
-        return darkened(Percent.percent(10));
+        return darkened(percent(10));
     }
 
     public Style darkened(Percent percent)

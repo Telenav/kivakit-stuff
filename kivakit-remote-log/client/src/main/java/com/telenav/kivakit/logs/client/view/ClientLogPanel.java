@@ -21,7 +21,7 @@ package com.telenav.kivakit.logs.client.view;
 import com.telenav.kivakit.core.logging.LogEntry;
 import com.telenav.kivakit.core.messaging.Broadcaster;
 import com.telenav.kivakit.core.progress.reporters.BroadcastingProgressReporter;
-import com.telenav.kivakit.core.string.Strings;
+import com.telenav.kivakit.core.string.Formatter;
 import com.telenav.kivakit.core.thread.KivaKitThread;
 import com.telenav.kivakit.core.time.Duration;
 import com.telenav.kivakit.core.value.count.Maximum;
@@ -236,7 +236,7 @@ public class ClientLogPanel extends KivaKitPanel
     {
         var currentSession = sessionPanel().currentSession();
         var entries = currentSession != null ? currentSession.entries().size() : 0;
-        frame.title(Strings.format("MesaKit Log Viewer ($) - Viewing $ Entries",
+        frame.title(Formatter.format("MesaKit Log Viewer ($) - Viewing $ Entries",
                 connector().isConnected() ? connector().connectedPort() : "Disconnected", entries));
     }
 

@@ -75,6 +75,6 @@ public class LogViewerApplication extends Application
     @Override
     protected ObjectSet<SwitchParser<?>> switchParsers()
     {
-        return ObjectSet.set(MAXIMUM_ENTRIES, QUIET);
+        return set(MAXIMUM_ENTRIES, QUIET);
     }
 }

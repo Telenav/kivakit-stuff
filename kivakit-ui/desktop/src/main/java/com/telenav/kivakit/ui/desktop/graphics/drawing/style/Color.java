@@ -102,7 +102,7 @@ public class Color
         @Override
         protected String onToString(Color value)
         {
-            return Align.right(Integer.toHexString(value.rgba()), 8, '0');
+            return Align.alignRight(Integer.toHexString(value.rgba()), 8, '0');
         }
 
         @Override

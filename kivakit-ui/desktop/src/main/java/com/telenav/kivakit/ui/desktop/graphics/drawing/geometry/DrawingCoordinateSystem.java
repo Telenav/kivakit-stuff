@@ -129,7 +129,7 @@ public class DrawingCoordinateSystem implements CoordinateSystem
     @Override
     public String name()
     {
-        if (name.equals("pixels"))
+        if ("pixels".equals(name))
         {
             return name;
         }

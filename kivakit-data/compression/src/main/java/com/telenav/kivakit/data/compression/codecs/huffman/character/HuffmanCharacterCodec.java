@@ -111,7 +111,7 @@ public class HuffmanCharacterCodec extends BaseRepeater implements CharacterCode
         @Override
         protected Character onToValue(String value)
         {
-            return (char) Long.parseLong(Strip.leading(value, "0x"), 16);
+            return (char) Long.parseLong(Strip.stripLeading(value, "0x"), 16);
         }
     }
 

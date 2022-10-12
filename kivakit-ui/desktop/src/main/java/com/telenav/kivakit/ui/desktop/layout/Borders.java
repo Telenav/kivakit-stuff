@@ -18,7 +18,7 @@ public class Borders
 {
     public static void applyMargin(JComponent component, int size)
     {
-        Borders.insideMarginsOf(Margins.of(8)).apply(component);
+        insideMarginsOf(Margins.of(8)).apply(component);
     }
 
     public static Borders create()
