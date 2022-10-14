@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- //
- // © 2011-2022 Telenav, Inc.
- // Licensed under Apache License, Version 2.0
- //
- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- -->
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// © 2011-2022 Telenav, Inc.
+// Licensed under Apache License, Version 2.0
+//
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
 
 <project
     xmlns="http://maven.apache.org/POM/4.0.0"
@@ -56,7 +56,7 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>kivakit-testing</artifactId>
             <scope>test</scope>
-        </dependency><dependency><groupId>com.telenav.kivakit</groupId><artifactId>kivakit-annotations</artifactId><version>1.7.1-SNAPSHOT</version><scope>compile</scope></dependency>
+        </dependency>
     </dependencies>
     
 </project>
