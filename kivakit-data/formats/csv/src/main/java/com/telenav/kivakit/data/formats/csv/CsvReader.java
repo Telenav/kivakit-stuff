@@ -117,7 +117,7 @@ public class CsvReader extends BaseIterator<CsvLine> implements RepeaterMixin, C
     }
 
     /**
-     * @return The current line number in the input
+     * Returns the current line number in the input
      */
     public int lineNumber()
     {
@@ -126,7 +126,7 @@ public class CsvReader extends BaseIterator<CsvLine> implements RepeaterMixin, C
 
     public Iterable<CsvLine> lines()
     {
-        return () -> CsvReader.this;
+        return () -> this;
     }
 
     public void quote(char quote)
@@ -135,7 +135,7 @@ public class CsvReader extends BaseIterator<CsvLine> implements RepeaterMixin, C
     }
 
     /**
-     * @return The schema for lines being read
+     * Returns the schema for lines being read
      */
     public CsvSchema schema()
     {

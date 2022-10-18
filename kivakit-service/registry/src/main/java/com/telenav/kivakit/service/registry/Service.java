@@ -23,13 +23,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.telenav.kivakit.application.Application;
 import com.telenav.kivakit.component.BaseComponent;
 import com.telenav.kivakit.core.string.ObjectFormatter;
-import com.telenav.kivakit.core.language.reflection.property.KivaKitIncludeProperty;
+import com.telenav.kivakit.core.language.reflection.property.IncludeProperty;
 import com.telenav.kivakit.core.time.Time;
 import com.telenav.kivakit.core.vm.JavaVirtualMachineHealth;
 import com.telenav.kivakit.interfaces.string.StringFormattable;
 import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeMember;
 import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeType;
-import com.telenav.kivakit.network.core.Host;
 import com.telenav.kivakit.network.core.LocalHost;
 import com.telenav.kivakit.network.core.Port;
 import com.telenav.kivakit.service.registry.internal.lexakai.DiagramRegistry;
@@ -133,7 +132,7 @@ public class Service extends BaseComponent implements Comparable<Service>, Strin
         return this;
     }
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     public Application.Identifier application()
     {
         return application;
@@ -181,7 +180,7 @@ public class Service extends BaseComponent implements Comparable<Service>, Strin
         return Objects.hash(application, type, port);
     }
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     public JavaVirtualMachineHealth health()
     {
         return health;
@@ -222,7 +221,7 @@ public class Service extends BaseComponent implements Comparable<Service>, Strin
     }
 
     /**
-     * @return True if it has been too long since this service was renewed, and it is in danger of being expired "soon"
+     * Returns true if it has been too long since this service was renewed, and it is in danger of being expired "soon"
      */
     @JsonIgnore
     public boolean isStale()
@@ -259,9 +258,9 @@ public class Service extends BaseComponent implements Comparable<Service>, Strin
     }
 
     /**
-     * @return The port that this service is bound to
+     * Returns the port that this service is bound to
      */
-    @KivaKitIncludeProperty
+    @IncludeProperty
     public Port port()
     {
         return port;
@@ -274,7 +273,7 @@ public class Service extends BaseComponent implements Comparable<Service>, Strin
         return this;
     }
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     public Time renewedAt()
     {
         return Time.epochMilliseconds(renewedAt);
@@ -304,9 +303,9 @@ public class Service extends BaseComponent implements Comparable<Service>, Strin
     }
 
     /**
-     * @return The type of service
+     * Returns the type of service
      */
-    @KivaKitIncludeProperty
+    @IncludeProperty
     public ServiceType type()
     {
         return type;

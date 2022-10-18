@@ -238,7 +238,7 @@ public final class SplitByteArray extends PrimitiveSplitArray implements ByteLis
     }
 
     /**
-     * @return A read-only sub-array which shares underlying data with this array.
+     * Returns a read-only sub-array which shares underlying data with this array.
      */
     @Override
     public ByteList sublist(int offset, int size)
@@ -301,7 +301,7 @@ public final class SplitByteArray extends PrimitiveSplitArray implements ByteLis
     }
 
     /**
-     * @return The child array for the given index
+     * Returns the child array for the given index
      */
     private ByteArray childArray(int childIndex)
     {

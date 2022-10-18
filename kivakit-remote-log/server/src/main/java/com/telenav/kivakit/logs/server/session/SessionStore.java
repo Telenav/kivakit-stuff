@@ -10,6 +10,7 @@ import com.telenav.kivakit.core.project.ProjectTrait;
 import com.telenav.kivakit.core.string.Strings;
 import com.telenav.kivakit.filesystem.File;
 import com.telenav.kivakit.filesystem.Folder;
+import com.telenav.kivakit.filesystem.Folders;
 import com.telenav.kivakit.logs.server.ServerLogProject;
 import com.telenav.kivakit.resource.Extension;
 import com.telenav.kivakit.resource.serialization.SerializableObject;
@@ -84,7 +85,7 @@ SessionStore extends BaseComponent implements ProjectTrait
     }
 
     /**
-     * @return A copy of the list of log entries for the given session
+     * Returns a copy of the list of log entries for the given session
      */
     @SuppressWarnings("unchecked")
     public synchronized LinkedList<LogEntry> entries(Session session)
@@ -129,7 +130,7 @@ SessionStore extends BaseComponent implements ProjectTrait
             {
                 var name = parts[0];
                 var time = new LocalDateTimeConverter(this).convert(parts[1]);
-                if (!Strings.isEmpty(name) && time != null)
+                if (!Strings.isNullOrBlank(name) && time != null)
                 {
                     sessions.add(new Session(name, time, file.sizeInBytes()));
                 }
@@ -175,7 +176,7 @@ SessionStore extends BaseComponent implements ProjectTrait
 
     private Folder logFolder()
     {
-        return Folder.kivakitCache()
+        return Folders.kivakitCacheFolder()
                 .folder("logs")
                 .mkdirs();
     }

@@ -62,7 +62,7 @@ public abstract class DrawingObject implements Coordinated
     }
 
     /**
-     * @return True If this object and the given object are in the same coordinate system
+     * Returns true If this object and the given object are in the same coordinate system
      */
     public boolean inSameCoordinateSystem(DrawingObject that)
     {

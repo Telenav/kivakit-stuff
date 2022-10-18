@@ -43,7 +43,7 @@ import static java.lang.Double.MAX_VALUE;
 public interface CoordinateSystem extends Named, Coordinated
 {
     /**
-     * @return This coordinate system
+     * Returns this coordinate system
      */
     @Override
     default CoordinateSystem coordinates()
@@ -52,7 +52,7 @@ public interface CoordinateSystem extends Named, Coordinated
     }
 
     /**
-     * @return The size of this coordinate system
+     * Returns the size of this coordinate system
      */
     default DrawingSize extent()
     {
@@ -60,7 +60,7 @@ public interface CoordinateSystem extends Named, Coordinated
     }
 
     /**
-     * @return The given height in the units of this coordinate system
+     * Returns the given height in the units of this coordinate system
      */
     default DrawingHeight height(double height)
     {
@@ -68,12 +68,12 @@ public interface CoordinateSystem extends Named, Coordinated
     }
 
     /**
-     * @return The width of this coordinate system in units
+     * Returns the width of this coordinate system in units
      */
     double height();
 
     /**
-     * @return True if this coordinate system is bounded
+     * Returns true if this coordinate system is bounded
      */
     default boolean isBounded()
     {
@@ -81,7 +81,7 @@ public interface CoordinateSystem extends Named, Coordinated
     }
 
     /**
-     * @return The given distance in the units of this coordinate system
+     * Returns the given distance in the units of this coordinate system
      */
     default DrawingLength length(double units)
     {
@@ -91,7 +91,7 @@ public interface CoordinateSystem extends Named, Coordinated
     DrawingPoint origin();
 
     /**
-     * @return The given Java 2D point as a {@link DrawingPoint}
+     * Returns the given Java 2D point as a {@link DrawingPoint}
      */
     default DrawingPoint point(Point2D point)
     {
@@ -99,7 +99,7 @@ public interface CoordinateSystem extends Named, Coordinated
     }
 
     /**
-     * @return The given x, y location as a {@link DrawingPoint} in this {@link CoordinateSystem}
+     * Returns the given x, y location as a {@link DrawingPoint} in this {@link CoordinateSystem}
      */
     default DrawingPoint point(double x, double y)
     {
@@ -107,7 +107,7 @@ public interface CoordinateSystem extends Named, Coordinated
     }
 
     /**
-     * @return The given x, y, width and height as a {@link DrawingRectangle} in this {@link CoordinateSystem}
+     * Returns the given x, y, width and height as a {@link DrawingRectangle} in this {@link CoordinateSystem}
      */
     default DrawingRectangle rectangle(double x, double y, double width, double height)
     {
@@ -115,7 +115,7 @@ public interface CoordinateSystem extends Named, Coordinated
     }
 
     /**
-     * @return The given size in the units of this coordinate system
+     * Returns the given size in the units of this coordinate system
      */
     default DrawingSize size(double width, double height)
     {
@@ -123,7 +123,7 @@ public interface CoordinateSystem extends Named, Coordinated
     }
 
     /**
-     * @return The given size in the units of this coordinate system
+     * Returns the given size in the units of this coordinate system
      */
     default DrawingSize size(DrawingWidth width, DrawingHeight height)
     {
@@ -131,7 +131,7 @@ public interface CoordinateSystem extends Named, Coordinated
     }
 
     /**
-     * @return The given {@link DrawingLength} converted from this coordinate system to the given coordinate system
+     * Returns the given {@link DrawingLength} converted from this coordinate system to the given coordinate system
      */
     default DrawingLength toCoordinates(Coordinated that, DrawingLength distance)
     {
@@ -139,12 +139,12 @@ public interface CoordinateSystem extends Named, Coordinated
     }
 
     /**
-     * @return The given {@link DrawingHeight} converted from this coordinate system to the given coordinate system
+     * Returns the given {@link DrawingHeight} converted from this coordinate system to the given coordinate system
      */
     DrawingHeight toCoordinates(Coordinated that, DrawingHeight height);
 
     /**
-     * @return The given {@link DrawingSize} converted from this coordinate system to the given coordinate system
+     * Returns the given {@link DrawingSize} converted from this coordinate system to the given coordinate system
      */
     default DrawingSize toCoordinates(Coordinated that, DrawingSize size)
     {
@@ -152,7 +152,7 @@ public interface CoordinateSystem extends Named, Coordinated
     }
 
     /**
-     * @return The given {@link DrawingRectangle} converted from this coordinate system to the given coordinate system
+     * Returns the given {@link DrawingRectangle} converted from this coordinate system to the given coordinate system
      */
     default DrawingRectangle toCoordinates(Coordinated that, DrawingRectangle rectangle)
     {
@@ -162,22 +162,22 @@ public interface CoordinateSystem extends Named, Coordinated
     }
 
     /**
-     * @return The given {@link DrawingWidth} converted from this coordinate system to the given coordinate system
+     * Returns the given {@link DrawingWidth} converted from this coordinate system to the given coordinate system
      */
     DrawingWidth toCoordinates(Coordinated coordinated, DrawingWidth width);
 
     /**
-     * @return The given {@link DrawingPoint} from this coordinate system to the given coordinate system
+     * Returns the given {@link DrawingPoint} from this coordinate system to the given coordinate system
      */
     DrawingPoint toCoordinates(Coordinated coordinated, DrawingPoint coordinate);
 
     /**
-     * @return The width of this coordinate system in units
+     * Returns the width of this coordinate system in units
      */
     double width();
 
     /**
-     * @return The given width in the units of this coordinate system
+     * Returns the given width in the units of this coordinate system
      */
     default DrawingWidth width(double width)
     {
@@ -185,12 +185,12 @@ public interface CoordinateSystem extends Named, Coordinated
     }
 
     /**
-     * @return The x coordinate of the origin in units
+     * Returns the x coordinate of the origin in units
      */
     double x();
 
     /**
-     * @return The y coordinate of the origin in units
+     * Returns the y coordinate of the origin in units
      */
     double y();
 }

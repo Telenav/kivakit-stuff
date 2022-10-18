@@ -102,7 +102,7 @@ public class Color
         @Override
         protected String onToString(Color value)
         {
-            return Align.right(Integer.toHexString(value.rgba()), 8, '0');
+            return Align.rightAlign(Integer.toHexString(value.rgba()), 8, '0');
         }
 
         @Override
@@ -224,12 +224,12 @@ public class Color
 
     public String asHexString()
     {
-        return "#" + Ints.toHex(rgb(), 6);
+        return "#" + Ints.intToHex(rgb(), 6);
     }
 
     public String asHexStringWithAlpha()
     {
-        return "#" + Ints.toHex(rgba(), 8);
+        return "#" + Ints.intToHex(rgba(), 8);
     }
 
     public int blue()

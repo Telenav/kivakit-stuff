@@ -103,7 +103,7 @@ public final class IntToByteMap extends PrimitiveMap implements PrimitiveScalarM
     }
 
     /**
-     * @return True if this map contains the given key
+     * Returns true if this map contains the given key
      */
     public boolean containsKey(int key)
     {
@@ -156,7 +156,7 @@ public final class IntToByteMap extends PrimitiveMap implements PrimitiveScalarM
     }
 
     /**
-     * @return The value for the given key. The returned value should be checked with {@link #isNull(int)} to determine
+     * Returns the value for the given key. The returned value should be checked with {@link #isNull(int)} to determine
      * if it represents null.
      */
     public byte get(int key)
@@ -210,7 +210,7 @@ public final class IntToByteMap extends PrimitiveMap implements PrimitiveScalarM
     }
 
     /**
-     * @return The keys in this map in an undefined order
+     * Returns the keys in this map in an undefined order
      */
     public IntIterator keys()
     {
@@ -347,7 +347,7 @@ public final class IntToByteMap extends PrimitiveMap implements PrimitiveScalarM
     }
 
     /**
-     * @return The values in this map in an undefined order
+     * Returns the values in this map in an undefined order
      */
     public ByteIterator values()
     {

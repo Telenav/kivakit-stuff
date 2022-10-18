@@ -22,13 +22,12 @@ import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.KryoSerializable;
 import com.esotericsoftware.kryo.io.Input;
 import com.esotericsoftware.kryo.io.Output;
-import com.telenav.kivakit.core.os.Console;
 import com.telenav.kivakit.core.string.StringConversions;
 import com.telenav.kivakit.primitive.collections.CompressibleCollection;
 import com.telenav.kivakit.primitive.collections.PrimitiveCollection;
 import com.telenav.kivakit.primitive.collections.array.PrimitiveArray;
-import com.telenav.kivakit.primitive.collections.list.ByteList;
 import com.telenav.kivakit.primitive.collections.internal.lexakai.DiagramPrimitiveArray;
+import com.telenav.kivakit.primitive.collections.list.ByteList;
 import com.telenav.lexakai.annotations.UmlClassDiagram;
 
 import java.util.Arrays;
@@ -147,7 +146,7 @@ public class ByteArray extends PrimitiveArray implements ByteList
     }
 
     /**
-     * @return The index of the cursor
+     * Returns the index of the cursor
      */
     @Override
     public int cursor()
@@ -173,7 +172,7 @@ public class ByteArray extends PrimitiveArray implements ByteList
     }
 
     /**
-     * @return The value at the given logical index.
+     * Returns the value at the given logical index.
      */
     @Override
     public byte get(int index)
@@ -185,7 +184,7 @@ public class ByteArray extends PrimitiveArray implements ByteList
     }
 
     /**
-     * @return The value at the given index as an unsigned value
+     * Returns the value at the given index as an unsigned value
      */
     public int getUnsigned(int index)
     {
@@ -241,7 +240,7 @@ public class ByteArray extends PrimitiveArray implements ByteList
     }
 
     /**
-     * @return The value at the given index or the null value if the index is out of bounds
+     * Returns the value at the given index or the null value if the index is out of bounds
      */
     @Override
     public byte safeGet(int index)
@@ -297,7 +296,7 @@ public class ByteArray extends PrimitiveArray implements ByteList
     }
 
     /**
-     * @return A read-only sub-array which shares underlying data with this array.
+     * Returns a read-only sub-array which shares underlying data with this array.
      */
     @Override
     public ByteArray sublist(int offset, int size)
@@ -384,10 +383,6 @@ public class ByteArray extends PrimitiveArray implements ByteList
     /** Resizes this dynamic array's capacity to the given size */
     private void resize(int size)
     {
-        if (size < size())
-        {
-            Console.println("hi");
-        }
         assert size >= size();
 
         // If we're writable and the size is increasing we can resize,

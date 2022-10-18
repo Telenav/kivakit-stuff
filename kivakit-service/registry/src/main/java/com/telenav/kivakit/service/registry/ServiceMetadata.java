@@ -19,7 +19,7 @@
 package com.telenav.kivakit.service.registry;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.telenav.kivakit.core.language.reflection.property.KivaKitIncludeProperty;
+import com.telenav.kivakit.core.language.reflection.property.IncludeProperty;
 import com.telenav.kivakit.core.version.Version;
 import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeMember;
 import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeType;
@@ -88,7 +88,7 @@ public class ServiceMetadata
         return this;
     }
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     public String description()
     {
         return description;

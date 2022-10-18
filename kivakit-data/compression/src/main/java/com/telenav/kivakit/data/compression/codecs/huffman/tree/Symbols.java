@@ -22,7 +22,7 @@ import com.telenav.kivakit.conversion.StringConverter;
 import com.telenav.kivakit.core.collections.list.ObjectList;
 import com.telenav.kivakit.core.collections.map.CountMap;
 import com.telenav.kivakit.core.messaging.Listener;
-import com.telenav.kivakit.core.string.Strings;
+import com.telenav.kivakit.core.string.Formatter;
 import com.telenav.kivakit.core.value.count.Count;
 import com.telenav.kivakit.core.value.count.Maximum;
 import com.telenav.kivakit.core.value.count.Minimum;
@@ -193,7 +193,7 @@ public class Symbols<Symbol>
     }
 
     /**
-     * @return The set of encoded symbols
+     * Returns the set of encoded symbols
      */
     public Set<CodedSymbol<Symbol>> encoded()
     {
@@ -201,7 +201,7 @@ public class Symbols<Symbol>
     }
 
     /**
-     * @return The escape symbol, if any
+     * Returns the escape symbol, if any
      */
     public CodedSymbol<Symbol> escape()
     {
@@ -209,7 +209,7 @@ public class Symbols<Symbol>
     }
 
     /**
-     * @return The number of symbols in this set
+     * Returns the number of symbols in this set
      */
     public int size()
     {
@@ -217,7 +217,7 @@ public class Symbols<Symbol>
     }
 
     /**
-     * @return List of symbol values
+     * Returns list of symbol values
      */
     public ObjectList<Symbol> symbols()
     {
@@ -235,8 +235,8 @@ public class Symbols<Symbol>
     @Override
     public String toString()
     {
-        return Strings.format("[Symbols escape = $, size = $]\n    $", escape(), size(),
-                ObjectList.objectList(encoded).join("\n    "));
+        return Formatter.format("[Symbols escape = $, size = $]\n    $", escape(), size(),
+                ObjectList.list(encoded).join("\n    "));
     }
 
     /**
@@ -257,7 +257,7 @@ public class Symbols<Symbol>
         while (true)
         {
             // and build a Huffman tree from the symbols
-            var tree = Tree.tree(symbols);
+            var tree = Tree.huffmanTree(symbols);
 
             // check the height of the tree,
             assert tree != null;
@@ -281,7 +281,7 @@ public class Symbols<Symbol>
     }
 
     /**
-     * @return A copy of the given symbols
+     * Returns a copy of the given symbols
      */
     private Symbols<Symbol> copy(Symbols<Symbol> that)
     {
@@ -292,7 +292,7 @@ public class Symbols<Symbol>
     }
 
     /**
-     * @return The least frequently occurring symbol removed from the given queue, but never the escape symbol
+     * Returns the least frequently occurring symbol removed from the given queue, but never the escape symbol
      */
     private CodedSymbol<Symbol> removeLeastFrequent(PriorityQueue<CodedSymbol<Symbol>> queue)
     {

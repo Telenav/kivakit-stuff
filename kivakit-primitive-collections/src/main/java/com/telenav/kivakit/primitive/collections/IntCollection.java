@@ -118,7 +118,7 @@ public interface IntCollection extends IntIterable, Sized, NamedObject
     }
 
     /**
-     * @return True if this collection contains the given value. Some collections may choose not to implement this
+     * Returns true if this collection contains the given value. Some collections may choose not to implement this
      * method if the search is too inefficient.
      */
     @SuppressWarnings("unused")
@@ -128,7 +128,7 @@ public interface IntCollection extends IntIterable, Sized, NamedObject
     }
 
     /**
-     * @return True if this collection contains all the values in the given collection
+     * Returns true if this collection contains all the values in the given collection
      */
     default boolean containsAll(IntCollection that)
     {
@@ -144,7 +144,7 @@ public interface IntCollection extends IntIterable, Sized, NamedObject
     }
 
     /**
-     * @return True if there is a null int defined for this collection
+     * Returns true if there is a null int defined for this collection
      */
     boolean hasNullInt();
 
@@ -154,12 +154,12 @@ public interface IntCollection extends IntIterable, Sized, NamedObject
     PrimitiveCollection hasNullInt(boolean has);
 
     /**
-     * @return True if the given value is the null value
+     * Returns true if the given value is the null value
      */
     boolean isNull(int value);
 
     /**
-     * @return The int being used to represent the null value
+     * Returns the int being used to represent the null value
      */
     int nullInt();
 

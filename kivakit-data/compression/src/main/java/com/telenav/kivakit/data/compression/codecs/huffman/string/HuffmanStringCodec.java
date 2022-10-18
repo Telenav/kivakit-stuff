@@ -61,7 +61,7 @@ public class HuffmanStringCodec implements StringCodec
     private static final Logger LOGGER = LoggerFactory.newLogger();
 
     /**
-     * @return A codec from the symbol frequencies in the given properties object
+     * Returns a codec from the symbol frequencies in the given properties object
      */
     public static HuffmanStringCodec stringCodec(PropertyMap frequencies)
     {
@@ -118,7 +118,7 @@ public class HuffmanStringCodec implements StringCodec
     }
 
     /**
-     * @return This symbols for this codec as a property map
+     * Returns this symbols for this codec as a property map
      */
     public PropertyMap asProperties()
     {

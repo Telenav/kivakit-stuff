@@ -53,7 +53,7 @@ import java.util.Iterator;
 public interface Codec<Symbol>
 {
     /**
-     * @return True if this codec can encode the given symbol and false if it must be escaped
+     * Returns true if this codec can encode the given symbol and false if it must be escaped
      */
     boolean canEncode(Symbol symbol);
 

@@ -109,7 +109,7 @@ public final class IntToIntMap extends PrimitiveMap implements PrimitiveScalarMa
     }
 
     /**
-     * @return True if this map contains the given key
+     * Returns true if this map contains the given key
      */
     public boolean containsKey(int key)
     {
@@ -162,7 +162,7 @@ public final class IntToIntMap extends PrimitiveMap implements PrimitiveScalarMa
     }
 
     /**
-     * @return The value for the given key. The returned value should be checked with {@link #isNull(int)} to determine
+     * Returns the value for the given key. The returned value should be checked with {@link #isNull(int)} to determine
      * if it represents null.
      */
     public int get(int key)
@@ -216,7 +216,7 @@ public final class IntToIntMap extends PrimitiveMap implements PrimitiveScalarMa
     }
 
     /**
-     * @return The keys in this map in an undefined order
+     * Returns the keys in this map in an undefined order
      */
     public IntIterator keys()
     {
@@ -353,7 +353,7 @@ public final class IntToIntMap extends PrimitiveMap implements PrimitiveScalarMa
     }
 
     /**
-     * @return The values in this map in an undefined order
+     * Returns the values in this map in an undefined order
      */
     public IntIterator values()
     {

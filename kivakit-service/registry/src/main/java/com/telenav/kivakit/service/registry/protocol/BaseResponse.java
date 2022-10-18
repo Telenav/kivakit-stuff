@@ -19,7 +19,7 @@
 package com.telenav.kivakit.service.registry.protocol;
 
 import com.telenav.kivakit.core.function.Result;
-import com.telenav.kivakit.core.language.reflection.property.KivaKitIncludeProperty;
+import com.telenav.kivakit.core.language.reflection.property.IncludeProperty;
 import com.telenav.kivakit.core.messaging.messages.status.Problem;
 import com.telenav.kivakit.core.version.Version;
 import com.telenav.kivakit.service.registry.ServiceRegistrySettings;
@@ -50,7 +50,7 @@ public abstract class BaseResponse<T>
         return this;
     }
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     public Problem problem()
     {
         return problem;
@@ -63,10 +63,10 @@ public abstract class BaseResponse<T>
         problem = (Problem) result.messages().findFirst(Problem.class);
     }
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     public Version version()
     {
-        return SettingsRegistry.settingsRegistryFor(this).requireSettings(ServiceRegistrySettings.class).version();
+        return SettingsRegistry.settingsFor(this).requireSettings(ServiceRegistrySettings.class).version();
     }
 
     protected abstract void value(T value);

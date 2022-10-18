@@ -109,7 +109,7 @@ public class CsvSchema extends BaseRepeater
     }
 
     /**
-     * @return The named column or null if no such column exists
+     * Returns the named column or null if no such column exists
      */
     public CsvColumn<?> columnForName(String name)
     {
@@ -117,7 +117,7 @@ public class CsvSchema extends BaseRepeater
     }
 
     /**
-     * @return True if this schema contains the given column
+     * Returns true if this schema contains the given column
      */
     public boolean contains(CsvColumn<?> column)
     {
@@ -125,7 +125,7 @@ public class CsvSchema extends BaseRepeater
     }
 
     /**
-     * @return The columns in this schema joined by commas
+     * Returns the columns in this schema joined by commas
      */
     @Override
     public String toString()

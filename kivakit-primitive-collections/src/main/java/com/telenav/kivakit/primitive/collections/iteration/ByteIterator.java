@@ -33,7 +33,7 @@ import com.telenav.lexakai.annotations.UmlClassDiagram;
 public interface ByteIterator extends PrimitiveIterator
 {
     /**
-     * @return True if there is a next value
+     * Returns true if there is a next value
      */
     @Override
     boolean hasNext();
@@ -50,13 +50,13 @@ public interface ByteIterator extends PrimitiveIterator
         var hashCode = 1;
         while (hasNext())
         {
-            hashCode = hashCode + Hash.hashCode(next());
+            hashCode = hashCode + Hash.hash(next());
         }
         return hashCode;
     }
 
     /**
-     * @return The next value in the sequence
+     * Returns the next value in the sequence
      */
     byte next();
 

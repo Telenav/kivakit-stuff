@@ -22,8 +22,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.telenav.kivakit.commandline.SwitchParser;
 import com.telenav.kivakit.commandline.SwitchParsers;
+import com.telenav.kivakit.core.collections.list.ObjectList;
 import com.telenav.kivakit.core.function.Result;
-import com.telenav.kivakit.core.language.reflection.property.KivaKitIncludeProperty;
+import com.telenav.kivakit.core.language.reflection.property.IncludeProperty;
 import com.telenav.kivakit.core.messaging.Listener;
 import com.telenav.kivakit.interfaces.naming.Named;
 import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeMember;
@@ -41,7 +42,6 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static com.telenav.kivakit.core.collections.list.ObjectList.objectList;
 import static com.telenav.kivakit.core.ensure.Ensure.ensure;
 import static com.telenav.kivakit.core.ensure.Ensure.unsupported;
 import static com.telenav.kivakit.service.registry.Scope.Type.CLUSTER;
@@ -76,7 +76,7 @@ public class Scope implements Named, Comparable<Scope>
 
     public static List<String> names(Result<Set<Service>> result)
     {
-        return objectList(scopes(result)
+        return ObjectList.list(scopes(result)
                 .stream()
                 .map(Scope::name)
                 .collect(Collectors.toSet()))
@@ -159,7 +159,7 @@ public class Scope implements Named, Comparable<Scope>
     {
     }
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     public ClusterIdentifier cluster()
     {
         return cluster;
@@ -191,7 +191,7 @@ public class Scope implements Named, Comparable<Scope>
     @JsonIgnore
     public boolean isCluster()
     {
-        return type == Type.CLUSTER;
+        return type == CLUSTER;
     }
 
     @JsonIgnore
@@ -203,7 +203,7 @@ public class Scope implements Named, Comparable<Scope>
     @JsonIgnore
     public boolean isNetwork()
     {
-        return type == Type.NETWORK;
+        return type == NETWORK;
     }
 
     @Override
@@ -231,7 +231,7 @@ public class Scope implements Named, Comparable<Scope>
         return name();
     }
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     public Type type()
     {
         return type;

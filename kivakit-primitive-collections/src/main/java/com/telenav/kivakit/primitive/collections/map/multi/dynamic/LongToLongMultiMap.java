@@ -76,7 +76,7 @@ public final class LongToLongMultiMap extends PrimitiveMultiMap implements
     }
 
     /**
-     * @return True if this map contains a list for the given key
+     * Returns true if this map contains a list for the given key
      */
     public boolean containsKey(long key)
     {
@@ -85,7 +85,7 @@ public final class LongToLongMultiMap extends PrimitiveMultiMap implements
     }
 
     /**
-     * @return An array of longs for the given key. This method is convenient in some cases, but it is less efficient
+     * Returns an array of longs for the given key. This method is convenient in some cases, but it is less efficient
      * than {@link #iterator(long)}.
      */
     @Override
@@ -119,7 +119,7 @@ public final class LongToLongMultiMap extends PrimitiveMultiMap implements
     }
 
     /**
-     * @return An iterator over the list of longs for the given key
+     * Returns an iterator over the list of longs for the given key
      */
     public LongIterator iterator(long key)
     {
@@ -132,7 +132,7 @@ public final class LongToLongMultiMap extends PrimitiveMultiMap implements
     }
 
     /**
-     * @return An {@link Iterable} over the keys in this map
+     * Returns an {@link Iterable} over the keys in this map
      */
     public LongIterator keys()
     {
@@ -238,7 +238,7 @@ public final class LongToLongMultiMap extends PrimitiveMultiMap implements
     }
 
     /**
-     * @return The number of entries in this map
+     * Returns the number of entries in this map
      */
     @Override
     public int size()

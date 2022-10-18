@@ -82,7 +82,7 @@ public final class IntToPackedArrayFixedMultiMap extends PrimitiveMultiMap imple
     }
 
     /**
-     * @return True if this map contains the given key
+     * Returns true if this map contains the given key
      */
     public boolean containsKey(int key)
     {
@@ -90,7 +90,7 @@ public final class IntToPackedArrayFixedMultiMap extends PrimitiveMultiMap imple
     }
 
     /**
-     * @return A long array for the given key
+     * Returns a long array for the given key
      */
     public LongArray get(int key)
     {
@@ -128,7 +128,7 @@ public final class IntToPackedArrayFixedMultiMap extends PrimitiveMultiMap imple
     }
 
     /**
-     * @return A long array for the given key
+     * Returns a long array for the given key
      */
     public LongArray getSigned(int key)
     {
@@ -184,7 +184,7 @@ public final class IntToPackedArrayFixedMultiMap extends PrimitiveMultiMap imple
     }
 
     /**
-     * @return An iterator over the keys in this map
+     * Returns an iterator over the keys in this map
      */
     public IntIterator keys()
     {

@@ -28,6 +28,7 @@ import java.util.List;
  * @author jonathanl (shibo)
  * @see StaxReader
  */
+@SuppressWarnings("unused")
 public class StaxPath extends StringPath
 {
     /**
@@ -56,7 +57,7 @@ public class StaxPath extends StringPath
     }
 
     /**
-     * @return True if this path is the given path, but not a path under the given path
+     * Returns true if this path is the given path, but not a path under the given path
      */
     public boolean isAt(StaxPath path)
     {
@@ -64,7 +65,7 @@ public class StaxPath extends StringPath
     }
 
     /**
-     * @return True if the this path is hierarchically "under" the given path. For example, if this path is a/b/c and
+     * Returns true if the this path is hierarchically "under" the given path. For example, if this path is a/b/c and
      * the given path is a/b/c or /a/b, this method would return true. However, if this path was a/b/c, and the given
      * path was /a/b/c/d, it would return false.
      */

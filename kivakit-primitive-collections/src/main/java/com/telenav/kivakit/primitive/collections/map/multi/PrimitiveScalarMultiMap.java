@@ -38,12 +38,12 @@ import java.util.List;
 public interface PrimitiveScalarMultiMap
 {
     /**
-     * @return A list of primitives for the given key, or null if there is none
+     * Returns a list of primitives for the given key, or null if there is none
      */
     PrimitiveList getPrimitiveList(long key);
 
     /**
-     * @return A list of primitives for the given key, or null if there is none
+     * Returns a list of primitives for the given key, or null if there is none
      */
     default PrimitiveList getSignedPrimitiveList(long key)
     {
@@ -51,7 +51,7 @@ public interface PrimitiveScalarMultiMap
     }
 
     /**
-     * @return True if the given key represents null
+     * Returns true if the given key represents null
      */
     boolean isScalarKeyNull(long key);
 

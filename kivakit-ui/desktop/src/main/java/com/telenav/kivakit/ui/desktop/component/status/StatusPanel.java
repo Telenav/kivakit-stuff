@@ -6,7 +6,7 @@ import com.telenav.kivakit.core.messaging.messages.status.Announcement;
 import com.telenav.kivakit.core.messaging.messages.status.Information;
 import com.telenav.kivakit.core.messaging.messages.status.Problem;
 import com.telenav.kivakit.core.messaging.messages.status.Warning;
-import com.telenav.kivakit.core.string.Strings;
+import com.telenav.kivakit.core.string.Formatter;
 import com.telenav.kivakit.core.time.Duration;
 import com.telenav.kivakit.core.vm.JavaVirtualMachineHealth;
 import com.telenav.kivakit.ui.desktop.component.health.HealthPanel;
@@ -77,7 +77,7 @@ public class StatusPanel extends JPanel implements
         var style = theme().styleMessage(message.getClass());
         if (message instanceof Problem)
         {
-            status(Duration.MAXIMUM, style, message.description());
+            status(Duration.FOREVER, style, message.description());
         }
         if (message instanceof Warning)
         {
@@ -97,7 +97,7 @@ public class StatusPanel extends JPanel implements
     public void status(Duration stayFor, Style color, String message, Object... arguments)
     {
         trace(message, arguments);
-        var formatted = Strings.format(message, arguments);
+        var formatted = Formatter.format(message, arguments);
         if (!status.getText().equals(formatted))
         {
             color.apply(status);
@@ -125,7 +125,7 @@ public class StatusPanel extends JPanel implements
 
     private void linger(Duration stayFor, String formatted, Timer timer)
     {
-        if (stayFor != null && !stayFor.equals(Duration.MAXIMUM))
+        if (stayFor != null && !stayFor.equals(Duration.FOREVER))
         {
             timer.schedule(new TimerTask()
             {

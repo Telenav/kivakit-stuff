@@ -91,7 +91,7 @@ public class CsvLine extends StringList implements
     }
 
     /**
-     * @return The value of the given column
+     * Returns the value of the given column
      */
     public <T> T get(CsvColumn<T> column)
     {
@@ -100,7 +100,7 @@ public class CsvLine extends StringList implements
     }
 
     /**
-     * @return The value of the given column
+     * Returns the value of the given column
      */
     public <T> T get(CsvColumn<T> column, StringConverter<T> converter)
     {
@@ -109,7 +109,7 @@ public class CsvLine extends StringList implements
     }
 
     /**
-     * @return The value of the given column
+     * Returns the value of the given column
      */
     public <T> ObjectList<T> get(CsvColumn<T> column, BaseStringConverter<T> converter)
     {
@@ -118,7 +118,7 @@ public class CsvLine extends StringList implements
     }
 
     /**
-     * @return The line number of this CSV line in the input, or -1 if the line was not read from an input source (if it
+     * Returns the line number of this CSV line in the input, or -1 if the line was not read from an input source (if it
      * was constructed to be written)
      */
     public int lineNumber()
@@ -127,7 +127,7 @@ public class CsvLine extends StringList implements
     }
 
     /**
-     * @return An object of the given type with its properties populated by {@link ObjectPopulator} using {@link
+     * Returns an object of the given type with its properties populated by {@link ObjectPopulator} using {@link
      * CsvPropertyFilter}. Properties of the object that correspond to {@link CsvColumn}s using KivaKit property naming
      * are retrieved with {@link PropertyValue#propertyValue(Property)} (see below) and set on the new object by reflection.
      * The result is an object corresponding to this line.
@@ -147,7 +147,7 @@ public class CsvLine extends StringList implements
     }
 
     /**
-     * @return The schema for this line
+     * Returns the schema for this line
      */
     public CsvSchema schema()
     {
@@ -179,7 +179,7 @@ public class CsvLine extends StringList implements
     }
 
     /**
-     * @return The unconverted string value for the given column
+     * Returns the unconverted string value for the given column
      */
     public String string(CsvColumn<?> column)
     {
@@ -226,7 +226,7 @@ public class CsvLine extends StringList implements
     }
 
     /**
-     * @return The separator used in this CSV line
+     * Returns the separator used in this CSV line
      */
     protected char delimiter()
     {

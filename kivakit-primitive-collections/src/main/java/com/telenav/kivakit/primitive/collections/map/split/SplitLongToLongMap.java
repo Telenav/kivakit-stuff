@@ -94,7 +94,7 @@ public final class SplitLongToLongMap extends SplitPrimitiveMap implements Primi
     }
 
     /**
-     * @return True if this map contains the given key
+     * Returns true if this map contains the given key
      */
     public boolean containsKey(long key)
     {
@@ -145,7 +145,7 @@ public final class SplitLongToLongMap extends SplitPrimitiveMap implements Primi
     }
 
     /**
-     * @return The value for the given key
+     * Returns the value for the given key
      */
     public long get(long key)
     {
@@ -181,7 +181,7 @@ public final class SplitLongToLongMap extends SplitPrimitiveMap implements Primi
     }
 
     /**
-     * @return The keys in this map in an undefined order
+     * Returns the keys in this map in an undefined order
      */
     public LongIterator keys()
     {
@@ -314,7 +314,7 @@ public final class SplitLongToLongMap extends SplitPrimitiveMap implements Primi
     }
 
     /**
-     * @return The values in this map in an undefined order
+     * Returns the values in this map in an undefined order
      */
     public LongIterator values()
     {
@@ -366,7 +366,7 @@ public final class SplitLongToLongMap extends SplitPrimitiveMap implements Primi
     }
 
     /**
-     * @return Gets the child map for the given key. If there is no map, one is created if create is true.
+     * Returns gets the child map for the given key. If there is no map, one is created if create is true.
      */
     private LongToLongMap child(long key, boolean create)
     {

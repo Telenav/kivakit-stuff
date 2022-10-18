@@ -52,12 +52,12 @@ public interface PackedPrimitiveArray
     PackedPrimitiveArray bits(BitCount bits, OverflowHandling overflow);
 
     /**
-     * @return The number of bits per element in this packed array
+     * Returns the number of bits per element in this packed array
      */
     BitCount bits();
 
     /**
-     * @return Directive on how to handle values too large for the bit-width of the array
+     * Returns directive on how to handle values too large for the bit-width of the array
      */
     OverflowHandling overflow();
 }

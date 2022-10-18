@@ -18,7 +18,7 @@
 
 package com.telenav.kivakit.primitive.collections.array.bits;
 
-import com.telenav.kivakit.core.string.Strings;
+import com.telenav.kivakit.core.string.Formatter;
 import com.telenav.kivakit.core.value.count.Count;
 import com.telenav.kivakit.interfaces.naming.Named;
 import com.telenav.kivakit.primitive.collections.array.PrimitiveArray;
@@ -60,7 +60,7 @@ public final class BitArray extends PrimitiveArray implements Named
     }
 
     /**
-     * @return The bit at the given index
+     * Returns the bit at the given index
      */
     public boolean bit(int index)
     {
@@ -69,7 +69,7 @@ public final class BitArray extends PrimitiveArray implements Named
     }
 
     /**
-     * @return The underlying bytes
+     * Returns the underlying bytes
      */
     public ByteList bytes()
     {
@@ -116,7 +116,7 @@ public final class BitArray extends PrimitiveArray implements Named
     }
 
     /**
-     * @return A reader that reads the bits in this bit array
+     * Returns a reader that reads the bits in this bit array
      */
     public BitReader reader()
     {
@@ -154,11 +154,11 @@ public final class BitArray extends PrimitiveArray implements Named
     @Override
     public String toString()
     {
-        return Strings.format("[BitArray name = '$', size = $, values = $]", name(), size(), toBitString());
+        return Formatter.format("[BitArray name = '$', size = $, values = $]", name(), size(), toBitString());
     }
 
     /**
-     * @return A writer that writes bits to this bit array
+     * Returns a writer that writes bits to this bit array
      */
     public BitWriter writer()
     {
@@ -171,7 +171,7 @@ public final class BitArray extends PrimitiveArray implements Named
                 try
                 {
                     super.close();
-                    size((int) super.cursor());
+                    size((int) cursor());
                 }
                 catch (Exception ignored)
                 {

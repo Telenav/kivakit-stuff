@@ -302,7 +302,7 @@ public final class SplitPackedArray extends PrimitiveSplitArray implements
     }
 
     /**
-     * @return The value at the given index or null if the index is out of bounds or the value at the given index is the
+     * Returns the value at the given index or null if the index is out of bounds or the value at the given index is the
      * null value
      */
     @Override
@@ -321,7 +321,7 @@ public final class SplitPackedArray extends PrimitiveSplitArray implements
     }
 
     /**
-     * @return The value at the given index or null if the index is out of bounds or the value at the given index is the
+     * Returns the value at the given index or null if the index is out of bounds or the value at the given index is the
      * null value
      */
     public boolean safeGetBoolean(int index)

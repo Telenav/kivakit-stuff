@@ -44,12 +44,12 @@ import static com.telenav.kivakit.core.ensure.Ensure.ensureNotNull;
 @LexakaiJavadoc(complete = true)
 public class CsvColumn<Type> extends Name
 {
-    public static <T> CsvColumn<T> of(String name)
+    public static <T> CsvColumn<T> csvColumn(String name)
     {
-        return CsvColumn.of(name, null);
+        return csvColumn(name, null);
     }
 
-    public static <T> CsvColumn<T> of(String name, StringConverter<T> converter)
+    public static <T> CsvColumn<T> csvColumn(String name, StringConverter<T> converter)
     {
         return new CsvColumn<>(name, converter);
     }
@@ -73,7 +73,7 @@ public class CsvColumn<Type> extends Name
     }
 
     /**
-     * @return The text for the given value in this column
+     * Returns the text for the given value in this column
      */
     public String asString(Type value, StringConverter<Type> converter)
     {
@@ -82,7 +82,7 @@ public class CsvColumn<Type> extends Name
     }
 
     /**
-     * @return The text for the given value in this column
+     * Returns the text for the given value in this column
      */
     public String asString(Type value)
     {
@@ -90,7 +90,7 @@ public class CsvColumn<Type> extends Name
     }
 
     /**
-     * @return The value of the given text if it is in this column
+     * Returns the value of the given text if it is in this column
      */
     public ObjectList<Type> asType(String text, BaseStringConverter<Type> converter)
     {
@@ -99,7 +99,7 @@ public class CsvColumn<Type> extends Name
     }
 
     /**
-     * @return The value of the given text if it is in this column
+     * Returns the value of the given text if it is in this column
      */
     public Type asType(String text, StringConverter<Type> converter)
     {
@@ -108,7 +108,7 @@ public class CsvColumn<Type> extends Name
     }
 
     /**
-     * @return The value of the given text if it is in this column
+     * Returns the value of the given text if it is in this column
      */
     public Type asType(String text)
     {
@@ -116,7 +116,7 @@ public class CsvColumn<Type> extends Name
     }
 
     /**
-     * @return The schema that defines this column
+     * Returns the schema that defines this column
      */
     public CsvSchema schema()
     {
@@ -124,7 +124,7 @@ public class CsvColumn<Type> extends Name
     }
 
     /**
-     * @return The index of this column in the schema that references it
+     * Returns the index of this column in the schema that references it
      */
     int index()
     {

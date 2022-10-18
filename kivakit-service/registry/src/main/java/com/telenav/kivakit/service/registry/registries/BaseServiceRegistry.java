@@ -20,7 +20,7 @@ package com.telenav.kivakit.service.registry.registries;
 
 import com.telenav.kivakit.application.Application;
 import com.telenav.kivakit.core.collections.set.MultiSet;
-import com.telenav.kivakit.core.collections.Sets;
+import com.telenav.kivakit.core.collections.set.ObjectSet;
 import com.telenav.kivakit.core.function.Result;
 import com.telenav.kivakit.core.function.ResultTrait;
 import com.telenav.kivakit.core.messaging.repeaters.BaseRepeater;
@@ -52,6 +52,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import static com.telenav.kivakit.core.collections.set.ObjectSet.set;
 import static com.telenav.kivakit.core.vm.ShutdownHook.Order.FIRST;
 
 /**
@@ -115,7 +116,7 @@ public abstract class BaseServiceRegistry extends BaseRepeater implements
     private MultiSet<Application.Identifier, Service> applicationToServices = new MultiSet<>();
 
     /** Lock accesses to data structures */
-    private transient final ReadWriteLock lock = new ReadWriteLock();
+    private final transient ReadWriteLock lock = new ReadWriteLock();
 
     /** Services by port */
     private Map<Port, Service> portToService = new HashMap<>();
@@ -142,7 +143,7 @@ public abstract class BaseServiceRegistry extends BaseRepeater implements
 
     private ServiceRegistryUpdater updater;
 
-    public BaseServiceRegistry()
+    protected BaseServiceRegistry()
     {
     }
 
@@ -191,7 +192,7 @@ public abstract class BaseServiceRegistry extends BaseRepeater implements
     }
 
     /**
-     * @return All applications that have registered a service with this registry
+     * Returns all applications that have registered a service with this registry
      */
     @Override
     @NotNull
@@ -201,7 +202,7 @@ public abstract class BaseServiceRegistry extends BaseRepeater implements
     }
 
     /**
-     * @return Any service running on the given port
+     * Returns any service running on the given port
      */
     @Override
     public @NotNull
@@ -259,7 +260,7 @@ public abstract class BaseServiceRegistry extends BaseRepeater implements
     }
 
     /**
-     * @return All services registered with this registry
+     * Returns all services registered with this registry
      */
     @Override
     public @NotNull
@@ -284,7 +285,7 @@ public abstract class BaseServiceRegistry extends BaseRepeater implements
     }
 
     /**
-     * @return A new service registry instance loaded from the {@link ServiceRegistryStore} or this registry itself if
+     * Returns a new service registry instance loaded from the {@link ServiceRegistryStore} or this registry itself if
      * there is no serialized data to load
      */
     public ServiceRegistry load()
@@ -330,7 +331,7 @@ public abstract class BaseServiceRegistry extends BaseRepeater implements
             running = true;
 
             // Save the service registry on shutdown
-            ShutdownHook.register("ServiceRegistryShutdown", FIRST, () -> store.save(this));
+            ShutdownHook.registerShutdownHook("ServiceRegistryShutdown", FIRST, () -> store.save(this));
 
             // and also every 30 seconds, in case we go down.
             KivaKitThread.repeat(this, "ServiceRegistrySaver", Duration.seconds(30).asFrequency(), () -> store.save(this));
@@ -452,7 +453,7 @@ public abstract class BaseServiceRegistry extends BaseRepeater implements
             return Result.success(bound);
         }
 
-        return result(Sets.empty());
+        return result(set());
     }
 
     @NotNull

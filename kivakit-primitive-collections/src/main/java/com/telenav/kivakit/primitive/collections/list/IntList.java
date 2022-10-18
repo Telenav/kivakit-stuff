@@ -80,7 +80,7 @@ public interface IntList extends IntCollection, PrimitiveList
     }
 
     /**
-     * @return Location of the read / write cursor
+     * Returns the location of the read / write cursor
      */
     int cursor();
 
@@ -90,7 +90,7 @@ public interface IntList extends IntCollection, PrimitiveList
     void cursor(int position);
 
     /**
-     * @return The first element in this list
+     * Returns the first element in this list
      */
     default int first()
     {
@@ -98,7 +98,7 @@ public interface IntList extends IntCollection, PrimitiveList
     }
 
     /**
-     * @return The int at the given index
+     * Returns the int at the given index
      */
     int get(int index);
 
@@ -148,7 +148,7 @@ public interface IntList extends IntCollection, PrimitiveList
     }
 
     /**
-     * @return The last element in this list
+     * Returns the last element in this list
      */
     default int last()
     {
@@ -156,7 +156,7 @@ public interface IntList extends IntCollection, PrimitiveList
     }
 
     /**
-     * @return The value at the given index, but if the index is out of range, null is returned.
+     * Returns the value at the given index, but if the index is out of range, null is returned.
      */
     int safeGet(int index);
 

@@ -69,7 +69,7 @@ public class HuffmanCharacterCodec extends BaseRepeater implements CharacterCode
     private static final Logger LOGGER = LoggerFactory.newLogger();
 
     /**
-     * @return A codec from the symbol frequencies in the given properties object
+     * Returns a codec from the symbol frequencies in the given properties object
      */
     public static HuffmanCharacterCodec characterCodec(Listener listener, PropertyMap frequencies, Character escape)
     {
@@ -105,13 +105,13 @@ public class HuffmanCharacterCodec extends BaseRepeater implements CharacterCode
         @Override
         protected String onToString(Character character)
         {
-            return "0x" + Ints.toHex(character, 2);
+            return "0x" + Ints.intToHex(character, 2);
         }
 
         @Override
         protected Character onToValue(String value)
         {
-            return (char) Long.parseLong(Strip.leading(value, "0x"), 16);
+            return (char) Long.parseLong(Strip.stripLeading(value, "0x"), 16);
         }
     }
 
@@ -132,7 +132,7 @@ public class HuffmanCharacterCodec extends BaseRepeater implements CharacterCode
     }
 
     /**
-     * @return This codec's symbols as a property map
+     * Returns this codec's symbols as a property map
      */
     public PropertyMap asProperties()
     {

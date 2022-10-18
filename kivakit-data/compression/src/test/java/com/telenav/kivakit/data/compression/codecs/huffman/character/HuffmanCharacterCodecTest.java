@@ -43,7 +43,7 @@ public class HuffmanCharacterCodecTest extends DataCompressionUnitTest
                 List.of("this is a test", "whatever", "banana", "cherry",
                         "apple", "coconut", "cookie", "whatever", "last"));
 
-        var progress = BroadcastingProgressReporter.createProgressReporter();
+        var progress = BroadcastingProgressReporter.progressReporter();
         for (int i = 0; i < 1_000_000_000; i++)
         {
             codec.decode(encoded, (ordinal, next) -> "last".equals(next) ? SymbolConsumer.Directive.STOP : SymbolConsumer.Directive.CONTINUE);
@@ -71,7 +71,7 @@ public class HuffmanCharacterCodecTest extends DataCompressionUnitTest
             ensure(symbols.size() >= 2 && symbols.size() <= 26, "Symbols.size: $", symbols.size());
             var codec = HuffmanCharacterCodec.characterCodec(symbols);
 
-            var progress = BroadcastingProgressReporter.createProgressReporter();
+            var progress = BroadcastingProgressReporter.progressReporter();
             _10.loop(() ->
             {
                 var random = randomStringSymbols(1, 64, 1, 32);

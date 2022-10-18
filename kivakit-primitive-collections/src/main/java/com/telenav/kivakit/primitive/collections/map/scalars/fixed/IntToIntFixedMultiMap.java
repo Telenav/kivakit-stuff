@@ -68,7 +68,7 @@ public final class IntToIntFixedMultiMap extends PrimitiveMultiMap implements
     }
 
     /**
-     * @return True if this map contains the given key
+     * Returns true if this map contains the given key
      */
     public boolean containsKey(int key)
     {
@@ -76,7 +76,7 @@ public final class IntToIntFixedMultiMap extends PrimitiveMultiMap implements
     }
 
     /**
-     * @return An int array for the given key
+     * Returns an int array for the given key
      */
     public IntArray get(int key)
     {
@@ -120,7 +120,7 @@ public final class IntToIntFixedMultiMap extends PrimitiveMultiMap implements
     }
 
     /**
-     * @return An iterator over the keys in this map
+     * Returns an iterator over the keys in this map
      */
     public IntIterator keys()
     {

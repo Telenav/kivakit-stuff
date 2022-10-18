@@ -59,7 +59,7 @@ import java.util.List;
 
 import static com.telenav.kivakit.core.ensure.Ensure.fail;
 import static com.telenav.kivakit.core.project.Project.resolveProject;
-import static com.telenav.kivakit.core.time.Duration.MAXIMUM;
+import static com.telenav.kivakit.core.time.Duration.FOREVER;
 import static com.telenav.kivakit.core.vm.ShutdownHook.Order.LAST;
 import static com.telenav.kivakit.serialization.core.SerializationSession.SessionType.CLIENT_SOCKET_SERIALIZATION_SESSION;
 import static com.telenav.kivakit.serialization.core.SerializationSession.SessionType.SERVER_SOCKET_SERIALIZATION_SESSION;
@@ -94,7 +94,7 @@ public class ServerLog extends BaseTextLog implements
 
     private final Lazy<Session> session = Lazy.lazy(() ->
     {
-        var application = Application.get();
+        var application = Application.application();
         if (application != null)
         {
             var session = new Session(application.name(), started, null);
@@ -106,7 +106,7 @@ public class ServerLog extends BaseTextLog implements
 
     public ServerLog()
     {
-        ShutdownHook.register("ServerLogShutdown", LAST, () -> SessionStore.get().save(session.get()));
+        ShutdownHook.registerShutdownHook("ServerLogShutdown", LAST, () -> SessionStore.get().save(session.get()));
 
         resolveProject(ServerLogProject.class).initialize();
 
@@ -136,7 +136,7 @@ public class ServerLog extends BaseTextLog implements
         {
             maximumEntries = Maximum.parseMaximum(Listener.consoleListener(), maximum);
         }
-        listen(BroadcastingProgressReporter.createProgressReporter(LOGGER, "bytes"));
+        listen(BroadcastingProgressReporter.progressReporter(LOGGER, "bytes"));
     }
 
     public ServerLog listen(ProgressReporter reporter)
@@ -181,7 +181,7 @@ public class ServerLog extends BaseTextLog implements
 
                         // and send the entry
                         serializer.write(new SerializableObject<>(entry, projectVersion()));
-                        serializer.flush(MAXIMUM);
+                        serializer.flush(FOREVER);
                     }
                     catch (Exception e)
                     {
@@ -262,13 +262,13 @@ public class ServerLog extends BaseTextLog implements
                     serializer.open(output, SERVER_SOCKET_SERIALIZATION_SESSION, kivakit().kivakitVersion());
 
                     // then send the client our application name
-                    serializer.write(new SerializableObject<>(Application.get().name(), Application.get().version()));
+                    serializer.write(new SerializableObject<>(Application.application().name(), Application.application().version()));
 
                     // and synchronize sessions with it
                     synchronizeSessions(serializer, reporter);
 
                     // then flush the serializer
-                    serializer.flush(MAXIMUM);
+                    serializer.flush(FOREVER);
 
                     // tell the progress reporter that the initialization process is done
                     reporter.end();
@@ -289,7 +289,7 @@ public class ServerLog extends BaseTextLog implements
                                 synchronized (serializationLock)
                                 {
                                     // sends a health report on the JVM
-                                    serializer.write(new SerializableObject<>(new JavaVirtualMachineHealth(), Application.get().version()));
+                                    serializer.write(new SerializableObject<>(new JavaVirtualMachineHealth(), Application.application().version()));
                                 }
                             }
                             catch (Exception e)

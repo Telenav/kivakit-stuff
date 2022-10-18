@@ -73,13 +73,13 @@ public interface ServiceRegistry extends ComponentMixin, ResultTrait
     Result<Boolean> addOrUpdate(Service service);
 
     /**
-     * @return All applications that have registered a service
+     * Returns all applications that have registered a service
      */
     @NotNull
     Result<Set<Application.Identifier>> discoverApplications(Scope scope);
 
     /**
-     * @return All the hosts that have registered services
+     * Returns all the hosts that have registered services
      */
     default Result<Set<Host>> discoverHosts()
     {
@@ -94,7 +94,7 @@ public interface ServiceRegistry extends ComponentMixin, ResultTrait
     }
 
     /**
-     * @return Any service running on the given port. Since a {@link Port} includes the host it is unique and only a
+     * Returns any service running on the given port. Since a {@link Port} includes the host it is unique and only a
      * single service is returned since only one service can be running on a specific port on a specific host.
      */
     @NotNull
@@ -113,7 +113,7 @@ public interface ServiceRegistry extends ComponentMixin, ResultTrait
     Result<Set<Service>> discoverServices(Application.Identifier application);
 
     /**
-     * @return All services registered with this registry
+     * Returns all services registered with this registry
      */
     @NotNull
     Result<Set<Service>> discoverServices();
@@ -125,7 +125,7 @@ public interface ServiceRegistry extends ComponentMixin, ResultTrait
     Result<Set<Service>> discoverServices(ServiceType type);
 
     /**
-     * @return True if this is a {@link LocalServiceRegistry}
+     * Returns true if this is a {@link LocalServiceRegistry}
      */
     default boolean isLocal()
     {
@@ -133,7 +133,7 @@ public interface ServiceRegistry extends ComponentMixin, ResultTrait
     }
 
     /**
-     * @return True if this is a {@link NetworkServiceRegistry}
+     * Returns true if this is a {@link NetworkServiceRegistry}
      */
     default boolean isNetwork()
     {

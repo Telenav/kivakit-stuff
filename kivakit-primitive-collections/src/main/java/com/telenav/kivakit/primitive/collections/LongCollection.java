@@ -121,7 +121,7 @@ public interface LongCollection extends LongIterable, Sized, NamedObject
     }
 
     /**
-     * @return True if this collection contains the given value. Some collections may choose not to implement this
+     * Returns true if this collection contains the given value. Some collections may choose not to implement this
      * method if the search is too inefficient.
      */
     default boolean contains(long value)
@@ -130,7 +130,7 @@ public interface LongCollection extends LongIterable, Sized, NamedObject
     }
 
     /**
-     * @return True if this collection contains all the values in the given collection
+     * Returns true if this collection contains all the values in the given collection
      */
     default boolean containsAll(LongCollection that)
     {
@@ -146,7 +146,7 @@ public interface LongCollection extends LongIterable, Sized, NamedObject
     }
 
     /**
-     * @return True if there is a null long defined for this collection
+     * Returns true if there is a null long defined for this collection
      */
     boolean hasNullLong();
 
@@ -156,12 +156,12 @@ public interface LongCollection extends LongIterable, Sized, NamedObject
     PrimitiveCollection hasNullLong(boolean has);
 
     /**
-     * @return True if the given value is the null value
+     * Returns true if the given value is the null value
      */
     boolean isNull(long value);
 
     /**
-     * @return The long being used to represent the null value
+     * Returns the long being used to represent the null value
      */
     long nullLong();
 

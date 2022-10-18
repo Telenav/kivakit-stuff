@@ -48,7 +48,7 @@ import com.telenav.lexakai.annotations.UmlClassDiagram;
 import com.telenav.lexakai.annotations.UmlNote;
 import com.telenav.lexakai.annotations.associations.UmlRelation;
 
-import static com.telenav.kivakit.core.collections.set.ObjectSet.objectSet;
+import static com.telenav.kivakit.core.collections.set.ObjectSet.set;
 import static com.telenav.kivakit.core.ensure.Ensure.ensureNotNull;
 
 /**
@@ -95,7 +95,7 @@ public class ServiceRegistryServer extends Server
             .optional()
             .build();
 
-    private transient final Lazy<ServiceRegistry> serviceRegistry = Lazy.lazy(() ->
+    private final transient Lazy<ServiceRegistry> serviceRegistry = Lazy.lazy(() ->
     {
         var registry = listenTo(get(SCOPE) == Scope.Type.NETWORK
                 ? new NetworkServiceRegistry()
@@ -162,19 +162,19 @@ public class ServiceRegistryServer extends Server
     }
 
     /**
-     * @return The resource folder containing static assets for reference by OpenAPI .yaml files and KivaKit OpenApi
+     * Returns the resource folder containing static assets for reference by OpenAPI .yaml files and KivaKit OpenApi
      * annotations. For example, a microservice might want to include an OAS .yaml file. If this method is not
      * overridden, the default folder will be the "assets" sub-package of the rest application's package.
      */
     protected ResourceFolder<?> openApiAssetsFolder()
     {
         var type = ensureNotNull(Type.typeForName("com.telenav.kivakit.web.swagger.SwaggerIndexJettyPlugin"));
-        return Package.parsePackage(this, type.type(), "assets/openapi");
+        return Package.parsePackage(this, type.asJavaType(), "assets/openapi");
     }
 
     @Override
     protected ObjectSet<SwitchParser<?>> switchParsers()
     {
-        return objectSet(PORT, SCOPE);
+        return set(PORT, SCOPE);
     }
 }

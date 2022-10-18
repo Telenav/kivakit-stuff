@@ -85,8 +85,8 @@ public class PackedArrayTest extends PrimitiveCollectionsUnitTest
                 var step = Math.max(1, (maximum / iterations) + 1);
                 for (var value = 0L; value < maximum && value >= 0; value += step)
                 {
-                    final Long left = values.safeGet(i - 1);
-                    final Long right = values.safeGet(i + 1);
+                    Long left = values.safeGet(i - 1);
+                    Long right = values.safeGet(i + 1);
                     values.set(i, value);
                     ensureEqual(value, values.get(i));
                     ensureEqual(left, values.safeGet(i - 1));

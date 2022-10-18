@@ -1,6 +1,6 @@
 package com.telenav.kivakit.ui.desktop.graphics.drawing;
 
-import com.telenav.kivakit.core.language.reflection.property.KivaKitIncludeProperty;
+import com.telenav.kivakit.core.language.reflection.property.IncludeProperty;
 import com.telenav.kivakit.core.value.level.Percent;
 import com.telenav.kivakit.ui.desktop.graphics.drawing.geometry.measurements.DrawingWidth;
 import com.telenav.kivakit.ui.desktop.graphics.drawing.geometry.objects.DrawingPoint;
@@ -22,7 +22,7 @@ import java.awt.Shape;
 public interface Drawable
 {
     /**
-     * @return A copy of this drawable
+     * Returns a copy of this drawable
      */
     Drawable copy();
 
@@ -34,12 +34,12 @@ public interface Drawable
     Shape draw(DrawingSurface surface);
 
     /**
-     * @return This drawable scaled by the given scaling factor
+     * Returns this drawable scaled by the given scaling factor
      */
     Drawable scaledBy(double scaleFactor);
 
     /**
-     * @return This drawable scaled by the given scaling factor
+     * Returns this drawable scaled by the given scaling factor
      */
     default Drawable scaledBy(Percent scaleFactor)
     {
@@ -47,14 +47,14 @@ public interface Drawable
     }
 
     /**
-     * @return The shape of this drawable (only once it has been drawn)
+     * Returns the shape of this drawable (only once it has been drawn)
      */
     Shape shape();
 
     /**
-     * @return The style of this drawable
+     * Returns the style of this drawable
      */
-    @KivaKitIncludeProperty
+    @IncludeProperty
     Style style();
 
     Drawable withColors(Style style);
@@ -72,13 +72,13 @@ public interface Drawable
     Drawable withFillStrokeWidth(DrawingWidth width);
 
     /**
-     * @return The location of the drawable
+     * Returns the location of the drawable
      */
-    @KivaKitIncludeProperty
+    @IncludeProperty
     DrawingPoint withLocation();
 
     /**
-     * @return A copy of this drawable at the given new location
+     * Returns a copy of this drawable at the given new location
      */
     Drawable withLocation(DrawingPoint at);
 

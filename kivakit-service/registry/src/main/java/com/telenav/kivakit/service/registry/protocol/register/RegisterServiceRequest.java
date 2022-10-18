@@ -20,7 +20,7 @@ package com.telenav.kivakit.service.registry.protocol.register;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.telenav.kivakit.core.string.ObjectFormatter;
-import com.telenav.kivakit.core.language.reflection.property.KivaKitIncludeProperty;
+import com.telenav.kivakit.core.language.reflection.property.IncludeProperty;
 import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeMember;
 import com.telenav.kivakit.microservice.protocols.rest.openapi.OpenApiIncludeType;
 import com.telenav.kivakit.service.registry.Service;
@@ -59,7 +59,7 @@ public class RegisterServiceRequest extends BaseRequest
         return ServiceRegistryProtocol.REGISTER_SERVICE;
     }
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     public Service service()
     {
         return service;

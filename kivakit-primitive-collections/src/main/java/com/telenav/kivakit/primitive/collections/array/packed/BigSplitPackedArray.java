@@ -221,7 +221,7 @@ public class BigSplitPackedArray extends PrimitiveSplitArray implements PackedPr
     }
 
     /**
-     * @return The value at the given index or null if the index is out of bounds or the value at the given index is the
+     * Returns the value at the given index or null if the index is out of bounds or the value at the given index is the
      * null value
      */
     public boolean safeGetBoolean(long index)
@@ -236,7 +236,7 @@ public class BigSplitPackedArray extends PrimitiveSplitArray implements PackedPr
     }
 
     /**
-     * @return The value at the given index or null if the index is out of bounds or the value at the given index is the
+     * Returns the value at the given index or null if the index is out of bounds or the value at the given index is the
      * null value
      */
     public int safeGetInt(long index)
@@ -245,7 +245,7 @@ public class BigSplitPackedArray extends PrimitiveSplitArray implements PackedPr
     }
 
     /**
-     * @return The value at the given index or null if the index is out of bounds or the value at the given index is the
+     * Returns the value at the given index or null if the index is out of bounds or the value at the given index is the
      * null value
      */
     public long safeGetLong(long index)

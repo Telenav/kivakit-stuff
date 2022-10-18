@@ -248,7 +248,7 @@ public final class SplitIntArray extends PrimitiveSplitArray implements IntList
     }
 
     /**
-     * @return The child array for the given index
+     * Returns the child array for the given index
      */
     private IntArray childArray(int childIndex)
     {

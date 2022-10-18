@@ -45,7 +45,7 @@ public interface ByteList extends
         CompressibleCollection
 {
     /**
-     * @return This byte list as an array (subclasses may provide a more efficient implementation)
+     * Returns this byte list as an array (subclasses may provide a more efficient implementation)
      */
     default byte[] asArray()
     {
@@ -98,7 +98,7 @@ public interface ByteList extends
     }
 
     /**
-     * @return Location of the read / write cursor
+     * Returns location of the read / write cursor
      */
     int cursor();
 
@@ -108,7 +108,7 @@ public interface ByteList extends
     void cursor(int position);
 
     /**
-     * @return The first element in this list
+     * Returns the first element in this list
      */
     default byte first()
     {
@@ -116,7 +116,7 @@ public interface ByteList extends
     }
 
     /**
-     * @return The byte at the given index
+     * Returns the byte at the given index
      */
     byte get(int index);
 
@@ -130,7 +130,7 @@ public interface ByteList extends
     }
 
     /**
-     * @return True if the cursor is not yet at the end of values
+     * Returns true if the cursor is not yet at the end of values
      */
     default boolean hasNext()
     {
@@ -174,7 +174,7 @@ public interface ByteList extends
     }
 
     /**
-     * @return The last element in this list
+     * Returns the last element in this list
      */
     default byte last()
     {
@@ -182,7 +182,7 @@ public interface ByteList extends
     }
 
     /**
-     * @return The next byte from the read cursor
+     * Returns the next byte from the read cursor
      */
     byte next();
 
@@ -213,7 +213,7 @@ public interface ByteList extends
     }
 
     /**
-     * @return An int value read in the format written by {@link #writeFlexibleChar(char)}
+     * Returns an int value read in the format written by {@link #writeFlexibleChar(char)}
      */
     default char readFlexibleChar()
     {
@@ -228,7 +228,7 @@ public interface ByteList extends
     }
 
     /**
-     * @return An int value read in the format written by {@link #writeFlexibleShort(short)}
+     * Returns an int value read in the format written by {@link #writeFlexibleShort(short)}
      */
     default short readFlexibleShort()
     {
@@ -251,7 +251,7 @@ public interface ByteList extends
     }
 
     /**
-     * @return The next byte masked to an unsigned value in an int
+     * Returns the next byte masked to an unsigned value in an int
      */
     default int readUnsigned()
     {
@@ -267,7 +267,7 @@ public interface ByteList extends
     }
 
     /**
-     * @return The value at the given index, but if the index is out of range, null is returned.
+     * Returns the value at the given index, but if the index is out of range, null is returned.
      */
     byte safeGet(int index);
 
@@ -278,7 +278,7 @@ public interface ByteList extends
     void set(int index, byte value);
 
     /**
-     * @return A subsection of this byte list
+     * Returns a subsection of this byte list
      */
     ByteList sublist(int offset, int size);
 

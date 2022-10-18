@@ -127,7 +127,7 @@ public class SearchList<T> extends KivaKitPanel
         {
             model.removeAllElements();
             String filter = searchField.getText();
-            if (Strings.isEmpty(filter))
+            if (Strings.isNullOrBlank(filter))
             {
                 model.addAll(elements);
             }

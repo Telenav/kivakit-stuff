@@ -29,12 +29,12 @@ import com.telenav.kivakit.interfaces.value.LongValued;
 public interface LongKeyed extends LongValued
 {
     /**
-     * @return The key
+     * Returns the key
      */
     long key();
 
     /**
-     * @return The key as a quantum
+     * Returns the key as a quantum
      */
     @Override
     default long longValue()

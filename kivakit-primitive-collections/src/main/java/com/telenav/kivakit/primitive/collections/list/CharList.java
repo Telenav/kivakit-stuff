@@ -80,7 +80,7 @@ public interface CharList extends CharCollection, PrimitiveList
     }
 
     /**
-     * @return The first element in this list
+     * Returns the first element in this list
      */
     default char first()
     {
@@ -88,7 +88,7 @@ public interface CharList extends CharCollection, PrimitiveList
     }
 
     /**
-     * @return The char at the given index
+     * Returns the char at the given index
      */
     char get(int index);
 
@@ -138,7 +138,7 @@ public interface CharList extends CharCollection, PrimitiveList
     }
 
     /**
-     * @return The last element in this list
+     * Returns the last element in this list
      */
     default char last()
     {
@@ -146,7 +146,7 @@ public interface CharList extends CharCollection, PrimitiveList
     }
 
     /**
-     * @return The value at the given index, but if the index is out of range, null is returned.
+     * Returns the value at the given index, but if the index is out of range, null is returned.
      */
     char safeGet(int index);
 

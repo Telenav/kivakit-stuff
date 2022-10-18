@@ -34,9 +34,8 @@ import com.telenav.kivakit.core.messaging.Debug;
 import com.telenav.kivakit.core.messaging.context.CallStack;
 import com.telenav.kivakit.core.messaging.messages.status.Warning;
 import com.telenav.kivakit.core.messaging.messages.status.activity.Step;
-import com.telenav.kivakit.core.os.Console;
+import com.telenav.kivakit.core.string.Formatter;
 import com.telenav.kivakit.core.string.Indent;
-import com.telenav.kivakit.core.string.Strings;
 import com.telenav.kivakit.core.time.Duration;
 import com.telenav.kivakit.core.time.Frequency;
 import com.telenav.kivakit.core.time.Time;
@@ -83,7 +82,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import static com.telenav.kivakit.core.messaging.context.CallStack.Matching.SUBCLASS;
 import static com.telenav.kivakit.core.messaging.context.CallStack.Proximity.IMMEDIATE;
 import static com.telenav.kivakit.core.project.Project.resolveProject;
-import static com.telenav.kivakit.core.time.Duration.MAXIMUM;
+import static com.telenav.kivakit.core.time.Duration.FOREVER;
 import static com.telenav.kivakit.core.time.Frequency.EVERY_5_SECONDS;
 import static com.telenav.kivakit.core.value.count.Bytes.bytes;
 import static com.telenav.kivakit.core.vm.ShutdownHook.Order.FIRST;
@@ -203,7 +202,7 @@ public abstract class PrimitiveCollection implements
 
     static
     {
-        ShutdownHook.register("PrimitiveCollectionShutdown", FIRST, () ->
+        ShutdownHook.registerShutdownHook("PrimitiveCollectionShutdown", FIRST, () ->
         {
             if (DEBUG.isDebugOn())
             {
@@ -216,13 +215,13 @@ public abstract class PrimitiveCollection implements
                 }
 
                 DEBUG.trace("Compressed collections by $:\n$", bytes(totalDelta), compressionRecords.bulleted());
-                LOGGER.flush(MAXIMUM);
+                LOGGER.flush(FOREVER);
             }
         });
     }
 
     /**
-     * @return The given size, increased (used only by collection implementations)
+     * Returns the given size, increased (used only by collection implementations)
      */
     public static int increasedCapacity(int size)
     {
@@ -305,7 +304,7 @@ public abstract class PrimitiveCollection implements
         @Override
         public String toString()
         {
-            return Strings.format("${double}% ($) - ${class} $ $ -> $",
+            return Formatter.format("${double}% ($) - ${class} $ $ -> $",
                     percentage(), delta(), type, objectName, before, after);
         }
 
@@ -544,7 +543,7 @@ public abstract class PrimitiveCollection implements
     }
 
     /**
-     * @return Size of collection as a {@link Count} object
+     * Returns size of collection as a {@link Count} object
      */
     @Override
     public final Count count()
@@ -672,7 +671,7 @@ public abstract class PrimitiveCollection implements
     }
 
     /**
-     * @return True if this set is empty
+     * Returns true if this set is empty
      */
     @Override
     public boolean isEmpty()
@@ -687,7 +686,7 @@ public abstract class PrimitiveCollection implements
     }
 
     /**
-     * @return True if the value is the "null" byte value
+     * Returns true if the value is the "null" byte value
      */
     public final boolean isNull(byte value)
     {
@@ -696,7 +695,7 @@ public abstract class PrimitiveCollection implements
     }
 
     /**
-     * @return True if the value is the "null" integer value
+     * Returns true if the value is the "null" integer value
      */
     public final boolean isNull(int value)
     {
@@ -705,7 +704,7 @@ public abstract class PrimitiveCollection implements
     }
 
     /**
-     * @return True if the value is the "null" long value
+     * Returns true if the value is the "null" long value
      */
     public final boolean isNull(long value)
     {
@@ -714,7 +713,7 @@ public abstract class PrimitiveCollection implements
     }
 
     /**
-     * @return True if the value is the "null" short value
+     * Returns true if the value is the "null" short value
      */
     public final boolean isNull(short value)
     {
@@ -723,7 +722,7 @@ public abstract class PrimitiveCollection implements
     }
 
     /**
-     * @return True if the value is the "null" char value
+     * Returns true if the value is the "null" char value
      */
     public final boolean isNull(char value)
     {
@@ -1240,10 +1239,6 @@ public abstract class PrimitiveCollection implements
     protected long[] newLongArray(Object who, String why, int size)
     {
         tracePrimitiveAllocation(size);
-        if (size > 1_000_000)
-        {
-            Console.println("hi");
-        }
         var values = new long[size];
         if (nullLong() != 0)
         {

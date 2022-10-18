@@ -1,7 +1,7 @@
 package com.telenav.kivakit.ui.desktop.component.panel.output;
 
+import com.telenav.kivakit.core.string.Formatter;
 import com.telenav.kivakit.core.string.StringConversions;
-import com.telenav.kivakit.core.string.Strings;
 import com.telenav.kivakit.ui.desktop.component.KivaKitPanel;
 import com.telenav.kivakit.ui.desktop.graphics.drawing.style.Fonts;
 import com.telenav.kivakit.ui.desktop.layout.Margins;
@@ -85,14 +85,14 @@ public class OutputPanel extends KivaKitPanel
     {
         SwingUtilities.invokeLater(() ->
         {
-            output.setText("<html><body>" + Strings.format(html, arguments) + "</body></html>");
+            output.setText("<html><body>" + Formatter.format(html, arguments) + "</body></html>");
             output.setCaretPosition(0);
         });
     }
 
     public void text(String text, Object... arguments)
     {
-        html(StringConversions.toHtmlString(Strings.format(text, arguments)));
+        html(StringConversions.toHtmlString(Formatter.format(text, arguments)));
     }
 
     private JScrollPane scrollPane()

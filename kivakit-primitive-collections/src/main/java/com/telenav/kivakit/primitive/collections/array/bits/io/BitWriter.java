@@ -62,7 +62,7 @@ public interface BitWriter extends AutoCloseable
     }
 
     /**
-     * @return The current position in bits
+     * Returns the current position in bits
      */
     long cursor();
 
@@ -83,7 +83,7 @@ public interface BitWriter extends AutoCloseable
     }
 
     /**
-     * @return True if writing the given bit caused a byte to be written
+     * Returns true if writing the given bit caused a byte to be written
      */
     boolean writeBit(boolean bit);
 

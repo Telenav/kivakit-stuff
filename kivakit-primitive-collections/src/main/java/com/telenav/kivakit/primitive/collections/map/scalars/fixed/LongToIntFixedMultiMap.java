@@ -65,7 +65,7 @@ public final class LongToIntFixedMultiMap extends PrimitiveMultiMap implements P
     }
 
     /**
-     * @return True if this map contains the given key
+     * Returns true if this map contains the given key
      */
     public boolean containsKey(long key)
     {
@@ -73,7 +73,7 @@ public final class LongToIntFixedMultiMap extends PrimitiveMultiMap implements P
     }
 
     /**
-     * @return An int array for the given key
+     * Returns an int array for the given key
      */
     public IntArray get(long key)
     {
@@ -111,7 +111,7 @@ public final class LongToIntFixedMultiMap extends PrimitiveMultiMap implements P
     }
 
     /**
-     * @return An iterator over the keys in this map
+     * Returns an iterator over the keys in this map
      */
     public LongIterator keys()
     {

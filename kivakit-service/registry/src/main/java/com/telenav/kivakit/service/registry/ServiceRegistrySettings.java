@@ -18,12 +18,12 @@
 
 package com.telenav.kivakit.service.registry;
 
-import com.telenav.kivakit.conversion.core.language.object.KivaKitConverted;
+import com.telenav.kivakit.conversion.core.language.object.ConvertedProperty;
 import com.telenav.kivakit.conversion.core.language.primitive.IntegerConverter;
 import com.telenav.kivakit.conversion.core.time.DurationConverter;
 import com.telenav.kivakit.conversion.core.time.FrequencyConverter;
 import com.telenav.kivakit.conversion.core.value.VersionConverter;
-import com.telenav.kivakit.core.language.reflection.property.KivaKitIncludeProperty;
+import com.telenav.kivakit.core.language.reflection.property.IncludeProperty;
 import com.telenav.kivakit.core.messaging.Listener;
 import com.telenav.kivakit.core.string.ObjectFormatter;
 import com.telenav.kivakit.core.time.Duration;
@@ -105,14 +105,14 @@ public class ServiceRegistrySettings
         return port(loopback());
     }
 
-    @KivaKitConverted(IntegerConverter.class)
+    @ConvertedProperty(IntegerConverter.class)
     public ServiceRegistrySettings localServiceRegistryPort(int localServiceRegistryPort)
     {
         this.localServiceRegistryPort = localServiceRegistryPort;
         return this;
     }
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     public int localServiceRegistryPort()
     {
         return localServiceRegistryPort;
@@ -140,78 +140,78 @@ public class ServiceRegistrySettings
         return networkServiceRegistryPort();
     }
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     public Port networkServiceRegistryPort()
     {
         return networkServiceRegistryPort;
     }
 
-    @KivaKitConverted(Port.Converter.class)
+    @ConvertedProperty(Port.Converter.class)
     public ServiceRegistrySettings networkServiceRegistryPort(Port networkServiceRegistryPort)
     {
         this.networkServiceRegistryPort = networkServiceRegistryPort;
         return this;
     }
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     public Duration portReservationExpirationTime()
     {
         return portReservationExpirationTime;
     }
 
-    @KivaKitConverted(DurationConverter.class)
+    @ConvertedProperty(DurationConverter.class)
     public ServiceRegistrySettings portReservationExpirationTime(Duration portReservationExpirationTime)
     {
         this.portReservationExpirationTime = portReservationExpirationTime;
         return this;
     }
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     public String restApiPath()
     {
         return restApiPath;
     }
 
-    @KivaKitConverted
+    @ConvertedProperty
     public ServiceRegistrySettings restApiPath(String restApiPath)
     {
         this.restApiPath = restApiPath;
         return this;
     }
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     public Frequency serviceLeaseRenewalFrequency()
     {
         return serviceLeaseRenewalFrequency;
     }
 
-    @KivaKitConverted(FrequencyConverter.class)
+    @ConvertedProperty(FrequencyConverter.class)
     public ServiceRegistrySettings serviceLeaseRenewalFrequency(Frequency serviceRenewalFrequency)
     {
         serviceLeaseRenewalFrequency = serviceRenewalFrequency;
         return this;
     }
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     public Duration serviceRegistrationExpirationTime()
     {
         return serviceRegistrationExpirationTime;
     }
 
-    @KivaKitConverted(DurationConverter.class)
+    @ConvertedProperty(DurationConverter.class)
     public ServiceRegistrySettings serviceRegistrationExpirationTime(Duration registrationExpirationTime)
     {
         serviceRegistrationExpirationTime = registrationExpirationTime;
         return this;
     }
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     public Duration serviceRegistryStoreExpirationTime()
     {
         return serviceRegistryStoreExpirationTime;
     }
 
-    @KivaKitConverted(DurationConverter.class)
+    @ConvertedProperty(DurationConverter.class)
     public ServiceRegistrySettings serviceRegistryStoreExpirationTime(Duration serviceRegistryStoreExpirationTime)
     {
         this.serviceRegistryStoreExpirationTime = serviceRegistryStoreExpirationTime;
@@ -224,13 +224,13 @@ public class ServiceRegistrySettings
         return new ObjectFormatter(this).toString();
     }
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     public Version version()
     {
         return version;
     }
 
-    @KivaKitConverted(VersionConverter.class)
+    @ConvertedProperty(VersionConverter.class)
     public void version(Version version)
     {
         this.version = version;

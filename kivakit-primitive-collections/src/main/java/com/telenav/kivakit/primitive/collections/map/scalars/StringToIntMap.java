@@ -93,7 +93,7 @@ public final class StringToIntMap extends PrimitiveMap
     }
 
     /**
-     * @return True if this map contains the given key
+     * Returns true if this map contains the given key
      */
     public boolean containsKey(String key)
     {
@@ -133,7 +133,7 @@ public final class StringToIntMap extends PrimitiveMap
     }
 
     /**
-     * @return The value for the given key. The returned value should be checked with {@link #isNull(int)} to determine
+     * Returns the value for the given key. The returned value should be checked with {@link #isNull(int)} to determine
      * if it represents a null value.
      */
     public int get(String key)
@@ -159,7 +159,7 @@ public final class StringToIntMap extends PrimitiveMap
     }
 
     /**
-     * @return The keys in this map
+     * Returns the keys in this map
      */
     public Iterator<String> keys()
     {
@@ -279,7 +279,7 @@ public final class StringToIntMap extends PrimitiveMap
     }
 
     /**
-     * @return Iterator over the values in this map
+     * Returns iterator over the values in this map
      */
     public IntIterator values()
     {

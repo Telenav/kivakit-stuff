@@ -112,7 +112,7 @@ public class LocalServiceRegistry extends BaseServiceRegistry
     }
 
     /**
-     * @return The next available port on the local host
+     * Returns the next available port on the local host
      */
     private Port nextPort()
     {

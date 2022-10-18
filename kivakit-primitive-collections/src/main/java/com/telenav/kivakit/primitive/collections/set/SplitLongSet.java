@@ -105,7 +105,7 @@ public final class SplitLongSet extends PrimitiveSet implements LongIterable
     }
 
     /**
-     * @return True if this set contains the value
+     * Returns true if this set contains the value
      */
     @Override
     public boolean contains(long value)
@@ -232,7 +232,7 @@ public final class SplitLongSet extends PrimitiveSet implements LongIterable
     }
 
     /**
-     * @return The values in this map in an undefined order
+     * Returns the values in this map in an undefined order
      */
     public LongIterator values()
     {
@@ -294,7 +294,7 @@ public final class SplitLongSet extends PrimitiveSet implements LongIterable
     }
 
     /**
-     * @return The sub-map for the given value
+     * Returns the sub-map for the given value
      */
     private LongSet set(long value)
     {

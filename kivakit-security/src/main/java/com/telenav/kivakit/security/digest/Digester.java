@@ -39,7 +39,7 @@ public interface Digester
     byte[] digest(byte[] value);
 
     /**
-     * @return A message digest of the given string
+     * Returns a message digest of the given string
      */
     default byte[] digest(String value)
     {

@@ -18,8 +18,8 @@
 
 package com.telenav.kivakit.data.compression.codecs.huffman.tree;
 
+import com.telenav.kivakit.core.string.Formatter;
 import com.telenav.kivakit.core.string.StringConversions;
-import com.telenav.kivakit.core.string.Strings;
 import com.telenav.kivakit.core.value.count.Count;
 
 /**
@@ -106,7 +106,7 @@ public class CodedSymbol<Symbol>
     @Override
     public String toString()
     {
-        return Strings.format("[Symbol value = '$', frequency = $, code = $]", StringConversions.toString(symbol), frequency, code);
+        return Formatter.format("[Symbol value = '$', frequency = $, code = $]", StringConversions.toHumanizedString(symbol), frequency, code);
     }
 
     public Symbol value()

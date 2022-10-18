@@ -191,7 +191,7 @@ public final class LongArray extends PrimitiveArray implements LongList
     }
 
     /**
-     * @return The index of the add cursor
+     * Returns the index of the add cursor
      */
     @Override
     public int cursor()
@@ -217,7 +217,7 @@ public final class LongArray extends PrimitiveArray implements LongList
     }
 
     /**
-     * @return The value at the given logical index.
+     * Returns the value at the given logical index.
      */
     @Override
     public long get(int index)
@@ -273,7 +273,7 @@ public final class LongArray extends PrimitiveArray implements LongList
     }
 
     /**
-     * @return The value at the given index or the null value if the index is out of bounds
+     * Returns the value at the given index or the null value if the index is out of bounds
      */
     @Override
     public long safeGet(int index)
@@ -349,7 +349,7 @@ public final class LongArray extends PrimitiveArray implements LongList
     }
 
     /**
-     * @return A read-only sub-array which shares underlying data with this array.
+     * Returns a read-only sub-array which shares underlying data with this array.
      */
     public LongArray subArray(int index, int size)
     {

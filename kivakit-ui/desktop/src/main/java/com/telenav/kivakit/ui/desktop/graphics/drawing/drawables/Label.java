@@ -66,7 +66,7 @@ public class Label extends Box
                 .textSize(style(), text)
                 .plus(margin * 2, margin * 2);
 
-        var shape = super.draw(surface, size);
+        var shape = draw(surface, size);
 
         surface.drawText(style(), withLocation().plus(margin, margin), text);
         return shape;

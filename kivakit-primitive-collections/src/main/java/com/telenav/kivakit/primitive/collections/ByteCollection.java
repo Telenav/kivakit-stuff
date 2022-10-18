@@ -121,7 +121,7 @@ public interface ByteCollection extends
     }
 
     /**
-     * @return True if this collection contains the given value. Some collections may choose not to implement this
+     * Returns true if this collection contains the given value. Some collections may choose not to implement this
      * method if the search is too inefficient.
      */
     default boolean contains(byte value)
@@ -130,7 +130,7 @@ public interface ByteCollection extends
     }
 
     /**
-     * @return True if this collection contains all the values in the given collection
+     * Returns true if this collection contains all the values in the given collection
      */
     default boolean containsAll(ByteCollection that)
     {
@@ -146,7 +146,7 @@ public interface ByteCollection extends
     }
 
     /**
-     * @return True if there is a null byte defined for this collection
+     * Returns true if there is a null byte defined for this collection
      */
     boolean hasNullByte();
 
@@ -156,12 +156,12 @@ public interface ByteCollection extends
     PrimitiveCollection hasNullByte(boolean has);
 
     /**
-     * @return True if the given value is the null value
+     * Returns true if the given value is the null value
      */
     boolean isNull(byte value);
 
     /**
-     * @return The byte being used to represent the null value
+     * Returns the byte being used to represent the null value
      */
     byte nullByte();
 

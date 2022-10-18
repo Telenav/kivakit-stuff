@@ -24,7 +24,7 @@ import com.telenav.kivakit.core.messaging.Debug;
 import com.telenav.kivakit.core.string.CaseFormat;
 import com.telenav.kivakit.core.vm.Properties;
 import com.telenav.kivakit.filesystem.File;
-import com.telenav.kivakit.filesystem.Folder;
+import com.telenav.kivakit.filesystem.Folders;
 import com.telenav.kivakit.resource.serialization.SerializableObject;
 import com.telenav.kivakit.serialization.kryo.KryoSerializationSession;
 import com.telenav.kivakit.serialization.kryo.types.KivaKitCoreKryoTypes;
@@ -37,7 +37,7 @@ import com.telenav.lexakai.annotations.UmlClassDiagram;
 import com.telenav.lexakai.annotations.associations.UmlRelation;
 import com.telenav.lexakai.annotations.visibility.UmlNotPublicApi;
 
-import static com.telenav.kivakit.resource.Extension.TMP;
+import static com.telenav.kivakit.resource.Extension.TEMPORARY;
 import static com.telenav.kivakit.serialization.core.SerializationSession.SessionType.RESOURCE_SERIALIZATION_SESSION;
 
 /**
@@ -87,7 +87,7 @@ public class ServiceRegistryStore extends BaseComponent
                         {
                             // then unregister the loaded class with the Debug class so the debug flag
                             // is re-considered for the newly loaded instance
-                            Debug.unregister(object.object().getClass());
+                            Debug.unregisterDebug(object.object().getClass());
 
                             // and add the listener to the registry.
                             trace("Loaded service registry");
@@ -117,7 +117,7 @@ public class ServiceRegistryStore extends BaseComponent
     {
         if (Booleans.isTrue(Properties.systemPropertyOrEnvironmentVariable("KIVAKIT_SAVE_REGISTRY", "true")))
         {
-            var file = file(registry.getClass()).withExtension(TMP);
+            var file = file(registry.getClass()).withExtension(TEMPORARY);
             trace("Saving service registry to $", file.messageSource());
             if (file.delete())
             {
@@ -140,7 +140,7 @@ public class ServiceRegistryStore extends BaseComponent
 
     private File file(Class<? extends ServiceRegistry> type)
     {
-        return Folder.kivakitCache()
+        return Folders.kivakitCacheFolder()
                 .folder("service-registry")
                 .mkdirs()
                 .file(CaseFormat.camelCaseToHyphenated(type.getSimpleName()) + ".kryo");

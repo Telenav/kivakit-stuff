@@ -32,7 +32,7 @@ import com.telenav.lexakai.annotations.UmlClassDiagram;
 public interface IntIterable
 {
     /**
-     * @return A new iterator
+     * Returns a new iterator
      */
     IntIterator iterator();
 }

@@ -31,7 +31,7 @@ import com.telenav.kivakit.ui.desktop.graphics.image.ImageResource;
 import java.awt.Taskbar;
 
 import static com.telenav.kivakit.commandline.SwitchParsers.maximumSwitchParser;
-import static com.telenav.kivakit.core.collections.set.ObjectSet.objectSet;
+import static com.telenav.kivakit.core.collections.set.ObjectSet.set;
 
 /**
  * Application to view remote {@link ServerLog}s.
@@ -75,6 +75,6 @@ public class LogViewerApplication extends Application
     @Override
     protected ObjectSet<SwitchParser<?>> switchParsers()
     {
-        return objectSet(MAXIMUM_ENTRIES, QUIET);
+        return set(MAXIMUM_ENTRIES, QUIET);
     }
 }

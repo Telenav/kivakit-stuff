@@ -21,20 +21,22 @@ package com.telenav.kivakit.data.formats.csv;
 import com.telenav.kivakit.conversion.core.language.primitive.DoubleConverter;
 import com.telenav.kivakit.conversion.core.language.primitive.IntegerConverter;
 import com.telenav.kivakit.core.progress.ProgressReporter;
-import com.telenav.kivakit.testing.UnitTest;
 import com.telenav.kivakit.resource.packages.PackageTrait;
+import com.telenav.kivakit.testing.UnitTest;
 import org.junit.Test;
+
+import static com.telenav.kivakit.data.formats.csv.CsvColumn.csvColumn;
 
 public class UnquotedCsvReaderTest extends UnitTest implements PackageTrait
 {
     @Test
     public void test()
     {
-        var year = CsvColumn.of("year", new IntegerConverter(this));
-        var make = CsvColumn.of("make");
-        var model = CsvColumn.of("model");
-        var description = CsvColumn.of("description");
-        var price = CsvColumn.of("price", new DoubleConverter(this));
+        var year = csvColumn("year", new IntegerConverter(this));
+        var make = csvColumn("make");
+        var model = csvColumn("model");
+        var description = csvColumn("description");
+        var price = csvColumn("price", new DoubleConverter(this));
         var schema = new CsvSchema(year, make, model, description, price);
 
         var resource = packageResource("SampleUnquotedCsv.csv");

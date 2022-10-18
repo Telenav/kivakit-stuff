@@ -27,7 +27,7 @@ package com.telenav.kivakit.ui.desktop.graphics.drawing;
 public interface Coordinated
 {
     /**
-     * @return The coordinate system for this object
+     * Returns the coordinate system for this object
      */
     CoordinateSystem coordinates();
 }

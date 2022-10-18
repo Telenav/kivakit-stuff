@@ -29,7 +29,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.telenav.kivakit.core.collections.Lists.arrayList;
+import static com.telenav.kivakit.core.collections.Lists.newArrayList;
 import static com.telenav.kivakit.core.value.count.Count._10;
 import static com.telenav.kivakit.core.value.count.Count._100;
 import static com.telenav.kivakit.core.value.count.Count._1024;
@@ -80,10 +80,10 @@ public class HuffmanStringListCodecTest extends DataCompressionUnitTest
 
         var codec = new HuffmanStringListCodec(stringCodec, characterCodec);
 
-        test(codec, arrayList("ohkh", "m", "ohkh", "m", "gxafxac", "ohkh", "gxafxac",
+        test(codec, newArrayList("ohkh", "m", "ohkh", "m", "gxafxac", "ohkh", "gxafxac",
                 "m", "m", "gxafxac", "ohkh", "m", "gxafxac", "gxafxac", "gxafxac", "ohkh", "m", "m", "m"));
 
-        test(codec, arrayList("ohkh"));
+        test(codec, newArrayList("ohkh"));
     }
 
     @Test
@@ -93,9 +93,9 @@ public class HuffmanStringListCodecTest extends DataCompressionUnitTest
         var characterCodec = characterCodec(this, properties("character.codec"), ESCAPE);
         var codec = new HuffmanStringListCodec(stringCodec, characterCodec);
 
-        test(codec, arrayList("bicycle", "barrier", "highway", "banana"));
-        test(codec, arrayList("oneway", "turkey", "foot", "access", "footway"));
-        test(codec, arrayList("gorilla", "amenity", "footway", "monkey", "maxspeed", "footway"));
+        test(codec, newArrayList("bicycle", "barrier", "highway", "banana"));
+        test(codec, newArrayList("oneway", "turkey", "foot", "access", "footway"));
+        test(codec, newArrayList("gorilla", "amenity", "footway", "monkey", "maxspeed", "footway"));
     }
 
     @Test

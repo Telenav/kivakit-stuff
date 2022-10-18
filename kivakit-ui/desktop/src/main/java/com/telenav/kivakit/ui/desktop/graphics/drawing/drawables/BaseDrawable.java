@@ -19,7 +19,7 @@
 package com.telenav.kivakit.ui.desktop.graphics.drawing.drawables;
 
 import com.telenav.kivakit.core.string.ObjectFormatter;
-import com.telenav.kivakit.core.language.reflection.property.KivaKitIncludeProperty;
+import com.telenav.kivakit.core.language.reflection.property.IncludeProperty;
 import com.telenav.kivakit.core.value.level.Percent;
 import com.telenav.kivakit.ui.desktop.graphics.drawing.Drawable;
 import com.telenav.kivakit.ui.desktop.graphics.drawing.DrawingSurface;
@@ -52,7 +52,7 @@ public abstract class BaseDrawable implements Drawable
 
     private Shape shape;
 
-    public BaseDrawable(Style style, DrawingPoint at)
+    protected BaseDrawable(Style style, DrawingPoint at)
     {
         this(style);
         this.at = at;
@@ -89,7 +89,7 @@ public abstract class BaseDrawable implements Drawable
     }
 
     @Override
-    @KivaKitIncludeProperty
+    @IncludeProperty
     public Style style()
     {
         return style;

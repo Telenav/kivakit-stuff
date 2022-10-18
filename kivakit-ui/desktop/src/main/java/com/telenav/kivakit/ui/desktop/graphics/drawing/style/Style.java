@@ -22,7 +22,7 @@
 package com.telenav.kivakit.ui.desktop.graphics.drawing.style;
 
 import com.telenav.kivakit.core.string.ObjectFormatter;
-import com.telenav.kivakit.core.language.reflection.property.KivaKitIncludeProperty;
+import com.telenav.kivakit.core.language.reflection.property.IncludeProperty;
 import com.telenav.kivakit.core.value.level.Percent;
 import com.telenav.kivakit.ui.desktop.graphics.drawing.surfaces.java2d.Java2dShapes;
 import org.jetbrains.annotations.NotNull;
@@ -63,7 +63,7 @@ import static com.telenav.kivakit.ui.desktop.theme.KivaKitColors.TRANSPARENT;
 public class Style
 {
     /**
-     * @return A style where all colors are transparent
+     * Returns a style where all colors are transparent
      */
     public static Style create()
     {
@@ -164,7 +164,7 @@ public class Style
 
     public Style darkened()
     {
-        return darkened(Percent.percent(10));
+        return darkened(percent(10));
     }
 
     public Style darkened(Percent percent)
@@ -174,25 +174,25 @@ public class Style
                 .withTextColor(textColor.darker(percent));
     }
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     public Color drawColor()
     {
         return drawColor;
     }
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     public Stroke drawStroke()
     {
         return drawStroke;
     }
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     public Color fillColor()
     {
         return fillColor;
     }
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     public Stroke fillStroke()
     {
         return fillStroke;
@@ -216,13 +216,13 @@ public class Style
                 drawStroke().stroked(shape));
     }
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     public Color textColor()
     {
         return textColor;
     }
 
-    @KivaKitIncludeProperty
+    @IncludeProperty
     public Font textFont()
     {
         return textFont;
