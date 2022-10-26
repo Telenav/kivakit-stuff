@@ -22,8 +22,6 @@
     </parent>
 
     <artifactId>kivakit-logs-viewer</artifactId>
-    <version>1.8.2</version>
-
     <properties>
         <viewer.version>1.9.8</viewer.version>
         <jar.base.name>kivakit-logs-viewer-${viewer.version}</jar.base.name>
