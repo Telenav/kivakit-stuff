@@ -106,13 +106,12 @@ public final class StringToIntMap extends PrimitiveMap
     @Override
     public boolean equals(Object object)
     {
-        if (object instanceof StringToIntMap)
+        if (object instanceof StringToIntMap that)
         {
             if (object == this)
             {
                 return true;
             }
-            var that = (StringToIntMap) object;
             if (size() != that.size())
             {
                 return false;

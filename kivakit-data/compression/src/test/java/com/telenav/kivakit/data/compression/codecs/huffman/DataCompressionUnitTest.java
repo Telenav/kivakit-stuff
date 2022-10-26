@@ -25,7 +25,6 @@ import com.telenav.kivakit.core.value.count.MutableCount;
 import com.telenav.kivakit.core.value.mutable.MutableValue;
 import com.telenav.kivakit.data.compression.Codec;
 import com.telenav.kivakit.data.compression.DataCompressionKryoTypes;
-import com.telenav.kivakit.data.compression.SymbolProducer;
 import com.telenav.kivakit.data.compression.codecs.huffman.character.HuffmanCharacterCodec;
 import com.telenav.kivakit.data.compression.codecs.huffman.tree.Symbols;
 import com.telenav.kivakit.primitive.collections.array.scalars.ByteArray;

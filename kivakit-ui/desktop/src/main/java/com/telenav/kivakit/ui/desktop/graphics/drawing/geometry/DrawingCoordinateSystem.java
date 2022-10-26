@@ -88,9 +88,8 @@ public class DrawingCoordinateSystem implements CoordinateSystem
     @Override
     public boolean equals(Object object)
     {
-        if (object instanceof DrawingCoordinateSystem)
+        if (object instanceof DrawingCoordinateSystem that)
         {
-            DrawingCoordinateSystem that = (DrawingCoordinateSystem) object;
             return x == that.x &&
                     y == that.y &&
                     dx == that.dx &&

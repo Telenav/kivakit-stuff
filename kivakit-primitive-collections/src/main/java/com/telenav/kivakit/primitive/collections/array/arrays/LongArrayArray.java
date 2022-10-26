@@ -127,9 +127,8 @@ public final class LongArrayArray extends PrimitiveArrayArray
     @Override
     public boolean equals(Object object)
     {
-        if (object instanceof LongArrayArray)
+        if (object instanceof LongArrayArray that)
         {
-            var that = (LongArrayArray) object;
             return Objects.areEqualPairs(indexes, that.indexes, sizes, that.sizes, store, that.store);
         }
         return false;

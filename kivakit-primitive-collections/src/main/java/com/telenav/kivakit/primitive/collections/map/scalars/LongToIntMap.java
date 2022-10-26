@@ -131,9 +131,8 @@ public final class LongToIntMap extends PrimitiveMap implements PrimitiveScalarM
     @Override
     public boolean equals(Object object)
     {
-        if (object instanceof LongToIntMap)
+        if (object instanceof LongToIntMap that)
         {
-            var that = (LongToIntMap) object;
             if (this == that)
             {
                 return true;

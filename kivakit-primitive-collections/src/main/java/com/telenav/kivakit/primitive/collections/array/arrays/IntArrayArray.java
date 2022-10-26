@@ -126,9 +126,8 @@ public final class IntArrayArray extends PrimitiveArrayArray
     @Override
     public boolean equals(Object object)
     {
-        if (object instanceof IntArrayArray)
+        if (object instanceof IntArrayArray that)
         {
-            var that = (IntArrayArray) object;
             return Objects.areEqualPairs(indexes, that.indexes, sizes, that.sizes, store, that.store);
         }
         return false;

@@ -110,9 +110,8 @@ public final class SplitByteArray extends PrimitiveSplitArray implements ByteLis
     @Override
     public boolean equals(Object object)
     {
-        if (object instanceof SplitByteArray)
+        if (object instanceof SplitByteArray that)
         {
-            var that = (SplitByteArray) object;
             return size() == that.size() && iterator().identical(that.iterator());
         }
         return false;

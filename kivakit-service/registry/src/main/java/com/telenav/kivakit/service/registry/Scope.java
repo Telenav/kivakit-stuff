@@ -174,9 +174,8 @@ public class Scope implements Named, Comparable<Scope>
     @Override
     public boolean equals(Object object)
     {
-        if (object instanceof Scope)
+        if (object instanceof Scope that)
         {
-            Scope that = (Scope) object;
             return name().equals(that.name());
         }
         return false;

@@ -135,9 +135,8 @@ public final class IntToIntMap extends PrimitiveMap implements PrimitiveScalarMa
     @Override
     public boolean equals(Object object)
     {
-        if (object instanceof IntToIntMap)
+        if (object instanceof IntToIntMap that)
         {
-            var that = (IntToIntMap) object;
             if (this == that)
             {
                 return true;

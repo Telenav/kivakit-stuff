@@ -166,9 +166,8 @@ public class Service extends BaseComponent implements Comparable<Service>, Strin
     @Override
     public boolean equals(Object object)
     {
-        if (object instanceof Service)
+        if (object instanceof Service that)
         {
-            Service that = (Service) object;
             return application.equals(that.application) && type.equals(that.type) && port.equals(that.port());
         }
         return false;

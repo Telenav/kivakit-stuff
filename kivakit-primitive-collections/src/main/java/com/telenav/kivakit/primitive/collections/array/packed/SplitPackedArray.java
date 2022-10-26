@@ -166,9 +166,8 @@ public final class SplitPackedArray extends PrimitiveSplitArray implements
     @Override
     public boolean equals(Object object)
     {
-        if (object instanceof SplitPackedArray)
+        if (object instanceof SplitPackedArray that)
         {
-            var that = (SplitPackedArray) object;
             return Objects.areEqualPairs(children, that.children, bits, that.bits);
         }
         return false;

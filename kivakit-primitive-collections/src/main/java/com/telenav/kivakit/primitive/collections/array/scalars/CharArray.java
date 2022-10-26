@@ -202,9 +202,8 @@ public final class CharArray extends PrimitiveArray implements CharList
     @Override
     public boolean equals(Object object)
     {
-        if (object instanceof CharArray)
+        if (object instanceof CharArray that)
         {
-            var that = (CharArray) object;
             if (size() == that.size())
             {
                 return iterator().identical(that.iterator());

@@ -111,9 +111,8 @@ public final class SplitIntArray extends PrimitiveSplitArray implements IntList
     @Override
     public boolean equals(Object object)
     {
-        if (object instanceof SplitIntArray)
+        if (object instanceof SplitIntArray that)
         {
-            var that = (SplitIntArray) object;
             return size() == that.size() && iterator().identical(that.iterator());
         }
         return false;

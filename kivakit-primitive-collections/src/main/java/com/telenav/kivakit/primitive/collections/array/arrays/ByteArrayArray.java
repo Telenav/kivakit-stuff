@@ -127,9 +127,8 @@ public final class ByteArrayArray extends PrimitiveArrayArray
     @Override
     public boolean equals(Object object)
     {
-        if (object instanceof ByteArrayArray)
+        if (object instanceof ByteArrayArray that)
         {
-            var that = (ByteArrayArray) object;
             return Objects.areEqualPairs(indexes, that.indexes, sizes, that.sizes, store, that.store);
         }
         return false;

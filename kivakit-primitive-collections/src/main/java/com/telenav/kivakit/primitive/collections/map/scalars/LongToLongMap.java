@@ -130,9 +130,8 @@ public final class LongToLongMap extends PrimitiveMap implements PrimitiveScalar
     @Override
     public boolean equals(Object object)
     {
-        if (object instanceof LongToLongMap)
+        if (object instanceof LongToLongMap that)
         {
-            var that = (LongToLongMap) object;
             if (this == that)
             {
                 return true;
