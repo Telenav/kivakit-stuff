@@ -10,107 +10,104 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>com.telenav</groupId>
-        <artifactId>telenav-root-superpom</artifactId>
-        <version>1.0.3</version>
-        <relativePath/>
-    </parent>
-
     <groupId>com.telenav.kivakit</groupId>
-    <artifactId>kivakit-stuff-parent</artifactId>
+    <artifactId>kivakit-stuff</artifactId>
     <version>1.8.2</version>
 
     <packaging>pom</packaging>
 
-    <name>Kivakit Stuff Parent</name>
-    <description>A collection of modules that extend KivaKit</description>
-
-    <modules>
-        <module>kivakit-data</module>
-        <module>kivakit-math</module>
-        <module>kivakit-primitive-collections</module>
-        <module>kivakit-remote-log</module>
-        <module>kivakit-security</module>
-
-<!-- not sure why this was not in the build pre-pom-rewrite, but it is uncompilable at present -->
-<!--        <module>kivakit-serialization-yaml</module> -->
-        <module>kivakit-service</module>
-        <module>kivakit-stuff</module>
-        <module>kivakit-ui</module>
-    </modules>
-
-    <properties>
-        <apache-commons.version>2.1</apache-commons.version>
-        <formdev.version>0.45</formdev.version>
-        <lexakai-annotations.version>1.0.10</lexakai-annotations.version>
-        <yamlbeans.version>1.15</yamlbeans.version>
-    </properties>
+    <name>Kivakit Stuff</name>
+    <description>Bill Of Meterials for Kivakit Stuff.
+        Import this pom as a pom-type, import scope dependency in your dependencyManagement
+         section to depend on a consistent set of versions of kivakit-stuff.</description>
 
     <dependencyManagement>
         <dependencies>
-
-            <!-- Pull in libraries defined in Kivakit -->
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>kivakit</artifactId>
+                <artifactId>kivakit-data-compression</artifactId>
                 <version>${project.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
             </dependency>
-
-            <!-- Pull in libraries defined in Kivakit Extensions -->
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>kivakit-extensions</artifactId>
+                <artifactId>kivakit-data-formats-csv</artifactId>
                 <version>${project.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
             </dependency>
-
-            <!-- Dependencies on modules defined in this aggregator project, Kivakit Stuff -->
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>kivakit-stuff</artifactId>
+                <artifactId>kivakit-data-formats-library</artifactId>
                 <version>${project.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
             </dependency>
-
-            <!-- Lexakai Annotations -->
             <dependency>
-                <groupId>com.telenav.lexakai</groupId>
-                <artifactId>lexakai-annotations</artifactId>
-                <version>${lexakai-annotations.version}</version>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>kivakit-data-formats-xml</artifactId>
+                <version>${project.version}</version>
             </dependency>
-
-            <!-- Yamlbeans -->
             <dependency>
-                <groupId>com.esotericsoftware.yamlbeans</groupId>
-                <artifactId>yamlbeans</artifactId>
-                <version>${yamlbeans.version}</version>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>kivakit-logs-client</artifactId>
+                <version>${project.version}</version>
             </dependency>
-
-            <!-- Formdev -->
             <dependency>
-                <groupId>com.formdev</groupId>
-                <artifactId>flatlaf</artifactId>
-                <version>${formdev.version}</version>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>kivakit-logs-server</artifactId>
+                <version>${project.version}</version>
             </dependency>
-
-            <!-- Apache Commons -->
             <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>commons-math</artifactId>
-                <version>${apache-commons.version}</version>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>kivakit-logs-viewer</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>kivakit-math</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>kivakit-primitive-collections</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>kivakit-security</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>kivakit-serialization-yaml</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>kivakit-service-client</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>kivakit-service-registry</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>kivakit-service-server</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>kivakit-service-viewer</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>kivakit-ui-desktop</artifactId>
+                <version>${project.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
 
     <developers>
-        
         <developer>
-            
             <id>jonathanl</id>
             <name>Jonathan Locke (Luo Shibo)</name>
             <email>jonathanl@telenav.com</email>
@@ -120,11 +117,8 @@
                 <role>lead</role>
                 <role>administrator</role>
             </roles>
-            
         </developer>
-        
         <developer>
-            
             <id>haifeng</id>
             <name>Haifeng Zhu</name>
             <email>hfzhu@telenav.com</email>
@@ -134,11 +128,8 @@
                 <role>developer</role>
                 <role>administrator</role>
             </roles>
-            
         </developer>
-        
         <developer>
-            
             <id>timboudreau</id>
             <name>Tim Boudreau</name>
             <email>tim@timboudreau.com</email>
@@ -148,9 +139,7 @@
                 <role>developer</role>
                 <role>administrator</role>
             </roles>
-            
         </developer>
-        
     </developers>
 
     <licenses>
@@ -176,5 +165,4 @@
         <system>GitHub</system>
         <url>https://github.com/Telenav/kivakit-stuff/issues</url>
     </issueManagement>
-
 </project>

@@ -21,9 +21,8 @@ import java.util.regex.Pattern;
 
 import static com.telenav.kivakit.core.ensure.Ensure.ensureNotNull;
 import static com.telenav.kivakit.core.ensure.Ensure.unsupported;
-import static com.telenav.kivakit.resource.serialization.ObjectMetadata.INSTANCE;
-import static com.telenav.kivakit.resource.serialization.ObjectMetadata.TYPE;
-import static com.telenav.kivakit.resource.serialization.ObjectMetadata.VERSION;
+import static com.telenav.kivakit.resource.serialization.ObjectMetadata.METADATA_OBJECT_INSTANCE;
+import static com.telenav.kivakit.resource.serialization.ObjectMetadata.METADATA_OBJECT_TYPE;
 
 /**
  * JSON {@link ObjectSerializer} using Google Gson library.
@@ -82,7 +81,7 @@ public class YamlObjectSerializer implements
     @Override
     public ProgressReporter reporter()
     {
-        return ProgressReporter.none();
+        return ProgressReporter.nullProgressReporter();
     }
 
     /**
@@ -99,11 +98,11 @@ public class YamlObjectSerializer implements
 
     private InstanceIdentifier instance(String text, ObjectMetadata[] metadata)
     {
-        var instance = InstanceIdentifier.SINGLETON;
+        var instance = InstanceIdentifier.singletonInstanceIdentifier();
         var instanceMatcher = INSTANCE_PATTERN.matcher(text);
-        if (INSTANCE.containedIn(metadata) && instanceMatcher.find())
+        if (METADATA_OBJECT_INSTANCE.containedIn(metadata) && instanceMatcher.find())
         {
-            instance = InstanceIdentifier.of(instanceMatcher.group("instance"));
+            instance = InstanceIdentifier.instanceIdentifier(instanceMatcher.group("instance"));
         }
         return instance;
     }
@@ -112,12 +111,12 @@ public class YamlObjectSerializer implements
                                       Class<T> typeToRead) throws RuntimeException
     {
         Class<T> type = typeToRead;
-        if (type == null && TYPE.containedIn(metadata))
+        if (type == null && METADATA_OBJECT_TYPE.containedIn(metadata))
         {
             var typeMatcher = TYPE_PATTERN.matcher(text);
             if (typeMatcher.find())
             {
-                type = Classes.forName(typeMatcher.group("type"));
+                type = Classes.classForName(typeMatcher.group("type"));
             }
         }
 
