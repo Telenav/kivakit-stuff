@@ -35,30 +35,10 @@
         
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>kivakit-application</artifactId>
-            <version>${kivakit.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>kivakit-ui-desktop</artifactId>
-            <version>${kivakit.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>kivakit-network-core</artifactId>
-            <version>${kivakit.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
             <artifactId>kivakit-logs-client</artifactId>
             <version>${kivakit.version}</version>
         </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>kivakit-logs-server</artifactId>
-            <version>${kivakit.version}</version>
-        </dependency>
-    </dependencies>
+        </dependencies>
     
     <profiles>
         

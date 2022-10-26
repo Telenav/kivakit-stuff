@@ -33,14 +33,6 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>kivakit-service-registry</artifactId>
         </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>kivakit-network-http</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>kivakit-web-jersey</artifactId>
-        </dependency>
-    </dependencies>
+        </dependencies>
     
 </project>
