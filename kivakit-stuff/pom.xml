@@ -19,7 +19,7 @@
     <name>Kivakit Stuff</name>
     <description>Bill Of Meterials for Kivakit Stuff.
         Import this pom as a pom-type, import scope dependency in your dependencyManagement
-         section to depend on a consistent set of versions of kivakit-stuff.</description>
+        section to depend on a consistent set of versions of kivakit-stuff.</description>
 
     <dependencyManagement>
         <dependencies>
