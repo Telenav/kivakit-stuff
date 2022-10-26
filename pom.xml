@@ -43,7 +43,6 @@
     <properties>
         <apache-commons.version>2.1</apache-commons.version>
         <formdev.version>0.45</formdev.version>
-        <lexakai-annotations.version>1.0.10</lexakai-annotations.version>
         <yamlbeans.version>1.15</yamlbeans.version>
     </properties>
 
@@ -54,6 +53,15 @@
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>kivakit</artifactId>
+                <version>${project.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Pull in libraries used by Kivakit -->
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>kivakit-parent</artifactId>
                 <version>${project.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
@@ -75,13 +83,6 @@
                 <version>${project.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
-            </dependency>
-
-            <!-- Lexakai Annotations -->
-            <dependency>
-                <groupId>com.telenav.lexakai</groupId>
-                <artifactId>lexakai-annotations</artifactId>
-                <version>${lexakai-annotations.version}</version>
             </dependency>
 
             <!-- Yamlbeans -->
