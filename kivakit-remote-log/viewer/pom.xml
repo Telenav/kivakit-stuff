@@ -1,74 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- //
- // © 2011-2022 Telenav, Inc.
- // Licensed under Apache License, Version 2.0
- //
- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- -->
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// © 2011-2022 Telenav, Inc.
+// Licensed under Apache License, Version 2.0
+//
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
 <project
     xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    
+
     <modelVersion>4.0.0</modelVersion>
-    
+
     <parent>
         <groupId>com.telenav.kivakit</groupId>
-        <artifactId>telenav-superpom-kivakit</artifactId>
-        <version>2.2.1</version>
-        <relativePath/>
+        <artifactId>kivakit-stuff-parent</artifactId>
+        <version>1.8.2</version>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
-    
-    <artifactId>kivakit-logs-viewer</artifactId>
-    <version>1.8.1</version>
 
+    <artifactId>kivakit-logs-viewer</artifactId>
     <properties>
         <viewer.version>1.9.8</viewer.version>
         <jar.base.name>kivakit-logs-viewer-${viewer.version}</jar.base.name>
     </properties>
-    
+
     <dependencies>
-        
+
         <!-- KivaKit -->
-        
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>kivakit-application</artifactId>
-            <version>${kivakit.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>kivakit-ui-desktop</artifactId>
-            <version>${kivakit.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>kivakit-network-core</artifactId>
-            <version>${kivakit.version}</version>
-        </dependency>
+
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>kivakit-logs-client</artifactId>
-            <version>${kivakit.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>kivakit-logs-server</artifactId>
-            <version>${kivakit.version}</version>
         </dependency>
     </dependencies>
-    
+
     <profiles>
-        
+
         <profile>
             <id>tools</id>
             <build>
                 <plugins>
-                    
+
                     <plugin>
-                        
+
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-shade-plugin</artifactId>
                         <version>${maven-shade-plugin.version}</version>
@@ -78,9 +55,9 @@
                                 <goals>
                                     <goal>shade</goal>
                                 </goals>
-                                
+
                                 <configuration>
-                                    
+
                                     <finalName>${jar.base.name}</finalName>
                                     <createDependencyReducedPom>false</createDependencyReducedPom>
                                     <transformers>
@@ -92,34 +69,34 @@
                                         <filter>
                                             <artifact>*:*</artifact>
                                             <excludes>
-                                                
+
                                                 <exclude>module-info.class</exclude>
                                                 <exclude>license.txt</exclude>
                                                 <exclude>META-INF/DEPENDENCIES</exclude>
                                                 <exclude>META-INF/LICENSE*</exclude>
                                                 <exclude>META-INF/NOTICE*</exclude>
                                                 <exclude>META-INF/MANIFEST.MF</exclude>
-                                                
+
                                             </excludes>
                                         </filter>
                                     </filters>
-                                    
+
                                 </configuration>
-                                
+
                             </execution>
                         </executions>
-                        
+
                     </plugin>
-                    
+
                     <plugin>
-                        
+
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-antrun-plugin</artifactId>
-                        <version>3.0.0</version>
+                        <version>3.1.0</version>
                         <executions>
-                            
+
                             <execution>
-                                
+
                                 <id>install-log-viewer-jar</id>
                                 <phase>package</phase>
                                 <configuration>
@@ -134,20 +111,20 @@
                                 <goals>
                                     <goal>run</goal>
                                 </goals>
-                                
+
                             </execution>
-                            
+
                         </executions>
-                        
+
                     </plugin>
-                    
+
                 </plugins>
-                
+
             </build>
         </profile>
-        
+
         <profile>
-            
+
             <id>dmg</id>
             <activation>
                 <activeByDefault>false</activeByDefault>
@@ -164,16 +141,16 @@
             </activation>
             <build>
                 <plugins>
-                    
+
                     <plugin>
-                        
+
                         <artifactId>exec-maven-plugin</artifactId>
                         <groupId>org.codehaus.mojo</groupId>
-                        <version>3.0.0</version>
+                        <version>3.1.0</version>
                         <executions>
-                            
+
                             <execution>
-                                
+
                                 <id>jpackage</id>
                                 <phase>install</phase>
                                 <goals>
@@ -182,7 +159,7 @@
                                 <configuration>
                                     <executable>/usr/bin/jpackage</executable>
                                     <arguments>
-                                        
+
                                         <argument>--input</argument>
                                         <argument>target/application/</argument>
                                         <argument>--name</argument>
@@ -201,25 +178,25 @@
                                         <argument>${viewer.version}</argument>
                                         <argument>--vendor</argument>
                                         <argument>Telenav</argument>
-                                        
+
                                     </arguments>
                                 </configuration>
-                                
+
                             </execution>
-                            
+
                         </executions>
-                        
+
                     </plugin>
-                    
+
                     <plugin>
-                        
+
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-antrun-plugin</artifactId>
-                        <version>3.0.0</version>
+                        <version>3.1.0</version>
                         <executions>
-                            
+
                             <execution>
-                                
+
                                 <id>install-dmg</id>
                                 <phase>install</phase>
                                 <configuration>
@@ -231,19 +208,19 @@
                                 <goals>
                                     <goal>run</goal>
                                 </goals>
-                                
+
                             </execution>
-                            
+
                         </executions>
-                        
+
                     </plugin>
-                    
+
                 </plugins>
-                
+
             </build>
-            
+
         </profile>
-        
+
     </profiles>
-    
+
 </project>
