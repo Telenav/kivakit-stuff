@@ -24,20 +24,20 @@ This project provides a client for accessing local and network service registrie
 
 [**Summary**](#summary)  
 
-[**Dependencies**](#dependencies) | [**Class Diagrams**](#class-diagrams) | [**Package Diagrams**](#package-diagrams) | [**Javadoc**](#javadoc)
+[**Dependencies**](#dependencies) | [**Code Quality**](#code-quality) | [**Class Diagrams**](#class-diagrams) | [**Package Diagrams**](#package-diagrams)
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-512.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-512-2x.png 2x"/>
 
 ### Dependencies <a name="dependencies"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/dependencies-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/dependencies-32-2x.png 2x"/>
 
-[*Dependency Diagram*](https://www.kivakit.org/1.7.0/lexakai/kivakit-stuff/kivakit-service/client/documentation/diagrams/dependencies.svg)
+[*Dependency Diagram*](https://www.kivakit.org/1.8.2/lexakai/kivakit-stuff/kivakit-service/client/documentation/diagrams/dependencies.svg)
 
 #### Maven Dependency
 
     <dependency>
         <groupId>com.telenav.kivakit</groupId>
         <artifactId>kivakit-service-client</artifactId>
-        <version>1.7.0</version>
+        <version>1.8.2</version>
     </dependency>
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
@@ -55,33 +55,38 @@ for a detailed discussion.
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
+### Code Quality <a name="code-quality"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/ruler-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/ruler-32-2x.png 2x"/>
+
+Code quality for this project is 44.4%.  
+  
+&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-40-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-40-96-2x.png 2x"/>
+
+| Measurement   | Value                    |
+|---------------|--------------------------|
+| Stability     | 33.3%&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-30-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-30-96-2x.png 2x"/>     |
+| Testing       | 33.3%&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-30-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-30-96-2x.png 2x"/>       |
+| Documentation | 66.7%&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-70-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-70-96-2x.png 2x"/> |
+
+<img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
+
 ### Class Diagrams <a name="class-diagrams"></a> &nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/diagram-40.png" srcset="https://telenav.github.io/telenav-assets/images/icons/diagram-40-2x.png 2x"/>
 
-[*Service Registry Client*](https://www.kivakit.org/1.7.0/lexakai/kivakit-stuff/kivakit-service/client/documentation/diagrams/diagram-client.svg)
+[*Service Registry Client*](https://www.kivakit.org/1.8.2/lexakai/kivakit-stuff/kivakit-service/client/documentation/diagrams/diagram-client.svg)
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
 ### Package Diagrams <a name="package-diagrams"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/box-24.png" srcset="https://telenav.github.io/telenav-assets/images/icons/box-24-2x.png 2x"/>
 
-[*com.telenav.kivakit.service.registry.client*](https://www.kivakit.org/1.7.0/lexakai/kivakit-stuff/kivakit-service/client/documentation/diagrams/com.telenav.kivakit.service.registry.client.svg)  
-[*com.telenav.kivakit.service.registry.client.internal.lexakai*](https://www.kivakit.org/1.7.0/lexakai/kivakit-stuff/kivakit-service/client/documentation/diagrams/com.telenav.kivakit.service.registry.client.internal.lexakai.svg)
+[*com.telenav.kivakit.service.registry.client*](https://www.kivakit.org/1.8.2/lexakai/kivakit-stuff/kivakit-service/client/documentation/diagrams/com.telenav.kivakit.service.registry.client.svg)  
+[*com.telenav.kivakit.service.registry.client.internal.lexakai*](https://www.kivakit.org/1.8.2/lexakai/kivakit-stuff/kivakit-service/client/documentation/diagrams/com.telenav.kivakit.service.registry.client.internal.lexakai.svg)
 
-<img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
+### Javadoc <a name="code-quality"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/books-24.png" srcset="https://telenav.github.io/telenav-assets/images/icons/books-24-2x.png 2x"/>
 
-### Javadoc <a name="javadoc"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/books-24.png" srcset="https://telenav.github.io/telenav-assets/images/icons/books-24-2x.png 2x"/>
-
-Javadoc coverage for this project is 83.3%.  
-  
-&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-80-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-80-96-2x.png 2x"/>
-
-
-
-
-| Class | Documentation Sections |
-|---|---|
-| [*DiagramClient*](https://www.kivakit.org/1.7.0/javadoc/kivakit-stuff/kivakit.service.client///////////////////////////////////////////////////////////////////////////.html) |  |  
-| [*ServiceRegistryClient*](https://www.kivakit.org/1.7.0/javadoc/kivakit-stuff/kivakit.service.client//////////////////////////////////////////////////////////////////.html) |  |  
-| [*ServiceRegistryClientSettings*](https://www.kivakit.org/1.7.0/javadoc/kivakit-stuff/kivakit.service.client//////////////////////////////////////////////////////////////////////////.html) |  |  
+| Class | Documentation Sections  |
+|-------|-------------------------|
+| [*DiagramClient*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.client///////////////////////////////////////////////////////////////////////////.html) |  |  
+| [*ServiceRegistryClient*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.client//////////////////////////////////////////////////////////////////.html) |  |  
+| [*ServiceRegistryClientSettings*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.client//////////////////////////////////////////////////////////////////////////.html) |  |  
 
 [//]: # (start-user-text)
 

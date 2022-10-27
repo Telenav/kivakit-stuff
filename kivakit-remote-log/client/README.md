@@ -14,20 +14,20 @@ This module is a text file log service provider.
 
 
 
-[**Dependencies**](#dependencies) | [**Class Diagrams**](#class-diagrams) | [**Package Diagrams**](#package-diagrams) | [**Javadoc**](#javadoc)
+[**Dependencies**](#dependencies) | [**Code Quality**](#code-quality) | [**Class Diagrams**](#class-diagrams) | [**Package Diagrams**](#package-diagrams)
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-512.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-512-2x.png 2x"/>
 
 ### Dependencies <a name="dependencies"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/dependencies-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/dependencies-32-2x.png 2x"/>
 
-[*Dependency Diagram*](https://www.kivakit.org/1.7.0/lexakai/kivakit-stuff/kivakit-remote-log/client/documentation/diagrams/dependencies.svg)
+[*Dependency Diagram*](https://www.kivakit.org/1.8.2/lexakai/kivakit-stuff/kivakit-remote-log/client/documentation/diagrams/dependencies.svg)
 
 #### Maven Dependency
 
     <dependency>
         <groupId>com.telenav.kivakit</groupId>
         <artifactId>kivakit-logs-client</artifactId>
-        <version>1.7.0</version>
+        <version>1.8.2</version>
     </dependency>
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
@@ -40,6 +40,20 @@ This module is a text file log service provider.
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
+### Code Quality <a name="code-quality"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/ruler-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/ruler-32-2x.png 2x"/>
+
+Code quality for this project is 0.0%.  
+  
+&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-0-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-0-96-2x.png 2x"/>
+
+| Measurement   | Value                    |
+|---------------|--------------------------|
+| Stability     | 0.0%&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-0-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-0-96-2x.png 2x"/>     |
+| Testing       | 0.0%&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-0-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-0-96-2x.png 2x"/>       |
+| Documentation | 0.0%&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-0-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-0-96-2x.png 2x"/> |
+
+<img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
+
 ### Class Diagrams <a name="class-diagrams"></a> &nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/diagram-40.png" srcset="https://telenav.github.io/telenav-assets/images/icons/diagram-40-2x.png 2x"/>
 
 None
@@ -48,56 +62,38 @@ None
 
 ### Package Diagrams <a name="package-diagrams"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/box-24.png" srcset="https://telenav.github.io/telenav-assets/images/icons/box-24-2x.png 2x"/>
 
-[*com.telenav.kivakit.logs.client*](https://www.kivakit.org/1.7.0/lexakai/kivakit-stuff/kivakit-remote-log/client/documentation/diagrams/com.telenav.kivakit.logs.client.svg)  
-[*com.telenav.kivakit.logs.client.network*](https://www.kivakit.org/1.7.0/lexakai/kivakit-stuff/kivakit-remote-log/client/documentation/diagrams/com.telenav.kivakit.logs.client.network.svg)  
-[*com.telenav.kivakit.logs.client.project*](https://www.kivakit.org/1.7.0/lexakai/kivakit-stuff/kivakit-remote-log/client/documentation/diagrams/com.telenav.kivakit.logs.client.project.svg)  
-[*com.telenav.kivakit.logs.client.view*](https://www.kivakit.org/1.7.0/lexakai/kivakit-stuff/kivakit-remote-log/client/documentation/diagrams/com.telenav.kivakit.logs.client.view.svg)  
-[*com.telenav.kivakit.logs.client.view.panels.connection*](https://www.kivakit.org/1.7.0/lexakai/kivakit-stuff/kivakit-remote-log/client/documentation/diagrams/com.telenav.kivakit.logs.client.view.panels.connection.svg)  
-[*com.telenav.kivakit.logs.client.view.panels.search*](https://www.kivakit.org/1.7.0/lexakai/kivakit-stuff/kivakit-remote-log/client/documentation/diagrams/com.telenav.kivakit.logs.client.view.panels.search.svg)  
-[*com.telenav.kivakit.logs.client.view.panels.session*](https://www.kivakit.org/1.7.0/lexakai/kivakit-stuff/kivakit-remote-log/client/documentation/diagrams/com.telenav.kivakit.logs.client.view.panels.session.svg)  
-[*com.telenav.kivakit.logs.client.view.panels.table*](https://www.kivakit.org/1.7.0/lexakai/kivakit-stuff/kivakit-remote-log/client/documentation/diagrams/com.telenav.kivakit.logs.client.view.panels.table.svg)  
-[*com.telenav.kivakit.logs.client.view.panels.tool*](https://www.kivakit.org/1.7.0/lexakai/kivakit-stuff/kivakit-remote-log/client/documentation/diagrams/com.telenav.kivakit.logs.client.view.panels.tool.svg)
+[*com.telenav.kivakit.logs.client*](https://www.kivakit.org/1.8.2/lexakai/kivakit-stuff/kivakit-remote-log/client/documentation/diagrams/com.telenav.kivakit.logs.client.svg)  
+[*com.telenav.kivakit.logs.client.network*](https://www.kivakit.org/1.8.2/lexakai/kivakit-stuff/kivakit-remote-log/client/documentation/diagrams/com.telenav.kivakit.logs.client.network.svg)  
+[*com.telenav.kivakit.logs.client.project*](https://www.kivakit.org/1.8.2/lexakai/kivakit-stuff/kivakit-remote-log/client/documentation/diagrams/com.telenav.kivakit.logs.client.project.svg)  
+[*com.telenav.kivakit.logs.client.view*](https://www.kivakit.org/1.8.2/lexakai/kivakit-stuff/kivakit-remote-log/client/documentation/diagrams/com.telenav.kivakit.logs.client.view.svg)  
+[*com.telenav.kivakit.logs.client.view.panels.connection*](https://www.kivakit.org/1.8.2/lexakai/kivakit-stuff/kivakit-remote-log/client/documentation/diagrams/com.telenav.kivakit.logs.client.view.panels.connection.svg)  
+[*com.telenav.kivakit.logs.client.view.panels.search*](https://www.kivakit.org/1.8.2/lexakai/kivakit-stuff/kivakit-remote-log/client/documentation/diagrams/com.telenav.kivakit.logs.client.view.panels.search.svg)  
+[*com.telenav.kivakit.logs.client.view.panels.session*](https://www.kivakit.org/1.8.2/lexakai/kivakit-stuff/kivakit-remote-log/client/documentation/diagrams/com.telenav.kivakit.logs.client.view.panels.session.svg)  
+[*com.telenav.kivakit.logs.client.view.panels.table*](https://www.kivakit.org/1.8.2/lexakai/kivakit-stuff/kivakit-remote-log/client/documentation/diagrams/com.telenav.kivakit.logs.client.view.panels.table.svg)  
+[*com.telenav.kivakit.logs.client.view.panels.tool*](https://www.kivakit.org/1.8.2/lexakai/kivakit-stuff/kivakit-remote-log/client/documentation/diagrams/com.telenav.kivakit.logs.client.view.panels.tool.svg)
 
-<img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
+### Javadoc <a name="code-quality"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/books-24.png" srcset="https://telenav.github.io/telenav-assets/images/icons/books-24-2x.png 2x"/>
 
-### Javadoc <a name="javadoc"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/books-24.png" srcset="https://telenav.github.io/telenav-assets/images/icons/books-24-2x.png 2x"/>
-
-Javadoc coverage for this project is 26.5%.  
-  
-&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-30-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-30-96-2x.png 2x"/>
-
-
-The following significant classes are undocumented:  
-
-- com.telenav.kivakit.logs.client.view.ClientLogPanel  
-- com.telenav.kivakit.logs.client.view.panels.connection.ConnectionPanel  
-- com.telenav.kivakit.logs.client.network.Connector  
-- com.telenav.kivakit.logs.client.network.Receiver  
-- com.telenav.kivakit.logs.client.view.panels.search.SearchPanel  
-- com.telenav.kivakit.logs.client.view.panels.session.SessionPanel  
-- com.telenav.kivakit.logs.client.view.panels.table.TableModel  
-- com.telenav.kivakit.logs.client.view.panels.table.TablePanel
-
-| Class | Documentation Sections |
-|---|---|
-| [*ClientLog*](https://www.kivakit.org/1.7.0/javadoc/kivakit-stuff/kivakit.logs.client//////////////////////////////////////////.html) |  |  
-| [*ClientLogFrame*](https://www.kivakit.org/1.7.0/javadoc/kivakit-stuff/kivakit.logs.client///////////////////////////////////////////////.html) |  |  
-| [*ClientLogFrame.ExitMode*](https://www.kivakit.org/1.7.0/javadoc/kivakit-stuff/kivakit.logs.client////////////////////////////////////////////////////////.html) |  |  
-| [*ClientLogPanel*](https://www.kivakit.org/1.7.0/javadoc/kivakit-stuff/kivakit.logs.client////////////////////////////////////////////////////.html) |  |  
-| [*Connection*](https://www.kivakit.org/1.7.0/javadoc/kivakit-stuff/kivakit.logs.client///////////////////////////////////////////////////.html) |  |  
-| [*ConnectionPanel*](https://www.kivakit.org/1.7.0/javadoc/kivakit-stuff/kivakit.logs.client///////////////////////////////////////////////////////////////////////.html) |  |  
-| [*Connector*](https://www.kivakit.org/1.7.0/javadoc/kivakit-stuff/kivakit.logs.client//////////////////////////////////////////////////.html) |  |  
-| [*Connector.State*](https://www.kivakit.org/1.7.0/javadoc/kivakit-stuff/kivakit.logs.client////////////////////////////////////////////////////////.html) |  |  
-| [*LogsClientTheme*](https://www.kivakit.org/1.7.0/javadoc/kivakit-stuff/kivakit.logs.client////////////////////////////////////////////////////////.html) |  |  
-| [*Receiver*](https://www.kivakit.org/1.7.0/javadoc/kivakit-stuff/kivakit.logs.client/////////////////////////////////////////////////.html) |  |  
-| [*Receiver.State*](https://www.kivakit.org/1.7.0/javadoc/kivakit-stuff/kivakit.logs.client///////////////////////////////////////////////////////.html) |  |  
-| [*SearchPanel*](https://www.kivakit.org/1.7.0/javadoc/kivakit-stuff/kivakit.logs.client///////////////////////////////////////////////////////////////.html) |  |  
-| [*SessionPanel*](https://www.kivakit.org/1.7.0/javadoc/kivakit-stuff/kivakit.logs.client/////////////////////////////////////////////////////////////////.html) |  |  
-| [*TableCellRenderer*](https://www.kivakit.org/1.7.0/javadoc/kivakit-stuff/kivakit.logs.client////////////////////////////////////////////////////////////////////.html) |  |  
-| [*TableFilter*](https://www.kivakit.org/1.7.0/javadoc/kivakit-stuff/kivakit.logs.client//////////////////////////////////////////////////////////////.html) |  |  
-| [*TableModel*](https://www.kivakit.org/1.7.0/javadoc/kivakit-stuff/kivakit.logs.client/////////////////////////////////////////////////////////////.html) |  |  
-| [*TablePanel*](https://www.kivakit.org/1.7.0/javadoc/kivakit-stuff/kivakit.logs.client/////////////////////////////////////////////////////////////.html) |  |  
-| [*ToolPanel*](https://www.kivakit.org/1.7.0/javadoc/kivakit-stuff/kivakit.logs.client///////////////////////////////////////////////////////////.html) |  |  
+| Class | Documentation Sections  |
+|-------|-------------------------|
+| [*ClientLog*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client//////////////////////////////////////////.html) |  |  
+| [*ClientLogFrame*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client///////////////////////////////////////////////.html) |  |  
+| [*ClientLogFrame.ExitMode*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client////////////////////////////////////////////////////////.html) |  |  
+| [*ClientLogPanel*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client////////////////////////////////////////////////////.html) |  |  
+| [*Connection*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client///////////////////////////////////////////////////.html) |  |  
+| [*ConnectionPanel*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client///////////////////////////////////////////////////////////////////////.html) |  |  
+| [*Connector*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client//////////////////////////////////////////////////.html) |  |  
+| [*Connector.State*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client////////////////////////////////////////////////////////.html) |  |  
+| [*LogsClientTheme*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client////////////////////////////////////////////////////////.html) |  |  
+| [*Receiver*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client/////////////////////////////////////////////////.html) |  |  
+| [*Receiver.State*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client///////////////////////////////////////////////////////.html) |  |  
+| [*SearchPanel*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client///////////////////////////////////////////////////////////////.html) |  |  
+| [*SessionPanel*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client/////////////////////////////////////////////////////////////////.html) |  |  
+| [*TableCellRenderer*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client////////////////////////////////////////////////////////////////////.html) |  |  
+| [*TableFilter*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client//////////////////////////////////////////////////////////////.html) |  |  
+| [*TableModel*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client/////////////////////////////////////////////////////////////.html) |  |  
+| [*TablePanel*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client/////////////////////////////////////////////////////////////.html) |  |  
+| [*ToolPanel*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client///////////////////////////////////////////////////////////.html) |  |  
 
 [//]: # (start-user-text)
 
