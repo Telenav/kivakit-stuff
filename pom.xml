@@ -13,7 +13,7 @@
     <parent>
         <groupId>com.telenav</groupId>
         <artifactId>telenav-root-superpom</artifactId>
-        <version>1.0.4</version>
+        <version>1.0.7</version>
         <relativePath/>
     </parent>
 
@@ -27,17 +27,28 @@
     <description>A collection of modules that extend KivaKit</description>
 
     <modules>
-        <module>kivakit-data</module>
-        <module>kivakit-math</module>
-        <module>kivakit-primitive-collections</module>
-        <module>kivakit-remote-log</module>
-        <module>kivakit-security</module>
+        <module>kivakit-stuff</module>
+        <module>kivakit-service/server</module>
+        <module>kivakit-data/formats/xml</module>
 
         <!-- not sure why this was not in the build pre-pom-rewrite, but it is uncompilable at present -->
         <!--        <module>kivakit-serialization-yaml</module> -->
-        <module>kivakit-service</module>
-        <module>kivakit-stuff</module>
-        <module>kivakit-ui</module>
+        <module>kivakit-data/formats/csv</module>
+        
+        <module>kivakit-service/viewer</module>
+        <module>kivakit-service/registry</module>
+        <module>kivakit-ui/desktop</module>
+        <module>kivakit-service/client</module>
+        <module>kivakit-remote-log/server</module>
+        <module>kivakit-security</module>
+        <module>kivakit-primitive-collections</module>
+        <!-- not sure why this was not in the build pre-pom-rewrite, but it is uncompilable at present -->
+        <!-- <module>kivakit-serialization-yaml</module> -->
+        <module>kivakit-remote-log/client</module>
+        <module>kivakit-remote-log/viewer</module>
+        <module>kivakit-data/compression</module>
+        <module>kivakit-data/formats/library</module>
+        <module>kivakit-math</module>
     </modules>
 
     <properties>

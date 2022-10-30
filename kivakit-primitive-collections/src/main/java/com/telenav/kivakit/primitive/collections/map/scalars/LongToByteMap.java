@@ -131,9 +131,8 @@ public final class LongToByteMap extends PrimitiveMap implements PrimitiveScalar
     @Override
     public boolean equals(Object object)
     {
-        if (object instanceof LongToByteMap)
+        if (object instanceof LongToByteMap that)
         {
-            var that = (LongToByteMap) object;
             if (this == that)
             {
                 return true;

@@ -123,9 +123,8 @@ public final class SplitLongToIntMap extends SplitPrimitiveMap implements Primit
     @Override
     public boolean equals(Object object)
     {
-        if (object instanceof SplitLongToIntMap)
+        if (object instanceof SplitLongToIntMap that)
         {
-            var that = (SplitLongToIntMap) object;
             if (size() != that.size())
             {
                 return false;

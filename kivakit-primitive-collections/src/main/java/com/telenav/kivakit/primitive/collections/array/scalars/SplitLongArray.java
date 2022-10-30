@@ -115,9 +115,8 @@ public final class SplitLongArray extends PrimitiveSplitArray implements LongLis
     @Override
     public boolean equals(Object object)
     {
-        if (object instanceof SplitLongArray)
+        if (object instanceof SplitLongArray that)
         {
-            var that = (SplitLongArray) object;
             return size() == that.size() && iterator().identical(that.iterator());
         }
         return false;

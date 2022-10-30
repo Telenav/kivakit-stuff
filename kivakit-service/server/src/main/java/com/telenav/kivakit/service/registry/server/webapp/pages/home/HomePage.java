@@ -150,22 +150,20 @@ public class HomePage extends ServiceRegistryWebPage
         Scope scope;
         switch (scopeString)
         {
-            case "network":
+            case "network" ->
             {
                 // If we are a local registry, search the network scope remotely, otherwise we are the network
                 // registry, so we search our own local information.
                 scope = isLocal() ? Scope.network() : Scope.localhost();
                 break;
             }
-
-            case "localhost":
+            case "localhost" ->
             {
                 // Search the local host
                 scope = Scope.localhost();
                 break;
             }
-
-            default:
+            default ->
             {
                 // Search the given cluster
                 scope = Scope.cluster(new ClusterIdentifier(scopeString));

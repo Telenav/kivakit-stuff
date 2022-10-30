@@ -90,9 +90,8 @@ public class DrawingPoint extends DrawingObject
     @Override
     public boolean equals(Object object)
     {
-        if (object instanceof DrawingPoint)
+        if (object instanceof DrawingPoint that)
         {
-            DrawingPoint that = (DrawingPoint) object;
             return coordinates().equals(that.coordinates()) && x == that.x && y == that.y;
         }
         return false;

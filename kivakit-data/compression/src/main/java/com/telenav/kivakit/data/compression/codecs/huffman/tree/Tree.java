@@ -134,14 +134,12 @@ public abstract class Tree<Symbol> implements Comparable<Tree<Symbol>>
 
     private void codedSymbols(Tree<Symbol> tree, Set<CodedSymbol<Symbol>> symbols)
     {
-        if (tree instanceof Leaf)
+        if (tree instanceof Leaf<Symbol> leaf)
         {
-            var leaf = (Leaf<Symbol>) tree;
             symbols.add(leaf.symbol());
         }
-        if (tree instanceof Node)
+        if (tree instanceof Node<Symbol> node)
         {
-            var node = (Node<Symbol>) tree;
             codedSymbols(node.left, symbols);
             codedSymbols(node.right, symbols);
         }
@@ -149,14 +147,12 @@ public abstract class Tree<Symbol> implements Comparable<Tree<Symbol>>
 
     private void codes(Map<CodedSymbol<Symbol>, Code> codes, Tree<Symbol> tree, String prefix)
     {
-        if (tree instanceof Leaf)
+        if (tree instanceof Leaf<Symbol> leaf)
         {
-            var leaf = (Leaf<Symbol>) tree;
             codes.put(leaf.symbol(), new Code(prefix));
         }
-        else if (tree instanceof Node)
+        else if (tree instanceof Node<Symbol> node)
         {
-            var node = (Node<Symbol>) tree;
             codes(codes, node.left, prefix + "0");
             codes(codes, node.right, prefix + "1");
         }
@@ -164,9 +160,8 @@ public abstract class Tree<Symbol> implements Comparable<Tree<Symbol>>
 
     private int height(Tree<Symbol> tree)
     {
-        if (tree instanceof Node)
+        if (tree instanceof Node<Symbol> node)
         {
-            var node = (Node<Symbol>) tree;
             return 1 + Math.max(height(node.left), height(node.right));
         }
         return 0;

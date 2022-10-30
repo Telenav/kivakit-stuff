@@ -52,9 +52,8 @@ public class Session implements Comparable<Session>
     @Override
     public boolean equals(Object object)
     {
-        if (object instanceof Session)
+        if (object instanceof Session that)
         {
-            Session that = (Session) object;
             return name.equals(that.name) && started.equals(that.started);
         }
         return false;

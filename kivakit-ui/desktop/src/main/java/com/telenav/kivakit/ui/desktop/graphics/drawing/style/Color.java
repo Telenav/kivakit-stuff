@@ -270,9 +270,8 @@ public class Color
     @Override
     public boolean equals(Object that)
     {
-        if (that instanceof Color)
+        if (that instanceof Color color)
         {
-            Color color = (Color) that;
             return red == color.red
                     && green == color.green
                     && blue == color.blue

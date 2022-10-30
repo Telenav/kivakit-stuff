@@ -205,9 +205,8 @@ public final class IntArray extends PrimitiveArray implements IntList
     @Override
     public boolean equals(Object object)
     {
-        if (object instanceof IntArray)
+        if (object instanceof IntArray that)
         {
-            var that = (IntArray) object;
             if (size() == that.size())
             {
                 return iterator().identical(that.iterator());

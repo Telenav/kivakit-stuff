@@ -213,21 +213,10 @@ public class Connector extends BaseRepeater
         state.transitionTo(newState);
         switch (newState)
         {
-            case CONNECTING:
-                narrate("Connecting to $", connectingTo);
-                break;
-
-            case CONNECTED:
-                narrate("Connected to $", connectedPort());
-                break;
-
-            case DISCONNECTING:
-                narrate("Disconnecting...");
-                break;
-
-            case DISCONNECTED:
-                narrate("Disconnected");
-                break;
+            case CONNECTING -> narrate("Connecting to $", connectingTo);
+            case CONNECTED -> narrate("Connected to $", connectedPort());
+            case DISCONNECTING -> narrate("Disconnecting...");
+            case DISCONNECTED -> narrate("Disconnected");
         }
         stateListener.accept(newState);
         return previous;

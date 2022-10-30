@@ -205,9 +205,8 @@ public final class LongArray extends PrimitiveArray implements LongList
     @Override
     public boolean equals(Object object)
     {
-        if (object instanceof LongArray)
+        if (object instanceof LongArray that)
         {
-            var that = (LongArray) object;
             if (size() == that.size())
             {
                 return iterator().identical(that.iterator());

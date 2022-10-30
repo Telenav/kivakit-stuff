@@ -152,26 +152,25 @@ public class PackedStringArray extends PrimitiveArray
         int arrayIndex;
         switch (type)
         {
-            case ASCII:
+            case ASCII ->
+            {
                 arrayIndex = asciiCharacterIndex;
                 for (var i = 0; i < string.length(); i++)
                 {
                     asciiCharacters.set(asciiCharacterIndex++, (byte) string.charAt(i));
                 }
                 asciiCharacters.set(asciiCharacterIndex++, (byte) 0);
-                break;
-
-            case UNICODE:
+            }
+            case UNICODE ->
+            {
                 arrayIndex = characterIndex;
                 for (var i = 0; i < string.length(); i++)
                 {
                     unicodeCharacters.set(characterIndex++, string.charAt(i));
                 }
                 unicodeCharacters.set(characterIndex++, (char) 0);
-                break;
-
-            default:
-                throw new IllegalStateException();
+            }
+            default -> throw new IllegalStateException();
         }
         size++;
         var index = index(type, arrayIndex);

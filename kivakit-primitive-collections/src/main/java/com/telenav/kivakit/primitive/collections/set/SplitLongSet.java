@@ -126,9 +126,8 @@ public final class SplitLongSet extends PrimitiveSet implements LongIterable
     @Override
     public boolean equals(Object object)
     {
-        if (object instanceof SplitLongSet)
+        if (object instanceof SplitLongSet that)
         {
-            var that = (SplitLongSet) object;
             if (size() != that.size())
             {
                 return false;

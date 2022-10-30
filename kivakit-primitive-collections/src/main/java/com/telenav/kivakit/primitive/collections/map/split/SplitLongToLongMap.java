@@ -122,9 +122,8 @@ public final class SplitLongToLongMap extends SplitPrimitiveMap implements Primi
     @Override
     public boolean equals(Object object)
     {
-        if (object instanceof SplitLongToLongMap)
+        if (object instanceof SplitLongToLongMap that)
         {
-            var that = (SplitLongToLongMap) object;
             if (size() != that.size())
             {
                 return false;

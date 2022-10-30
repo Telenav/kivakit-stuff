@@ -129,9 +129,8 @@ public final class IntToByteMap extends PrimitiveMap implements PrimitiveScalarM
     @Override
     public boolean equals(Object object)
     {
-        if (object instanceof IntToByteMap)
+        if (object instanceof IntToByteMap that)
         {
-            var that = (IntToByteMap) object;
             if (this == that)
             {
                 return true;

@@ -33,16 +33,12 @@ This project contains projects for compressing data and processing data in commo
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
-### Javadoc Coverage <a name = "javadoc-coverage"></a> &nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/bargraph-24.png" srcset="https://telenav.github.io/telenav-assets/images/icons/bargraph-24-2x.png 2x"/>
+### Code Quality <a name = "code-quality"></a> &nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/ruler-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/ruler-32-2x.png 2x"/>
 
-&nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-80-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-80-96-2x.png 2x"/>
- &nbsp; &nbsp; [**kivakit-data-compression**](compression/README.md)  
-&nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-90-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-90-96-2x.png 2x"/>
- &nbsp; &nbsp; [**kivakit-data-formats-csv**](formats/csv/README.md)  
-&nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-90-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-90-96-2x.png 2x"/>
- &nbsp; &nbsp; [**kivakit-data-formats-library**](formats/library/README.md)  
-&nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-70-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-70-96-2x.png 2x"/>
- &nbsp; &nbsp; [**kivakit-data-formats-xml**](formats/xml/README.md)
+&nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-0-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-0-96-2x.png 2x"/> &nbsp; &nbsp; [**kivakit-data-compression**](compression/README.md)  
+&nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-40-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-40-96-2x.png 2x"/> &nbsp; &nbsp; [**kivakit-data-formats-csv**](formats/csv/README.md)  
+&nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-70-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-70-96-2x.png 2x"/> &nbsp; &nbsp; [**kivakit-data-formats-library**](formats/library/README.md)  
+&nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-0-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-0-96-2x.png 2x"/> &nbsp; &nbsp; [**kivakit-data-formats-xml**](formats/xml/README.md)
 
 [//]: # (start-user-text)
 

@@ -123,9 +123,8 @@ public final class SplitLongToByteMap extends SplitPrimitiveMap implements Primi
     @Override
     public boolean equals(Object object)
     {
-        if (object instanceof SplitLongToByteMap)
+        if (object instanceof SplitLongToByteMap that)
         {
-            var that = (SplitLongToByteMap) object;
             if (size() != that.size())
             {
                 return false;

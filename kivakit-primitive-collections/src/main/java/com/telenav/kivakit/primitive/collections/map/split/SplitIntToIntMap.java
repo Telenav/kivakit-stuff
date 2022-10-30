@@ -115,9 +115,8 @@ public final class SplitIntToIntMap extends SplitPrimitiveMap implements Primiti
     @Override
     public boolean equals(Object object)
     {
-        if (object instanceof SplitIntToIntMap)
+        if (object instanceof SplitIntToIntMap that)
         {
-            var that = (SplitIntToIntMap) object;
             if (size() != that.size())
             {
                 return false;

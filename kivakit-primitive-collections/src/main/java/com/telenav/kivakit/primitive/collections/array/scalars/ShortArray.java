@@ -203,9 +203,8 @@ public final class ShortArray extends PrimitiveArray implements ShortList
     @Override
     public boolean equals(Object object)
     {
-        if (object instanceof ShortArray)
+        if (object instanceof ShortArray that)
         {
-            var that = (ShortArray) object;
             if (size() == that.size())
             {
                 return iterator().identical(that.iterator());

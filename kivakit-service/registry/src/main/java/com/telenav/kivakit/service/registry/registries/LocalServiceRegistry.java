@@ -19,7 +19,6 @@
 package com.telenav.kivakit.service.registry.registries;
 
 import com.telenav.kivakit.core.function.Result;
-import com.telenav.kivakit.network.core.Host;
 import com.telenav.kivakit.network.core.LocalHost;
 import com.telenav.kivakit.network.core.Port;
 import com.telenav.kivakit.service.registry.Service;

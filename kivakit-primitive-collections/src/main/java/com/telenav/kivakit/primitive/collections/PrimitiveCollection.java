@@ -287,9 +287,8 @@ public abstract class PrimitiveCollection implements
         @Override
         public boolean equals(Object object)
         {
-            if (object instanceof CompressionRecord)
+            if (object instanceof CompressionRecord that)
             {
-                CompressionRecord that = (CompressionRecord) object;
                 return name().equals(that.name());
             }
             return false;

@@ -178,9 +178,8 @@ public final class PackedArray extends PrimitiveArray implements LongList, Packe
     @Override
     public boolean equals(Object object)
     {
-        if (object instanceof PackedArray)
+        if (object instanceof PackedArray that)
         {
-            var that = (PackedArray) object;
             return Objects.areEqualPairs(bits, that.bits, data, that.data);
         }
         return false;
@@ -200,20 +199,18 @@ public final class PackedArray extends PrimitiveArray implements LongList, Packe
         var data = this.data;
         switch (bits)
         {
-            case 32:
+            case 32 ->
+            {
                 value = data.get(index / 2);
                 if (index % 2 == 0)
                 {
                     value >>>= 32;
                 }
                 value &= 0xffff_ffffL;
-                break;
-
-            case 64:
-                value = data.get(index);
-                break;
-
-            default:
+            }
+            case 64 -> value = data.get(index);
+            default ->
+            {
                 var bitIndex = index * bits;
                 var dataIndex = bitIndex / Long.SIZE;
                 var bitOffset = bitIndex % Long.SIZE;
@@ -227,6 +224,7 @@ public final class PackedArray extends PrimitiveArray implements LongList, Packe
                     value = (data.get(dataIndex) & firstMask[bitOffset]) << -firstShift;
                     value |= ((data.get(dataIndex + 1) & secondMask[bitOffset]) >>> secondShift[bitOffset]);
                 }
+            }
         }
 
         return value;

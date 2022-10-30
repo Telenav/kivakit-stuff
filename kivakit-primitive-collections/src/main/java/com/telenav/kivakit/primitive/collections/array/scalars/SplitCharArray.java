@@ -99,9 +99,8 @@ public final class SplitCharArray extends PrimitiveSplitArray implements CharLis
     @Override
     public boolean equals(Object object)
     {
-        if (object instanceof SplitCharArray)
+        if (object instanceof SplitCharArray that)
         {
-            var that = (SplitCharArray) object;
             return size() == that.size() && iterator().identical(that.iterator());
         }
         return false;

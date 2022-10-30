@@ -160,9 +160,8 @@ public class ByteArray extends PrimitiveArray implements ByteList
     @Override
     public boolean equals(Object object)
     {
-        if (object instanceof ByteArray)
+        if (object instanceof ByteArray that)
         {
-            var that = (ByteArray) object;
             if (size() == that.size())
             {
                 return iterator().identical(that.iterator());

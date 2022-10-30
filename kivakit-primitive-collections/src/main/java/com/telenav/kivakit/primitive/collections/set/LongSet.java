@@ -128,9 +128,8 @@ public final class LongSet extends PrimitiveSet implements LongCollection
     @Override
     public boolean equals(Object object)
     {
-        if (object instanceof LongSet)
+        if (object instanceof LongSet that)
         {
-            var that = (LongSet) object;
             if (size() != that.size())
             {
                 return false;
