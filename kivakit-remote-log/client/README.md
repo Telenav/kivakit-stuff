@@ -76,24 +76,24 @@ None
 
 | Class | Documentation Sections  |
 |-------|-------------------------|
-| [*ClientLog*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client//////////////////////////////////////////.html) |  |  
-| [*ClientLogFrame*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client///////////////////////////////////////////////.html) |  |  
-| [*ClientLogFrame.ExitMode*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client////////////////////////////////////////////////////////.html) |  |  
-| [*ClientLogPanel*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client////////////////////////////////////////////////////.html) |  |  
-| [*Connection*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client///////////////////////////////////////////////////.html) |  |  
-| [*ConnectionPanel*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client///////////////////////////////////////////////////////////////////////.html) |  |  
-| [*Connector*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client//////////////////////////////////////////////////.html) |  |  
-| [*Connector.State*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client////////////////////////////////////////////////////////.html) |  |  
-| [*LogsClientTheme*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client////////////////////////////////////////////////////////.html) |  |  
-| [*Receiver*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client/////////////////////////////////////////////////.html) |  |  
-| [*Receiver.State*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client///////////////////////////////////////////////////////.html) |  |  
-| [*SearchPanel*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client///////////////////////////////////////////////////////////////.html) |  |  
-| [*SessionPanel*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client/////////////////////////////////////////////////////////////////.html) |  |  
-| [*TableCellRenderer*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client////////////////////////////////////////////////////////////////////.html) |  |  
-| [*TableFilter*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client//////////////////////////////////////////////////////////////.html) |  |  
-| [*TableModel*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client/////////////////////////////////////////////////////////////.html) |  |  
-| [*TablePanel*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client/////////////////////////////////////////////////////////////.html) |  |  
-| [*ToolPanel*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client///////////////////////////////////////////////////////////.html) |  |  
+| [*ClientLog*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client/com/telenav/kivakit/logs/client/ClientLog.html) |  |  
+| [*ClientLogFrame*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client/com/telenav/kivakit/logs/client/ClientLogFrame.html) |  |  
+| [*ClientLogFrame.ExitMode*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client/com/telenav/kivakit/logs/client/ClientLogFrame.ExitMode.html) |  |  
+| [*ClientLogPanel*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client/com/telenav/kivakit/logs/client/view/ClientLogPanel.html) |  |  
+| [*Connection*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client/com/telenav/kivakit/logs/client/network/Connection.html) |  |  
+| [*ConnectionPanel*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client/com/telenav/kivakit/logs/client/view/panels/connection/ConnectionPanel.html) |  |  
+| [*Connector*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client/com/telenav/kivakit/logs/client/network/Connector.html) |  |  
+| [*Connector.State*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client/com/telenav/kivakit/logs/client/network/Connector.State.html) |  |  
+| [*LogsClientTheme*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client/com/telenav/kivakit/logs/client/project/LogsClientTheme.html) |  |  
+| [*Receiver*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client/com/telenav/kivakit/logs/client/network/Receiver.html) |  |  
+| [*Receiver.State*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client/com/telenav/kivakit/logs/client/network/Receiver.State.html) |  |  
+| [*SearchPanel*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client/com/telenav/kivakit/logs/client/view/panels/search/SearchPanel.html) |  |  
+| [*SessionPanel*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client/com/telenav/kivakit/logs/client/view/panels/session/SessionPanel.html) |  |  
+| [*TableCellRenderer*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client/com/telenav/kivakit/logs/client/view/panels/table/TableCellRenderer.html) |  |  
+| [*TableFilter*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client/com/telenav/kivakit/logs/client/view/panels/table/TableFilter.html) |  |  
+| [*TableModel*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client/com/telenav/kivakit/logs/client/view/panels/table/TableModel.html) |  |  
+| [*TablePanel*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client/com/telenav/kivakit/logs/client/view/panels/table/TablePanel.html) |  |  
+| [*ToolPanel*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.client/com/telenav/kivakit/logs/client/view/panels/tool/ToolPanel.html) |  |  
 
 [//]: # (start-user-text)
 

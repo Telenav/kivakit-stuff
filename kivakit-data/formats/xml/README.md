@@ -68,15 +68,15 @@ None
 
 | Class | Documentation Sections  |
 |-------|-------------------------|
-| [*StaxPath*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.data.formats.xml///////////////////////////////////////////////////.html) |  |  
-| [*StaxReader*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.data.formats.xml/////////////////////////////////////////////////////.html) | Using a {@link StaxReader} |  
+| [*StaxPath*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.data.formats.xml/com/telenav/kivakit/data/formats/xml/stax/StaxPath.html) |  |  
+| [*StaxReader*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.data.formats.xml/com/telenav/kivakit/data/formats/xml/stax/StaxReader.html) | Using a {@link StaxReader} |  
 | | Stream Positioning |  
 | | Reader State |  
 | | Moving Through the Stream |  
 | | StaxPath Positioning Operations |  
-| [*StaxReader.BooleanMatcher*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.data.formats.xml////////////////////////////////////////////////////////////////////.html) |  |  
-| [*StaxReader.Match*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.data.formats.xml///////////////////////////////////////////////////////////.html) |  |  
-| [*StaxReader.Matcher*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.data.formats.xml/////////////////////////////////////////////////////////////.html) |  |  
+| [*StaxReader.BooleanMatcher*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.data.formats.xml/com/telenav/kivakit/data/formats/xml/stax/StaxReader.BooleanMatcher.html) |  |  
+| [*StaxReader.Match*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.data.formats.xml/com/telenav/kivakit/data/formats/xml/stax/StaxReader.Match.html) |  |  
+| [*StaxReader.Matcher*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.data.formats.xml/com/telenav/kivakit/data/formats/xml/stax/StaxReader.Matcher.html) |  |  
 
 [//]: # (start-user-text)
 

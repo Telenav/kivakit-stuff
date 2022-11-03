@@ -81,8 +81,8 @@ Code quality for this project is 66.7%.
 
 | Class | Documentation Sections  |
 |-------|-------------------------|
-| [*DataFormat*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.data.formats.library////////////////////////////////////////////////////.html) |  |  
-| [*DiagramDataFormat*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.data.formats.library////////////////////////////////////////////////////////////////////////////.html) |  |  
+| [*DataFormat*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.data.formats.library/com/telenav/kivakit/data/formats/library/DataFormat.html) |  |  
+| [*DiagramDataFormat*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.data.formats.library/com/telenav/kivakit/data/formats/library/internal/lexakai/DiagramDataFormat.html) |  |  
 
 [//]: # (start-user-text)
 

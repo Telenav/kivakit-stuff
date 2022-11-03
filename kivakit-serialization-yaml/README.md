@@ -80,8 +80,8 @@ None
 
 | Class | Documentation Sections  |
 |-------|-------------------------|
-| [*YamlObjectSerializer*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.serialization.yaml////////////////////////////////////////////////////////////.html) |  |  
-| [*YamlSerializationProject*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.serialization.yaml////////////////////////////////////////////////////////////////.html) |  |  
+| [*YamlObjectSerializer*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.serialization.yaml/com/telenav/kivakit/serialization/yaml/YamlObjectSerializer.html) |  |  
+| [*YamlSerializationProject*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.serialization.yaml/com/telenav/kivakit/serialization/yaml/YamlSerializationProject.html) |  |  
 
 [//]: # (start-user-text)
 

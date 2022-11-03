@@ -83,12 +83,12 @@ Code quality for this project is 55.6%.
 
 | Class | Documentation Sections  |
 |-------|-------------------------|
-| [*BaseDigester*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.security/////////////////////////////////////////////////.html) |  |  
-| [*DiagramSecurity*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.security//////////////////////////////////////////////////////////////.html) |  |  
-| [*DiagramSecurityDigest*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.security////////////////////////////////////////////////////////////////////.html) |  |  
-| [*Digester*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.security/////////////////////////////////////////////.html) |  |  
-| [*Md5Digester*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.security//////////////////////////////////////////////////////////.html) |  |  
-| [*Sha1Digester*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.security///////////////////////////////////////////////////////////.html) |  |  
+| [*BaseDigester*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.security/com/telenav/kivakit/security/digest/BaseDigester.html) |  |  
+| [*DiagramSecurity*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.security/com/telenav/kivakit/security/internal/lexakai/DiagramSecurity.html) |  |  
+| [*DiagramSecurityDigest*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.security/com/telenav/kivakit/security/internal/lexakai/DiagramSecurityDigest.html) |  |  
+| [*Digester*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.security/com/telenav/kivakit/security/digest/Digester.html) |  |  
+| [*Md5Digester*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.security/com/telenav/kivakit/security/digest/digesters/Md5Digester.html) |  |  
+| [*Sha1Digester*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.security/com/telenav/kivakit/security/digest/digesters/Sha1Digester.html) |  |  
 
 [//]: # (start-user-text)
 

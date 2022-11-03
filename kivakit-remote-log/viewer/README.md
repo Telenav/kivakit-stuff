@@ -68,8 +68,8 @@ None
 
 | Class | Documentation Sections  |
 |-------|-------------------------|
-| [*LogViewerApplication*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.viewer/////////////////////////////////////////////////////.html) |  |  
-| [*LogViewerTesterApplication*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.viewer///////////////////////////////////////////////////////////.html) |  |  
+| [*LogViewerApplication*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.viewer/com/telenav/kivakit/logs/viewer/LogViewerApplication.html) |  |  
+| [*LogViewerTesterApplication*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.viewer/com/telenav/kivakit/logs/viewer/LogViewerTesterApplication.html) |  |  
 
 [//]: # (start-user-text)
 

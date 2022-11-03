@@ -68,7 +68,7 @@ None
 
 | Class | Documentation Sections  |
 |-------|-------------------------|
-| [*ServiceRegistryViewerApplication*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.viewer////////////////////////////////////////////////////////////////////.html) |  |  
+| [*ServiceRegistryViewerApplication*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.viewer/com/telenav/kivakit/service/viewer/ServiceRegistryViewerApplication.html) |  |  
 
 [//]: # (start-user-text)
 

@@ -81,9 +81,9 @@ None
 
 | Class | Documentation Sections  |
 |-------|-------------------------|
-| [*StandardDeviation*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.math//////////////////////////////////////////////////////.html) |  |  
-| [*SuccessRate*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.math////////////////////////////////////////////////.html) |  |  
-| [*Trigonometry*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.math///////////////////////////////////////////////////.html) |  |  
+| [*StandardDeviation*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.math/com/telenav/kivakit/math/statistics/StandardDeviation.html) |  |  
+| [*SuccessRate*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.math/com/telenav/kivakit/math/statistics/SuccessRate.html) |  |  
+| [*Trigonometry*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.math/com/telenav/kivakit/math/trigonometry/Trigonometry.html) |  |  
 
 [//]: # (start-user-text)
 

@@ -84,9 +84,9 @@ Code quality for this project is 44.4%.
 
 | Class | Documentation Sections  |
 |-------|-------------------------|
-| [*DiagramClient*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.client///////////////////////////////////////////////////////////////////////////.html) |  |  
-| [*ServiceRegistryClient*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.client//////////////////////////////////////////////////////////////////.html) |  |  
-| [*ServiceRegistryClientSettings*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.client//////////////////////////////////////////////////////////////////////////.html) |  |  
+| [*DiagramClient*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.client/com/telenav/kivakit/service/registry/client/internal/lexakai/DiagramClient.html) |  |  
+| [*ServiceRegistryClient*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.client/com/telenav/kivakit/service/registry/client/ServiceRegistryClient.html) |  |  
+| [*ServiceRegistryClientSettings*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.client/com/telenav/kivakit/service/registry/client/ServiceRegistryClientSettings.html) |  |  
 
 [//]: # (start-user-text)
 

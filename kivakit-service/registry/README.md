@@ -92,45 +92,45 @@ Code quality for this project is 34.2%.
 
 | Class | Documentation Sections  |
 |-------|-------------------------|
-| [*ApplicationIdentifierGsonSerializer*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry///////////////////////////////////////////////////////////////////////////////////////////////////.html) |  |  
-| [*BaseRequest*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry//////////////////////////////////////////////////////////.html) |  |  
-| [*BaseResponse*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry///////////////////////////////////////////////////////////.html) |  |  
-| [*BaseServiceRegistry*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry////////////////////////////////////////////////////////////////////.html) |  |  
-| [*ClusterIdentifier*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry///////////////////////////////////////////////////////.html) |  |  
-| [*DiagramRegistry*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry//////////////////////////////////////////////////////////////////////.html) |  |  
-| [*DiagramRest*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry//////////////////////////////////////////////////////////////////.html) |  |  
-| [*DiscoverApplicationsRequest*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry///////////////////////////////////////////////////////////////////////////////////.html) |  |  
-| [*DiscoverApplicationsResponse*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry////////////////////////////////////////////////////////////////////////////////////.html) |  |  
-| [*DiscoverPortServiceRequest*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry//////////////////////////////////////////////////////////////////////////////////.html) |  |  
-| [*DiscoverPortServiceResponse*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry///////////////////////////////////////////////////////////////////////////////////.html) |  |  
-| [*DiscoverServicesRequest*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry///////////////////////////////////////////////////////////////////////////////.html) |  |  
-| [*DiscoverServicesRequest.SearchType*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry//////////////////////////////////////////////////////////////////////////////////////////.html) |  |  
-| [*DiscoverServicesResponse*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry////////////////////////////////////////////////////////////////////////////////.html) |  |  
-| [*LocalServiceRegistry*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/////////////////////////////////////////////////////////////////////.html) |  |  
-| [*NetworkRegistryUpdateRequest*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry//////////////////////////////////////////////////////////////////////////////////.html) |  |  
-| [*NetworkRegistryUpdateResponse*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry///////////////////////////////////////////////////////////////////////////////////.html) |  |  
-| [*NetworkServiceRegistry*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry///////////////////////////////////////////////////////////////////////.html) |  |  
-| [*RegisterServiceRequest*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry//////////////////////////////////////////////////////////////////////////////.html) |  |  
-| [*RegisterServiceResponse*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry///////////////////////////////////////////////////////////////////////////////.html) |  |  
-| [*RenewServiceRequest*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry////////////////////////////////////////////////////////////////////////.html) |  |  
-| [*RenewServiceResponse*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/////////////////////////////////////////////////////////////////////////.html) |  |  
-| [*Scope*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry///////////////////////////////////////////.html) |  |  
-| [*Scope.Type*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry////////////////////////////////////////////////.html) |  |  
-| [*Service*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/////////////////////////////////////////////.html) | Service Registration and Expiration |  
+| [*ApplicationIdentifierGsonSerializer*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/serialization/serializers/ApplicationIdentifierGsonSerializer.html) |  |  
+| [*BaseRequest*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/protocol/BaseRequest.html) |  |  
+| [*BaseResponse*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/protocol/BaseResponse.html) |  |  
+| [*BaseServiceRegistry*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/registries/BaseServiceRegistry.html) |  |  
+| [*ClusterIdentifier*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/ClusterIdentifier.html) |  |  
+| [*DiagramRegistry*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/internal/lexakai/DiagramRegistry.html) |  |  
+| [*DiagramRest*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/internal/lexakai/DiagramRest.html) |  |  
+| [*DiscoverApplicationsRequest*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/protocol/discover/DiscoverApplicationsRequest.html) |  |  
+| [*DiscoverApplicationsResponse*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/protocol/discover/DiscoverApplicationsResponse.html) |  |  
+| [*DiscoverPortServiceRequest*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/protocol/discover/DiscoverPortServiceRequest.html) |  |  
+| [*DiscoverPortServiceResponse*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/protocol/discover/DiscoverPortServiceResponse.html) |  |  
+| [*DiscoverServicesRequest*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/protocol/discover/DiscoverServicesRequest.html) |  |  
+| [*DiscoverServicesRequest.SearchType*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/protocol/discover/DiscoverServicesRequest.SearchType.html) |  |  
+| [*DiscoverServicesResponse*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/protocol/discover/DiscoverServicesResponse.html) |  |  
+| [*LocalServiceRegistry*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/registries/LocalServiceRegistry.html) |  |  
+| [*NetworkRegistryUpdateRequest*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/protocol/update/NetworkRegistryUpdateRequest.html) |  |  
+| [*NetworkRegistryUpdateResponse*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/protocol/update/NetworkRegistryUpdateResponse.html) |  |  
+| [*NetworkServiceRegistry*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/registries/NetworkServiceRegistry.html) |  |  
+| [*RegisterServiceRequest*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/protocol/register/RegisterServiceRequest.html) |  |  
+| [*RegisterServiceResponse*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/protocol/register/RegisterServiceResponse.html) |  |  
+| [*RenewServiceRequest*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/protocol/renew/RenewServiceRequest.html) |  |  
+| [*RenewServiceResponse*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/protocol/renew/RenewServiceResponse.html) |  |  
+| [*Scope*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/Scope.html) |  |  
+| [*Scope.Type*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/Scope.Type.html) |  |  
+| [*Service*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/Service.html) | Service Registration and Expiration |  
 | | Service Discovery |  
 | | Service Properties |  
-| [*ServiceMetadata*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/////////////////////////////////////////////////////.html) | Service Metadata |  
-| [*ServiceRegistry*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/////////////////////////////////////////////////////.html) |  |  
-| [*ServiceRegistryGsonFactorySource*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry////////////////////////////////////////////////////////////////////////////////////.html) |  |  
-| [*ServiceRegistryJerseySerializer*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry///////////////////////////////////////////////////////////////////////////////////.html) |  |  
-| [*ServiceRegistryKryoTypes*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry//////////////////////////////////////////////////////////////.html) |  |  
-| [*ServiceRegistryProject*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry////////////////////////////////////////////////////////////.html) |  |  
-| [*ServiceRegistryProtocol*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry//////////////////////////////////////////////////////////////////////.html) |  |  
-| [*ServiceRegistrySettings*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/////////////////////////////////////////////////////////////.html) | ServiceRegistrySettings.properties |  
-| [*ServiceRegistryStore*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry////////////////////////////////////////////////////////////////.html) |  |  
-| [*ServiceRegistryUpdater*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry////////////////////////////////////////////////////////////.html) |  |  
-| [*ServiceType*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/////////////////////////////////////////////////.html) |  |  
-| [*ServiceTypeGsonSerializer*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/////////////////////////////////////////////////////////////////////////////////////////.html) |  |  
+| [*ServiceMetadata*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/ServiceMetadata.html) | Service Metadata |  
+| [*ServiceRegistry*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/ServiceRegistry.html) |  |  
+| [*ServiceRegistryGsonFactorySource*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/serialization/ServiceRegistryGsonFactorySource.html) |  |  
+| [*ServiceRegistryJerseySerializer*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/serialization/ServiceRegistryJerseySerializer.html) |  |  
+| [*ServiceRegistryKryoTypes*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/ServiceRegistryKryoTypes.html) |  |  
+| [*ServiceRegistryProject*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/ServiceRegistryProject.html) |  |  
+| [*ServiceRegistryProtocol*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/protocol/ServiceRegistryProtocol.html) |  |  
+| [*ServiceRegistrySettings*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/ServiceRegistrySettings.html) | ServiceRegistrySettings.properties |  
+| [*ServiceRegistryStore*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/store/ServiceRegistryStore.html) |  |  
+| [*ServiceRegistryUpdater*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/ServiceRegistryUpdater.html) |  |  
+| [*ServiceType*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/ServiceType.html) |  |  
+| [*ServiceTypeGsonSerializer*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.registry/com/telenav/kivakit/service/registry/serialization/serializers/ServiceTypeGsonSerializer.html) |  |  
 
 [//]: # (start-user-text)
 
