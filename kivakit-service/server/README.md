@@ -82,16 +82,16 @@ Code quality for this project is 40.0%.
 
 | Class | Documentation Sections  |
 |-------|-------------------------|
-| [*DiagramServer*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.server///////////////////////////////////////////////////////////////////////////.html) |  |  
-| [*HomePage*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.server///////////////////////////////////////////////////////////////////////.html) |  |  
-| [*ServicePanel*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.server///////////////////////////////////////////////////////////////////////////.html) |  |  
-| [*ServiceRegistryRestApplication*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.server////////////////////////////////////////////////////////////////////////////////.html) |  |  
-| [*ServiceRegistryRestResource*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.server/////////////////////////////////////////////////////////////////////////////.html) |  |  
-| [*ServiceRegistryServer*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.server//////////////////////////////////////////////////////////////////.html) |  |  
-| [*ServiceRegistryServerProject*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.server/////////////////////////////////////////////////////////////////////////.html) |  |  
-| [*ServiceRegistryServerSettings*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.server//////////////////////////////////////////////////////////////////////////.html) |  |  
-| [*ServiceRegistryWebApplication*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.server/////////////////////////////////////////////////////////////////////////////////.html) |  |  
-| [*ServiceRegistryWebPage*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.server//////////////////////////////////////////////////////////////////////////.html) |  |  
+| [*DiagramServer*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.server/com/telenav/kivakit/service/registry/server/internal/lexakai/DiagramServer.html) |  |  
+| [*HomePage*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.server/com/telenav/kivakit/service/registry/server/webapp/pages/home/HomePage.html) |  |  
+| [*ServicePanel*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.server/com/telenav/kivakit/service/registry/server/webapp/pages/home/ServicePanel.html) |  |  
+| [*ServiceRegistryRestApplication*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.server/com/telenav/kivakit/service/registry/server/rest/ServiceRegistryRestApplication.html) |  |  
+| [*ServiceRegistryRestResource*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.server/com/telenav/kivakit/service/registry/server/rest/ServiceRegistryRestResource.html) |  |  
+| [*ServiceRegistryServer*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.server/com/telenav/kivakit/service/registry/server/ServiceRegistryServer.html) |  |  
+| [*ServiceRegistryServerProject*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.server/com/telenav/kivakit/service/registry/server/ServiceRegistryServerProject.html) |  |  
+| [*ServiceRegistryServerSettings*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.server/com/telenav/kivakit/service/registry/server/ServiceRegistryServerSettings.html) |  |  
+| [*ServiceRegistryWebApplication*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.server/com/telenav/kivakit/service/registry/server/webapp/ServiceRegistryWebApplication.html) |  |  
+| [*ServiceRegistryWebPage*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.service.server/com/telenav/kivakit/service/registry/server/webapp/ServiceRegistryWebPage.html) |  |  
 
 [//]: # (start-user-text)
 

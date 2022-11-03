@@ -81,15 +81,15 @@ Code quality for this project is 37.5%.
 
 | Class | Documentation Sections  |
 |-------|-------------------------|
-| [*CsvColumn*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.data.formats.csv///////////////////////////////////////////////.html) |  |  
-| [*CsvLine*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.data.formats.csv/////////////////////////////////////////////.html) | Properties |  
+| [*CsvColumn*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.data.formats.csv/com/telenav/kivakit/data/formats/csv/CsvColumn.html) |  |  
+| [*CsvLine*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.data.formats.csv/com/telenav/kivakit/data/formats/csv/CsvLine.html) | Properties |  
 | | Converting a Line to an Object |  
-| [*CsvPropertyFilter*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.data.formats.csv///////////////////////////////////////////////////////.html) |  |  
-| [*CsvReader*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.data.formats.csv///////////////////////////////////////////////.html) | Processing CSV Lines |  
-| [*CsvSchema*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.data.formats.csv///////////////////////////////////////////////.html) |  |  
-| [*CsvWriter*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.data.formats.csv///////////////////////////////////////////////.html) |  |  
-| [*DiagramCsv*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.data.formats.csv/////////////////////////////////////////////////////////////////.html) |  |  
-| [*UnquotedCsvReader*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.data.formats.csv///////////////////////////////////////////////////////.html) |  |  
+| [*CsvPropertyFilter*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.data.formats.csv/com/telenav/kivakit/data/formats/csv/CsvPropertyFilter.html) |  |  
+| [*CsvReader*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.data.formats.csv/com/telenav/kivakit/data/formats/csv/CsvReader.html) | Processing CSV Lines |  
+| [*CsvSchema*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.data.formats.csv/com/telenav/kivakit/data/formats/csv/CsvSchema.html) |  |  
+| [*CsvWriter*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.data.formats.csv/com/telenav/kivakit/data/formats/csv/CsvWriter.html) |  |  
+| [*DiagramCsv*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.data.formats.csv/com/telenav/kivakit/data/formats/csv/internal/lexakai/DiagramCsv.html) |  |  
+| [*UnquotedCsvReader*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.data.formats.csv/com/telenav/kivakit/data/formats/csv/UnquotedCsvReader.html) |  |  
 
 [//]: # (start-user-text)
 

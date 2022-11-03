@@ -69,11 +69,11 @@ None
 
 | Class | Documentation Sections  |
 |-------|-------------------------|
-| [*ServerLog*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.server//////////////////////////////////////////.html) |  |  
-| [*ServerLogKryoTypes*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.server///////////////////////////////////////////////////.html) |  |  
-| [*ServerLogProject*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.server/////////////////////////////////////////////////.html) |  |  
-| [*Session*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.server////////////////////////////////////////////////.html) |  |  
-| [*SessionStore*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.server/////////////////////////////////////////////////////.html) |  |  
+| [*ServerLog*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.server/com/telenav/kivakit/logs/server/ServerLog.html) |  |  
+| [*ServerLogKryoTypes*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.server/com/telenav/kivakit/logs/server/ServerLogKryoTypes.html) |  |  
+| [*ServerLogProject*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.server/com/telenav/kivakit/logs/server/ServerLogProject.html) |  |  
+| [*Session*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.server/com/telenav/kivakit/logs/server/session/Session.html) |  |  
+| [*SessionStore*](https://www.kivakit.org/1.8.2/javadoc/kivakit-stuff/kivakit.logs.server/com/telenav/kivakit/logs/server/session/SessionStore.html) |  |  
 
 [//]: # (start-user-text)
 
