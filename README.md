@@ -18,7 +18,7 @@
 
 [//]: # (end-user-text)
 
-# kivakit-stuff 1.8.2 &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/logos/kivakit/kivakit-64.png" srcset="https://telenav.github.io/telenav-assets/images/logos/kivakit/kivakit-64-2x.png 2x"/>
+# kivakit-stuff 1.8.4 &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/logos/kivakit/kivakit-64.png" srcset="https://telenav.github.io/telenav-assets/images/logos/kivakit/kivakit-64-2x.png 2x"/>
 
 KivaKit is a new vision for Java coding that makes development faster and easier.
 
@@ -64,8 +64,8 @@ KivaKit is a new vision for Java coding that makes development faster and easier
 ### Code Quality <a name = "code-quality"></a> &nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/ruler-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/ruler-32-2x.png 2x"/>
 
 &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-20-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-20-96-2x.png 2x"/> &nbsp; &nbsp; [**kivakit-math**](kivakit-math/README.md)  
-&nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-10-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-10-96-2x.png 2x"/> &nbsp; &nbsp; [**kivakit-primitive-collections**](kivakit-primitive-collections/README.md)  
-&nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-60-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-60-96-2x.png 2x"/> &nbsp; &nbsp; [**kivakit-security**](kivakit-security/README.md)  
+&nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-0-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-0-96-2x.png 2x"/> &nbsp; &nbsp; [**kivakit-primitive-collections**](kivakit-primitive-collections/README.md)  
+&nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-30-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-30-96-2x.png 2x"/> &nbsp; &nbsp; [**kivakit-security**](kivakit-security/README.md)  
 &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-0-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-0-96-2x.png 2x"/> &nbsp; &nbsp; [**kivakit-serialization-yaml**](kivakit-serialization-yaml/README.md)
 
 [//]: # (start-user-text)

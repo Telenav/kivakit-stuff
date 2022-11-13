@@ -4,9 +4,9 @@
 
 [//]: # (end-user-text)
 
-# kivakit-metrics &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/ruler-64.png" srcset="https://telenav.github.io/telenav-assets/images/icons/ruler-64-2x.png 2x"/>
+# kivakit-metrics-prometheus &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/ruler-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/ruler-32-2x.png 2x"/>
 
-This module contains a provider for kivakit-metrics that makes Prometheus monitoring available
+This module contains packages for collecting metrics in a cloud environment with Prometheus.
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-512.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-512-2x.png 2x"/>
 
@@ -20,14 +20,14 @@ This module contains a provider for kivakit-metrics that makes Prometheus monito
 
 ### Dependencies <a name="dependencies"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/dependencies-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/dependencies-32-2x.png 2x"/>
 
-[*Dependency Diagram*](https://www.kivakit.org/1.8.2/lexakai/kivakit-extensions/kivakit-metrics/prometheus/documentation/diagrams/dependencies.svg)
+[*Dependency Diagram*](https://www.kivakit.org/1.8.4/lexakai/kivakit-stuff/kivakit-metrics/prometheus/documentation/diagrams/dependencies.svg)
 
 #### Maven Dependency
 
     <dependency>
         <groupId>com.telenav.kivakit</groupId>
         <artifactId>kivakit-metrics-prometheus</artifactId>
-        <version>1.8.2</version>
+        <version>1.8.4</version>
     </dependency>
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
@@ -62,14 +62,14 @@ None
 
 ### Package Diagrams <a name="package-diagrams"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/box-24.png" srcset="https://telenav.github.io/telenav-assets/images/icons/box-24-2x.png 2x"/>
 
-[*com.telenav.kivakit.metrics.prometheus*](https://www.kivakit.org/1.8.2/lexakai/kivakit-extensions/kivakit-metrics/prometheus/documentation/diagrams/com.telenav.kivakit.metrics.prometheus.svg)
+[*com.telenav.kivakit.metrics.prometheus*](https://www.kivakit.org/1.8.4/lexakai/kivakit-stuff/kivakit-metrics/prometheus/documentation/diagrams/com.telenav.kivakit.metrics.prometheus.svg)
 
 ### Javadoc <a name="code-quality"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/books-24.png" srcset="https://telenav.github.io/telenav-assets/images/icons/books-24-2x.png 2x"/>
 
 | Class | Documentation Sections  |
 |-------|-------------------------|
-| [*PrometheusJettyPlugin*](https://www.kivakit.org/1.8.2/javadoc/kivakit-extensions/kivakit.metrics.prometheus/com/telenav/kivakit/metrics/prometheus/PrometheusJettyPlugin.html) |  |  
-| [*PrometheusMetricsReporter*](https://www.kivakit.org/1.8.2/javadoc/kivakit-extensions/kivakit.metrics.prometheus/com/telenav/kivakit/metrics/prometheus/PrometheusMetricsReporter.html) |  |  
+| [*PrometheusJettyPlugin*](https://www.kivakit.org/1.8.4/javadoc/kivakit-stuff/kivakit-metrics-prometheus/com/telenav/kivakit/metrics/prometheus/PrometheusJettyPlugin.html) |  |  
+| [*PrometheusMetricsReporter*](https://www.kivakit.org/1.8.4/javadoc/kivakit-stuff/kivakit-metrics-prometheus/com/telenav/kivakit/metrics/prometheus/PrometheusMetricsReporter.html) |  |  
 
 [//]: # (start-user-text)
 
