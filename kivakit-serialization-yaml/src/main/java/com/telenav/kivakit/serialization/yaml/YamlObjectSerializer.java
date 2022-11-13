@@ -2,6 +2,7 @@ package com.telenav.kivakit.serialization.yaml;
 
 import com.esotericsoftware.yamlbeans.YamlConfig;
 import com.esotericsoftware.yamlbeans.YamlReader;
+import com.telenav.kivakit.conversion.core.language.object.ConvertedProperty;
 import com.telenav.kivakit.core.io.IO;
 import com.telenav.kivakit.core.language.Classes;
 import com.telenav.kivakit.core.language.trait.TryTrait;
@@ -13,6 +14,7 @@ import com.telenav.kivakit.core.version.Version;
 import com.telenav.kivakit.resource.serialization.ObjectMetadata;
 import com.telenav.kivakit.resource.serialization.ObjectSerializer;
 import com.telenav.kivakit.resource.serialization.SerializableObject;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.InputStream;
@@ -21,14 +23,27 @@ import java.util.regex.Pattern;
 
 import static com.telenav.kivakit.core.ensure.Ensure.ensureNotNull;
 import static com.telenav.kivakit.core.ensure.Ensure.unsupported;
+import static com.telenav.kivakit.core.messaging.Listener.throwingListener;
+import static com.telenav.kivakit.core.progress.ProgressReporter.nullProgressReporter;
 import static com.telenav.kivakit.resource.serialization.ObjectMetadata.METADATA_OBJECT_INSTANCE;
 import static com.telenav.kivakit.resource.serialization.ObjectMetadata.METADATA_OBJECT_TYPE;
+import static com.telenav.kivakit.resource.serialization.ObjectMetadata.METADATA_OBJECT_VERSION;
 
 /**
- * JSON {@link ObjectSerializer} using Google Gson library.
+ * YAML {@link ObjectSerializer} using YamlBeans, without support for {@link ConvertedProperty}.
+ *
+ * <p><b>NOTE</b></p>
+ *
+ * <p>
+ * There is no support yet for {@link ConvertedProperty} annotations because YamlBeans doesn't support this (and neither
+ * does SnakeYAML). So for now, YAML serialization is limited to unconverted primitive types. There is a post to the
+ * SnakeYAML group asking if there is a way to achieve converted properties here:
+ * <a href="https://groups.google.com/g/snakeyaml-core/c/WD-1ZqrjBts">SnakeYAML Post</a>
+ * </p>
  *
  * @author jonathanl (shibo)
  */
+@SuppressWarnings("unused")
 public class YamlObjectSerializer implements
         ObjectSerializer,
         RegistryTrait,
@@ -40,17 +55,23 @@ public class YamlObjectSerializer implements
 
     private static final Pattern VERSION_PATTERN = Pattern.compile("(version)\\s*:\\s*(?<version>.+)\\n*");
 
+    @Override
+    public ProgressReporter progressReporter()
+    {
+        return nullProgressReporter();
+    }
+
     /**
      * {@inheritDoc}
      */
     @Override
-    public <T> SerializableObject<T> read(InputStream input,
-                                          StringPath path,
-                                          Class<T> type,
-                                          ObjectMetadata... metadata)
+    public <T> SerializableObject<T> readObject(@NotNull InputStream input,
+                                                @NotNull StringPath path,
+                                                Class<T> type,
+                                                ObjectMetadata... metadata)
     {
         // Read .yaml text,
-        var text = IO.string(input);
+        var text = IO.readString(throwingListener(), input);
 
         return tryCatchThrow(() ->
         {
@@ -78,20 +99,14 @@ public class YamlObjectSerializer implements
         }, "Unable to read $ from $", resolvedType(text, metadata, type), path);
     }
 
-    @Override
-    public ProgressReporter reporter()
-    {
-        return ProgressReporter.nullProgressReporter();
-    }
-
     /**
      * {@inheritDoc}
      */
     @Override
-    public <T> void write(OutputStream output,
-                          StringPath path,
-                          SerializableObject<T> object,
-                          ObjectMetadata... metadata)
+    public <T> void writeObject(@NotNull OutputStream output,
+                                @NotNull StringPath path,
+                                @NotNull SerializableObject<T> object,
+                                ObjectMetadata... metadata)
     {
         unsupported("Writing YAML is not supported at this time");
     }
@@ -127,7 +142,7 @@ public class YamlObjectSerializer implements
     private Version version(String text, ObjectMetadata[] metadata)
     {
         Version version = null;
-        if (VERSION.containedIn(metadata))
+        if (METADATA_OBJECT_VERSION.containedIn(metadata))
         {
             var versionMatcher = VERSION_PATTERN.matcher(text);
             if (versionMatcher.find())

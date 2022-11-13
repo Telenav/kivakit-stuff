@@ -16,10 +16,9 @@ package com.telenav.kivakit.serialization.yaml;/////////////////////////////////
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-import com.telenav.kivakit.conversion.core.language.object.KivaKitConverted;
+import com.telenav.kivakit.conversion.core.language.object.ConvertedProperty;
 import com.telenav.kivakit.conversion.core.language.primitive.IntegerConverter;
 import com.telenav.kivakit.conversion.core.time.DurationConverter;
-import com.telenav.kivakit.core.time.Duration;
 
 /**
  * Configuration Java Bean with string conversion methods for each property to allow storage of this configuration in a
@@ -27,18 +26,19 @@ import com.telenav.kivakit.core.time.Duration;
  *
  * @author jonathanl (shibo)
  */
+@SuppressWarnings("unused")
 public class ClientSettings
 {
     private int port;
 
-    private Duration timeout;
+    private String timeout;
 
     public int getPort()
     {
         return port;
     }
 
-    public Duration getTimeout()
+    public String getTimeout()
     {
         return timeout;
     }
@@ -48,7 +48,7 @@ public class ClientSettings
         return port;
     }
 
-    @KivaKitConverted(IntegerConverter.class)
+    @ConvertedProperty(IntegerConverter.class)
     public void port(int port)
     {
         this.port = port;
@@ -59,18 +59,18 @@ public class ClientSettings
         this.port = port;
     }
 
-    public void setTimeout(Duration timeout)
+    public void setTimeout(String timeout)
     {
         this.timeout = timeout;
     }
 
-    public Duration timeout()
+    public String timeout()
     {
         return timeout;
     }
 
-    @KivaKitConverted(DurationConverter.class)
-    public void timeout(Duration timeout)
+    @ConvertedProperty(DurationConverter.class)
+    public void timeout(String timeout)
     {
         this.timeout = timeout;
     }
