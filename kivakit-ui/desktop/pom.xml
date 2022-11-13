@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <!--
  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  //
@@ -8,44 +9,58 @@
  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  -->
 
-<project
-    xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns = "http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation = "http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     
     <modelVersion>4.0.0</modelVersion>
     
     <parent>
         <groupId>com.telenav.kivakit</groupId>
         <artifactId>kivakit-stuff-parent</artifactId>
-        <version>1.8.4</version>
+        <version>1.8.5</version>
         <relativePath>../../pom.xml</relativePath>
     </parent>
     
     <artifactId>kivakit-ui-desktop</artifactId>
+
+    <!-- Properties -->
+
+    <properties>
+
+        <ui.flat.look.and.feel.version>2.6</ui.flat.look.and.feel.version>
+
+    </properties>
+
+    <!-- Dependencies -->
+
     <dependencies>
         
         <!-- KivaKit -->
-        
+
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>kivakit-resource</artifactId>
+            <version>${project.version}</version>
         </dependency>
-        
+
         <!-- Darcula Theme -->
-        
+
         <dependency>
             <groupId>com.formdev</groupId>
             <artifactId>flatlaf</artifactId>
+            <version>${ui.flat.look.and.feel.version}</version>
         </dependency>
-        
+
         <!-- Testing -->
-        
+
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>kivakit-testing</artifactId>
+            <version>${project.version}</version>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
     
 </project>

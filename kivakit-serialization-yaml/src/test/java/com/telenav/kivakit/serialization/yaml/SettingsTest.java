@@ -16,44 +16,42 @@ package com.telenav.kivakit.serialization.yaml;/////////////////////////////////
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-import com.telenav.kivakit.core.path.PackagePath;
-import com.telenav.kivakit.core.testing.UnitTest;
 import com.telenav.kivakit.core.time.Duration;
-import com.telenav.kivakit.settings.Settings;
-import com.telenav.kivakit.settings.stores.PackageSettingsStore;
+import com.telenav.kivakit.settings.SettingsRegistry;
+import com.telenav.kivakit.settings.SettingsTrait;
+import com.telenav.kivakit.testing.UnitTest;
 import org.jetbrains.annotations.NotNull;
 import org.junit.Test;
 
 import static com.telenav.kivakit.core.project.Project.resolveProject;
+import static com.telenav.kivakit.core.registry.InstanceIdentifier.instanceIdentifier;
 
 public class SettingsTest extends UnitTest
+        implements SettingsTrait
 {
     @Test
     public void testYaml()
     {
-        var settings = settings();
+        var settings = listenToGlobalSettings();
 
-        resolveProject(YamlSerializationProject.class).initialize();
+        listenTo(resolveProject(YamlSerializationProject.class)).initialize();
 
-        // Configure
-        {
-            // Add all properties files in this package to the global set
-            settings.registerSettingsIn(PackageSettingsStore.of(this, PackagePath.packagePath(getClass())));
-        }
+        // Add all properties files in this package to the global set
+        registerSettingsIn(packageForThis());
 
         // Get configuration
         {
             // Client code can then retrieve both settings
-            var server1 = settings.requireSettings(ClientSettings.class, "banana");
-            ensureEqual(Duration.seconds(6), server1.timeout());
+            var server1 = settings.requireSettings(ClientSettings.class, instanceIdentifier("banana"));
+            ensureEqual("6 seconds", server1.timeout());
             ensureEqual(9999, server1.port());
         }
     }
 
     @NotNull
-    private Settings settings()
+    private SettingsRegistry listenToGlobalSettings()
     {
-        var global = Settings.of(this);
+        var global = settingsForThis();
         global.unload();
         global.clearListeners();
         global.addListener(this);
