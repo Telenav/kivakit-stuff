@@ -15,13 +15,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.telenav</groupId>
-        <artifactId>telenav-root-superpom</artifactId>
-        <version>1.0.16</version>
-        <relativePath/>
+        <groupId>com.telenav.kivakit</groupId>
+        <artifactId>kivakit-stuff-parent</artifactId>
+        <version>1.8.4</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <groupId>com.telenav.kivakit</groupId>
     <artifactId>kivakit-stuff</artifactId>
     <version>1.8.4</version>
 
