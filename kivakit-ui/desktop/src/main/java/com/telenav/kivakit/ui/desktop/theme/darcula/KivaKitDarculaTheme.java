@@ -36,7 +36,7 @@ public class KivaKitDarculaTheme extends KivaKitTheme
 
     public KivaKitDarculaTheme()
     {
-        FlatDarculaLaf.install();
+        FlatDarculaLaf.setup();
     }
 
     @Override
