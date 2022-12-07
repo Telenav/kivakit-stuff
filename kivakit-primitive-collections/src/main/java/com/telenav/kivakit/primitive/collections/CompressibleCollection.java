@@ -36,6 +36,7 @@ import java.util.Map;
  *
  * @author jonathanl (shibo)
  */
+@SuppressWarnings("unused")
 @UmlClassDiagram(diagram = DiagramPrimitiveCollection.class)
 public interface CompressibleCollection
 {
@@ -43,7 +44,6 @@ public interface CompressibleCollection
      * Compress all {@link CompressibleCollection} fields recursively on the given object
      *
      * @param root The object to compress
-     * @return Size of the object after compressing
      */
     static void compressReachableObjects
     (
