@@ -1,5 +1,6 @@
 package com.telenav.kivakit.serialization.yaml;
 
+import com.telenav.kivakit.core.BaseKivaKitProject;
 import com.telenav.kivakit.core.project.Project;
 import com.telenav.kivakit.resource.Extension;
 import com.telenav.kivakit.resource.serialization.ObjectSerializerRegistry;
@@ -18,7 +19,7 @@ import com.telenav.kivakit.resource.serialization.ObjectSerializerRegistry;
  * @see YamlObjectSerializer
  * @see ObjectSerializerRegistry
  */
-public class YamlSerializationProject extends Project
+public class YamlSerializationProject extends BaseKivaKitProject
 {
     @Override
     public void onInitialize()
