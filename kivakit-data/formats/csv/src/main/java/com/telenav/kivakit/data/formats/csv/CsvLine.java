@@ -50,8 +50,8 @@ import com.telenav.lexakai.annotations.UmlClassDiagram;
  *
  * <p>
  * A {@link CsvLine} can be converted directly to an object with {@link #populatedObject(Class)}. A new instance of the
- * class is created and its properties are populated using the {@link CsvSchema} of this line. For details, see {@link
- * #populatedObject(Class)} and {@link #propertyValue(Property)}.
+ * class is created and its properties are populated using the {@link CsvSchema} of this line. For details, see
+ * {@link #populatedObject(Class)} and {@link #propertyValue(Property)}.
  * </p>
  *
  * @author jonathanl (shibo)
@@ -64,8 +64,8 @@ import com.telenav.lexakai.annotations.UmlClassDiagram;
 @UmlClassDiagram(diagram = DiagramCsv.class)
 @LexakaiJavadoc(complete = true)
 public class CsvLine extends StringList implements
-        PropertyValue,
-        RepeaterMixin
+    PropertyValue,
+    RepeaterMixin
 {
     /** The schema that this line obeys */
     private final transient CsvSchema schema;
@@ -127,23 +127,38 @@ public class CsvLine extends StringList implements
     }
 
     /**
-     * Returns an object of the given type with its properties populated by {@link ObjectPopulator} using {@link
-     * CsvPropertyFilter}. Properties of the object that correspond to {@link CsvColumn}s using KivaKit property naming
-     * are retrieved with {@link PropertyValue#propertyValue(Property)} (see below) and set on the new object by reflection.
-     * The result is an object corresponding to this line.
+     * Returns an object of the given type with its properties populated by {@link ObjectPopulator} using
+     * {@link CsvPropertyFilter}. Properties of the object that correspond to {@link CsvColumn}s using KivaKit property
+     * naming are retrieved with {@link PropertyValue#propertyValue(Property)} (see below) and set on the new object by
+     * reflection. The result is an object corresponding to this line.
      */
     public <T> T populatedObject(Class<T> type)
     {
         try
         {
             return new ObjectPopulator(new CsvPropertyFilter(schema()), () -> this)
-                    .populate(Type.typeForClass(type).newInstance());
+                .populate(Type.typeForClass(type).newInstance());
         }
         catch (Exception e)
         {
             problem(e, "Unable to create or populate ${debug}", type);
             return null;
         }
+    }
+
+    /**
+     * Implementation of {@link PropertyValue} used by {@link ObjectPopulator} in {@link #populatedObject(Class)} to get
+     * the value of the given property using the property name to find the {@link CsvColumn}.
+     */
+    @Override
+    public Object propertyValue(Property property)
+    {
+        var column = schema().columnForName(property.name());
+        if (column != null)
+        {
+            return get(column);
+        }
+        return null;
     }
 
     /**
@@ -154,28 +169,18 @@ public class CsvLine extends StringList implements
         return schema;
     }
 
+    @Override
+    public String separator()
+    {
+        return Character.toString(delimiter());
+    }
+
     /**
      * Sets the given column to the given value
      */
     public <T> void set(CsvColumn<T> column, T value)
     {
         set(column, column.asString(value));
-    }
-
-    /**
-     * Sets the given column to the given value
-     */
-    public void set(CsvColumn<?> column, String value)
-    {
-        if (column != null)
-        {
-            var index = column.index();
-            while (index >= size())
-            {
-                add("");
-            }
-            set(index, value);
-        }
     }
 
     /**
@@ -211,32 +216,11 @@ public class CsvLine extends StringList implements
     }
 
     /**
-     * Implementation of {@link PropertyValue} used by {@link ObjectPopulator} in {@link #populatedObject(Class)} to
-     * get the value of the given property using the property name to find the {@link CsvColumn}.
-     */
-    @Override
-    public Object propertyValue(Property property)
-    {
-        var column = schema().columnForName(property.name());
-        if (column != null)
-        {
-            return get(column);
-        }
-        return null;
-    }
-
-    /**
      * Returns the separator used in this CSV line
      */
     protected char delimiter()
     {
         return delimiter;
-    }
-
-    @Override
-    public String separator()
-    {
-        return Character.toString(delimiter());
     }
 
     /**
@@ -245,5 +229,21 @@ public class CsvLine extends StringList implements
     void lineNumber(int lineNumber)
     {
         this.lineNumber = lineNumber;
+    }
+
+    /**
+     * Sets the given column to the given value
+     */
+    private void set(CsvColumn<?> column, String value)
+    {
+        if (column != null)
+        {
+            var index = column.index();
+            while (index >= size())
+            {
+                add("");
+            }
+            set(index, value);
+        }
     }
 }
