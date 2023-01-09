@@ -26,9 +26,8 @@ import com.telenav.kivakit.core.collections.list.StringList;
 import com.telenav.kivakit.core.language.reflection.Type;
 import com.telenav.kivakit.core.language.reflection.property.Property;
 import com.telenav.kivakit.core.language.reflection.property.PropertyValue;
-import com.telenav.kivakit.core.messaging.repeaters.RepeaterMixin;
+import com.telenav.kivakit.core.messaging.repeaters.BaseRepeater;
 import com.telenav.kivakit.core.string.Strings;
-import com.telenav.kivakit.core.value.count.Maximum;
 import com.telenav.kivakit.data.formats.csv.internal.lexakai.DiagramCsv;
 import com.telenav.lexakai.annotations.LexakaiJavadoc;
 import com.telenav.lexakai.annotations.UmlClassDiagram;
@@ -50,8 +49,8 @@ import com.telenav.lexakai.annotations.UmlClassDiagram;
  *
  * <p>
  * A {@link CsvLine} can be converted directly to an object with {@link #populatedObject(Class)}. A new instance of the
- * class is created and its properties are populated using the {@link CsvSchema} of this line. For details, see {@link
- * #populatedObject(Class)} and {@link #propertyValue(Property)}.
+ * class is created and its properties are populated using the {@link CsvSchema} of this line. For details, see
+ * {@link #populatedObject(Class)} and {@link #propertyValue(Property)}.
  * </p>
  *
  * @author jonathanl (shibo)
@@ -63,9 +62,7 @@ import com.telenav.lexakai.annotations.UmlClassDiagram;
 @SuppressWarnings({ "unused", "SpellCheckingInspection" })
 @UmlClassDiagram(diagram = DiagramCsv.class)
 @LexakaiJavadoc(complete = true)
-public class CsvLine extends StringList implements
-        PropertyValue,
-        RepeaterMixin
+public class CsvLine extends BaseRepeater implements PropertyValue
 {
     /** The schema that this line obeys */
     private final transient CsvSchema schema;
@@ -79,15 +76,54 @@ public class CsvLine extends StringList implements
     /** The value separator, by default a comma */
     private final char delimiter;
 
+    /** The columns of this line */
+    private final StringList columns;
+
     /**
      * Construct with a given schema and delimiter
      */
     public CsvLine(CsvSchema schema, char delimiter)
     {
-        super(Maximum._10_000);
-
         this.schema = schema;
         this.delimiter = delimiter;
+        this.columns = new StringList()
+        {
+            @Override
+            public String separator()
+            {
+                return Character.toString(delimiter);
+            }
+
+            @Override
+            public String toString(String value)
+            {
+                // Escape quotes
+                if (value.contains("\""))
+                {
+                    value = Strings.replaceAll(value, "\"", "\"\"");
+                }
+
+                // And quote values with separators in them
+                if (value.indexOf(delimiter()) >= 0)
+                {
+                    value = '"' + value + '"';
+                }
+                return value;
+            }
+        };
+    }
+
+    public boolean add(String value)
+    {
+        return columns.add(value);
+    }
+
+    /**
+     * Returns a copy of the columns in this line
+     */
+    public StringList columns()
+    {
+        return columns.copy();
     }
 
     /**
@@ -117,6 +153,11 @@ public class CsvLine extends StringList implements
         return text == null ? null : column.asType(text, converter);
     }
 
+    public String get(int index)
+    {
+        return columns.get(index);
+    }
+
     /**
      * Returns the line number of this CSV line in the input, or -1 if the line was not read from an input source (if it
      * was constructed to be written)
@@ -127,23 +168,38 @@ public class CsvLine extends StringList implements
     }
 
     /**
-     * Returns an object of the given type with its properties populated by {@link ObjectPopulator} using {@link
-     * CsvPropertyFilter}. Properties of the object that correspond to {@link CsvColumn}s using KivaKit property naming
-     * are retrieved with {@link PropertyValue#propertyValue(Property)} (see below) and set on the new object by reflection.
-     * The result is an object corresponding to this line.
+     * Returns an object of the given type with its properties populated by {@link ObjectPopulator} using
+     * {@link CsvPropertyFilter}. Properties of the object that correspond to {@link CsvColumn}s using KivaKit property
+     * naming are retrieved with {@link PropertyValue#propertyValue(Property)} (see below) and set on the new object by
+     * reflection. The result is an object corresponding to this line.
      */
     public <T> T populatedObject(Class<T> type)
     {
         try
         {
             return new ObjectPopulator(new CsvPropertyFilter(schema()), () -> this)
-                    .populate(Type.typeForClass(type).newInstance());
+                .populate(Type.typeForClass(type).newInstance());
         }
         catch (Exception e)
         {
             problem(e, "Unable to create or populate ${debug}", type);
             return null;
         }
+    }
+
+    /**
+     * Implementation of {@link PropertyValue} used by {@link ObjectPopulator} in {@link #populatedObject(Class)} to get
+     * the value of the given property using the property name to find the {@link CsvColumn}.
+     */
+    @Override
+    public Object propertyValue(Property property)
+    {
+        var column = schema().columnForName(property.name());
+        if (column != null)
+        {
+            return get(column);
+        }
+        return null;
     }
 
     /**
@@ -162,20 +218,9 @@ public class CsvLine extends StringList implements
         set(column, column.asString(value));
     }
 
-    /**
-     * Sets the given column to the given value
-     */
-    public void set(CsvColumn<?> column, String value)
+    public void set(int index, String value)
     {
-        if (column != null)
-        {
-            var index = column.index();
-            while (index >= size())
-            {
-                add("");
-            }
-            set(index, value);
-        }
+        columns.set(index, value);
     }
 
     /**
@@ -184,45 +229,13 @@ public class CsvLine extends StringList implements
     public String string(CsvColumn<?> column)
     {
         var index = column.index();
-        return index >= size() ? null : get(column.index());
+        return index >= columns.size() ? null : columns.get(column.index());
     }
 
     @Override
     public String toString()
     {
-        return join(delimiter());
-    }
-
-    @Override
-    public String toString(String value)
-    {
-        // Escape quotes
-        if (value.contains("\""))
-        {
-            value = Strings.replaceAll(value, "\"", "\"\"");
-        }
-
-        // And quote values with separators in them
-        if (value.indexOf(delimiter()) >= 0)
-        {
-            value = '"' + value + '"';
-        }
-        return value;
-    }
-
-    /**
-     * Implementation of {@link PropertyValue} used by {@link ObjectPopulator} in {@link #populatedObject(Class)} to
-     * get the value of the given property using the property name to find the {@link CsvColumn}.
-     */
-    @Override
-    public Object propertyValue(Property property)
-    {
-        var column = schema().columnForName(property.name());
-        if (column != null)
-        {
-            return get(column);
-        }
-        return null;
+        return columns.join(delimiter());
     }
 
     /**
@@ -233,17 +246,27 @@ public class CsvLine extends StringList implements
         return delimiter;
     }
 
-    @Override
-    public String separator()
-    {
-        return Character.toString(delimiter());
-    }
-
     /**
      * Used by CSV reader to set the line number for this line
      */
     void lineNumber(int lineNumber)
     {
         this.lineNumber = lineNumber;
+    }
+
+    /**
+     * Sets the given column to the given value
+     */
+    private void set(CsvColumn<?> column, String value)
+    {
+        if (column != null)
+        {
+            var index = column.index();
+            while (index >= columns.size())
+            {
+                add("");
+            }
+            set(index, value);
+        }
     }
 }
