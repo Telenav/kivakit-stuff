@@ -26,9 +26,8 @@ import com.telenav.kivakit.core.collections.list.StringList;
 import com.telenav.kivakit.core.language.reflection.Type;
 import com.telenav.kivakit.core.language.reflection.property.Property;
 import com.telenav.kivakit.core.language.reflection.property.PropertyValue;
-import com.telenav.kivakit.core.messaging.repeaters.RepeaterMixin;
+import com.telenav.kivakit.core.messaging.repeaters.BaseRepeater;
 import com.telenav.kivakit.core.string.Strings;
-import com.telenav.kivakit.core.value.count.Maximum;
 import com.telenav.kivakit.data.formats.csv.internal.lexakai.DiagramCsv;
 import com.telenav.lexakai.annotations.LexakaiJavadoc;
 import com.telenav.lexakai.annotations.UmlClassDiagram;
@@ -63,9 +62,7 @@ import com.telenav.lexakai.annotations.UmlClassDiagram;
 @SuppressWarnings({ "unused", "SpellCheckingInspection" })
 @UmlClassDiagram(diagram = DiagramCsv.class)
 @LexakaiJavadoc(complete = true)
-public class CsvLine extends StringList implements
-    PropertyValue,
-    RepeaterMixin
+public class CsvLine extends BaseRepeater implements PropertyValue
 {
     /** The schema that this line obeys */
     private final transient CsvSchema schema;
@@ -79,15 +76,54 @@ public class CsvLine extends StringList implements
     /** The value separator, by default a comma */
     private final char delimiter;
 
+    /** The columns of this line */
+    private final StringList columns;
+
     /**
      * Construct with a given schema and delimiter
      */
     public CsvLine(CsvSchema schema, char delimiter)
     {
-        super(Maximum._10_000);
-
         this.schema = schema;
         this.delimiter = delimiter;
+        this.columns = new StringList()
+        {
+            @Override
+            public String separator()
+            {
+                return Character.toString(delimiter);
+            }
+
+            @Override
+            public String toString(String value)
+            {
+                // Escape quotes
+                if (value.contains("\""))
+                {
+                    value = Strings.replaceAll(value, "\"", "\"\"");
+                }
+
+                // And quote values with separators in them
+                if (value.indexOf(delimiter()) >= 0)
+                {
+                    value = '"' + value + '"';
+                }
+                return value;
+            }
+        };
+    }
+
+    public boolean add(String value)
+    {
+        return columns.add(value);
+    }
+
+    /**
+     * Returns a copy of the columns in this line
+     */
+    public StringList columns()
+    {
+        return columns.copy();
     }
 
     /**
@@ -115,6 +151,11 @@ public class CsvLine extends StringList implements
     {
         var text = string(column);
         return text == null ? null : column.asType(text, converter);
+    }
+
+    public String get(int index)
+    {
+        return columns.get(index);
     }
 
     /**
@@ -169,12 +210,6 @@ public class CsvLine extends StringList implements
         return schema;
     }
 
-    @Override
-    public String separator()
-    {
-        return Character.toString(delimiter());
-    }
-
     /**
      * Sets the given column to the given value
      */
@@ -183,36 +218,24 @@ public class CsvLine extends StringList implements
         set(column, column.asString(value));
     }
 
+    public void set(int index, String value)
+    {
+        columns.set(index, value);
+    }
+
     /**
      * Returns the unconverted string value for the given column
      */
     public String string(CsvColumn<?> column)
     {
         var index = column.index();
-        return index >= size() ? null : get(column.index());
+        return index >= columns.size() ? null : columns.get(column.index());
     }
 
     @Override
     public String toString()
     {
-        return join(delimiter());
-    }
-
-    @Override
-    public String toString(String value)
-    {
-        // Escape quotes
-        if (value.contains("\""))
-        {
-            value = Strings.replaceAll(value, "\"", "\"\"");
-        }
-
-        // And quote values with separators in them
-        if (value.indexOf(delimiter()) >= 0)
-        {
-            value = '"' + value + '"';
-        }
-        return value;
+        return columns.join(delimiter());
     }
 
     /**
@@ -239,7 +262,7 @@ public class CsvLine extends StringList implements
         if (column != null)
         {
             var index = column.index();
-            while (index >= size())
+            while (index >= columns.size())
             {
                 add("");
             }

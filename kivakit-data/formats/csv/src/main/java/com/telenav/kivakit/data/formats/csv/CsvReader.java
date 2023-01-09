@@ -33,8 +33,8 @@ import com.telenav.lexakai.annotations.associations.UmlRelation;
 /**
  * Parses a stream of CSV information. The rules outlined
  * <a href="https://en.wikipedia.org/wiki/Comma-separated_values">here</a> dictate valid CSV format.
- * In particular, this class can handle quoted strings, line breaks within quotes, comments, empty lines, and some of
- * the other standard formatting issues.
+ * In particular, this class can handle quoted strings, line breaks within quotes, comments, empty lines, and some other
+ * standard formatting issues.
  *
  * <p><b>Processing CSV Lines</b></p>
  * <p>
@@ -129,9 +129,10 @@ public class CsvReader extends BaseIterator<CsvLine> implements RepeaterMixin, C
         return () -> this;
     }
 
-    public void quote(char quote)
+    public CsvReader quote(char quote)
     {
         this.quote = quote;
+        return this;
     }
 
     /**
@@ -153,6 +154,11 @@ public class CsvReader extends BaseIterator<CsvLine> implements RepeaterMixin, C
             next();
         }
         return this;
+    }
+
+    public CsvReader unquoted()
+    {
+        return quote((char) -1);
     }
 
     /**
@@ -198,8 +204,7 @@ public class CsvReader extends BaseIterator<CsvLine> implements RepeaterMixin, C
     {
         if (in.hasNext())
         {
-            var line = new CsvLine(schema, delimiter);
-            line.addListener(this);
+            var line = listenTo(new CsvLine(schema, delimiter));
             var lineNumber = in.lineNumber();
             line.lineNumber(lineNumber);
             if (lineNumber == 0)
@@ -371,7 +376,7 @@ public class CsvReader extends BaseIterator<CsvLine> implements RepeaterMixin, C
         if (inQuotes)
         {
             throw new IllegalArgumentException(
-                    "Quoted column never closed with matching quote at line " + lineNumber());
+                "Quoted column never closed with matching quote at line " + lineNumber());
         }
     }
 
