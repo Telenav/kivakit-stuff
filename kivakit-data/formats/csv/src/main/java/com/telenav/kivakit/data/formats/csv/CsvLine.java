@@ -33,6 +33,7 @@ import com.telenav.lexakai.annotations.UmlClassDiagram;
 import static com.telenav.kivakit.core.collections.list.StringList.stringList;
 import static com.telenav.kivakit.core.os.Console.console;
 import static com.telenav.kivakit.core.string.Strings.doubleQuoted;
+import static com.telenav.kivakit.core.string.Strings.notNull;
 
 /**
  * A model of a line in a CSV (Comma Separated Variable) file. {@link CsvLine} objects are produced by {@link CsvReader}
@@ -218,7 +219,7 @@ public class CsvLine extends BaseRepeater implements PropertyValue
         var result = stringList();
         for (var column : schema.columns())
         {
-            var value = Strings.notNull(get(column).toString());
+            var value = notNull(get(column).toString());
             if (quoted && column.type() == String.class)
             {
                 result.add(doubleQuoted(value));
