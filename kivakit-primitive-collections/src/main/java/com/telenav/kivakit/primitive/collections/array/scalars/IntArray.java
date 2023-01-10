@@ -68,7 +68,7 @@ public final class IntArray extends PrimitiveArray implements IntList
 
         public Converter(Listener listener, Separators separators)
         {
-            super(listener);
+            super(listener, IntArray.class);
             this.separators = separators;
         }
 

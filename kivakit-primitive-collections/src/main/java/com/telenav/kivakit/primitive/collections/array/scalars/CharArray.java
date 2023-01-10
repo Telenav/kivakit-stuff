@@ -30,8 +30,8 @@ import com.telenav.kivakit.core.value.count.Maximum;
 import com.telenav.kivakit.primitive.collections.CompressibleCollection;
 import com.telenav.kivakit.primitive.collections.PrimitiveCollection;
 import com.telenav.kivakit.primitive.collections.array.PrimitiveArray;
-import com.telenav.kivakit.primitive.collections.list.CharList;
 import com.telenav.kivakit.primitive.collections.internal.lexakai.DiagramPrimitiveArray;
+import com.telenav.kivakit.primitive.collections.list.CharList;
 import com.telenav.lexakai.annotations.LexakaiJavadoc;
 import com.telenav.lexakai.annotations.UmlClassDiagram;
 
@@ -53,7 +53,8 @@ import java.util.Arrays;
  * @see KryoSerializable
  * @see CompressibleCollection
  */
-@SuppressWarnings("DuplicatedCode") @UmlClassDiagram(diagram = DiagramPrimitiveArray.class)
+@SuppressWarnings({ "DuplicatedCode", "unused" })
+@UmlClassDiagram(diagram = DiagramPrimitiveArray.class)
 public final class CharArray extends PrimitiveArray implements CharList
 {
     /**
@@ -68,7 +69,7 @@ public final class CharArray extends PrimitiveArray implements CharList
 
         public Converter(Listener listener, Separators separators)
         {
-            super(listener);
+            super(listener, CharArray.class);
             this.separators = separators;
         }
 
@@ -350,7 +351,7 @@ public final class CharArray extends PrimitiveArray implements CharList
     public String toString()
     {
         return "[" + getClass().getSimpleName() + " name = " + objectName() + ", size = " + size() + "]\n" +
-                toString(index -> Long.toString(get(index)));
+            toString(index -> Long.toString(get(index)));
     }
 
     /**

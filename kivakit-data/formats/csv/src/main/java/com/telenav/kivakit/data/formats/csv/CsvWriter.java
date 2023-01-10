@@ -51,6 +51,9 @@ public class CsvWriter extends BaseRepeater implements Closeable
     /** Progress as CSV is being written */
     private final ProgressReporter reporter;
 
+    /** True if fields should be quoted */
+    private boolean quoted;
+
     /**
      * Constructs a writer with the given output destination and schema
      */
@@ -75,6 +78,12 @@ public class CsvWriter extends BaseRepeater implements Closeable
         reporter.end();
     }
 
+    public CsvWriter quoted()
+    {
+        this.quoted = true;
+        return this;
+    }
+
     /**
      * Returns the schema being used by this writer
      */
@@ -89,7 +98,11 @@ public class CsvWriter extends BaseRepeater implements Closeable
     public void write(CsvLine line)
     {
         reporter.next();
-        out.write(line.toString() + "\n");
+        if (quoted)
+        {
+            line = line.quoted();
+        }
+        out.write(line + "\n");
     }
 
     /**

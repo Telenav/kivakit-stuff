@@ -42,7 +42,7 @@ import static com.telenav.kivakit.core.ensure.Ensure.ensureNotNull;
  */
 @UmlClassDiagram(diagram = DiagramCsv.class)
 @LexakaiJavadoc(complete = true)
-public class CsvColumn<Type> extends Name
+public class CsvColumn<T> extends Name
 {
     public static <T> CsvColumn<T> csvColumn(String name)
     {
@@ -61,12 +61,12 @@ public class CsvColumn<Type> extends Name
     private CsvSchema schema;
 
     /** The converter to convert this column to and from its type */
-    private final StringConverter<Type> converter;
+    private final StringConverter<T> converter;
 
     /**
      * Construct the named column
      */
-    protected CsvColumn(String name, StringConverter<Type> converter)
+    protected CsvColumn(String name, StringConverter<T> converter)
     {
         super(name);
         this.converter = converter;
@@ -75,7 +75,7 @@ public class CsvColumn<Type> extends Name
     /**
      * Returns the text for the given value in this column
      */
-    public String asString(Type value, StringConverter<Type> converter)
+    public String asString(T value, StringConverter<T> converter)
     {
         ensureNotNull(converter);
         return converter.unconvert(value);
@@ -84,7 +84,7 @@ public class CsvColumn<Type> extends Name
     /**
      * Returns the text for the given value in this column
      */
-    public String asString(Type value)
+    public String asString(T value)
     {
         return asString(value, converter);
     }
@@ -92,7 +92,7 @@ public class CsvColumn<Type> extends Name
     /**
      * Returns the value of the given text if it is in this column
      */
-    public ObjectList<Type> asType(String text, BaseStringConverter<Type> converter)
+    public ObjectList<T> asType(String text, BaseStringConverter<T> converter)
     {
         ensureNotNull(converter);
         return converter.convertToList(text, ",");
@@ -101,7 +101,7 @@ public class CsvColumn<Type> extends Name
     /**
      * Returns the value of the given text if it is in this column
      */
-    public Type asType(String text, StringConverter<Type> converter)
+    public T asType(String text, StringConverter<T> converter)
     {
         ensureNotNull(converter);
         return converter.convert(text);
@@ -110,7 +110,7 @@ public class CsvColumn<Type> extends Name
     /**
      * Returns the value of the given text if it is in this column
      */
-    public Type asType(String text)
+    public T asType(String text)
     {
         return asType(text, converter);
     }
@@ -121,6 +121,11 @@ public class CsvColumn<Type> extends Name
     public CsvSchema schema()
     {
         return schema;
+    }
+
+    public Class<T> type()
+    {
+        return converter.toType();
     }
 
     /**

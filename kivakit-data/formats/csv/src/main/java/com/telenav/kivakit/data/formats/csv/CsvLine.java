@@ -18,10 +18,8 @@
 
 package com.telenav.kivakit.data.formats.csv;
 
-import com.telenav.kivakit.conversion.BaseStringConverter;
 import com.telenav.kivakit.conversion.StringConverter;
 import com.telenav.kivakit.conversion.core.language.object.ObjectPopulator;
-import com.telenav.kivakit.core.collections.list.ObjectList;
 import com.telenav.kivakit.core.collections.list.StringList;
 import com.telenav.kivakit.core.language.reflection.Type;
 import com.telenav.kivakit.core.language.reflection.property.Property;
@@ -31,6 +29,10 @@ import com.telenav.kivakit.core.string.Strings;
 import com.telenav.kivakit.data.formats.csv.internal.lexakai.DiagramCsv;
 import com.telenav.lexakai.annotations.LexakaiJavadoc;
 import com.telenav.lexakai.annotations.UmlClassDiagram;
+
+import static com.telenav.kivakit.core.collections.list.StringList.stringList;
+import static com.telenav.kivakit.core.os.Console.console;
+import static com.telenav.kivakit.core.string.Strings.doubleQuoted;
 
 /**
  * A model of a line in a CSV (Comma Separated Variable) file. {@link CsvLine} objects are produced by {@link CsvReader}
@@ -79,6 +81,9 @@ public class CsvLine extends BaseRepeater implements PropertyValue
     /** The columns of this line */
     private final StringList columns;
 
+    /** True if strings should be quoted */
+    private boolean quoted;
+
     /**
      * Construct with a given schema and delimiter
      */
@@ -86,31 +91,7 @@ public class CsvLine extends BaseRepeater implements PropertyValue
     {
         this.schema = schema;
         this.delimiter = delimiter;
-        this.columns = new StringList()
-        {
-            @Override
-            public String separator()
-            {
-                return Character.toString(delimiter);
-            }
-
-            @Override
-            public String toString(String value)
-            {
-                // Escape quotes
-                if (value.contains("\""))
-                {
-                    value = Strings.replaceAll(value, "\"", "\"\"");
-                }
-
-                // And quote values with separators in them
-                if (value.indexOf(delimiter()) >= 0)
-                {
-                    value = '"' + value + '"';
-                }
-                return value;
-            }
-        };
+        this.columns = stringList().separator(Character.toString(delimiter));
     }
 
     public boolean add(String value)
@@ -132,22 +113,15 @@ public class CsvLine extends BaseRepeater implements PropertyValue
     public <T> T get(CsvColumn<T> column)
     {
         var text = string(column);
-        return text == null ? null : column.asType(text);
+        return text == null
+            ? null
+            : column.asType(text);
     }
 
     /**
      * Returns the value of the given column
      */
     public <T> T get(CsvColumn<T> column, StringConverter<T> converter)
-    {
-        var text = string(column);
-        return text == null ? null : column.asType(text, converter);
-    }
-
-    /**
-     * Returns the value of the given column
-     */
-    public <T> ObjectList<T> get(CsvColumn<T> column, BaseStringConverter<T> converter)
     {
         var text = string(column);
         return text == null ? null : column.asType(text, converter);
@@ -202,6 +176,12 @@ public class CsvLine extends BaseRepeater implements PropertyValue
         return null;
     }
 
+    public CsvLine quoted()
+    {
+        this.quoted = true;
+        return this;
+    }
+
     /**
      * Returns the schema for this line
      */
@@ -235,7 +215,20 @@ public class CsvLine extends BaseRepeater implements PropertyValue
     @Override
     public String toString()
     {
-        return columns.join(delimiter());
+        var result = stringList();
+        for (var column : schema.columns())
+        {
+            var value = Strings.notNull(get(column).toString());
+            if (quoted && column.type() == String.class)
+            {
+                result.add(doubleQuoted(value));
+            }
+            else
+            {
+                result.add(value);
+            }
+        }
+        return result.join(delimiter());
     }
 
     /**
