@@ -22,6 +22,7 @@ import com.telenav.kivakit.core.collections.iteration.BaseIterator;
 import com.telenav.kivakit.core.io.LookAheadReader;
 import com.telenav.kivakit.core.messaging.repeaters.RepeaterMixin;
 import com.telenav.kivakit.core.progress.ProgressReporter;
+import com.telenav.kivakit.core.value.count.Count;
 import com.telenav.kivakit.data.formats.csv.internal.lexakai.DiagramCsv;
 import com.telenav.kivakit.interfaces.io.Closeable;
 import com.telenav.kivakit.resource.Resource;
@@ -29,6 +30,8 @@ import com.telenav.lexakai.annotations.LexakaiJavadoc;
 import com.telenav.lexakai.annotations.UmlClassDiagram;
 import com.telenav.lexakai.annotations.associations.UmlAggregation;
 import com.telenav.lexakai.annotations.associations.UmlRelation;
+
+import static com.telenav.kivakit.core.progress.ProgressReporter.nullProgressReporter;
 
 /**
  * Parses a stream of CSV information. The rules outlined
@@ -42,7 +45,7 @@ import com.telenav.lexakai.annotations.associations.UmlRelation;
  * class is {@link Iterable}, lines can then be retrieved as objects with code similar to:
  *
  * <pre>
- * try (var reader = new CsvReader(resource, schema, ',', ProgressReporter.none()))
+ * try (var reader = new CsvReader(resource, schema))
  * {
  *     for (var line : reader)
  *     {
@@ -67,6 +70,9 @@ public class CsvReader extends BaseIterator<CsvLine> implements RepeaterMixin, C
     /** The separator for CSV (can be changed with setDelimiter) */
     protected char delimiter;
 
+    /** Escape character */
+    protected char escape = '\\';
+
     /** The input */
     protected final LookAheadReader in;
 
@@ -80,6 +86,19 @@ public class CsvReader extends BaseIterator<CsvLine> implements RepeaterMixin, C
     /** Quote character */
     private char quote = '"';
 
+    public CsvReader(Resource resource,
+                     CsvSchema schema,
+                     char delimiter)
+    {
+        this(resource, schema, delimiter, nullProgressReporter());
+    }
+
+    public CsvReader(Resource resource,
+                     CsvSchema schema)
+    {
+        this(resource, schema, ',');
+    }
+
     /**
      * Constructs a reader for the given input stream and CSV schema
      */
@@ -91,7 +110,7 @@ public class CsvReader extends BaseIterator<CsvLine> implements RepeaterMixin, C
         this.reporter = reporter;
         this.schema = schema;
         this.delimiter = delimiter;
-        var reader = resource.reader(reporter).textReader();
+        var reader = resource.reader(nullProgressReporter()).textReader();
         if (reader == null)
         {
             throw new IllegalArgumentException("Unable to read: " + resource);
@@ -127,6 +146,21 @@ public class CsvReader extends BaseIterator<CsvLine> implements RepeaterMixin, C
     public Iterable<CsvLine> lines()
     {
         return () -> this;
+    }
+
+    public void problem()
+    {
+        reporter.problem();
+    }
+
+    public void problems(Count problems)
+    {
+        reporter.problems(problems);
+    }
+
+    public void problems(long problems)
+    {
+        reporter.problems(problems);
     }
 
     public CsvReader quote(char quote)
@@ -207,7 +241,7 @@ public class CsvReader extends BaseIterator<CsvLine> implements RepeaterMixin, C
             var line = listenTo(new CsvLine(schema, delimiter));
             var lineNumber = in.lineNumber();
             line.lineNumber(lineNumber);
-            if (lineNumber == 0)
+            if (lineNumber == 1)
             {
                 reporter.start();
             }
@@ -291,6 +325,10 @@ public class CsvReader extends BaseIterator<CsvLine> implements RepeaterMixin, C
             }
             else
             {
+                if (in.current() == escape)
+                {
+                    in.next();
+                }
                 buffer.append((char) in.current());
             }
             in.next();
@@ -306,77 +344,62 @@ public class CsvReader extends BaseIterator<CsvLine> implements RepeaterMixin, C
      */
     protected void readQuotedColumn(LookAheadReader in, StringBuffer buffer)
     {
-        boolean inQuotes;
-
-        // Skip the first double quote
-        in.next();
+        // Read the character after the quote
+        var second = (char) in.next();
 
         // If we're starting off with two double quotes ("")
-        if (in.current() == quote)
+        if (second == quote)
         {
-            // we need to read the third character
+            // then the column is blank.
             in.next();
+            return;
+        }
 
-            // and if it's also a quote then we have a triple quote (""")
-            if (in.current() == quote)
+        // White we haven't hit the closing quote or end of line,
+        while (in.current() != quote && !in.atEndOfLine())
+        {
+            if (in.current() == escape)
             {
-                // which is a quoted column starting with an escaped quote character!
-                inQuotes = true;
-                buffer.append(quote);
                 in.next();
             }
-            else
-            {
-                // If we don't have a quote, then we have only a double quote (""), so we append the
-                // escaped quote and whatever the third character is
-                inQuotes = false;
-                buffer.append(quote);
-            }
-        }
-        else
-        {
-            // We have a simple quoted column, we skip our quote
-            inQuotes = true;
-        }
 
-        while (in.hasNext())
-        {
-            if (!inQuotes && in.atEndOfLine())
-            {
-                break;
-            }
-            else if (!inQuotes && in.current() == delimiter)
-            {
-                // Just catch this case and break out of the loop, it will be
-                // handled later.
-                break;
-            }
-            else if (in.current() == quote)
-            {
-                if (in.lookAhead() == quote)
-                {
-                    buffer.append(quote);
-                    in.next();
-                }
-                else
-                {
-                    // Must be the end of the quotes.
-                    inQuotes = false;
-                }
-            }
-            else
-            {
-                buffer.append((char) in.current());
-            }
+            // append the next character
+            buffer.append((char) in.current());
+
+            // and advance the input.
             in.next();
+
+            // If we're looking at "",
+            if (in.current() == quote && in.lookAhead() == quote)
+            {
+                // then it's a literal quote
+                buffer.append(quote);
+                if (in.atEndOfLine())
+                {
+                    break;
+                }
+                in.next();
+                if (in.atEndOfLine())
+                {
+                    break;
+                }
+                in.next();
+                if (in.atEndOfLine())
+                {
+                    break;
+                }
+            }
         }
 
-        // Ensure to see if we just exhausted the stream without ever closing the
-        // column quote.
-        if (inQuotes)
+        if (in.atEndOfLine())
         {
             throw new IllegalArgumentException(
                 "Quoted column never closed with matching quote at line " + lineNumber());
+        }
+        else
+        {
+            // Skip the close quote
+            in.next();
         }
     }
 

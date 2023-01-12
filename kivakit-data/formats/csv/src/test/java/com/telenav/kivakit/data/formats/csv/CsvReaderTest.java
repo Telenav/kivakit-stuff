@@ -20,9 +20,8 @@ package com.telenav.kivakit.data.formats.csv;
 
 import com.telenav.kivakit.conversion.core.language.primitive.DoubleConverter;
 import com.telenav.kivakit.conversion.core.language.primitive.IntegerConverter;
-import com.telenav.kivakit.core.progress.ProgressReporter;
-import com.telenav.kivakit.testing.UnitTest;
 import com.telenav.kivakit.resource.packages.PackageTrait;
+import com.telenav.kivakit.testing.UnitTest;
 import org.junit.Test;
 
 import static com.telenav.kivakit.data.formats.csv.CsvColumn.csvColumn;
@@ -40,34 +39,34 @@ public class CsvReaderTest extends UnitTest implements PackageTrait
         var schema = new CsvSchema(year, make, model, description, price);
 
         var resource = packageResource("SampleCsv.csv");
-        try (var myReader = new CsvReader(resource, schema, ',', ProgressReporter.nullProgressReporter()))
+        try (var in = new CsvReader(resource, schema))
         {
-            myReader.skipLines(1);
-            ensure(myReader.hasNext());
+            in.skipLines(1);
+            ensure(in.hasNext());
 
             // 1st line
-            var firstDataLine = myReader.next();
+            var firstDataLine = in.next();
             ensureEqual(firstDataLine.get(year), 1997);
             ensureEqual(firstDataLine.string(description), "ac, abs, moon");
             ensureEqual(firstDataLine.get(price), 3000.0);
 
             // 2nd line
-            myReader.next();
+            in.next();
 
             // 3rd line
-            var thirdLine = myReader.next();
+            var thirdLine = in.next();
             ensureEqual(thirdLine.string(model), "Venture \"Extended Edition, Very Large\"");
 
             // 4th line
-            var fourthLine = myReader.next();
+            var fourthLine = in.next();
             ensure(fourthLine.string(description).indexOf('\n') >= 0);
 
             // 5th line
-            var fifthLine = myReader.next();
+            var fifthLine = in.next();
             ensureEqual(fifthLine.string(model), "\"Venture Extended Edition, Very Large\"");
 
             // 6th line
-            var sixthLine = myReader.next();
+            var sixthLine = in.next();
             ensureEqual(sixthLine.string(model), "\"K\" Ct");
         }
     }

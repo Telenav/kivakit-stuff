@@ -20,6 +20,7 @@ package com.telenav.kivakit.data.formats.csv;
 
 import com.telenav.kivakit.core.messaging.repeaters.BaseRepeater;
 import com.telenav.kivakit.core.progress.ProgressReporter;
+import com.telenav.kivakit.core.value.count.Count;
 import com.telenav.kivakit.data.formats.csv.internal.lexakai.DiagramCsv;
 import com.telenav.kivakit.interfaces.io.Closeable;
 import com.telenav.lexakai.annotations.LexakaiJavadoc;
@@ -28,6 +29,8 @@ import com.telenav.lexakai.annotations.associations.UmlAggregation;
 import com.telenav.lexakai.annotations.associations.UmlRelation;
 
 import java.io.PrintWriter;
+
+import static com.telenav.kivakit.core.progress.ProgressReporter.nullProgressReporter;
 
 /**
  * Writes {@link CsvLine}s to a {@link PrintWriter} using a given {@link CsvSchema}.
@@ -57,7 +60,15 @@ public class CsvWriter extends BaseRepeater implements Closeable
     /**
      * Constructs a writer with the given output destination and schema
      */
-    public CsvWriter(PrintWriter out, ProgressReporter reporter, CsvSchema schema)
+    public CsvWriter(PrintWriter out, CsvSchema schema)
+    {
+        this(out, schema, nullProgressReporter());
+    }
+
+    /**
+     * Constructs a writer with the given output destination and schema
+     */
+    public CsvWriter(PrintWriter out, CsvSchema schema, ProgressReporter reporter)
     {
         this.out = out;
         this.reporter = reporter;
@@ -76,6 +87,21 @@ public class CsvWriter extends BaseRepeater implements Closeable
     {
         out.close();
         reporter.end();
+    }
+
+    public void problem()
+    {
+        reporter.problem();
+    }
+
+    public void problems(Count problems)
+    {
+        reporter.problems(problems);
+    }
+
+    public void problems(long problems)
+    {
+        reporter.problems(problems);
     }
 
     public CsvWriter quoted()
