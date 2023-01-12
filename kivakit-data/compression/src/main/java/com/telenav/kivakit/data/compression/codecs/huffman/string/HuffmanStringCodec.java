@@ -91,7 +91,7 @@ public class HuffmanStringCodec implements StringCodec
     {
         public Converter(Listener listener)
         {
-            super(listener);
+            super(listener, String.class);
         }
 
         @Override

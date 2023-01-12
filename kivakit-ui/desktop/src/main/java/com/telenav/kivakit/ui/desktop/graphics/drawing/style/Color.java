@@ -96,7 +96,7 @@ public class Color
     {
         public ColorConverter(Listener listener)
         {
-            super(listener);
+            super(listener, Color.class);
         }
 
         @Override
@@ -273,9 +273,9 @@ public class Color
         if (that instanceof Color color)
         {
             return red == color.red
-                    && green == color.green
-                    && blue == color.blue
-                    && alpha == color.alpha;
+                && green == color.green
+                && blue == color.blue
+                && alpha == color.alpha;
         }
         return false;
     }

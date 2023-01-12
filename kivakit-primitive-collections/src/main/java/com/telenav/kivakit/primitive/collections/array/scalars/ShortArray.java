@@ -30,8 +30,8 @@ import com.telenav.kivakit.core.value.count.Maximum;
 import com.telenav.kivakit.primitive.collections.CompressibleCollection;
 import com.telenav.kivakit.primitive.collections.PrimitiveCollection;
 import com.telenav.kivakit.primitive.collections.array.PrimitiveArray;
-import com.telenav.kivakit.primitive.collections.list.ShortList;
 import com.telenav.kivakit.primitive.collections.internal.lexakai.DiagramPrimitiveArray;
+import com.telenav.kivakit.primitive.collections.list.ShortList;
 import com.telenav.lexakai.annotations.LexakaiJavadoc;
 import com.telenav.lexakai.annotations.UmlClassDiagram;
 
@@ -42,7 +42,7 @@ import java.util.Arrays;
  * the array if you call {@link #set(int, short)} or {@link #add(short)} and the array is not big enough.
  * <p>
  * Constructors take the same name, maximum size and estimated capacity that all {@link PrimitiveCollection}s take. In
- * addition a {@link ShortArray} can construct from part or all of a primitive short[].
+ * addition, a {@link ShortArray} can construct from part or all of a primitive short[].
  * <p>
  * A sub-array can be retrieved by specifying the starting index and the length with {@link #subArray(int, int)}. The
  * sub-array is read only and will share data with the underlying parent array for efficiency.
@@ -53,7 +53,8 @@ import java.util.Arrays;
  * @see KryoSerializable
  * @see CompressibleCollection
  */
-@SuppressWarnings("DuplicatedCode") @UmlClassDiagram(diagram = DiagramPrimitiveArray.class)
+@SuppressWarnings({ "DuplicatedCode", "unused" })
+@UmlClassDiagram(diagram = DiagramPrimitiveArray.class)
 public final class ShortArray extends PrimitiveArray implements ShortList
 {
     /**
@@ -68,7 +69,7 @@ public final class ShortArray extends PrimitiveArray implements ShortList
 
         public Converter(Listener listener, Separators separators)
         {
-            super(listener);
+            super(listener, ShortArray.class);
             this.separators = separators;
         }
 
@@ -352,7 +353,7 @@ public final class ShortArray extends PrimitiveArray implements ShortList
     public String toString()
     {
         return "[" + getClass().getSimpleName() + " name = " + objectName() + ", size = " + size() + "]\n" +
-                toString(index -> Long.toString(get(index)));
+            toString(index -> Long.toString(get(index)));
     }
 
     /**

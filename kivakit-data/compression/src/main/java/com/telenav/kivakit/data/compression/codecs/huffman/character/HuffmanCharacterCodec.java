@@ -99,7 +99,7 @@ public class HuffmanCharacterCodec extends BaseRepeater implements CharacterCode
     {
         public Converter(Listener listener)
         {
-            super(listener);
+            super(listener, Character.class);
         }
 
         @Override

@@ -68,7 +68,7 @@ public final class LongArray extends PrimitiveArray implements LongList
 
         public Converter(Listener listener, Separators separators)
         {
-            super(listener);
+            super(listener, LongArray.class);
             this.separators = separators;
         }
 
