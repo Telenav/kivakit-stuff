@@ -116,6 +116,11 @@ public class CsvSchema extends BaseRepeater
         return columnForName.get(name);
     }
 
+    public ObjectList<CsvColumn<?>> columns()
+    {
+        return columns;
+    }
+
     /**
      * Returns true if this schema contains the given column
      */
