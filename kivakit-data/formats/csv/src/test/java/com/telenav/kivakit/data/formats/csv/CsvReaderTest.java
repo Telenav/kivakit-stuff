@@ -42,32 +42,37 @@ public class CsvReaderTest extends UnitTest implements PackageTrait
         try (var in = new CsvReader(resource, schema))
         {
             in.skipLines(1);
+
             ensure(in.hasNext());
 
-            // 1st line
-            var firstDataLine = in.next();
-            ensureEqual(firstDataLine.get(year), 1997);
-            ensureEqual(firstDataLine.string(description), "ac, abs, moon");
-            ensureEqual(firstDataLine.get(price), 3000.0);
+            {
+                var line = in.next();
+                ensureEqual(line.string(model), "\"K\" Ct");
+            }
 
-            // 2nd line
+            {
+                var line = in.next();
+                ensureEqual(line.string(model), "\"Venture Extended Edition, Very Large\"");
+            }
+
+            {
+                var line = in.next();
+                ensureEqual(line.get(year), 1997);
+                ensureEqual(line.string(description), "ac, abs, moon");
+                ensureEqual(line.get(price), 3000.0);
+            }
+
             in.next();
 
-            // 3rd line
-            var thirdLine = in.next();
-            ensureEqual(thirdLine.string(model), "Venture \"Extended Edition, Very Large\"");
+            {
+                var line = in.next();
+                ensureEqual(line.string(model), "Venture \"Extended Edition, Very Large\"");
+            }
 
-            // 4th line
-            var fourthLine = in.next();
-            ensure(fourthLine.string(description).indexOf('\n') >= 0);
-
-            // 5th line
-            var fifthLine = in.next();
-            ensureEqual(fifthLine.string(model), "\"Venture Extended Edition, Very Large\"");
-
-            // 6th line
-            var sixthLine = in.next();
-            ensureEqual(sixthLine.string(model), "\"K\" Ct");
+            {
+                var line = in.next();
+                ensure(line.string(description).indexOf('!') >= 0);
+            }
         }
     }
 }

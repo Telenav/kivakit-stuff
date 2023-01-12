@@ -36,10 +36,11 @@ import static com.telenav.kivakit.core.progress.ProgressReporter.nullProgressRep
 /**
  * Parses a stream of CSV information. The rules outlined
  * <a href="https://en.wikipedia.org/wiki/Comma-separated_values">here</a> dictate valid CSV format.
- * In particular, this class can handle quoted strings, line breaks within quotes, comments, empty lines, and some other
- * standard formatting issues.
+ * In particular, this class can handle quoted strings, comments, empty lines, and other standard formatting
+ * issues. However, it cannot handle line breaks within quotes.
  *
  * <p><b>Processing CSV Lines</b></p>
+ *
  * <p>
  * A reader instance is constructed with {@link #CsvReader(Resource, CsvSchema, char, ProgressReporter)}. Since the
  * class is {@link Iterable}, lines can then be retrieved as objects with code similar to:
@@ -348,15 +349,48 @@ public class CsvReader extends BaseIterator<CsvLine> implements RepeaterMixin, C
         var second = (char) in.next();
 
         // If we're starting off with two double quotes ("")
+        var terminator = quote;
         if (second == quote)
         {
-            // then the column is blank.
-            in.next();
-            return;
+            // and the next one is a quote too (""")
+            if (in.lookAhead() == quote)
+            {
+                // read the quote,
+                in.next();
+
+                // then append the literal quote,
+                buffer.append(quote);
+
+                // and move to the next character,
+                in.next();
+            }
+            else
+            {
+                // otherwise, if the next character is not a delimiter,
+                // we have a column starting with something like ,""x
+                if (in.lookAhead() != delimiter)
+                {
+                    // so append the quote,
+                    buffer.append(quote);
+
+                    // and move to the next character the 'x',
+                    in.next();
+
+                    // and we stop at the delimiter since we are not actually on a
+                    // quoted column (we're on a column like ,""k"", which is unquoted)
+                    terminator = delimiter;
+                }
+                else
+                {
+                    // otherwise, the column is empty, so we append nothing.
+                    in.next();
+                    return;
+                }
+            }
         }
 
         // White we haven't hit the closing quote or end of line,
-        while (in.current() != quote && !in.atEndOfLine())
+        while (in.current() != terminator && !in.atEndOfLine())
         {
             if (in.current() == escape)
             {
@@ -374,20 +408,8 @@ public class CsvReader extends BaseIterator<CsvLine> implements RepeaterMixin, C
             {
                 // then it's a literal quote
                 buffer.append(quote);
-                if (in.atEndOfLine())
-                {
-                    break;
-                }
                 in.next();
-                if (in.atEndOfLine())
-                {
-                    break;
-                }
                 in.next();
-                if (in.atEndOfLine())
-                {
-                    break;
-                }
             }
         }
 
