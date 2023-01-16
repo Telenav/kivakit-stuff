@@ -18,20 +18,20 @@
 
 package com.telenav.kivakit.data.formats.library.internal.lexakai;
 
-import com.telenav.kivakit.annotations.code.quality.CodeQuality;
+import com.telenav.kivakit.annotations.code.quality.TypeQuality;
 import com.telenav.lexakai.annotations.LexakaiJavadoc;
 import com.telenav.lexakai.annotations.diagrams.UmlDiagramIdentifier;
 
 import static com.telenav.kivakit.annotations.code.quality.Stability.STABLE;
-import static com.telenav.kivakit.annotations.code.quality.Documentation.DOCUMENTATION_COMPLETE;
+import static com.telenav.kivakit.annotations.code.quality.Documentation.DOCUMENTED;
 import static com.telenav.kivakit.annotations.code.quality.Testing.TESTING_NOT_NEEDED;
 /**
  * @author jonathanl (shibo)
  */
 @LexakaiJavadoc(complete = true)
-@CodeQuality(stability = STABLE,
+@TypeQuality(stability = STABLE,
              testing = TESTING_NOT_NEEDED,
-             documentation = DOCUMENTATION_COMPLETE)
+             documentation = DOCUMENTED)
 public interface DiagramDataFormat extends UmlDiagramIdentifier
 {
 }
