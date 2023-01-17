@@ -57,46 +57,6 @@ import java.util.Arrays;
 @UmlClassDiagram(diagram = DiagramPrimitiveArray.class)
 public final class CharArray extends PrimitiveArray implements CharList
 {
-    /**
-     * Converts to and from a {@link CharArray}
-     *
-     * @author jonathanl (shibo)
-     */
-    @LexakaiJavadoc(complete = true)
-    public static class Converter extends BaseStringConverter<CharArray>
-    {
-        private final Separators separators;
-
-        public Converter(Listener listener, Separators separators)
-        {
-            super(listener, CharArray.class);
-            this.separators = separators;
-        }
-
-        @Override
-        protected String onToString(CharArray array)
-        {
-            var strings = new StringList(Maximum.maximum(array.size()));
-            var values = array.iterator();
-            while (values.hasNext())
-            {
-                strings.add(Character.toString(values.next()));
-            }
-            return strings.join(separators.current());
-        }
-
-        @Override
-        protected CharArray onToValue(String value)
-        {
-            var array = new CharArray("converted");
-            array.initialize();
-            for (var index = 0; index < value.length(); index++)
-            {
-                array.add(value.charAt(index));
-            }
-            return array;
-        }
-    }
 
     /** The underlying primitive data array */
     private char[] data;

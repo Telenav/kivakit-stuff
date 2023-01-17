@@ -57,48 +57,6 @@ import java.util.Arrays;
 @UmlClassDiagram(diagram = DiagramPrimitiveArray.class)
 public final class ShortArray extends PrimitiveArray implements ShortList
 {
-    /**
-     * Converts to and from {@link ShortArray}
-     *
-     * @author jonathanl (shibo)
-     */
-    @LexakaiJavadoc(complete = true)
-    public static class Converter extends BaseStringConverter<ShortArray>
-    {
-        private final Separators separators;
-
-        public Converter(Listener listener, Separators separators)
-        {
-            super(listener, ShortArray.class);
-            this.separators = separators;
-        }
-
-        @Override
-        protected String onToString(ShortArray array)
-        {
-            var strings = new StringList(Maximum.maximum(array.size()));
-            var values = array.iterator();
-            while (values.hasNext())
-            {
-                strings.add(Short.toString(values.next()));
-            }
-            return strings.join(separators.current());
-        }
-
-        @Override
-        protected ShortArray onToValue(String value)
-        {
-            var elements = StringList.split(value, separators.current());
-            var array = new ShortArray("converted");
-            array.initialize();
-            for (var element : elements)
-            {
-                array.add(Short.parseShort(element));
-            }
-            return array;
-        }
-    }
-
     /** The underlying primitive data array */
     private short[] data;
 

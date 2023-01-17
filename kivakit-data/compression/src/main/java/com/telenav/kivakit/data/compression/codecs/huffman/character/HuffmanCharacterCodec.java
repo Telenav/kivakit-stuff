@@ -18,13 +18,10 @@
 
 package com.telenav.kivakit.data.compression.codecs.huffman.character;
 
-import com.telenav.kivakit.conversion.BaseStringConverter;
-import com.telenav.kivakit.core.language.primitive.Ints;
 import com.telenav.kivakit.core.logging.Logger;
 import com.telenav.kivakit.core.logging.LoggerFactory;
 import com.telenav.kivakit.core.messaging.Listener;
 import com.telenav.kivakit.core.messaging.repeaters.BaseRepeater;
-import com.telenav.kivakit.core.string.Strip;
 import com.telenav.kivakit.core.value.count.Maximum;
 import com.telenav.kivakit.core.value.count.MutableCount;
 import com.telenav.kivakit.data.compression.SymbolConsumer;
@@ -73,7 +70,7 @@ public class HuffmanCharacterCodec extends BaseRepeater implements CharacterCode
      */
     public static HuffmanCharacterCodec characterCodec(Listener listener, PropertyMap frequencies, Character escape)
     {
-        return characterCodec(Symbols.loadSymbols(frequencies, escape, new Converter(listener)));
+        return characterCodec(Symbols.loadSymbols(frequencies, escape, new HuffmanCharacterConverter(listener)));
     }
 
     /**
@@ -93,26 +90,6 @@ public class HuffmanCharacterCodec extends BaseRepeater implements CharacterCode
     public static HuffmanCharacterCodec characterCodec(Symbols<Character> symbols)
     {
         return characterCodec(symbols, Maximum._16);
-    }
-
-    public static class Converter extends BaseStringConverter<Character>
-    {
-        public Converter(Listener listener)
-        {
-            super(listener, Character.class);
-        }
-
-        @Override
-        protected String onToString(Character character)
-        {
-            return "0x" + Ints.intToHex(character, 2);
-        }
-
-        @Override
-        protected Character onToValue(String value)
-        {
-            return (char) Long.parseLong(Strip.stripLeading(value, "0x"), 16);
-        }
     }
 
     /** The symbols used to create this codec */
@@ -136,7 +113,7 @@ public class HuffmanCharacterCodec extends BaseRepeater implements CharacterCode
      */
     public PropertyMap asProperties()
     {
-        return symbols.asProperties(new Converter(LOGGER), symbol ->
+        return symbols.asProperties(new HuffmanCharacterConverter(LOGGER), symbol ->
         {
             if (symbol == END_OF_STRING)
             {

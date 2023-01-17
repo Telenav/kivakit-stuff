@@ -18,12 +18,18 @@
 
 package com.telenav.kivakit.security.digest;
 
+import com.telenav.kivakit.core.io.IO;
+import com.telenav.kivakit.core.messaging.Listener;
+import com.telenav.kivakit.resource.Resource;
 import com.telenav.kivakit.security.internal.lexakai.DiagramSecurityDigest;
 import com.telenav.lexakai.annotations.LexakaiJavadoc;
 import com.telenav.lexakai.annotations.UmlClassDiagram;
 
+import java.security.DigestInputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+
+import static com.telenav.kivakit.core.ensure.Ensure.illegalState;
 
 /**
  * Base class for message digesters. The method {@link #digest(byte[])} creates the digest.
@@ -44,13 +50,32 @@ public abstract class BaseDigester implements Digester
     @Override
     public byte[] digest(byte[] value)
     {
+        return digester().digest(value);
+    }
+
+    public byte[] digest(Listener listener, Resource resource)
+    {
+        var digester = digester();
+        try (var in = resource.openForReading())
+        {
+            IO.readBytes(listener, new DigestInputStream(in, digester));
+        }
+        catch (Exception e)
+        {
+            return illegalState("Cannot create $ digest for: $", algorithmName, resource);
+        }
+        return digester.digest();
+    }
+
+    public MessageDigest digester()
+    {
         try
         {
-            return MessageDigest.getInstance(algorithmName).digest(value);
+            return MessageDigest.getInstance(algorithmName);
         }
         catch (NoSuchAlgorithmException e)
         {
-            throw new IllegalStateException("Can't create digest", e);
+            return illegalState("Can't find digest algorithm: $", algorithmName);
         }
     }
 }
