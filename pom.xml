@@ -136,7 +136,7 @@
 
         <!-- Web -->
 
-        <web.netty.version>4.1.84.Final</web.netty.version>
+        <web.netty.version>4.1.87.Final</web.netty.version>
 
         <!-- Utilities -->
 
