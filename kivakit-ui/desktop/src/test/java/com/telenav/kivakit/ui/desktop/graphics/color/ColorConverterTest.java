@@ -21,6 +21,7 @@ package com.telenav.kivakit.ui.desktop.graphics.color;
 import com.telenav.kivakit.core.messaging.Listener;
 import com.telenav.kivakit.testing.UnitTest;
 import com.telenav.kivakit.ui.desktop.graphics.drawing.style.Color;
+import com.telenav.kivakit.ui.desktop.graphics.drawing.style.ColorConverter;
 import org.junit.Test;
 
 public class ColorConverterTest extends UnitTest
@@ -28,7 +29,7 @@ public class ColorConverterTest extends UnitTest
     @Test
     public void test()
     {
-        var converter = new Color.ColorConverter(Listener.nullListener());
+        var converter = new ColorConverter(Listener.nullListener());
         ensureEqual(Color.RED, converter.convert("ffff0000"));
         ensureEqual(Color.GREEN, converter.convert("ff00ff00"));
         ensureEqual(Color.BLUE, converter.convert("ff0000ff"));

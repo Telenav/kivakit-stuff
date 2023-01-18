@@ -56,47 +56,6 @@ import java.util.Arrays;
 @SuppressWarnings("DuplicatedCode") @UmlClassDiagram(diagram = DiagramPrimitiveArray.class)
 public final class LongArray extends PrimitiveArray implements LongList
 {
-    /**
-     * Converts to and from a {@link LongArray}
-     *
-     * @author jonathanl (shibo)
-     */
-    @LexakaiJavadoc(complete = true)
-    public static class Converter extends BaseStringConverter<LongArray>
-    {
-        private final Separators separators;
-
-        public Converter(Listener listener, Separators separators)
-        {
-            super(listener, LongArray.class);
-            this.separators = separators;
-        }
-
-        @Override
-        protected String onToString(LongArray array)
-        {
-            var strings = new StringList(Maximum.maximum(array.size()));
-            var values = array.iterator();
-            while (values.hasNext())
-            {
-                strings.add(Long.toString(values.next()));
-            }
-            return strings.join(separators.current());
-        }
-
-        @Override
-        protected LongArray onToValue(String value)
-        {
-            var elements = StringList.split(value, separators.current());
-            var array = new LongArray("converted");
-            array.initialize();
-            for (var element : elements)
-            {
-                array.add(Long.parseLong(element));
-            }
-            return array;
-        }
-    }
 
     /** The underlying primitive data array */
     private long[] data;

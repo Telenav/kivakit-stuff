@@ -18,7 +18,7 @@ package com.telenav.kivakit.serialization.yaml;/////////////////////////////////
 
 import com.telenav.kivakit.conversion.core.language.object.ConvertedProperty;
 import com.telenav.kivakit.conversion.core.language.primitive.IntegerConverter;
-import com.telenav.kivakit.conversion.core.time.DurationConverter;
+import com.telenav.kivakit.conversion.core.time.duration.DurationConverter;
 
 /**
  * Configuration Java Bean with string conversion methods for each property to allow storage of this configuration in a
