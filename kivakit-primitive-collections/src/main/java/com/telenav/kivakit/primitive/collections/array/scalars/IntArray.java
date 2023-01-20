@@ -56,47 +56,6 @@ import java.util.Arrays;
 @SuppressWarnings("DuplicatedCode") @UmlClassDiagram(diagram = DiagramPrimitiveArray.class)
 public final class IntArray extends PrimitiveArray implements IntList
 {
-    /**
-     * Converts to and from an {@link IntArray}
-     *
-     * @author jonathanl (shibo)
-     */
-    @LexakaiJavadoc(complete = true)
-    public static class Converter extends BaseStringConverter<IntArray>
-    {
-        private final Separators separators;
-
-        public Converter(Listener listener, Separators separators)
-        {
-            super(listener, IntArray.class);
-            this.separators = separators;
-        }
-
-        @Override
-        protected String onToString(IntArray array)
-        {
-            var strings = new StringList(Maximum.maximum(array.size()));
-            var values = array.iterator();
-            while (values.hasNext())
-            {
-                strings.add(Integer.toString(values.next()));
-            }
-            return strings.join(separators.current());
-        }
-
-        @Override
-        protected IntArray onToValue(String value)
-        {
-            var elements = StringList.split(value, separators.current());
-            var array = new IntArray("converted");
-            array.initialize();
-            for (var element : elements)
-            {
-                array.add(Integer.parseInt(element));
-            }
-            return array;
-        }
-    }
 
     /** The underlying primitive data array */
     private int[] data;
