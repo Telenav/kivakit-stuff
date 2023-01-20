@@ -16,7 +16,6 @@ package com.telenav.kivakit.serialization.yaml;/////////////////////////////////
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-import com.telenav.kivakit.core.time.Duration;
 import com.telenav.kivakit.settings.SettingsRegistry;
 import com.telenav.kivakit.settings.SettingsTrait;
 import com.telenav.kivakit.testing.UnitTest;
@@ -52,7 +51,7 @@ public class SettingsTest extends UnitTest
     private SettingsRegistry listenToGlobalSettings()
     {
         var global = settingsForThis();
-        global.unload();
+        global.clear();
         global.clearListeners();
         global.addListener(this);
         return global;
