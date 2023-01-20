@@ -113,7 +113,7 @@ public class YamlObjectSerializer implements
 
     private InstanceIdentifier instance(String text, ObjectMetadata[] metadata)
     {
-        var instance = InstanceIdentifier.singletonInstanceIdentifier();
+        var instance = InstanceIdentifier.singleton();
         var instanceMatcher = INSTANCE_PATTERN.matcher(text);
         if (METADATA_OBJECT_INSTANCE.containedIn(metadata) && instanceMatcher.find())
         {
