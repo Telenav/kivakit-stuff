@@ -19,7 +19,7 @@
 package com.telenav.kivakit.data.formats.csv;
 
 import com.telenav.kivakit.core.collections.list.ObjectList;
-import com.telenav.kivakit.core.collections.map.CaseFoldingStringMap;
+import com.telenav.kivakit.core.collections.map.StringMap;
 import com.telenav.kivakit.core.collections.set.ObjectSet;
 import com.telenav.kivakit.core.messaging.repeaters.BaseRepeater;
 import com.telenav.kivakit.core.value.count.Maximum;
@@ -29,6 +29,8 @@ import com.telenav.lexakai.annotations.UmlClassDiagram;
 import com.telenav.lexakai.annotations.associations.UmlAggregation;
 
 import java.util.List;
+
+import static com.telenav.kivakit.core.collections.map.StringMap.KeyCaseSensitivity.FOLD_CASE_UPPER;
 
 /**
  * An ordered collection of {@link CsvColumn} objects, specifying the structure of a line in a CSV (Comma Separated
@@ -48,7 +50,8 @@ public class CsvSchema extends BaseRepeater
     }
 
     /** Columns by name */
-    private final CaseFoldingStringMap<CsvColumn<?>> columnForName = new CaseFoldingStringMap<>(Maximum._1_000);
+    private final StringMap<CsvColumn<?>> columnForName = new StringMap<CsvColumn<?>>(Maximum._1_000)
+        .withKeyCaseSensitivity(FOLD_CASE_UPPER);
 
     /** List of columns */
     @UmlAggregation
