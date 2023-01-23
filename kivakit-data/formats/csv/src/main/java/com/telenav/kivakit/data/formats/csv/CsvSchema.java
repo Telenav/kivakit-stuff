@@ -30,6 +30,7 @@ import com.telenav.lexakai.annotations.associations.UmlAggregation;
 
 import java.util.List;
 
+import static com.telenav.kivakit.core.collections.map.StringMap.KeyCaseSensitivity.FOLD_CASE_LOWER;
 import static com.telenav.kivakit.core.collections.map.StringMap.KeyCaseSensitivity.FOLD_CASE_UPPER;
 
 /**
@@ -50,8 +51,7 @@ public class CsvSchema extends BaseRepeater
     }
 
     /** Columns by name */
-    private final StringMap<CsvColumn<?>> columnForName = new StringMap<CsvColumn<?>>(Maximum._1_000)
-        .withKeyCaseSensitivity(FOLD_CASE_UPPER);
+    private final StringMap<CsvColumn<?>> columnForName = new StringMap<>(Maximum._1_000);
 
     /** List of columns */
     @UmlAggregation
