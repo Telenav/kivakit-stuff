@@ -46,14 +46,10 @@
     <modules>
 
         <module>kivakit-stuff</module>
-        <module>kivakit-data/formats/xml</module>
         <module>kivakit-serialization-yaml</module>
-        <module>kivakit-data/formats/csv</module>
         <module>kivakit-ui/desktop</module>
         <module>kivakit-security</module>
         <module>kivakit-primitive-collections</module>
-        <module>kivakit-data/compression</module>
-        <module>kivakit-data/formats/library</module>
         <module>kivakit-math</module>
 
     </modules>
