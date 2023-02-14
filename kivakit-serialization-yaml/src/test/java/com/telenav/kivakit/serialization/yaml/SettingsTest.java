@@ -51,7 +51,7 @@ public class SettingsTest extends UnitTest
     private SettingsRegistry listenToGlobalSettings()
     {
         var global = settingsForThis();
-        global.clear();
+        global.clearRegistry();
         global.clearListeners();
         global.addListener(this);
         return global;
