@@ -21,10 +21,7 @@
 
 package com.telenav.kivakit.ui.desktop.graphics.drawing.style;
 
-import com.telenav.kivakit.conversion.BaseStringConverter;
 import com.telenav.kivakit.core.language.primitive.Ints;
-import com.telenav.kivakit.core.messaging.Listener;
-import com.telenav.kivakit.core.string.Align;
 import com.telenav.kivakit.core.value.level.Percent;
 
 import javax.swing.JList;
