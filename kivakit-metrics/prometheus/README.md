@@ -20,14 +20,14 @@ This module contains packages for collecting metrics in a cloud environment with
 
 ### Dependencies <a name="dependencies"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/dependencies-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/dependencies-32-2x.png 2x"/>
 
-[*Dependency Diagram*](https://www.kivakit.org/1.17.0/lexakai/kivakit-stuff/kivakit-metrics/prometheus/documentation/diagrams/dependencies.svg)
+[*Dependency Diagram*](https://www.kivakit.org/1.17.1/lexakai/kivakit-stuff/kivakit-metrics/prometheus/documentation/diagrams/dependencies.svg)
 
 #### Maven Dependency
 
     <dependency>
         <groupId>com.telenav.kivakit</groupId>
         <artifactId>kivakit-metrics-prometheus</artifactId>
-        <version>1.17.0</version>
+        <version>1.17.1</version>
     </dependency>
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
@@ -42,15 +42,15 @@ This module contains packages for collecting metrics in a cloud environment with
 
 ### Code Quality <a name="code-quality"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/ruler-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/ruler-32-2x.png 2x"/>
 
-Code quality for this project is 66.7%.  
+Code quality for this project is 0.0%.  
   
-&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-70-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-70-96-2x.png 2x"/>
+&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-0-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-0-96-2x.png 2x"/>
 
 | Measurement   | Value                    |
 |---------------|--------------------------|
-| Stability     | 100.0%&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-100-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-100-96-2x.png 2x"/>     |
+| Stability     | 0.0%&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-0-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-0-96-2x.png 2x"/>     |
 | Testing       | 0.0%&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-0-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-0-96-2x.png 2x"/>       |
-| Documentation | 100.0%&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-100-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-100-96-2x.png 2x"/> |
+| Documentation | 0.0%&nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/meters/meter-0-96.png" srcset="https://telenav.github.io/telenav-assets/images/meters/meter-0-96-2x.png 2x"/> |
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
@@ -62,14 +62,14 @@ None
 
 ### Package Diagrams <a name="package-diagrams"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/box-24.png" srcset="https://telenav.github.io/telenav-assets/images/icons/box-24-2x.png 2x"/>
 
-[*com.telenav.kivakit.metrics.prometheus*](https://www.kivakit.org/1.17.0/lexakai/kivakit-stuff/kivakit-metrics/prometheus/documentation/diagrams/com.telenav.kivakit.metrics.prometheus.svg)
+[*com.telenav.kivakit.metrics.prometheus*](https://www.kivakit.org/1.17.1/lexakai/kivakit-stuff/kivakit-metrics/prometheus/documentation/diagrams/com.telenav.kivakit.metrics.prometheus.svg)
 
 ### Javadoc <a name="code-quality"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/books-24.png" srcset="https://telenav.github.io/telenav-assets/images/icons/books-24-2x.png 2x"/>
 
 | Class | Documentation Sections  |
 |-------|-------------------------|
-| [*PrometheusJettyPlugin*](https://www.kivakit.org/1.17.0/javadoc/kivakit-stuff/kivakit-metrics-prometheus/com/telenav/kivakit/metrics/prometheus/PrometheusJettyPlugin.html) |  |  
-| [*PrometheusMetricsReporter*](https://www.kivakit.org/1.17.0/javadoc/kivakit-stuff/kivakit-metrics-prometheus/com/telenav/kivakit/metrics/prometheus/PrometheusMetricsReporter.html) |  |  
+| [*PrometheusJettyPlugin*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-metrics-prometheus/com/telenav/kivakit/metrics/prometheus/PrometheusJettyPlugin.html) |  |  
+| [*PrometheusMetricsReporter*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-metrics-prometheus/com/telenav/kivakit/metrics/prometheus/PrometheusMetricsReporter.html) |  |  
 
 [//]: # (start-user-text)
 
