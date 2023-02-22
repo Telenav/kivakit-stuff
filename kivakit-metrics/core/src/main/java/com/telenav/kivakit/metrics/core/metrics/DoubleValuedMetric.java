@@ -1,26 +1,25 @@
-package com.telenav.kivakit.metrics.core.scalar;
+package com.telenav.kivakit.metrics.core.metrics;
 
-import com.telenav.kivakit.annotations.code.quality.CodeQuality;
+import com.telenav.kivakit.annotations.code.quality.TypeQuality;
 import com.telenav.kivakit.core.language.reflection.property.IncludeProperty;
 import com.telenav.kivakit.core.string.ObjectFormatter;
 import com.telenav.kivakit.interfaces.value.DoubleValued;
-import com.telenav.kivakit.metrics.core.AggregateMetric;
-import com.telenav.kivakit.metrics.core.BaseMetric;
+import com.telenav.kivakit.metrics.core.Statistics;
 
+import static com.telenav.kivakit.annotations.code.quality.Documentation.DOCUMENTED;
 import static com.telenav.kivakit.annotations.code.quality.Stability.STABLE_EXTENSIBLE;
-import static com.telenav.kivakit.annotations.code.quality.Documentation.DOCUMENTATION_COMPLETE;
 import static com.telenav.kivakit.annotations.code.quality.Testing.UNTESTED;
 
 /**
- * A quantum metric is a single measurement (as opposed to an {@link AggregateMetric}) with a {@link #name()},
+ * A quantum metric is a single measurement (as opposed to an {@link Statistics}) with a {@link #name()},
  * {@link #type()}, {@link #unit()}, {@link #description()} and {@link #measurement()}.
  *
  * @author jonathanl (shibo)
  */
 @SuppressWarnings("unused")
-@CodeQuality(stability = STABLE_EXTENSIBLE,
+@TypeQuality(stability = STABLE_EXTENSIBLE,
              testing = UNTESTED,
-             documentation = DOCUMENTATION_COMPLETE)
+             documentation = DOCUMENTED)
 public class DoubleValuedMetric<T extends DoubleValued> extends BaseMetric<T>
 {
     /** The measurement value */

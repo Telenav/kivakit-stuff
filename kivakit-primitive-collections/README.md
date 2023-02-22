@@ -30,14 +30,14 @@ The primitive collections store data in primitive data structures.
 
 ### Dependencies <a name="dependencies"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/dependencies-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/dependencies-32-2x.png 2x"/>
 
-[*Dependency Diagram*](https://www.kivakit.org/1.16.0/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/dependencies.svg)
+[*Dependency Diagram*](https://www.kivakit.org/1.17.1/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/dependencies.svg)
 
 #### Maven Dependency
 
     <dependency>
         <groupId>com.telenav.kivakit</groupId>
         <artifactId>kivakit-primitive-collections</artifactId>
-        <version>1.16.0</version>
+        <version>1.17.1</version>
     </dependency>
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
@@ -75,172 +75,172 @@ Code quality for this project is 3.6%.
 
 ### Class Diagrams <a name="class-diagrams"></a> &nbsp; &nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/diagram-40.png" srcset="https://telenav.github.io/telenav-assets/images/icons/diagram-40-2x.png 2x"/>
 
-[*Primitive Arrays*](https://www.kivakit.org/1.16.0/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/diagram-primitive-array.svg)  
-[*Primitive Bit I/O*](https://www.kivakit.org/1.16.0/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/diagram-primitive-array-bit-io.svg)  
-[*Primitive Collections*](https://www.kivakit.org/1.16.0/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/diagram-primitive-collection.svg)  
-[*Primitive Lists*](https://www.kivakit.org/1.16.0/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/diagram-primitive-list.svg)  
-[*Primitive Maps*](https://www.kivakit.org/1.16.0/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/diagram-primitive-map.svg)  
-[*Primitive Multi-Maps*](https://www.kivakit.org/1.16.0/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/diagram-primitive-multi-map.svg)  
-[*Primitive Sets*](https://www.kivakit.org/1.16.0/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/diagram-primitive-set.svg)  
-[*Split Primitive Arrays*](https://www.kivakit.org/1.16.0/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/diagram-primitive-split-array.svg)  
-[*Two-Dimensional Arrays*](https://www.kivakit.org/1.16.0/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/diagram-primitive-array-array.svg)
+[*Primitive Arrays*](https://www.kivakit.org/1.17.1/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/diagram-primitive-array.svg)  
+[*Primitive Bit I/O*](https://www.kivakit.org/1.17.1/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/diagram-primitive-array-bit-io.svg)  
+[*Primitive Collections*](https://www.kivakit.org/1.17.1/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/diagram-primitive-collection.svg)  
+[*Primitive Lists*](https://www.kivakit.org/1.17.1/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/diagram-primitive-list.svg)  
+[*Primitive Maps*](https://www.kivakit.org/1.17.1/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/diagram-primitive-map.svg)  
+[*Primitive Multi-Maps*](https://www.kivakit.org/1.17.1/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/diagram-primitive-multi-map.svg)  
+[*Primitive Sets*](https://www.kivakit.org/1.17.1/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/diagram-primitive-set.svg)  
+[*Split Primitive Arrays*](https://www.kivakit.org/1.17.1/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/diagram-primitive-split-array.svg)  
+[*Two-Dimensional Arrays*](https://www.kivakit.org/1.17.1/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/diagram-primitive-array-array.svg)
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
 ### Package Diagrams <a name="package-diagrams"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/box-24.png" srcset="https://telenav.github.io/telenav-assets/images/icons/box-24-2x.png 2x"/>
 
-[*com.telenav.kivakit.primitive.collections*](https://www.kivakit.org/1.16.0/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.svg)  
-[*com.telenav.kivakit.primitive.collections.array*](https://www.kivakit.org/1.16.0/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.array.svg)  
-[*com.telenav.kivakit.primitive.collections.array.arrays*](https://www.kivakit.org/1.16.0/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.array.arrays.svg)  
-[*com.telenav.kivakit.primitive.collections.array.bits*](https://www.kivakit.org/1.16.0/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.array.bits.svg)  
-[*com.telenav.kivakit.primitive.collections.array.bits.io*](https://www.kivakit.org/1.16.0/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.array.bits.io.svg)  
-[*com.telenav.kivakit.primitive.collections.array.bits.io.input*](https://www.kivakit.org/1.16.0/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.array.bits.io.input.svg)  
-[*com.telenav.kivakit.primitive.collections.array.bits.io.output*](https://www.kivakit.org/1.16.0/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.array.bits.io.output.svg)  
-[*com.telenav.kivakit.primitive.collections.array.packed*](https://www.kivakit.org/1.16.0/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.array.packed.svg)  
-[*com.telenav.kivakit.primitive.collections.array.scalars*](https://www.kivakit.org/1.16.0/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.array.scalars.svg)  
-[*com.telenav.kivakit.primitive.collections.array.strings*](https://www.kivakit.org/1.16.0/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.array.strings.svg)  
-[*com.telenav.kivakit.primitive.collections.internal.lexakai*](https://www.kivakit.org/1.16.0/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.internal.lexakai.svg)  
-[*com.telenav.kivakit.primitive.collections.iteration*](https://www.kivakit.org/1.16.0/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.iteration.svg)  
-[*com.telenav.kivakit.primitive.collections.list*](https://www.kivakit.org/1.16.0/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.list.svg)  
-[*com.telenav.kivakit.primitive.collections.list.adapters*](https://www.kivakit.org/1.16.0/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.list.adapters.svg)  
-[*com.telenav.kivakit.primitive.collections.list.store*](https://www.kivakit.org/1.16.0/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.list.store.svg)  
-[*com.telenav.kivakit.primitive.collections.map*](https://www.kivakit.org/1.16.0/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.map.svg)  
-[*com.telenav.kivakit.primitive.collections.map.multi*](https://www.kivakit.org/1.16.0/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.map.multi.svg)  
-[*com.telenav.kivakit.primitive.collections.map.multi.dynamic*](https://www.kivakit.org/1.16.0/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.map.multi.dynamic.svg)  
-[*com.telenav.kivakit.primitive.collections.map.objects*](https://www.kivakit.org/1.16.0/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.map.objects.svg)  
-[*com.telenav.kivakit.primitive.collections.map.scalars*](https://www.kivakit.org/1.16.0/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.map.scalars.svg)  
-[*com.telenav.kivakit.primitive.collections.map.scalars.fixed*](https://www.kivakit.org/1.16.0/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.map.scalars.fixed.svg)  
-[*com.telenav.kivakit.primitive.collections.map.split*](https://www.kivakit.org/1.16.0/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.map.split.svg)  
-[*com.telenav.kivakit.primitive.collections.set*](https://www.kivakit.org/1.16.0/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.set.svg)
+[*com.telenav.kivakit.primitive.collections*](https://www.kivakit.org/1.17.1/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.svg)  
+[*com.telenav.kivakit.primitive.collections.array*](https://www.kivakit.org/1.17.1/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.array.svg)  
+[*com.telenav.kivakit.primitive.collections.array.arrays*](https://www.kivakit.org/1.17.1/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.array.arrays.svg)  
+[*com.telenav.kivakit.primitive.collections.array.bits*](https://www.kivakit.org/1.17.1/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.array.bits.svg)  
+[*com.telenav.kivakit.primitive.collections.array.bits.io*](https://www.kivakit.org/1.17.1/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.array.bits.io.svg)  
+[*com.telenav.kivakit.primitive.collections.array.bits.io.input*](https://www.kivakit.org/1.17.1/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.array.bits.io.input.svg)  
+[*com.telenav.kivakit.primitive.collections.array.bits.io.output*](https://www.kivakit.org/1.17.1/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.array.bits.io.output.svg)  
+[*com.telenav.kivakit.primitive.collections.array.packed*](https://www.kivakit.org/1.17.1/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.array.packed.svg)  
+[*com.telenav.kivakit.primitive.collections.array.scalars*](https://www.kivakit.org/1.17.1/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.array.scalars.svg)  
+[*com.telenav.kivakit.primitive.collections.array.strings*](https://www.kivakit.org/1.17.1/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.array.strings.svg)  
+[*com.telenav.kivakit.primitive.collections.internal.lexakai*](https://www.kivakit.org/1.17.1/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.internal.lexakai.svg)  
+[*com.telenav.kivakit.primitive.collections.iteration*](https://www.kivakit.org/1.17.1/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.iteration.svg)  
+[*com.telenav.kivakit.primitive.collections.list*](https://www.kivakit.org/1.17.1/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.list.svg)  
+[*com.telenav.kivakit.primitive.collections.list.adapters*](https://www.kivakit.org/1.17.1/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.list.adapters.svg)  
+[*com.telenav.kivakit.primitive.collections.list.store*](https://www.kivakit.org/1.17.1/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.list.store.svg)  
+[*com.telenav.kivakit.primitive.collections.map*](https://www.kivakit.org/1.17.1/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.map.svg)  
+[*com.telenav.kivakit.primitive.collections.map.multi*](https://www.kivakit.org/1.17.1/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.map.multi.svg)  
+[*com.telenav.kivakit.primitive.collections.map.multi.dynamic*](https://www.kivakit.org/1.17.1/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.map.multi.dynamic.svg)  
+[*com.telenav.kivakit.primitive.collections.map.objects*](https://www.kivakit.org/1.17.1/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.map.objects.svg)  
+[*com.telenav.kivakit.primitive.collections.map.scalars*](https://www.kivakit.org/1.17.1/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.map.scalars.svg)  
+[*com.telenav.kivakit.primitive.collections.map.scalars.fixed*](https://www.kivakit.org/1.17.1/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.map.scalars.fixed.svg)  
+[*com.telenav.kivakit.primitive.collections.map.split*](https://www.kivakit.org/1.17.1/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.map.split.svg)  
+[*com.telenav.kivakit.primitive.collections.set*](https://www.kivakit.org/1.17.1/lexakai/kivakit-stuff/kivakit-primitive-collections/documentation/diagrams/com.telenav.kivakit.primitive.collections.set.svg)
 
 ### Javadoc <a name="code-quality"></a> &nbsp;&nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/books-24.png" srcset="https://telenav.github.io/telenav-assets/images/icons/books-24-2x.png 2x"/>
 
 | Class | Documentation Sections  |
 |-------|-------------------------|
-| [*BaseBitReader*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/bits/io/input/BaseBitReader.html) |  |  
-| [*BaseBitWriter*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/bits/io/output/BaseBitWriter.html) |  |  
-| [*BigSplitPackedArray*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/packed/BigSplitPackedArray.html) |  |  
-| [*BitArray*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/bits/BitArray.html) |  |  
-| [*BitInput*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/bits/io/input/BitInput.html) |  |  
-| [*BitOutput*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/bits/io/output/BitOutput.html) |  |  
-| [*BitReader*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/bits/io/BitReader.html) |  |  
-| [*BitWriter*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/bits/io/BitWriter.html) |  |  
-| [*ByteArray*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/scalars/ByteArray.html) |  |  
-| [*ByteArrayArray*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/arrays/ByteArrayArray.html) |  |  
-| [*ByteCollection*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/ByteCollection.html) |  |  
-| [*ByteIterable*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/iteration/ByteIterable.html) |  |  
-| [*ByteIterator*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/iteration/ByteIterator.html) |  |  
-| [*ByteList*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/list/ByteList.html) |  |  
-| [*CharArray*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/scalars/CharArray.html) |  |  
-| [*CharArrayConverter*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/scalars/CharArrayConverter.html) |  |  
-| [*CharCollection*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/CharCollection.html) |  |  
-| [*CharIterable*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/iteration/CharIterable.html) |  |  
-| [*CharIterator*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/iteration/CharIterator.html) |  |  
-| [*CharList*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/list/CharList.html) |  |  
-| [*CompressibleCollection*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/CompressibleCollection.html) |  |  
-| [*CompressibleCollection.CompressionEvent*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/CompressibleCollection.CompressionEvent.html) |  |  
-| [*CompressibleCollection.Method*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/CompressibleCollection.Method.html) |  |  
-| [*DefaultHashingStrategy*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/DefaultHashingStrategy.html) |  |  
-| [*DiagramPrimitiveArray*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/internal/lexakai/DiagramPrimitiveArray.html) |  |  
-| [*DiagramPrimitiveArrayArray*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/internal/lexakai/DiagramPrimitiveArrayArray.html) |  |  
-| [*DiagramPrimitiveArrayBitIo*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/internal/lexakai/DiagramPrimitiveArrayBitIo.html) |  |  
-| [*DiagramPrimitiveCollection*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/internal/lexakai/DiagramPrimitiveCollection.html) |  |  
-| [*DiagramPrimitiveList*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/internal/lexakai/DiagramPrimitiveList.html) |  |  
-| [*DiagramPrimitiveMap*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/internal/lexakai/DiagramPrimitiveMap.html) |  |  
-| [*DiagramPrimitiveMultiMap*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/internal/lexakai/DiagramPrimitiveMultiMap.html) |  |  
-| [*DiagramPrimitiveSet*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/internal/lexakai/DiagramPrimitiveSet.html) |  |  
-| [*DiagramPrimitiveSplitArray*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/internal/lexakai/DiagramPrimitiveSplitArray.html) |  |  
-| [*DoubleQuantizable*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/DoubleQuantizable.html) |  |  
-| [*FixedSizeBitArray*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/bits/FixedSizeBitArray.html) |  |  
-| [*HashingStrategy*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/HashingStrategy.html) |  |  
-| [*IntArray*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/scalars/IntArray.html) |  |  
-| [*IntArrayArray*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/arrays/IntArrayArray.html) |  |  
-| [*IntArrayConverter*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/scalars/IntArrayConverter.html) |  |  
-| [*IntCollection*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/IntCollection.html) |  |  
-| [*IntIterable*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/iteration/IntIterable.html) |  |  
-| [*IntIterator*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/iteration/IntIterator.html) |  |  
-| [*IntLinkedListStore*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/list/store/IntLinkedListStore.html) |  |  
-| [*IntList*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/list/IntList.html) |  |  
-| [*IntListAdapter*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/list/adapters/IntListAdapter.html) |  |  
-| [*IntMultiMap*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/multi/IntMultiMap.html) |  |  
-| [*IntToByteFixedMultiMap*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/fixed/IntToByteFixedMultiMap.html) |  |  
-| [*IntToByteMap*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/IntToByteMap.html) |  |  
-| [*IntToByteMap.EntryVisitor*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/IntToByteMap.EntryVisitor.html) |  |  
-| [*IntToIntFixedMultiMap*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/fixed/IntToIntFixedMultiMap.html) |  |  
-| [*IntToIntMap*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/IntToIntMap.html) |  |  
-| [*IntToIntMap.EntryVisitor*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/IntToIntMap.EntryVisitor.html) |  |  
-| [*IntToLongFixedMultiMap*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/fixed/IntToLongFixedMultiMap.html) |  |  
-| [*IntToLongMap*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/IntToLongMap.html) |  |  
-| [*IntToLongMap.EntryVisitor*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/IntToLongMap.EntryVisitor.html) |  |  
-| [*IntToPackedArrayFixedMultiMap*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/fixed/IntToPackedArrayFixedMultiMap.html) |  |  
-| [*LongArray*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/scalars/LongArray.html) |  |  
-| [*LongArrayArray*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/arrays/LongArrayArray.html) |  |  
-| [*LongArrayConverter*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/scalars/LongArrayConverter.html) |  |  
-| [*LongCollection*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/LongCollection.html) |  |  
-| [*LongIterable*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/iteration/LongIterable.html) |  |  
-| [*LongIterator*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/iteration/LongIterator.html) |  |  
-| [*LongKeyed*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/LongKeyed.html) |  |  
-| [*LongLinkedListStore*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/list/store/LongLinkedListStore.html) |  |  
-| [*LongList*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/list/LongList.html) |  |  
-| [*LongMultiMap*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/multi/LongMultiMap.html) |  |  
-| [*LongSet*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/set/LongSet.html) |  |  
-| [*LongToByteFixedMultiMap*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/fixed/LongToByteFixedMultiMap.html) |  |  
-| [*LongToByteMap*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/LongToByteMap.html) |  |  
-| [*LongToByteMap.EntryVisitor*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/LongToByteMap.EntryVisitor.html) |  |  
-| [*LongToIntFixedMultiMap*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/fixed/LongToIntFixedMultiMap.html) |  |  
-| [*LongToIntMap*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/LongToIntMap.html) |  |  
-| [*LongToIntMap.EntryVisitor*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/LongToIntMap.EntryVisitor.html) |  |  
-| [*LongToIntMultiMap*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/multi/dynamic/LongToIntMultiMap.html) |  |  
-| [*LongToLongFixedMultiMap*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/fixed/LongToLongFixedMultiMap.html) |  |  
-| [*LongToLongMap*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/LongToLongMap.html) |  |  
-| [*LongToLongMap.EntryVisitor*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/LongToLongMap.EntryVisitor.html) |  |  
-| [*LongToLongMultiMap*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/multi/dynamic/LongToLongMultiMap.html) |  |  
-| [*LongToObjectMap*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/objects/LongToObjectMap.html) |  |  
-| [*PackedArray*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/packed/PackedArray.html) |  |  
-| [*PackedPrimitiveArray*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/packed/PackedPrimitiveArray.html) |  |  
-| [*PackedPrimitiveArray.OverflowHandling*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/packed/PackedPrimitiveArray.OverflowHandling.html) |  |  
-| [*PackedStringArray*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/strings/PackedStringArray.html) |  |  
-| [*PackedStringArray.Type*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/strings/PackedStringArray.Type.html) |  |  
-| [*PackedStringStore*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/list/store/PackedStringStore.html) |  |  
-| [*PrimitiveArray*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/PrimitiveArray.html) |  |  
-| [*PrimitiveArrayArray*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/PrimitiveArrayArray.html) |  |  
-| [*PrimitiveCollection*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/PrimitiveCollection.html) |  |  
-| [*PrimitiveCollection.AllocationStackTrace*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/PrimitiveCollection.AllocationStackTrace.html) |  |  
-| [*PrimitiveCollection.CompressionRecord*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/PrimitiveCollection.CompressionRecord.html) |  |  
-| [*PrimitiveCollection.IndexedToString*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/PrimitiveCollection.IndexedToString.html) |  |  
-| [*PrimitiveCollectionsKryoTypes*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/PrimitiveCollectionsKryoTypes.html) |  |  
-| [*PrimitiveIterator*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/iteration/PrimitiveIterator.html) |  |  
-| [*PrimitiveList*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/list/PrimitiveList.html) |  |  
-| [*PrimitiveListStore*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/list/store/PrimitiveListStore.html) |  |  
-| [*PrimitiveMap*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/PrimitiveMap.html) |  |  
-| [*PrimitiveMap.MapToString*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/PrimitiveMap.MapToString.html) |  |  
-| [*PrimitiveMultiMap*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/multi/PrimitiveMultiMap.html) |  |  
-| [*PrimitiveMultiMap.MultiMapToString*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/multi/PrimitiveMultiMap.MultiMapToString.html) |  |  
-| [*PrimitiveScalarMap*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/PrimitiveScalarMap.html) |  |  
-| [*PrimitiveScalarMultiMap*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/multi/PrimitiveScalarMultiMap.html) |  |  
-| [*PrimitiveSet*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/set/PrimitiveSet.html) |  |  
-| [*PrimitiveSet.SetToString*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/set/PrimitiveSet.SetToString.html) |  |  
-| [*PrimitiveSplitArray*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/PrimitiveSplitArray.html) |  |  
-| [*ShortArray*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/scalars/ShortArray.html) |  |  
-| [*ShortArrayConverter*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/scalars/ShortArrayConverter.html) |  |  
-| [*ShortCollection*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/ShortCollection.html) |  |  
-| [*ShortIterable*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/iteration/ShortIterable.html) |  |  
-| [*ShortIterator*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/iteration/ShortIterator.html) |  |  
-| [*ShortList*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/list/ShortList.html) |  |  
-| [*SplitByteArray*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/scalars/SplitByteArray.html) |  |  
-| [*SplitCharArray*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/scalars/SplitCharArray.html) |  |  
-| [*SplitIntArray*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/scalars/SplitIntArray.html) |  |  
-| [*SplitIntToIntMap*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/split/SplitIntToIntMap.html) |  |  
-| [*SplitLongArray*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/scalars/SplitLongArray.html) |  |  
-| [*SplitLongSet*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/set/SplitLongSet.html) |  |  
-| [*SplitLongToByteMap*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/split/SplitLongToByteMap.html) |  |  
-| [*SplitLongToIntMap*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/split/SplitLongToIntMap.html) |  |  
-| [*SplitLongToLongMap*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/split/SplitLongToLongMap.html) |  |  
-| [*SplitPackedArray*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/packed/SplitPackedArray.html) |  |  
-| [*SplitPrimitiveMap*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/SplitPrimitiveMap.html) |  |  
-| [*StringToIntMap*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/StringToIntMap.html) |  |  
-| [*StringToObjectMap*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/StringToObjectMap.html) |  |  
-| [*VariableReadSizeBitInput*](https://www.kivakit.org/1.16.0/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/bits/io/input/VariableReadSizeBitInput.html) |  |  
+| [*BaseBitReader*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/bits/io/input/BaseBitReader.html) |  |  
+| [*BaseBitWriter*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/bits/io/output/BaseBitWriter.html) |  |  
+| [*BigSplitPackedArray*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/packed/BigSplitPackedArray.html) |  |  
+| [*BitArray*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/bits/BitArray.html) |  |  
+| [*BitInput*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/bits/io/input/BitInput.html) |  |  
+| [*BitOutput*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/bits/io/output/BitOutput.html) |  |  
+| [*BitReader*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/bits/io/BitReader.html) |  |  
+| [*BitWriter*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/bits/io/BitWriter.html) |  |  
+| [*ByteArray*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/scalars/ByteArray.html) |  |  
+| [*ByteArrayArray*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/arrays/ByteArrayArray.html) |  |  
+| [*ByteCollection*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/ByteCollection.html) |  |  
+| [*ByteIterable*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/iteration/ByteIterable.html) |  |  
+| [*ByteIterator*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/iteration/ByteIterator.html) |  |  
+| [*ByteList*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/list/ByteList.html) |  |  
+| [*CharArray*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/scalars/CharArray.html) |  |  
+| [*CharArrayConverter*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/scalars/CharArrayConverter.html) |  |  
+| [*CharCollection*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/CharCollection.html) |  |  
+| [*CharIterable*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/iteration/CharIterable.html) |  |  
+| [*CharIterator*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/iteration/CharIterator.html) |  |  
+| [*CharList*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/list/CharList.html) |  |  
+| [*CompressibleCollection*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/CompressibleCollection.html) |  |  
+| [*CompressibleCollection.CompressionEvent*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/CompressibleCollection.CompressionEvent.html) |  |  
+| [*CompressibleCollection.Method*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/CompressibleCollection.Method.html) |  |  
+| [*DefaultHashingStrategy*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/DefaultHashingStrategy.html) |  |  
+| [*DiagramPrimitiveArray*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/internal/lexakai/DiagramPrimitiveArray.html) |  |  
+| [*DiagramPrimitiveArrayArray*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/internal/lexakai/DiagramPrimitiveArrayArray.html) |  |  
+| [*DiagramPrimitiveArrayBitIo*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/internal/lexakai/DiagramPrimitiveArrayBitIo.html) |  |  
+| [*DiagramPrimitiveCollection*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/internal/lexakai/DiagramPrimitiveCollection.html) |  |  
+| [*DiagramPrimitiveList*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/internal/lexakai/DiagramPrimitiveList.html) |  |  
+| [*DiagramPrimitiveMap*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/internal/lexakai/DiagramPrimitiveMap.html) |  |  
+| [*DiagramPrimitiveMultiMap*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/internal/lexakai/DiagramPrimitiveMultiMap.html) |  |  
+| [*DiagramPrimitiveSet*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/internal/lexakai/DiagramPrimitiveSet.html) |  |  
+| [*DiagramPrimitiveSplitArray*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/internal/lexakai/DiagramPrimitiveSplitArray.html) |  |  
+| [*DoubleQuantizable*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/DoubleQuantizable.html) |  |  
+| [*FixedSizeBitArray*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/bits/FixedSizeBitArray.html) |  |  
+| [*HashingStrategy*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/HashingStrategy.html) |  |  
+| [*IntArray*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/scalars/IntArray.html) |  |  
+| [*IntArrayArray*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/arrays/IntArrayArray.html) |  |  
+| [*IntArrayConverter*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/scalars/IntArrayConverter.html) |  |  
+| [*IntCollection*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/IntCollection.html) |  |  
+| [*IntIterable*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/iteration/IntIterable.html) |  |  
+| [*IntIterator*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/iteration/IntIterator.html) |  |  
+| [*IntLinkedListStore*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/list/store/IntLinkedListStore.html) |  |  
+| [*IntList*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/list/IntList.html) |  |  
+| [*IntListAdapter*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/list/adapters/IntListAdapter.html) |  |  
+| [*IntMultiMap*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/multi/IntMultiMap.html) |  |  
+| [*IntToByteFixedMultiMap*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/fixed/IntToByteFixedMultiMap.html) |  |  
+| [*IntToByteMap*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/IntToByteMap.html) |  |  
+| [*IntToByteMap.EntryVisitor*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/IntToByteMap.EntryVisitor.html) |  |  
+| [*IntToIntFixedMultiMap*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/fixed/IntToIntFixedMultiMap.html) |  |  
+| [*IntToIntMap*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/IntToIntMap.html) |  |  
+| [*IntToIntMap.EntryVisitor*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/IntToIntMap.EntryVisitor.html) |  |  
+| [*IntToLongFixedMultiMap*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/fixed/IntToLongFixedMultiMap.html) |  |  
+| [*IntToLongMap*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/IntToLongMap.html) |  |  
+| [*IntToLongMap.EntryVisitor*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/IntToLongMap.EntryVisitor.html) |  |  
+| [*IntToPackedArrayFixedMultiMap*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/fixed/IntToPackedArrayFixedMultiMap.html) |  |  
+| [*LongArray*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/scalars/LongArray.html) |  |  
+| [*LongArrayArray*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/arrays/LongArrayArray.html) |  |  
+| [*LongArrayConverter*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/scalars/LongArrayConverter.html) |  |  
+| [*LongCollection*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/LongCollection.html) |  |  
+| [*LongIterable*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/iteration/LongIterable.html) |  |  
+| [*LongIterator*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/iteration/LongIterator.html) |  |  
+| [*LongKeyed*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/LongKeyed.html) |  |  
+| [*LongLinkedListStore*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/list/store/LongLinkedListStore.html) |  |  
+| [*LongList*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/list/LongList.html) |  |  
+| [*LongMultiMap*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/multi/LongMultiMap.html) |  |  
+| [*LongSet*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/set/LongSet.html) |  |  
+| [*LongToByteFixedMultiMap*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/fixed/LongToByteFixedMultiMap.html) |  |  
+| [*LongToByteMap*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/LongToByteMap.html) |  |  
+| [*LongToByteMap.EntryVisitor*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/LongToByteMap.EntryVisitor.html) |  |  
+| [*LongToIntFixedMultiMap*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/fixed/LongToIntFixedMultiMap.html) |  |  
+| [*LongToIntMap*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/LongToIntMap.html) |  |  
+| [*LongToIntMap.EntryVisitor*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/LongToIntMap.EntryVisitor.html) |  |  
+| [*LongToIntMultiMap*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/multi/dynamic/LongToIntMultiMap.html) |  |  
+| [*LongToLongFixedMultiMap*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/fixed/LongToLongFixedMultiMap.html) |  |  
+| [*LongToLongMap*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/LongToLongMap.html) |  |  
+| [*LongToLongMap.EntryVisitor*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/LongToLongMap.EntryVisitor.html) |  |  
+| [*LongToLongMultiMap*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/multi/dynamic/LongToLongMultiMap.html) |  |  
+| [*LongToObjectMap*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/objects/LongToObjectMap.html) |  |  
+| [*PackedArray*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/packed/PackedArray.html) |  |  
+| [*PackedPrimitiveArray*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/packed/PackedPrimitiveArray.html) |  |  
+| [*PackedPrimitiveArray.OverflowHandling*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/packed/PackedPrimitiveArray.OverflowHandling.html) |  |  
+| [*PackedStringArray*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/strings/PackedStringArray.html) |  |  
+| [*PackedStringArray.Type*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/strings/PackedStringArray.Type.html) |  |  
+| [*PackedStringStore*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/list/store/PackedStringStore.html) |  |  
+| [*PrimitiveArray*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/PrimitiveArray.html) |  |  
+| [*PrimitiveArrayArray*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/PrimitiveArrayArray.html) |  |  
+| [*PrimitiveCollection*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/PrimitiveCollection.html) |  |  
+| [*PrimitiveCollection.AllocationStackTrace*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/PrimitiveCollection.AllocationStackTrace.html) |  |  
+| [*PrimitiveCollection.CompressionRecord*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/PrimitiveCollection.CompressionRecord.html) |  |  
+| [*PrimitiveCollection.IndexedToString*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/PrimitiveCollection.IndexedToString.html) |  |  
+| [*PrimitiveCollectionsKryoTypes*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/PrimitiveCollectionsKryoTypes.html) |  |  
+| [*PrimitiveIterator*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/iteration/PrimitiveIterator.html) |  |  
+| [*PrimitiveList*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/list/PrimitiveList.html) |  |  
+| [*PrimitiveListStore*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/list/store/PrimitiveListStore.html) |  |  
+| [*PrimitiveMap*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/PrimitiveMap.html) |  |  
+| [*PrimitiveMap.MapToString*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/PrimitiveMap.MapToString.html) |  |  
+| [*PrimitiveMultiMap*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/multi/PrimitiveMultiMap.html) |  |  
+| [*PrimitiveMultiMap.MultiMapToString*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/multi/PrimitiveMultiMap.MultiMapToString.html) |  |  
+| [*PrimitiveScalarMap*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/PrimitiveScalarMap.html) |  |  
+| [*PrimitiveScalarMultiMap*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/multi/PrimitiveScalarMultiMap.html) |  |  
+| [*PrimitiveSet*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/set/PrimitiveSet.html) |  |  
+| [*PrimitiveSet.SetToString*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/set/PrimitiveSet.SetToString.html) |  |  
+| [*PrimitiveSplitArray*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/PrimitiveSplitArray.html) |  |  
+| [*ShortArray*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/scalars/ShortArray.html) |  |  
+| [*ShortArrayConverter*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/scalars/ShortArrayConverter.html) |  |  
+| [*ShortCollection*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/ShortCollection.html) |  |  
+| [*ShortIterable*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/iteration/ShortIterable.html) |  |  
+| [*ShortIterator*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/iteration/ShortIterator.html) |  |  
+| [*ShortList*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/list/ShortList.html) |  |  
+| [*SplitByteArray*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/scalars/SplitByteArray.html) |  |  
+| [*SplitCharArray*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/scalars/SplitCharArray.html) |  |  
+| [*SplitIntArray*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/scalars/SplitIntArray.html) |  |  
+| [*SplitIntToIntMap*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/split/SplitIntToIntMap.html) |  |  
+| [*SplitLongArray*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/scalars/SplitLongArray.html) |  |  
+| [*SplitLongSet*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/set/SplitLongSet.html) |  |  
+| [*SplitLongToByteMap*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/split/SplitLongToByteMap.html) |  |  
+| [*SplitLongToIntMap*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/split/SplitLongToIntMap.html) |  |  
+| [*SplitLongToLongMap*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/split/SplitLongToLongMap.html) |  |  
+| [*SplitPackedArray*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/packed/SplitPackedArray.html) |  |  
+| [*SplitPrimitiveMap*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/SplitPrimitiveMap.html) |  |  
+| [*StringToIntMap*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/StringToIntMap.html) |  |  
+| [*StringToObjectMap*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/map/scalars/StringToObjectMap.html) |  |  
+| [*VariableReadSizeBitInput*](https://www.kivakit.org/1.17.1/javadoc/kivakit-stuff/kivakit-primitive-collections/com/telenav/kivakit/primitive/collections/array/bits/io/input/VariableReadSizeBitInput.html) |  |  
 
 [//]: # (start-user-text)
 

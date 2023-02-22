@@ -17,9 +17,9 @@
     
     <parent>
         <groupId>com.telenav.kivakit</groupId>
-        <artifactId>kivakit-extensions-parent</artifactId>
-        <version>1.17.0</version>
-        <relativePath>../../../kivakit-extensions/pom.xml</relativePath>
+        <artifactId>kivakit-stuff-parent</artifactId>
+        <version>1.17.1</version>
+        <relativePath>../../../kivakit-stuff/pom.xml</relativePath>
     </parent>
     
     <artifactId>kivakit-metrics-prometheus</artifactId>

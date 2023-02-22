@@ -2,40 +2,29 @@ package com.telenav.kivakit.metrics.core;
 
 import com.telenav.kivakit.annotations.code.quality.TypeQuality;
 import com.telenav.kivakit.core.time.CreatedAt;
+import com.telenav.kivakit.interfaces.collection.Addable;
 import com.telenav.kivakit.interfaces.naming.Named;
-import com.telenav.kivakit.interfaces.value.DoubleValued;
 
 import static com.telenav.kivakit.annotations.code.quality.Documentation.DOCUMENTED;
 import static com.telenav.kivakit.annotations.code.quality.Stability.STABLE_EXTENSIBLE;
 import static com.telenav.kivakit.annotations.code.quality.Testing.TESTING_NOT_NEEDED;
 
 /**
- * A named measurement {@link #createdAt()} at some point in time
+ * An aggregate metric is a metric for a set of measurements, added with {@link Addable#add(Object)}
  *
  * @author jonathanl (shibo)
  */
 @TypeQuality(stability = STABLE_EXTENSIBLE,
              testing = TESTING_NOT_NEEDED,
              documentation = DOCUMENTED)
-public interface Metric<T> extends
+public interface Statistics<T> extends Addable<T>,
     Named,
-    CreatedAt,
-    DoubleValued
+    CreatedAt
 {
-    @TypeQuality(stability = STABLE_EXTENSIBLE,
-                 testing = TESTING_NOT_NEEDED,
-                 documentation = DOCUMENTED)
-    enum MetricType
-    {
-        /** The metric represents a count of something, like requests */
-        COUNTER,
-
-        /** The metric represents a level, such as CPU or memory use */
-        GAUGE,
-
-        /** The metric is an observation in a histogram, such as the duration of a request */
-        HISTOGRAM
-    }
+    /**
+     * Returns the average for this aggregated metric
+     */
+    Metric<T> average();
 
     /**
      * Human-readable description of this metric
@@ -43,14 +32,29 @@ public interface Metric<T> extends
     String description();
 
     /**
-     * Returns the measurement
+     * Returns the maximum sample for this aggregated metric
      */
-    T measurement();
+    Metric<T> maximum();
+
+    /**
+     * Returns the minimum sample for this aggregated metric
+     */
+    Metric<T> minimum();
+
+    /**
+     * Returns the number of samples for this aggregated metric
+     */
+    Metric<T> samples();
+
+    /**
+     * Returns the total of all samples for this aggregated metric
+     */
+    Metric<T> total();
 
     /**
      * Returns the type of measurement
      */
-    MetricType type();
+    Metric.MetricType type();
 
     /**
      * Returns the metric unit
